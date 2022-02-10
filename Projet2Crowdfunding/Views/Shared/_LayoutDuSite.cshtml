@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/Site.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="entete">
+        <h1>En-Tête</h1>
+    </div>
+
+    <div id="main">
+        <div id="menu">
+            <ul>
+                <li>@Html.ActionLink("Accueil", "Index")</li>
+                <li>@Html.ActionLink("Modifier Ada", "ModifyParticipant", new { Id = 1 })</li>
+                <li>@Html.ActionLink("Modifier Sara", "ModifyParticipant", new { Id = 2 })</li>
+            </ul>
+        </div>
+
+        <div id="contenu">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div id="footer">
+        &copy; @DateTime.Now.Year - Ceci est le footer
+    </div>
+</body>
+</html>
