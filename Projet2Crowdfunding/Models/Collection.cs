@@ -18,6 +18,7 @@ namespace Projet2Crowdfunding.Models
         public int? DonationId { get; set; }
 
         [Required]
+        public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
     }
 }
