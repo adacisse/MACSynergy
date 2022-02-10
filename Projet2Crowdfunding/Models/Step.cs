@@ -8,7 +8,7 @@ namespace Projet2Crowdfunding.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Montant)]
+        [Display(Name = "Montant")]
         public double Amount { get; set; }
 
         [MaxLength(250)]
