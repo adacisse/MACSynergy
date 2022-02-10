@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Projet2Crowdfunding.Models
 {
-    public class PayPalAccount
+    public class PayPalAccount : PaymentOption
     {
         public int Id { get; set; }
 

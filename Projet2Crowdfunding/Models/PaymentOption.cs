@@ -1,10 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Projet2Crowdfunding.Models
 {
-    public class PaymentOption
+    public abstract class PaymentOption
     {
-        public PaymentOption()
-        {
-        }
+        public int Id { get; set; }
+
+        [Required]
+        public Boolean RegisterCard { get; set; }
+
+
     }
 }

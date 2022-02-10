@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet2Crowdfunding.Models
 {
-    public class CreditCard
+    public class CreditCard : PaymentOption
     {
         public int Id { get; set; }
 

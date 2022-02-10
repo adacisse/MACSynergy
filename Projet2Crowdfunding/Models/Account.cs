@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Models
 {
-    public class Account
+    public abstract class Account
     {
         public int Id { get; set; }
 

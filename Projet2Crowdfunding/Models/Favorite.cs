@@ -5,20 +5,14 @@ namespace Projet2Crowdfunding.Models
 {
     public class Favorite
     {
-        public Favorite()
-        {
-        }
+        public int Id { get; set; }
 
         [Required]
-        public int id { get; set; }
-
-        [Display (Name ="Id du projet")]
+        public int? ProjectId { get; set; }
+        public virtual Project Project { get; set; }
+        
         [Required]
-        public int project_id { get; set; }
-
-        [Display(Name = "Id du participant")]
-        [Required]
-        public int participant_id { get; set; }
-
+        public int? ParticipantId { get; set; }
+        public virtual Participant Participant { get; set; }
     }
 }

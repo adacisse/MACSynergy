@@ -41,10 +41,6 @@ namespace Projet2Crowdfunding.Models
         public string Partnership { get; set; }
 
         [Required]
-        [Display(Name = "Catégorie")]
-        public Category Category { get; set; }
-
-        [Required]
         public ProjectOwnerType Type { get; set; }
 
         [MaxLength(250)]
