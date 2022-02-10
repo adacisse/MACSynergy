@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet2Crowdfunding.Models
 {
+    public enum ReportStatus { ToProcess, Processed }
     public class Report
     {
         public int Id { get; set; }
@@ -22,5 +23,6 @@ namespace Projet2Crowdfunding.Models
         public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
 
+        public ReportStatus Status { get; set; }
     }
 }
