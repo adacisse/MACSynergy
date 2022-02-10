@@ -11,12 +11,7 @@ namespace Projet2Crowdfunding.Models
 
     public class Participant
     {
-        public int Id { get; set; }
-
-        [MaxLength(15)]
-        [Required]
-        [Display(Name = "Numéro de téléphone")]
-        public string PhoneNumber { get; set; }     
+        public int Id { get; set; }    
 
         [MaxLength(45)]
         [Required]
@@ -34,6 +29,11 @@ namespace Projet2Crowdfunding.Models
         [Column(TypeName = "date")]
         [Display(Name = "Date de naissance")]
         public DateTime? Birthdate { get; set; }
+
+        [MaxLength(15)]
+        [Required]
+        [Display(Name = "Numéro de téléphone")]
+        public string PhoneNumber { get; set; }
 
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
