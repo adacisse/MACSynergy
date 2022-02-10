@@ -14,43 +14,43 @@ namespace Projet2Crowdfunding.Controllers
         {
             return View();
         }
-        public IActionResult ModifyParticipant(int Id)
-        {
-            if (Id != 0)
-            {
-                BddContext ctx = new BddContext();
-                Participant participant = ctx.Participants.Find(Id);
-                if (participant == null)
-                {
-                    return View("Error");
-                }
-                return View(participant);
-            }
-            return View("Error");
+        //public IActionResult ModifyParticipant(int Id)
+        //{
+        //    if (Id != 0)
+        //    {
+        //        BddContext ctx = new BddContext();
+        //        Participant participant = ctx.Participants.Find(Id);
+        //        if (participant == null)
+        //        {
+        //            return View("Error");
+        //        }
+        //        return View(participant);
+        //    }
+        //    return View("Error");
             
-        }
+        //}
 
-        [HttpPost]
-        public IActionResult ModifyParticipant(Participant participant)
-        {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View(participant);
-            //}
+        //[HttpPost]
+        //public IActionResult ModifyParticipant(Participant participant)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(participant);
+        //    }
 
-            if (participant.Id != 0)
-            {
-                ParticipantService ps = new ParticipantService();
-                ps.ModifyParticipant(participant.Id, participant.LastName, participant.FirstName, 
-                    participant.Gender, participant.PhoneNumber, participant.Birthdate);
-                return RedirectToAction("Index");
+        //    if (participant.Id != 0)
+        //    {
+        //        ParticipantService ps = new ParticipantService();
+        //        ps.ModifyParticipant(participant.Id, participant.LastName, participant.FirstName,
+        //            participant.Gender, participant.PhoneNumber, participant.Birthdate);
+        //        return RedirectToAction("Index");
 
-            }
-            else
-            {
-                return View("Error");
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        return View("Error");
+        //    }
+        //}
 
     }
 

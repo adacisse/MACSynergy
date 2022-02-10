@@ -3,13 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Projet2Crowdfunding.Models
 {
+    public enum TransactionType { Payment, Reimbursement }
+
     public class Transaction
-    {
+    { 
         public int Id { get; set; }
 
-        [MaxLength(45)]
+        
         [Required]
-        public string Type { get; set; }
+        public TransactionType Type { get; set; }
 
         [Required]
         public int? DonationId { get; set; }
@@ -18,5 +20,14 @@ namespace Projet2Crowdfunding.Models
         [Required]
         [Display(Name = "Date de transaction")]
         public DateTime TransationDate { get; set; }
+
+        public int? CreditCardId { get; set; }
+        public virtual CreditCard CreditCard { get; set; }
+
+        public int? PaypalAccountId { get; set; }
+        public virtual PayPalAccount PaypalAccount { get; set; }
+
+        
+
     }
 }

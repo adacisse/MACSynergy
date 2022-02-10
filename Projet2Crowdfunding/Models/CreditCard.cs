@@ -4,9 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Projet2Crowdfunding.Models
 {
-    public class CreditCard : PaymentOption
+    public class CreditCard 
     {
         public int Id { get; set; }
+
+        [Required]
+        public Boolean RegisterCard { get; set; }
 
         [MaxLength(25)]
         [Required]

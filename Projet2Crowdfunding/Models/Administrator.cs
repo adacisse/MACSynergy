@@ -4,10 +4,15 @@ using System.ComponentModel.DataAnnotations;
 namespace Projet2Crowdfunding.Models
 {
     public enum AdministratorType { employee, volunteer}
-    public class Administrator : User
+
+    public class Administrator 
     {
         public int Id { get; set; }
 
+        [MaxLength(15)]
+        [Required]
+        [Display(Name = "Numéro de téléphone")]
+        public string PhoneNumber { get; set; }       
 
         [MaxLength(45)]
         [Required]
@@ -23,8 +28,11 @@ namespace Projet2Crowdfunding.Models
         public virtual Address Address { get; set; }
 
         [Required]
+        public int? AccountId { get; set; }
+        public virtual AdministratorAccount Account { get; set; }
+
+
+        [Required]
         public AdministratorType Type { get; set; }
-
-
     }
 }

@@ -14,11 +14,14 @@ namespace Projet2Crowdfunding.Models
         public string Description { get; set; }
 
         [Required]
-        public int? UserId { get; set; }
-        public virtual User User { get; set; }
+        public int? ParticipantId { get; set; }
+        public virtual Participant Participant { get; set; }
 
         public int? ProjectOwnerId { get; set; }
         public virtual ProjectOwner ProjectOwner { get; set; }
+
+        public int? ReceiveProjectOwnerId { get; set; }
+        public virtual ProjectOwner ReceiveProjectOwner { get; set; }
   
         public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }

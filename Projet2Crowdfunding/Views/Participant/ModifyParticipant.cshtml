@@ -28,14 +28,14 @@
             new SelectList(Enum.GetValues(typeof(Gender))),
             "Sélectionnez le genre")
 
-        @Html.LabelFor(m => Model.PhoneNumber)
+        @*@Html.LabelFor(m => Model.PhoneNumber)
         @Html.TextBoxFor(m => Model.PhoneNumber)
 
         @Html.LabelFor(m => Model.Birthdate)
         @Html.TextBoxFor(m => Model.Birthdate, "{0:yyyy-MM-dd}", new { @type = "date" , @class = "Selection"})
 
         @Html.HiddenFor(m => Model.Account)
-        @Html.HiddenFor(m => Model.Address)
+        @Html.HiddenFor(m => Model.Address)*@
 
         <input type="submit" value="Modifier" />
 

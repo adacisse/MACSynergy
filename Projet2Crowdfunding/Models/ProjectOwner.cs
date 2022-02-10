@@ -10,9 +10,14 @@ namespace Projet2Crowdfunding.Models
     public enum ProjectOwnerType { association, ONG}
     public enum AssoStatus { registered, published}
 
-    public class ProjectOwner : User
+    public class ProjectOwner
     {
         public int Id { get; set; }
+
+        [MaxLength(15)]
+        [Required]
+        [Display(Name = "Numéro de téléphone")]
+        public string PhoneNumber { get; set; }
 
         [MaxLength(45)]
         [Required]
@@ -60,6 +65,10 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Adresse")]
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
+
+        [Required]
+        public int? AccountId { get; set; }
+        public virtual ProjectOwnerAccount Account { get; set; }
 
     }
 }

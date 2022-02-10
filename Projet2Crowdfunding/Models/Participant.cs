@@ -9,9 +9,14 @@ namespace Projet2Crowdfunding.Models
 {
     public enum Gender { Male, Female, Other }
 
-    public class Participant : User
+    public class Participant
     {
         public int Id { get; set; }
+
+        [MaxLength(15)]
+        [Required]
+        [Display(Name = "Numéro de téléphone")]
+        public string PhoneNumber { get; set; }     
 
         [MaxLength(45)]
         [Required]
@@ -30,8 +35,12 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Date de naissance")]
         public DateTime? Birthdate { get; set; }
 
-       
         public int? AddressId { get; set; }
-        public virtual Address Address { get; set; }     
+        public virtual Address Address { get; set; }
+
+        [Required]
+        public int? AccountId { get; set; }
+        public virtual ParticipantAccount Account { get; set; }
+
     }
 }
