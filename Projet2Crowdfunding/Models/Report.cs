@@ -6,19 +6,20 @@ namespace Projet2Crowdfunding.Models
 {
     public class Report
     {
+        public int Id { get; set; }
+
         [Column(TypeName = "text")]
         [Required]
-        [Display(Name = "Charte de Confidentialité")]
         public string Description { get; set; }
 
         [Required]
-        [Display(Name = "Charte de Confidentialité")]
+        public int? UserId { get; set; }
         public virtual User User { get; set; }
 
-        [Display(Name = "Charte de Confidentialité")]
+        public int? ProjectOwnerId { get; set; }
         public virtual ProjectOwner ProjectOwner { get; set; }
   
-        [Display(Name = "Charte de Confidentialité")]
+        public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
 
     }

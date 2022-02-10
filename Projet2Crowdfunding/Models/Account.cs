@@ -10,7 +10,7 @@ namespace Projet2Crowdfunding.Models
     {
         public int Id { get; set; }
 
-        [MaxLength(45)]
+        [MaxLength(100)]
         [Required]
         [Display(Name = "Adresse Email")]
         public string Mail { get; set; }

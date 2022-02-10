@@ -6,30 +6,27 @@ namespace Projet2Crowdfunding.Models
 {
     public class CreditCard
     {
-        [MaxLength(16)]
+        public int Id { get; set; }
+
+        [MaxLength(25)]
         [Required]
-        [Display(Name = "Carte bancaire")]
-        public string card_number { get; set; }
+        [Display(Name = "Numéro de Carte")]
+        public string CardNumber { get; set; }
 
         [MaxLength(10)]
         [Required]
-        [Column(TypeName = "Date d'expiration")] //affichage colonne sql
+        [Column(TypeName = "Date")] 
         [Display(Name = "Date d'expiration")]
-        public DateTime? expiration_date { get; set; }
+        public DateTime ExpirationDate { get; set; }
 
-        [MaxLength(3)]
+        [MaxLength(5)]
         [Required]
-        public string cvv { get; set; }
+        public string Cvv { get; set; }
 
         [MaxLength(100)]
         [Required]
-        [Display(Name = "Nom du propriétaire de la carte")]
-        public string owner_name { get; set; }
-
-        [Required]
-        [Display(Name = "Id de la transaction")] //Identifiant de transaction pour le proprio de la carte
-        public int transaction_id { get; set; }
-
+        [Display(Name = "Nom du titulaire")]
+        public string OwnerName { get; set; }
 
     }
 }

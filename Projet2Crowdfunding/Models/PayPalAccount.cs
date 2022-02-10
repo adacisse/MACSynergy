@@ -5,6 +5,8 @@ namespace Projet2Crowdfunding.Models
 {
     public class PayPalAccount
     {
+        public int Id { get; set; }
+
         [MaxLength(100)]
         [Required]
         [Display(Name = "Email")]

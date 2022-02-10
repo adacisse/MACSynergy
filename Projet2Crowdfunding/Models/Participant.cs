@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace Projet2Crowdfunding.Models
 {
     public enum Gender { Male, Female, Other }
-    public class Participant
+
+    public class Participant : User
     {
         public int Id { get; set; }
 
@@ -25,21 +26,12 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Genre")]
         public Gender Gender { get; set; }
 
-        [MaxLength(15)]
-        [Display(Name = "Numéro de Téléphone")]
-        public string PhoneNumber { get; set; }
-
         [Column(TypeName = "date")]
         [Display(Name = "Date de naissance")]
         public DateTime? Birthdate { get; set; }
 
-        [Required]
-        public int? AccountId { get; set; }
-        public virtual Account Account { get; set; }
-
+       
         public int? AddressId { get; set; }
-        public virtual Address Address { get; set; }
-
-      
+        public virtual Address Address { get; set; }     
     }
 }

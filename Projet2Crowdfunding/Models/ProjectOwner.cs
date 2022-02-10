@@ -25,7 +25,7 @@ namespace Projet2Crowdfunding.Models
         public string Summary { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "Déscription")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
         [MaxLength(100)]
@@ -33,7 +33,7 @@ namespace Projet2Crowdfunding.Models
         public string HyperLink { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "Déscription voluntariat")]
+        [Display(Name = "Description volontariat")]
         public string VolunteerDescritpion { get; set; }
 
         [MaxLength(300)]
@@ -45,7 +45,6 @@ namespace Projet2Crowdfunding.Models
         public Category Category { get; set; }
 
         [Required]
-        [Display(Name = "Type")]
         public ProjectOwnerType Type { get; set; }
 
         [MaxLength(250)]
@@ -63,6 +62,7 @@ namespace Projet2Crowdfunding.Models
 
         [Required]
         [Display(Name = "Adresse")]
+        public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
 
     }

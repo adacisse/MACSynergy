@@ -8,14 +8,16 @@ namespace Projet2Crowdfunding.Models
 {
     public class User
     {
-        [Required]
-        [Display(Name = "Compte")]
-        public virtual Account Account { get; set; }
-
+        public int Id { get; set; }
 
         [MaxLength(15)]
         [Required]
         [Display(Name = "Numéro de téléphone")]
         public string PhoneNumber { get; set; }
+
+        [Required]     
+        public int? AccountId { get; set; }
+        public virtual Account Account { get; set; }
+
     }
 }

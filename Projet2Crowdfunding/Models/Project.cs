@@ -31,7 +31,7 @@ namespace Projet2Crowdfunding.Models
 
         [Column(TypeName = "text")]
         [Required]
-        [Display(Name = "Déscription")]
+        [Display(Name = "Description")]
         public string Descritpion { get; set; }
 
         [MaxLength(250)]
@@ -43,7 +43,7 @@ namespace Projet2Crowdfunding.Models
         public Category Category { get; set; }
 
         [Required]
-        [Display(Name = "Date du démarrage")]
+        [Display(Name = "Date de démarrage")]
         public DateTime StartDate { get; set; }
 
         [Required]
