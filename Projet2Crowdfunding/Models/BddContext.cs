@@ -10,15 +10,30 @@ namespace Projet2Crowdfunding.Models
     {
         //public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Administrator> Administrators { get; set; }
+        public DbSet<AdministratorAccount> AdministratorAccounts { get; set; }
         public DbSet<Collection> Collections { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
         public DbSet<Donation> Donations { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<Participant> Participants { get; set; }
+        public DbSet<ParticipantAccount> ParticipantAccounts { get; set; }
+        public DbSet<PayPalAccount> PayPalAccounts { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectOwner> ProjectOwners { get; set; }
+        public DbSet<ProjectOwnerAccount> ProjectOwnerAccounts { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        //public DbSet<StatisticsPlateform> StatisticsPlateforms { get; set; }
+        //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
+        public DbSet<Step> Steps { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;user id=root;password=christelle;database=Project2Crowdfunding");
+            optionsBuilder.UseMySql("server=localhost;user id=root;password=rrrrr;database=Project2Crowdfunding");
         }
 
         public void InitializedDB()
