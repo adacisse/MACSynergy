@@ -7,57 +7,62 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Models
 {
-    public class ProjectOwner
+    public enum ProjectOwnerType { association, ONG}
+    public enum AssoStatus { registered, published}
+
+    public class ProjectOwner : User
     {
         public int Id { get; set; }
 
         [MaxLength(45)]
         [Required]
-        public string AssociationName { get; set; }
+        [Display(Name = "Nom")]
+        public string Name { get; set; }
 
         [Column(TypeName= "text")]
         [Required]
+        [Display(Name = "Résumé")]
         public string Summary { get; set; }
 
         [Column(TypeName = "text")]
+        [Display(Name = "Déscription")]
         public string Description { get; set; }
 
         [MaxLength(100)]
+        [Display(Name = "Lien Hypertext")]
         public string HyperLink { get; set; }
 
         [Column(TypeName = "text")]
+        [Display(Name = "Déscription voluntariat")]
         public string VolunteerDescritpion { get; set; }
 
         [MaxLength(300)]
+        [Display(Name = "Partenariat")]
         public string Partnership { get; set; }
 
-        [MaxLength(15)]
         [Required]
-        public string PhoneNumber { get; set; }
+        [Display(Name = "Catégorie")]
+        public Category Category { get; set; }
 
-        [MaxLength(50)]
         [Required]
-        public string Category { get; set; }
-
-        [MaxLength(45)]
-        [Required]
-        public string Type { get; set; }
+        [Display(Name = "Type")]
+        public ProjectOwnerType Type { get; set; }
 
         [MaxLength(250)]
         [Required]
+        [Display(Name = "Justificatif")]
         public string AssociationProof { get; set; }
 
         [MaxLength(250)]
+        [Display(Name = "Logo")]
         public string Image { get; set; }
 
-        [MaxLength(45)]
         [Required]
-        public string State { get; set; }
+        [Display(Name = "État")]
+        public AssoStatus Status { get; set; }
 
         [Required]
-        public virtual Account Account { get; set; }
-
-        [Required]
+        [Display(Name = "Adresse")]
         public virtual Address Address { get; set; }
 
     }
