@@ -1,38 +1,152 @@
-﻿#entete, #menu, #contenu, #footer {
+﻿#header, #contenu, #footer {
     padding: 1px 0;
-}
-
-#entete {
-    background-color: lightcoral;
-    text-align: center;
-    background-size: 100px;
-}
-
-#main {
-    margin: auto;
-}
-
-#menu {
-    float: left;
-    width: 240px;
-    background-color: lightsalmon;
+    background-color: white;
 }
 
 #contenu {
-    margin-left: 245px;
-    background-color: lightblue;
+    padding-top: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 #footer {
-    background-color: lightgreen;
     text-align: center;
-    clear: both;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .titre {
     text-align: center;
 }
 
-.selectionne {
-    color: red;
+#nav-color {
+    background-color: White;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+#nav-elements {
+    color: grey;
+}
+
+#nav-elements:hover, #nav-active {
+    color: seagreen
+}
+
+#bouton-log {
+    background-color: seagreen;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 30px 10px 30px;
+    font-size: 14px;
+}
+
+#bouton-log:hover {
+    background-color: rgb(33, 99, 62);
+    text-decoration: none;
+}
+
+.fa-facebook {
+    color: #3B5998;
+}
+
+.fa-twitter {
+    color: #55ACEE;
+}
+
+.fa-intagram {
+    color: #125688;
+}
+
+.fa-youtube {
+    color: #bb0000;
+}
+.fa-linkedin {
+    color: #007bb5;
+}
+
+.newsletter-subscribe {
+    color: #313437;
+    background-color: darkseagreen;
+    padding: 20px 74px;
+    border-radius: 5px;
+    margin: 30px auto
+    }
+
+.newsletter-subscribe p {
+    color: #7d8285;
+    line-height: 1.5
+}    
+
+.newsletter-subscribe h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    padding-top: 0;
+    margin-top: 0;
+    color: seagreen
+}    
+
+.newsletter-subscribe .intro {
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 25px
+}    
+
+.newsletter-subscribe .intro p {
+    margin-bottom: 35px
+}
+
+.newsletter-subscribe form {
+    justify-content: center
+}
+
+.newsletter-subscribe form .form-control {
+    background: #eff1f4;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+    text-indent: 9px;
+    height: 45px;
+    margin-right: 10px;
+    min-width: 10px
+}
+
+.newsletter-subscribe form .btn {
+    padding: 16px 32px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    line-height: 1
+}        
+
+.newsletter-subscribe form .btn:hover {
+    opacity: 1
+}
+
+.newsletter-subscribe form .btn:active {
+    transform: translateY(1px)
+}
+
+.newsletter-subscribe form .btn-primary {
+    background-color: seagreen;
+    color: #fff;
+    outline: none !important
+}
+
+body {
+    background-color: White
+}
+a:link{
+    text-decoration: none
+}
+
+
