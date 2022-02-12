@@ -1,4 +1,5 @@
-﻿#header, #contenu, #footer {
+﻿
+#header, #contenu, #footer {
     padding: 1px 0;
     background-color: white;
 }
@@ -26,9 +27,9 @@
     color: grey;
 }
 
-#nav-elements:hover, #nav-active {
-    color: seagreen
-}
+    #nav-elements:hover, #nav-active {
+        color: seagreen
+    }
 
 #bouton-log {
     background-color: seagreen;
@@ -40,10 +41,10 @@
     font-size: 14px;
 }
 
-#bouton-log:hover {
-    background-color: rgb(33, 99, 62);
-    text-decoration: none;
-}
+    #bouton-log:hover {
+        background-color: rgb(33, 99, 62);
+        text-decoration: none;
+    }
 
 .fa-facebook {
     color: #3B5998;
@@ -60,6 +61,7 @@
 .fa-youtube {
     color: #bb0000;
 }
+
 .fa-linkedin {
     color: #007bb5;
 }
@@ -70,83 +72,179 @@
     padding: 20px 74px;
     border-radius: 5px;
     margin: 30px auto
-    }
+}
 
     .newsletter-subscribe p {
         color: black;
         line-height: 1.5
-    }    
+    }
 
-.newsletter-subscribe h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    line-height: 1.5;
-    padding-top: 0;
-    margin-top: 0;
-    color: seagreen
-}    
+    .newsletter-subscribe h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: seagreen
+    }
 
-.newsletter-subscribe .intro {
-    font-size: 16px;
-    max-width: 500px;
-    margin: 0 auto 25px
-}    
+    .newsletter-subscribe .intro {
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 25px
+    }
 
-.newsletter-subscribe .intro p {
-    margin-bottom: 35px
-}
+        .newsletter-subscribe .intro p {
+            margin-bottom: 35px
+        }
 
-.newsletter-subscribe form {
-    justify-content: center
-}
+    .newsletter-subscribe form {
+        justify-content: center
+    }
 
-.newsletter-subscribe form .form-control {
-    background: #eff1f4;
-    border: none;
-    border-radius: 3px;
-    box-shadow: none;
-    outline: none;
-    color: inherit;
-    text-indent: 9px;
-    height: 45px;
-    margin-right: 10px;
-    min-width: 10px
-}
+        .newsletter-subscribe form .form-control {
+            background: #eff1f4;
+            border: none;
+            border-radius: 3px;
+            box-shadow: none;
+            outline: none;
+            color: inherit;
+            text-indent: 9px;
+            height: 45px;
+            margin-right: 10px;
+            min-width: 10px
+        }
 
-.newsletter-subscribe form .btn {
-    padding: 16px 32px;
-    border: none;
-    background: none;
-    box-shadow: none;
-    text-shadow: none;
-    opacity: 0.9;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 13px;
-    letter-spacing: 0.4px;
-    line-height: 1
-}        
+        .newsletter-subscribe form .btn {
+            padding: 16px 32px;
+            border: none;
+            background: none;
+            box-shadow: none;
+            text-shadow: none;
+            opacity: 0.9;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            line-height: 1
+        }
 
-.newsletter-subscribe form .btn:hover {
-    opacity: 1
-}
+            .newsletter-subscribe form .btn:hover {
+                opacity: 1
+            }
 
-.newsletter-subscribe form .btn:active {
-    transform: translateY(1px)
-}
+            .newsletter-subscribe form .btn:active {
+                transform: translateY(1px)
+            }
 
-.newsletter-subscribe form .btn-primary {
-    background-color: seagreen;
-    color: #fff;
-    outline: none !important
-}
+        .newsletter-subscribe form .btn-primary {
+            background-color: seagreen;
+            color: #fff;
+            outline: none !important
+        }
 
-body {
-    background-color: White
-}
-a:link{
+
+a:link {
     text-decoration: none
 }
 
 
+
+
+/*POUR LA PAGE INDEX*/
+
+#image-fond {
+    background-image: url(images/vert5.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.img-text {
+    width: 240px;
+    height: 350px;
+    display: block;
+    text-align: center;
+    padding: 73% 5% 5% 5%;
+    background-color: rgb(248, 248, 248);
+    border: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(219, 219, 219);
+}
+
+    .img-text h2 {
+        text-align: left;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+
+    .img-text p {
+        font-size: 12px;
+        text-decoration: none;
+        color: gray;
+    }
+
+.single-box {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    z-index: 5;
+}
+
+.img-area {
+    position: absolute;
+    width: 240px;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-control-prev {
+    margin-left: -120px;
+}
+
+.carousel-control-next {
+    margin-right: -120px;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    text-align: justify;
+}
+
+.carousel-indicators {
+    width: 0;
+    height: 0;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    filter: invert(1);
+}
+
+.form-1-box legend {
+    font-size: inherit;
+    line-height: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.border-MACS {
+    background-color: rgb(248, 248, 248);
+    border: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(219, 219, 219);
+}
+
+    .border-MACS p {
+        color: gray;
+    }
