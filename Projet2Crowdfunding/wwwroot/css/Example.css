@@ -8,6 +8,10 @@ body {
     background-size: 100%;  
 }
 
+h6 {
+    color: rgb(87, 86, 86)
+}
+
 #nav-color{
     background-color: rgb(245, 243, 243);
 }
@@ -15,8 +19,9 @@ body {
 #nav-elements{
     color: grey;
 }
-#nav-elements:hover, #nav-active{
-    color: rgb(94, 216, 12);
+   
+#nav-elements:hover, #nav-active {
+        color: rgb(173, 209, 42);
 }
 
 #bouton-log {
@@ -117,5 +122,16 @@ p{
     border-color: rgb(219, 219, 219);
 }
 .border-MACS p{
+    color: gray;
+}
+
+.mode-vert h6 {
+    font-size: 30px;
+    color: rgb(173, 209, 42);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.mode-vert p {
     color: gray;
 }
