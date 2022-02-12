@@ -72,10 +72,10 @@
     margin: 30px auto
     }
 
-.newsletter-subscribe p {
-    color: #7d8285;
-    line-height: 1.5
-}    
+    .newsletter-subscribe p {
+        color: black;
+        line-height: 1.5
+    }    
 
 .newsletter-subscribe h2 {
     font-size: 24px;
