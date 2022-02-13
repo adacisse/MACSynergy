@@ -34,5 +34,10 @@ namespace Projet2Crowdfunding.Models
 
         [Required]
         public AdministratorType Type { get; set; }
+
+        [Required]
+        public int? UserId { get; set; }
+        public virtual User User { get; set; }
+
     }
 }
