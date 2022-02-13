@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Inscription porteur de projet</title>
+
+        <style>
+            fieldset {
+                background-color: beige;
+                width: 800px;
+                border: 15px solid seagreen;
+                padding: 50px;
+                margin: 20px;
+                text-align: justify;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+
+            <h1>Bienvenue</h1>
+
+            <label for="Vous avez déja un compte MACSynergY?">Vous avez déja un compte Macsynergy?</label>
+            <a href="autentification.html" class="btn btn-success">Connectez-vous!</a>
+            <br />
+            <label for="nom"> Nom </label>
+            <br />
+            <input type="text" id="nom du responsable">
+            <br />
+            <br />
+            <label for="prenom">Prenom </label>
+            <br />
+            <input type="text" id="prenom du responsable">
+            <br />
+            <br />
+            <label for="nom asso">Nom de l'association</label>
+            <br />
+            <input type="text" id="nom asso">
+
+            <br />
+            <br />
+            <label for="adresse">Adresse de l'association</label>
+            <br />
+            <input type="text" id="Adresse association">
+            <br />
+            <br />
+
+            <label for="Email">Adresse e-mail </label>
+            <br />
+            <input type="text" id="Email">
+            <br />
+            <br />
+            <label for="Mot de passe">Mot de passe </label>
+            <br />
+            <input type="text" id="Mot de passe">
+            <br />
+            <label for="Homme">Association </label>
+            <input type="radio" name="gender" value="Unspecified" />
+            <label for="Femme">ONG </label>
+            <input type="radio" name="gender" value="Unspecified" />
+            <br />
+            <br />
+            <label for="Sport">Catégorie </label>
+            <select asp-for="sport">
+                <option value="1">Animal</option>
+                <option value="2">Environnement</option>
+                <option value="3">Humanitaire</option>
+                <option value="3">Education</option>
+                <option value="3">Santé</option>
+                <option value="3">Besoins élémentaires</option>
+                <option value="3">Autre</option>
+            </select>
+            <br />
+            <br />
+            <input class="form-check-input" type="checkbox" id="check2" name="Confidentialite" value="something">
+            <label class="form-check-label">J'ai lu et j'accepte la politique de confidentialité de Macsynergy</label>
+            <br />
+            <br />
+            <input type="submit" value="S'inscrire" />
+        </fieldset>
+</body>
+</html>
