@@ -69,6 +69,6 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public int? AccountId { get; set; }
         public virtual ProjectOwnerAccount Account { get; set; }
-
+        public ProjectOwnerAccount ProjectOwnerAccount { get; internal set; }
     }
 }
