@@ -29,6 +29,10 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+<<<<<<< HEAD
+=======
+        public DbSet<Account> Accounts { get; set; }
+>>>>>>> eea739a249fe00475d5143939202fa323f0cd0d4
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -242,8 +246,11 @@ namespace Projet2Crowdfunding.Models
                 .HasIndex(u => new { u.Mail, u.Password })
                 .IsUnique();
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> eea739a249fe00475d5143939202fa323f0cd0d4
         }
 
     }

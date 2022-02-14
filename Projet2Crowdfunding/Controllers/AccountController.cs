@@ -14,15 +14,20 @@ namespace Projet2Crowdfunding.Controllers
         {
             return View();
         }
-        [HttpPost, ActionName("Login")]
+        //[HttpPost, ActionName("Login")]
 
-        public IActionResult UserLogin(string Mail, string Password)
-        {
+        //public IActionResult UserLogin(string Mail, string Password)
+        //{
             
+<<<<<<< HEAD
             bddContext = new BddContext();
             bddContext.Accounts.FindAsync();
+=======
+        //    bddContext = new BddContext();
+        //    bddContext.Accounts.FindAsync();
+>>>>>>> eea739a249fe00475d5143939202fa323f0cd0d4
 
-            return View();
-        }
+        //    return View();
+        //}
     }
 }

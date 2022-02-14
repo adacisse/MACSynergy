@@ -41,6 +41,6 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public int? AccountId { get; set; }
         public virtual ParticipantAccount Account { get; set; }
-
+        public ParticipantAccount ParticipantAccount { get; internal set; }
     }
 }
