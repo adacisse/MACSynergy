@@ -35,12 +35,18 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Numéro de téléphone")]
         public string PhoneNumber { get; set; }
 
+        [Required]
+        public Boolean Newsletter { get; set; }
+
+        [Required]
+        [Display(Name = "Charte de Confidentialité")]
+        public Boolean ConfidentialityCharter { get; set; }
+
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
 
         [Required]
         public int? AccountId { get; set; }
-        public virtual ParticipantAccount Account { get; set; }
-        public ParticipantAccount ParticipantAccount { get; internal set; }
+        public virtual Account Account { get; set; }
     }
 }

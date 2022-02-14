@@ -30,7 +30,6 @@ namespace Projet2Crowdfunding.Models
 
         [Required]
         public int? AccountId { get; set; }
-        public virtual AdministratorAccount Account { get; set; }
-        public AdministratorAccount AdministratorAccount { get; internal set; }
+        public virtual Account Account { get; set; }
     }
 }

@@ -62,13 +62,19 @@ namespace Projet2Crowdfunding.Models
         public AssoStatus Status { get; set; }
 
         [Required]
+        [Display(Name = "Charte de Confidentialité")]
+        public Boolean ConfidentialityCharter { get; set; }
+
+        [Required]
+        public Boolean Newsletter { get; set; }
+
+        [Required]
         [Display(Name = "Adresse")]
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
 
         [Required]
         public int? AccountId { get; set; }
-        public virtual ProjectOwnerAccount Account { get; set; }
-        public ProjectOwnerAccount ProjectOwnerAccount { get; internal set; }
+        public virtual Account Account { get; set; }
     }
 }

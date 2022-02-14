@@ -24,7 +24,7 @@ namespace Projet2Crowdfunding.Service
         public int CreateParticipant(string lastName, string firstname, string mail, string password)
         {
             string encodedPassword = EncodeMD5(password);
-     
+
             Account account = new Account()
             {
                 Mail = mail,
@@ -34,18 +34,18 @@ namespace Projet2Crowdfunding.Service
             Participant participant = new Participant()
             {
                 FirstName = firstname,
-                LastName = lastName,           
+                LastName = lastName,
                 ParticipantAccount = new ParticipantAccount()
                 {
                     Newsletter = false,
                     ConfidentialityCharter = true,
                     Account = account
-                },          
+                },
             };
 
             this.bddContext.Participants.Add(participant);
             this.bddContext.SaveChanges();
-            return account.Id;
+            return participant.Id;
         }
 
 
@@ -98,7 +98,7 @@ namespace Projet2Crowdfunding.Service
 
             this.bddContext.ProjectOwners.Add(projectOwner);
             this.bddContext.SaveChanges();
-            return account.Id;
+            return projectOwner.Id;
         }
 
         public int CreateAdministrator(string lastName, string firstName, string mail, string password
@@ -123,10 +123,9 @@ namespace Projet2Crowdfunding.Service
 
             };
 
-
             this.bddContext.Administrators.Add(administrator);
             this.bddContext.SaveChanges();
-            return account.Id;
+            return administrator.Id;
 
         }
 
@@ -137,7 +136,6 @@ namespace Projet2Crowdfunding.Service
                 (a => a.Mail == mail && a.Password == password);
             return account;
         }
-
 
         public Participant GetParticipant(int id)
         {
@@ -187,12 +185,11 @@ namespace Projet2Crowdfunding.Service
         }
 
 
-
-
         public void Dispose()
         {
             bddContext.Dispose();
         }
+
     }
 }
 

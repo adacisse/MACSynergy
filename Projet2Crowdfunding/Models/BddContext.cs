@@ -11,7 +11,6 @@ namespace Projet2Crowdfunding.Models
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Administrator> Administrators { get; set; }
-        public DbSet<AdministratorAccount> AdministratorAccounts { get; set; }
         public DbSet<Collection> Collections { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<CreditCard> CreditCards { get; set; }
@@ -19,11 +18,9 @@ namespace Projet2Crowdfunding.Models
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<Participant> Participants { get; set; }
-        public DbSet<ParticipantAccount> ParticipantAccounts { get; set; }
         public DbSet<PayPalAccount> PayPalAccounts { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectOwner> ProjectOwners { get; set; }
-        public DbSet<ProjectOwnerAccount> ProjectOwnerAccounts { get; set; }
         public DbSet<Report> Reports { get; set; }
         //public DbSet<StatisticsPlateform> StatisticsPlateforms { get; set; }
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
@@ -51,6 +48,8 @@ namespace Projet2Crowdfunding.Models
                     Gender = Gender.Female,
                     PhoneNumber = "6666666666",
                     Birthdate = DateTime.Parse("2013-07-04"),
+                    Newsletter = false,
+                    ConfidentialityCharter = true,
                     Address = new Address
                     {
                         Id = 1,
@@ -60,17 +59,11 @@ namespace Projet2Crowdfunding.Models
                         City = "Toulouse",
                         Country = "France"
                     },
-                    Account = new ParticipantAccount
+                    Account = new Account
                     {
                         Id = 1,
-                        Newsletter = false,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 1,
-                            Mail = "adacisse@gmail.com",
-                            Password = "aaaaa"
-                        }
+                        Mail = "adacisse@gmail.com",
+                        Password = "aaaaa"
                     }
                 },
                 new Participant
@@ -81,6 +74,9 @@ namespace Projet2Crowdfunding.Models
                     Gender = Gender.Female,
                     PhoneNumber = "5555555555",
                     Birthdate = DateTime.Parse("2011-03-14"),
+
+                    Newsletter = true,
+                    ConfidentialityCharter = true,
                     Address = new Address
                     {
                         Id = 2,
@@ -90,17 +86,12 @@ namespace Projet2Crowdfunding.Models
                         City = "Paris",
                         Country = "France"
                     },
-                    Account = new ParticipantAccount
+                    Account = new Account
                     {
                         Id = 2,
-                        Newsletter = true,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 2,
-                            Mail = "sara.rchouk@gmail.com",
-                            Password = "sssss"
-                        }
+                        Mail = "sara.rchouk@gmail.com",
+                        Password = "sssss"
+                        
                     }
                 },
                 new Participant
@@ -111,6 +102,9 @@ namespace Projet2Crowdfunding.Models
                     Gender = Gender.Male,
                     PhoneNumber = "4444114444",
                     Birthdate = DateTime.Parse("1987-09-12"),
+
+                    Newsletter = true,
+                    ConfidentialityCharter = true,
                     Address = new Address
                     {
                         Id = 3,
@@ -120,17 +114,11 @@ namespace Projet2Crowdfunding.Models
                         City = "Málaga",
                         Country = "Espagne"
                     },
-                    Account = new ParticipantAccount
+                    Account = new Account
                     {
                         Id = 3,
-                        Newsletter = true,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 3,
-                            Mail = "juanjoperez@gmail.com",
-                            Password = "juanjuan"
-                        }
+                        Mail = "juanjoperez@gmail.com",
+                        Password = "juanjuan"      
                     }
                 },
                 new Participant
@@ -141,6 +129,8 @@ namespace Projet2Crowdfunding.Models
                     Gender = Gender.Female,
                     PhoneNumber = "3333113333",
                     Birthdate = DateTime.Parse("1994-02-09"),
+                    Newsletter = false,
+                    ConfidentialityCharter = true,
                     Address = new Address
                     {
                         Id = 4,
@@ -150,17 +140,11 @@ namespace Projet2Crowdfunding.Models
                         City = "Sevilla",
                         Country = "Espagne"
                     },
-                    Account = new ParticipantAccount
+                    Account = new Account
                     {
                         Id = 4,
-                        Newsletter = false,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 4,
-                            Mail = "lauradupuy@gmail.com",
-                            Password = "laulau"
-                        }
+                        Mail = "lauradupuy@gmail.com",
+                        Password = "laulau"
                     }
                 }
 
@@ -176,15 +160,11 @@ namespace Projet2Crowdfunding.Models
                     FirstName = "Matthieu",
                     PhoneNumber = "3333333333",
                     Type = AdministratorType.employee,
-                    Account = new AdministratorAccount
+                    Account = new Account
                     {
-                        Id = 1,
-                        Account = new Account
-                        {
-                            Id = 5,
-                            Mail = "matthieu.faucillon@gmail.com",
-                            Password = "mmmmm"
-                        }
+                        Id = 5,
+                        Mail = "matthieu.faucillon@gmail.com",
+                        Password = "mmmmm"
                     }
                 },
 
@@ -194,15 +174,11 @@ namespace Projet2Crowdfunding.Models
                     LastName = "Equisoain",
                     FirstName = "Cristina",
                     PhoneNumber = "4444444444",
-                    Account = new AdministratorAccount
+                    Account = new Account
                     {
-                        Id = 2,
-                        Account = new Account
-                        {
-                            Id = 6,
-                            Mail = "cristinaequisoain@gmail.com",
-                            Password = "ccccc"
-                        }
+                        Id = 6,
+                        Mail = "cristinaequisoain@gmail.com",
+                        Password = "ccccc"
                     }
                 },
 
@@ -213,15 +189,11 @@ namespace Projet2Crowdfunding.Models
                     FirstName = "Florent",
                     PhoneNumber = "3333333311",
                     Type = AdministratorType.employee,
-                    Account = new AdministratorAccount
+                    Account = new Account
                     {
-                        Id = 3,
-                        Account = new Account
-                        {
-                            Id = 7,
-                            Mail = "florentlacroix@gmail.com",
-                            Password = "floflo"
-                        }
+                        Id = 7,
+                        Mail = "florentlacroix@gmail.com",
+                        Password = "floflo"
                     }
                 },
 
@@ -232,15 +204,11 @@ namespace Projet2Crowdfunding.Models
                     FirstName = "Clara",
                     PhoneNumber = "1133333333",
                     Type = AdministratorType.volunteer,
-                    Account = new AdministratorAccount
+                    Account = new Account
                     {
-                        Id = 4,
-                        Account = new Account
-                        {
-                            Id = 8,
-                            Mail = "clara.martin@gmail.com",
-                            Password = "clacla"
-                        }
+                        Id = 8,
+                        Mail = "clara.martin@gmail.com",
+                        Password = "clacla"
                     }
                 }
             );
