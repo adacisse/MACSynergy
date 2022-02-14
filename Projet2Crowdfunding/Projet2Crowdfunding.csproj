@@ -18,6 +18,6 @@
     <None Remove="Views\LoginInscription\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\User\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>

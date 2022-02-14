@@ -12,32 +12,6 @@ h6 {
     color: rgb(87, 86, 86)
 }
 
-#nav-color{
-    background-color: rgb(245, 243, 243);
-}
-
-#nav-elements{
-    color: grey;
-}
-   
-#nav-elements:hover, #nav-active {
-        color: rgb(173, 209, 42);
-}
-
-#bouton-log {
-    background-color: seagreen;
-    color: white;
-    text-align: center;
-    border-radius: 50px;
-    border: none;
-    padding: 10px 30px 10px 30px;
-    font-size: 14px;
-}
-#bouton-log:hover {
-    background-color: rgb(33, 99, 62);
-    text-decoration: none;
-}
-
 .img-text{
     width: 240px;
     height: 350px;

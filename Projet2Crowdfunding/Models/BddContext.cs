@@ -29,7 +29,7 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Account> Users { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -73,7 +73,7 @@ namespace Projet2Crowdfunding.Models
                     }
                 );
 
-            ////Instances Participant
+            //Instances Participant
             //this.Participants.AddRange(
             //new Participant
             //{
@@ -93,7 +93,7 @@ namespace Projet2Crowdfunding.Models
             //        Country = "France"
             //    },
             //    Account = new ParticipantAccount { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" },
-            //    User = new User { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" }
+            //    User = new Account { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" }
             //},
             // new Participant
             // {
@@ -165,7 +165,6 @@ namespace Projet2Crowdfunding.Models
         //    modelBuilder.Entity<Participant>()
         //        .HasIndex(u => u.Account)
         //        .IsUnique();
-        //    modelBuilder.Entity<Address>().Property(a => a.Street).HasMaxLength(12);
         //}
 
     }

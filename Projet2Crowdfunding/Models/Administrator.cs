@@ -24,6 +24,9 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Prenom")]
         public string FirstName { get; set; }
 
+        [Required]
+        public AdministratorType Type { get; set; }
+
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
 
@@ -32,12 +35,6 @@ namespace Projet2Crowdfunding.Models
         public virtual AdministratorAccount Account { get; set; }
 
 
-        [Required]
-        public AdministratorType Type { get; set; }
-
-        [Required]
-        public int? UserId { get; set; }
-        public virtual Account User { get; set; }
 
     }
 }
