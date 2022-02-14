@@ -43,130 +43,131 @@ namespace Projet2Crowdfunding.Models
             this.Database.EnsureCreated();
 
             //Instances Adress
-            //this.Addresses.AddRange(
-            //        new Address
-            //        {
-            //            Id = 5,
-            //            StreetName = "Street of Wansington",
-            //            StreetNumber = "31A",
-            //            ZipCode = "58943",
-            //            City = "Liverpool",
-            //            Country = "Anglaterre"
-            //        },
-            //        new Address
-            //        {
-            //            Id = 6,
-            //            StreetName = "Rue de Paris",
-            //            StreetNumber = "2",
-            //            ZipCode = "67444",
-            //            City = "Reins",
-            //            Country = "France"
-            //        },
-            //        new Address
-            //        {
-            //            Id = 7,
-            //            StreetName = "Calle de abril",
-            //            StreetNumber = "7",
-            //            ZipCode = "84337",
-            //            City = "Sevilla",
-            //            Country = "Espagne"
-            //        }
-            //    );
+            this.Addresses.AddRange(
+                    new Address
+                    {
+                        Id = 5,
+                        StreetName = "Street of Wansington",
+                        StreetNumber = "31A",
+                        ZipCode = "58943",
+                        City = "Liverpool",
+                        Country = "Anglaterre"
+                    },
+                    new Address
+                    {
+                        Id = 6,
+                        StreetName = "Rue de Paris",
+                        StreetNumber = "2",
+                        ZipCode = "67444",
+                        City = "Reins",
+                        Country = "France"
+                    },
+                    new Address
+                    {
+                        Id = 7,
+                        StreetName = "Calle de abril",
+                        StreetNumber = "7",
+                        ZipCode = "84337",
+                        City = "Sevilla",
+                        Country = "Espagne"
+                    }
+                );
 
-            //    //Instances Participant
-            //    this.Participants.AddRange(
-            //    new Participant
+            ////Instances Participant
+            //this.Participants.AddRange(
+            //new Participant
+            //{
+            //    Id = 1,
+            //    LastName = "Cisse",
+            //    FirstName = "Ada",
+            //    Gender = Gender.Female,
+            //    PhoneNumber = "6666666666",
+            //    Birthdate = DateTime.Parse("2013-07-04"),
+            //    Address = new Address
             //    {
             //        Id = 1,
-            //        LastName = "Cisse",
-            //        FirstName = "Ada",
-            //        Gender = Gender.Female,
-            //        PhoneNumber = "6666666666",
-            //        Birthdate = DateTime.Parse("2013-07-04"),
-            //        Address = new Address
-            //                    {
-            //                        Id = 1,
-            //                        StreetName = "Rue de la fleur",
-            //                        StreetNumber = "12",
-            //                        ZipCode = "57888",
-            //                        City = "Toulouse",
-            //                        Country = "France"
-            //                    },
-            //        Account = new ParticipantAccount { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" },
-            //        User = new User { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" }
+            //        StreetName = "Rue de la fleur",
+            //        StreetNumber = "12",
+            //        ZipCode = "57888",
+            //        City = "Toulouse",
+            //        Country = "France"
             //    },
-            //     new Participant
+            //    Account = new ParticipantAccount { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" },
+            //    User = new User { Id = 1, Mail = "adacisse@gmail.com", Password = "aaaaa" }
+            //},
+            // new Participant
+            // {
+            //     Id = 2,
+            //     LastName = "Rchouk",
+            //     FirstName = "Sara",
+            //     Gender = Gender.Female,
+            //     PhoneNumber = "5555555555",
+            //     Birthdate = DateTime.Parse("2011-03-14"),
+            //     Address = new Address
             //     {
             //         Id = 2,
-            //         LastName = "Rchouk",
-            //         FirstName = "Sara",
-            //         Gender = Gender.Female,
-            //         PhoneNumber = "5555555555",
-            //         Birthdate = DateTime.Parse("2011-03-14"),
-            //         Address = new Address
-            //                 {
-            //                     Id = 2,
-            //                     StreetName = "Rue du presidant",
-            //                     StreetNumber = "24",
-            //                     ZipCode = "75007",
-            //                     City = "Paris",
-            //                     Country = "France"
-            //                 },
-            //         Account = new ParticipantAccount { Id = 2, Mail = "sararchouk@gmail.com", Password = "sssss" }
+            //         StreetName = "Rue du presidant",
+            //         StreetNumber = "24",
+            //         ZipCode = "75007",
+            //         City = "Paris",
+            //         Country = "France"
             //     },
-            //     new Participant
+            //     Account = new ParticipantAccount { Id = 2, Mail = "sararchouk@gmail.com", Password = "sssss" }
+            // },
+            // new Participant
+            // {
+            //     Id = 3,
+            //     LastName = "Equisoain",
+            //     FirstName = "Cristina",
+            //     Gender = Gender.Female,
+            //     PhoneNumber = "4444444444",
+            //     Birthdate = DateTime.Parse("1994-07-04"),
+            //     Address = new Address
             //     {
             //         Id = 3,
-            //         LastName = "Equisoain",
-            //         FirstName = "Cristina",
-            //         Gender = Gender.Female,
-            //         PhoneNumber = "4444444444",
-            //         Birthdate = DateTime.Parse("1994-07-04"),
-            //         Address = new Address
-            //                 {
-            //                     Id = 3,
-            //                     StreetName = "Calle de Barcelona",
-            //                     StreetNumber = "52",
-            //                     ZipCode = "36666",
-            //                     City = "Madrid",
-            //                     Country = "Espagne"
-            //                 },
-            //         Account = new ParticipantAccount { Id = 3, Mail = "cristinaequisoain@gmail.com", Password = "ccccc" }
+            //         StreetName = "Calle de Barcelona",
+            //         StreetNumber = "52",
+            //         ZipCode = "36666",
+            //         City = "Madrid",
+            //         Country = "Espagne"
             //     },
-            //     new Participant
+            //     Account = new ParticipantAccount { Id = 3, Mail = "cristinaequisoain@gmail.com", Password = "ccccc" }
+            // },
+            // new Participant
+            // {
+            //     Id = 4,
+            //     LastName = "Faucillon",
+            //     FirstName = "Matthieu",
+            //     Gender = Gender.Male,
+            //     PhoneNumber = "3333333333",
+            //     Birthdate = DateTime.Parse("1990-07-04"),
+            //     Address = new Address
             //     {
             //         Id = 4,
-            //         LastName = "Faucillon",
-            //         FirstName = "Matthieu",
-            //         Gender = Gender.Male,
-            //         PhoneNumber = "3333333333",
-            //         Birthdate = DateTime.Parse("1990-07-04"),
-            //         Address = new Address
-            //                 {
-            //                     Id = 4,
-            //                     StreetName = "Rue de la gare",
-            //                     StreetNumber = "43",
-            //                     ZipCode = "97532",
-            //                     City = "Bordeaux",
-            //                     Country = "France"
-            //                 },
-            //         Account = new ParticipantAccount { Id = 4, Mail = "matthieufaucillon@gmail.com", Password = "mmmmm" }
-            //     }
+            //         StreetName = "Rue de la gare",
+            //         StreetNumber = "43",
+            //         ZipCode = "97532",
+            //         City = "Bordeaux",
+            //         Country = "France"
+            //     },
+            //     Account = new ParticipantAccount { Id = 4, Mail = "matthieufaucillon@gmail.com", Password = "mmmmm" }
+            // }
 
-            //    );
-            //    this.SaveChanges();
-            //}
+            //);
 
-
-
-            ////protected override void OnModelCreating(ModelBuilder modelBuilder)
-            ////{
-            ////    modelBuilder.Entity<Participant>()
-            ////        .HasIndex(u => u.Account)
-            ////        .IsUnique();
-            ////    modelBuilder.Entity<Address>().Property(a => a.Street).HasMaxLength(12);
-            ////}
-
+            this.SaveChanges();
         }
+
+
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Participant>()
+        //        .HasIndex(u => u.Account)
+        //        .IsUnique();
+        //    modelBuilder.Entity<Address>().Property(a => a.Street).HasMaxLength(12);
+        //}
+
     }
 }
+

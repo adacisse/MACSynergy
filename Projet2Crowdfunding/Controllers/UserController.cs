@@ -10,7 +10,7 @@ namespace Projet2Crowdfunding.Controllers
     public class UserController : Controller
     {
         private BddContext bddContext;
-        public IActionResult Index()
+        public IActionResult LoginPage()
         {
             return View();
         }
