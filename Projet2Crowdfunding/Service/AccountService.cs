@@ -95,7 +95,7 @@ namespace Projet2Crowdfunding.Service
         public Account Login(string mail, string password)
         {
             string encodedPassword = EncodeMD5(password);
-            Account account = this.bddContext.Users.FirstOrDefault
+            Account account = this.bddContext.Accounts.FirstOrDefault
                 (u => u.Mail == mail && u.Password == password);
             return account;
         }
