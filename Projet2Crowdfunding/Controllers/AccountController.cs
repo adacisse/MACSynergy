@@ -20,7 +20,7 @@ namespace Projet2Crowdfunding.Controllers
         {
             
             bddContext = new BddContext();
-            bddContext.Users.FindAsync();
+            bddContext.Accounts.FindAsync();
 
             return View();
         }

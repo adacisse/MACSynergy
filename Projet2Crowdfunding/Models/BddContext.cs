@@ -8,7 +8,7 @@ namespace Projet2Crowdfunding.Models
 {
     public class BddContext : DbContext
     {
-        //public DbSet<Account> Accounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Administrator> Administrators { get; set; }
         public DbSet<AdministratorAccount> AdministratorAccounts { get; set; }
@@ -29,7 +29,6 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Account> Users { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -189,7 +188,7 @@ namespace Projet2Crowdfunding.Models
                       Account = new Account
                       {
                           Id = 4,
-                          Mail = "matthieufaucillon@gmail.com",
+                          Mail = "matthieu.faucillon@gmail.com",
                           Password = "mmmmm"
                       }
                   }
@@ -197,17 +196,55 @@ namespace Projet2Crowdfunding.Models
 
             );
 
+
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+
             this.SaveChanges();
         }
 
 
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Participant>()
-        //        .HasIndex(u => u.Account)
-        //        .IsUnique();
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ParticipantAccount>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<AdministratorAccount>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<ProjectOwnerAccount>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<Account>()
+                .HasIndex(u => new { u.Mail, u.Password })
+                .IsUnique();
+
+
+
+        }
 
     }
 }
