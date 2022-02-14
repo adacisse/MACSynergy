@@ -8,7 +8,7 @@ namespace Projet2Crowdfunding.Models
 {
     public class BddContext : DbContext
     {
-        //public DbSet<Account> Accounts { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Administrator> Administrators { get; set; }
         public DbSet<AdministratorAccount> AdministratorAccounts { get; set; }
@@ -29,7 +29,6 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Account> Accounts { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -197,6 +196,29 @@ namespace Projet2Crowdfunding.Models
 
             );
 
+
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+            //Instances Participant
+            this.Participants.AddRange(
+
+            );
+
+
             this.SaveChanges();
         }
 
@@ -219,6 +241,7 @@ namespace Projet2Crowdfunding.Models
             modelBuilder.Entity<Account>()
                 .HasIndex(u => new { u.Mail, u.Password })
                 .IsUnique();
+
 
         }
 
