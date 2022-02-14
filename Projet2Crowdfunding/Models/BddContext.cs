@@ -29,7 +29,7 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Account> Users { get; set; }
+        public DbSet<Account> Accounts { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
