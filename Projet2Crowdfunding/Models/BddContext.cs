@@ -243,7 +243,6 @@ namespace Projet2Crowdfunding.Models
                 .IsUnique();
 
 
-
         }
 
     }
