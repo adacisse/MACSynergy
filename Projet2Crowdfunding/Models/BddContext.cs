@@ -199,22 +199,22 @@ namespace Projet2Crowdfunding.Models
 
 
             //Instances Participant
-            this.Participants.AddRange(
+            this.Administrators.AddRange(
 
             );
 
             //Instances Participant
-            this.Participants.AddRange(
+            this.ProjectOwners.AddRange(
 
             );
 
             //Instances Participant
-            this.Participants.AddRange(
+            this.Projects.AddRange(
 
             );
 
             //Instances Participant
-            this.Participants.AddRange(
+            this.Steps.AddRange(
 
             );
 
