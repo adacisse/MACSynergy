@@ -7,7 +7,7 @@ using Projet2Crowdfunding.Models;
 
 namespace Projet2Crowdfunding.Controllers
 {
-    public class UserController : Controller
+    public class AccountController : Controller
     {
         private BddContext bddContext;
         public IActionResult LoginPage()
