@@ -1,0 +1,23 @@
+﻿body {
+    overflow-x: hidden;
+}
+
+
+
+.row-content {
+    background-color: white;
+    padding: 45px 30px;
+    margin-bottom: 20px
+}
+
+fieldset {
+    background-color: white;
+    width: 1000px;
+    border: 4px solid seagreen;
+    padding: 50px;
+    margin: 20px;
+    text-align: justify;
+   
+}
+
+
