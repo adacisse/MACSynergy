@@ -28,9 +28,6 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public AdministratorType Type { get; set; }
 
-        public int? AddressId { get; set; }
-        public virtual Address Address { get; set; }
-
         [Required]
         public int? AccountId { get; set; }
         public virtual AdministratorAccount Account { get; set; }

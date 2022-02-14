@@ -176,15 +176,6 @@ namespace Projet2Crowdfunding.Models
                     FirstName = "Matthieu",
                     PhoneNumber = "3333333333",
                     Type = AdministratorType.employee,
-                    Address = new Address
-                    {
-                        Id = 5,
-                        StreetName = "Rue de la gare",
-                        StreetNumber = "43",
-                        ZipCode = "97532",
-                        City = "Bordeaux",
-                        Country = "France"
-                    },
                     Account = new AdministratorAccount
                     {
                         Id = 1,
@@ -203,15 +194,6 @@ namespace Projet2Crowdfunding.Models
                     LastName = "Equisoain",
                     FirstName = "Cristina",
                     PhoneNumber = "4444444444",
-                    Address = new Address
-                    {
-                        Id = 6,
-                        StreetName = "Calle de Barcelona",
-                        StreetNumber = "52",
-                        ZipCode = "36666",
-                        City = "Madrid",
-                        Country = "Espagne"
-                    },
                     Account = new AdministratorAccount
                     {
                         Id = 2,
@@ -231,15 +213,6 @@ namespace Projet2Crowdfunding.Models
                     FirstName = "Florent",
                     PhoneNumber = "3333333311",
                     Type = AdministratorType.employee,
-                    Address = new Address
-                    {
-                        Id = 7,
-                        StreetName = "Street of Wansington",
-                        StreetNumber = "31A",
-                        ZipCode = "58943",
-                        City = "Liverpool",
-                        Country = "Anglaterre"
-                    },
                     Account = new AdministratorAccount
                     {
                         Id = 3,
@@ -259,15 +232,6 @@ namespace Projet2Crowdfunding.Models
                     FirstName = "Clara",
                     PhoneNumber = "1133333333",
                     Type = AdministratorType.volunteer,
-                    Address = new Address
-                    {
-                        Id = 8,
-                        StreetName = "Rue de Paris",
-                        StreetNumber = "2",
-                        ZipCode = "67444",
-                        City = "Reins",
-                        Country = "France"
-                    },
                     Account = new AdministratorAccount
                     {
                         Id = 4,
@@ -299,11 +263,11 @@ namespace Projet2Crowdfunding.Models
             //        Status = AssoStatus.published,
             //        Address = new Address
             //        {
-            //            Id = 9,
-            //            StreetName = "",
-            //            StreetNumber = "34",
-            //            ZipCode = "37543",
-            //            City = "Pau",
+            //            Id = 5,
+            //            StreetName = "Rue de Paris",
+            //            StreetNumber = "2",
+            //            ZipCode = "67444",
+            //            City = "Reins",
             //            Country = "France"
             //        },
             //        Account = new ProjectOwnerAccount
@@ -336,12 +300,12 @@ namespace Projet2Crowdfunding.Models
             //        Status = AssoStatus.published,
             //        Address = new Address
             //        {
-            //            Id = 10,
-            //            StreetName = "",
-            //            StreetNumber = "5",
-            //            ZipCode = "56543",
-            //            City = "Grenoble",
-            //            Country = "France"
+            //            Id = 6,
+            //            StreetName = "Street of Wansington",
+            //            StreetNumber = "31A",
+            //            ZipCode = "58943",
+            //            City = "Liverpool",
+            //            Country = "Anglaterre"
             //        },
             //        Account = new ProjectOwnerAccount
             //        {
@@ -373,12 +337,12 @@ namespace Projet2Crowdfunding.Models
             //        Status = AssoStatus.registered,
             //        Address = new Address
             //        {
-            //            Id = 11,
-            //            StreetName = "",
-            //            StreetNumber = "17",
-            //            ZipCode = "57832",
-            //            City = "Dublin",
-            //            Country = "Ireland"
+            //            Id = 7,
+            //            StreetName = "Calle de Barcelona",
+            //            StreetNumber = "52",
+            //            ZipCode = "36666",
+            //            City = "Madrid",
+            //            Country = "Espagne"
             //        },
             //        Account = new ProjectOwnerAccount
             //        {
@@ -410,12 +374,12 @@ namespace Projet2Crowdfunding.Models
             //        Status = AssoStatus.published,
             //        Address = new Address
             //        {
-            //            Id = 12,
-            //            StreetName = "",
-            //            StreetNumber = "34",
-            //            ZipCode = "37543",
-            //            City = "Pau",
-            //            Country = "France"
+            //            Id = 8,
+            //            StreetName = "Rue de la gare",
+                        //StreetNumber = "43",
+                        //ZipCode = "97532",
+                        //City = "Bordeaux",
+                        //Country = "France"
             //        },
             //        Account = new ProjectOwnerAccount
             //        {
@@ -447,7 +411,7 @@ namespace Projet2Crowdfunding.Models
             //        Status = AssoStatus.registered,
             //        Address = new Address
             //        {
-            //            Id = 13,
+            //            Id = 9,
             //            StreetName = "",
             //            StreetNumber = "37",
             //            ZipCode = "17634",
