@@ -1,0 +1,13 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+<style type="text/css"> 
+a.nounderline:link 
+{ 
+ text-decoration:none; 
+} 
+</style>
