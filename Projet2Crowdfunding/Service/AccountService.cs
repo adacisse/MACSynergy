@@ -6,10 +6,10 @@ using Projet2Crowdfunding.Models;
 
 namespace Projet2Crowdfunding.Service
 {
-    public class UserService
+    public class AccountService
     {
         private BddContext bddContext;
-        public UserService()
+        public AccountService()
         {
             bddContext = new BddContext();
         }
@@ -23,7 +23,7 @@ namespace Projet2Crowdfunding.Service
         , Gender gender, DateTime birthdate, string phoneNumber)
         {
             string encodedPassword = EncodeMD5(password);
-            User user = new User() { Mail = mail, Password = encodedPassword };
+            Account user = new Account() { Mail = mail, Password = encodedPassword };
 
 
             Participant participant = new Participant()
@@ -47,7 +47,7 @@ namespace Projet2Crowdfunding.Service
 
         {
             string encodedPassword = EncodeMD5(password);
-            User user = new User() { Mail = mail, Password = encodedPassword };
+            Account user = new Account() { Mail = mail, Password = encodedPassword };
 
             ProjectOwner projectOwner = new ProjectOwner()
             {
@@ -72,7 +72,7 @@ namespace Projet2Crowdfunding.Service
         , string phoneNumber)
         {
             string encodedPassword = EncodeMD5(password);
-            User user = new User() { Mail = mail, Password = encodedPassword };
+            Account user = new Account() { Mail = mail, Password = encodedPassword };
 
             Administrator administrator = new Administrator()
             {
@@ -89,10 +89,10 @@ namespace Projet2Crowdfunding.Service
 
         }
 
-        public User Login (string mail, string password)
+        public Account Login (string mail, string password)
         {
             string encodedPassword = EncodeMD5(password);
-            User user = this.bddContext.Users.FirstOrDefault
+            Account user = this.bddContext.Users.FirstOrDefault
                 (u => u.Mail == mail && u.Password == password);
             return user;
         }
