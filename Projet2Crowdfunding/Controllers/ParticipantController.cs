@@ -14,6 +14,17 @@ namespace Projet2Crowdfunding.Controllers
         {
             return View();
         }
+
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
+
+        public IActionResult ModifyParticipant()
+        {
+            return View();
+        }
+
         //public IActionResult ModifyParticipant(int Id)
         //{
         //    if (Id != 0)
@@ -27,7 +38,7 @@ namespace Projet2Crowdfunding.Controllers
         //        return View(participant);
         //    }
         //    return View("Error");
-            
+
         //}
 
         //[HttpPost]
