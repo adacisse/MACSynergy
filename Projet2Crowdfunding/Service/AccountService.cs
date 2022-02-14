@@ -20,8 +20,7 @@ namespace Projet2Crowdfunding.Service
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         }
 
-
-        public int CreateParticipant(string lastName, string firstname, string mail, string password)
+        public int CreateAccount(string mail, string password)
         {
             string encodedPassword = EncodeMD5(password);
 
@@ -31,16 +30,20 @@ namespace Projet2Crowdfunding.Service
                 Password = encodedPassword
             };
 
+            this.bddContext.Accounts.Add(account);
+            this.bddContext.SaveChanges();
+            return account.Id;
+        }
+
+        public int CreateParticipant(int idAccount, string lastName, string firstname)
+        {
             Participant participant = new Participant()
             {
                 FirstName = firstname,
                 LastName = lastName,
-                ParticipantAccount = new ParticipantAccount()
-                {
-                    Newsletter = false,
-                    ConfidentialityCharter = true,
-                    Account = account
-                },
+                Newsletter = false,
+                ConfidentialityCharter = true,
+                AccountId = idAccount
             };
 
             this.bddContext.Participants.Add(participant);
@@ -49,18 +52,11 @@ namespace Projet2Crowdfunding.Service
         }
 
 
-        public int CreateProjectOwner(string name, string phoneNumber, string mail, string password
-            , string summary, string description, string hyperlink, string volunteerDescritpion
-        , string patnerShip, ProjectOwnerType type, string image, string associationProof, string streetNumber
-            , string streetName, string zipCode, string city, string country)
-
+        public int CreateProjectOwner(int idAccount, string name, string phoneNumber, 
+            string summary, string description, string hyperlink, string volunteerDescritpion, 
+            string patnerShip, ProjectOwnerType type, string image, string associationProof, string streetNumber,
+            string streetName, string zipCode, string city, string country)
         {
-            string encodedPassword = EncodeMD5(password);
-            Account account = new Account()
-            {
-                Mail = mail,
-                Password = encodedPassword
-            };
             Address address = new Address()
             {
                 StreetNumber = streetNumber,
@@ -83,17 +79,10 @@ namespace Projet2Crowdfunding.Service
                 Image = image,
                 Type = type,
                 Status = AssoStatus.registered,
-
-
-                ProjectOwnerAccount = new ProjectOwnerAccount()
-                {
-                    Newsletter = false,
-                    ConfidentialityCharter = true,
-                    Account = account
-                },
+                Newsletter = false,
+                ConfidentialityCharter = true,
+                AccountId = idAccount,
                 Address = address
-
-
             };
 
             this.bddContext.ProjectOwners.Add(projectOwner);
@@ -101,26 +90,14 @@ namespace Projet2Crowdfunding.Service
             return projectOwner.Id;
         }
 
-        public int CreateAdministrator(string lastName, string firstName, string mail, string password
-        , string phoneNumber)
+        public int CreateAdministrator(int idAccount, string lastName, string firstName, string phoneNumber)
         {
-            string encodedPassword = EncodeMD5(password);
-            Account account = new Account()
-            {
-                Mail = mail,
-                Password = encodedPassword
-            };
-
             Administrator administrator = new Administrator()
             {
                 FirstName = firstName,
                 LastName = lastName,
                 PhoneNumber = phoneNumber,
-                AdministratorAccount = new AdministratorAccount()
-                {
-                    Account = account
-                },
-
+                AccountId = idAccount
             };
 
             this.bddContext.Administrators.Add(administrator);
@@ -137,6 +114,21 @@ namespace Projet2Crowdfunding.Service
             return account;
         }
 
+        public Account GetAccount(int id)
+        {
+            return this.bddContext.Accounts.Find(id);
+        }
+
+        public Account GetAccount(string idStr)
+        {
+            int id;
+            if (int.TryParse(idStr, out id))
+            {
+                return this.GetAccount(id);
+            }
+            return null;
+        }
+
         public Participant GetParticipant(int id)
         {
             return this.bddContext.Participants.Find(id);
@@ -151,7 +143,6 @@ namespace Projet2Crowdfunding.Service
             }
             return null;
         }
-
 
         public ProjectOwner GetProjectOwner(int id)
         {
