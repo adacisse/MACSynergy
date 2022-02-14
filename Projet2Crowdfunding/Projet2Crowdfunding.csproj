@@ -16,8 +16,10 @@
 
   <ItemGroup>
     <None Remove="Views\LoginInscription\" />
+    <None Remove="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
