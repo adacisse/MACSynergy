@@ -189,7 +189,7 @@ namespace Projet2Crowdfunding.Models
                       Account = new Account
                       {
                           Id = 4,
-                          Mail = "matthieufaucillon@gmail.com",
+                          Mail = "matthieu.faucillon@gmail.com",
                           Password = "mmmmm"
                       }
                   }
@@ -202,12 +202,25 @@ namespace Projet2Crowdfunding.Models
 
 
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Participant>()
-        //        .HasIndex(u => u.Account)
-        //        .IsUnique();
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ParticipantAccount>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<AdministratorAccount>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<ProjectOwnerAccount>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<Account>()
+                .HasIndex(u => new { u.Mail, u.Password })
+                .IsUnique();
+
+        }
 
     }
 }
