@@ -29,6 +29,13 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        public DbSet<Account> Accounts { get; set; }
+>>>>>>> eea739a249fe00475d5143939202fa323f0cd0d4
+=======
+>>>>>>> c038d3f2e5ee69acd06da341b504e74b71f0a562
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -230,6 +237,17 @@ namespace Projet2Crowdfunding.Models
                 .HasIndex(u => u.AccountId)
                 .IsUnique();
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> eea739a249fe00475d5143939202fa323f0cd0d4
+        }
+
+    }
+}
+=======
             modelBuilder.Entity<AdministratorAccount>()
                 .HasIndex(u => u.AccountId)
                 .IsUnique();
@@ -247,4 +265,5 @@ namespace Projet2Crowdfunding.Models
 
     }
 }
+>>>>>>> c038d3f2e5ee69acd06da341b504e74b71f0a562
 
