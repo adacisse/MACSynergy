@@ -274,209 +274,209 @@ namespace Projet2Crowdfunding.Models
                         Account = new Account
                         {
                             Id = 8,
-                            Mail = "claramartin@gmail.com",
+                            Mail = "clara.martin@gmail.com",
                             Password = "clacla"
                         }
                     }
                 }
             );
 
-            //Instances PPs
-            this.ProjectOwners.AddRange(
-                new ProjectOwner
-                {
-                    Id = 1,
-                    PhoneNumber = "4499444444",
-                    Name = ,
-                    Summary = ,
-                    Description = ,
-                    HyperLink = ,
-                    VolunteerDescritpion = ,
-                    Partnership = ,
-                    Type = ProjectOwnerType.association,
-                    AssociationProof = ,
-                    Image = ,
-                    Status = AssoStatus.published,
-                    Address = new Address
-                    {
-                        Id = 9,
-                        StreetName = "",
-                        StreetNumber = "34",
-                        ZipCode = "37543",
-                        City = "Pau",
-                        Country = "France"
-                    },
-                    Account = new ProjectOwnerAccount
-                    {
-                        Id = 1,
-                        Newsletter = true,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 9,
-                            Mail = "",
-                            Password = ""
-                        }
-                    }
-                },
+            ////Instances PPs
+            //this.ProjectOwners.AddRange(
+            //    new ProjectOwner
+            //    {
+            //        Id = 1,
+            //        PhoneNumber = "4499444444",
+            //        Name = ,
+            //        Summary = ,
+            //        Description = ,
+            //        HyperLink = ,
+            //        VolunteerDescritpion = ,
+            //        Partnership = ,
+            //        Type = ProjectOwnerType.association,
+            //        AssociationProof = ,
+            //        Image = ,
+            //        Status = AssoStatus.published,
+            //        Address = new Address
+            //        {
+            //            Id = 9,
+            //            StreetName = "",
+            //            StreetNumber = "34",
+            //            ZipCode = "37543",
+            //            City = "Pau",
+            //            Country = "France"
+            //        },
+            //        Account = new ProjectOwnerAccount
+            //        {
+            //            Id = 1,
+            //            Newsletter = true,
+            //            ConfidentialityCharter = true,
+            //            Account = new Account
+            //            {
+            //                Id = 9,
+            //                Mail = "",
+            //                Password = ""
+            //            }
+            //        }
+            //    },
 
-                new ProjectOwner
-                {
-                    Id = 2,
-                    PhoneNumber = "4499455444",
-                    Name = ,
-                    Summary = ,
-                    Description = ,
-                    HyperLink = ,
-                    VolunteerDescritpion = ,
-                    Partnership = ,
-                    Type = ProjectOwnerType.association,
-                    AssociationProof = ,
-                    Image = ,
-                    Status = AssoStatus.published,
-                    Address = new Address
-                    {
-                        Id = 10,
-                        StreetName = "",
-                        StreetNumber = "5",
-                        ZipCode = "56543",
-                        City = "Grenoble",
-                        Country = "France"
-                    },
-                    Account = new ProjectOwnerAccount
-                    {
-                        Id = 2,
-                        Newsletter = false,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 10,
-                            Mail = "",
-                            Password = ""
-                        }
-                    }
-                },
+            //    new ProjectOwner
+            //    {
+            //        Id = 2,
+            //        PhoneNumber = "4499455444",
+            //        Name = ,
+            //        Summary = ,
+            //        Description = ,
+            //        HyperLink = ,
+            //        VolunteerDescritpion = ,
+            //        Partnership = ,
+            //        Type = ProjectOwnerType.association,
+            //        AssociationProof = ,
+            //        Image = ,
+            //        Status = AssoStatus.published,
+            //        Address = new Address
+            //        {
+            //            Id = 10,
+            //            StreetName = "",
+            //            StreetNumber = "5",
+            //            ZipCode = "56543",
+            //            City = "Grenoble",
+            //            Country = "France"
+            //        },
+            //        Account = new ProjectOwnerAccount
+            //        {
+            //            Id = 2,
+            //            Newsletter = false,
+            //            ConfidentialityCharter = true,
+            //            Account = new Account
+            //            {
+            //                Id = 10,
+            //                Mail = "",
+            //                Password = ""
+            //            }
+            //        }
+            //    },
 
-                new ProjectOwner
-                {
-                    Id = 3,
-                    PhoneNumber = "4499444444",
-                    Name = ,
-                    Summary = ,
-                    Description = ,
-                    HyperLink = ,
-                    VolunteerDescritpion = ,
-                    Partnership = ,
-                    Type = ProjectOwnerType.association,
-                    AssociationProof = ,
-                    Image = ,
-                    Status = AssoStatus.registered,
-                    Address = new Address
-                    {
-                        Id = 11,
-                        StreetName = "",
-                        StreetNumber = "17",
-                        ZipCode = "57832",
-                        City = "Dublin",
-                        Country = "Ireland"
-                    },
-                    Account = new ProjectOwnerAccount
-                    {
-                        Id = 3,
-                        Newsletter = true,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 11,
-                            Mail = "",
-                            Password = ""
-                        }
-                    }
-                },
+            //    new ProjectOwner
+            //    {
+            //        Id = 3,
+            //        PhoneNumber = "4499444444",
+            //        Name = ,
+            //        Summary = ,
+            //        Description = ,
+            //        HyperLink = ,
+            //        VolunteerDescritpion = ,
+            //        Partnership = ,
+            //        Type = ProjectOwnerType.association,
+            //        AssociationProof = ,
+            //        Image = ,
+            //        Status = AssoStatus.registered,
+            //        Address = new Address
+            //        {
+            //            Id = 11,
+            //            StreetName = "",
+            //            StreetNumber = "17",
+            //            ZipCode = "57832",
+            //            City = "Dublin",
+            //            Country = "Ireland"
+            //        },
+            //        Account = new ProjectOwnerAccount
+            //        {
+            //            Id = 3,
+            //            Newsletter = true,
+            //            ConfidentialityCharter = true,
+            //            Account = new Account
+            //            {
+            //                Id = 11,
+            //                Mail = "",
+            //                Password = ""
+            //            }
+            //        }
+            //    },
 
-                new ProjectOwner
-                {
-                    Id = 4,
-                    PhoneNumber = "4499444444",
-                    Name = ,
-                    Summary = ,
-                    Description = ,
-                    HyperLink = ,
-                    VolunteerDescritpion = ,
-                    Partnership = ,
-                    Type = ProjectOwnerType.ONG,
-                    AssociationProof = ,
-                    Image = ,
-                    Status = AssoStatus.published,
-                    Address = new Address
-                    {
-                        Id = 12,
-                        StreetName = "",
-                        StreetNumber = "34",
-                        ZipCode = "37543",
-                        City = "Pau",
-                        Country = "France"
-                    },
-                    Account = new ProjectOwnerAccount
-                    {
-                        Id = 4,
-                        Newsletter = true,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 12,
-                            Mail = "",
-                            Password = ""
-                        }
-                    }
-                },
+            //    new ProjectOwner
+            //    {
+            //        Id = 4,
+            //        PhoneNumber = "4499444444",
+            //        Name = ,
+            //        Summary = ,
+            //        Description = ,
+            //        HyperLink = ,
+            //        VolunteerDescritpion = ,
+            //        Partnership = ,
+            //        Type = ProjectOwnerType.ONG,
+            //        AssociationProof = ,
+            //        Image = ,
+            //        Status = AssoStatus.published,
+            //        Address = new Address
+            //        {
+            //            Id = 12,
+            //            StreetName = "",
+            //            StreetNumber = "34",
+            //            ZipCode = "37543",
+            //            City = "Pau",
+            //            Country = "France"
+            //        },
+            //        Account = new ProjectOwnerAccount
+            //        {
+            //            Id = 4,
+            //            Newsletter = true,
+            //            ConfidentialityCharter = true,
+            //            Account = new Account
+            //            {
+            //                Id = 12,
+            //                Mail = "",
+            //                Password = ""
+            //            }
+            //        }
+            //    },
 
-                new ProjectOwner
-                {
-                    Id = 5,
-                    PhoneNumber = "4499444444",
-                    Name = ,
-                    Summary = ,
-                    Description = ,
-                    HyperLink = ,
-                    VolunteerDescritpion = ,
-                    Partnership = ,
-                    Type = ProjectOwnerType.ONG,
-                    AssociationProof = ,
-                    Image = ,
-                    Status = AssoStatus.registered,
-                    Address = new Address
-                    {
-                        Id = 13,
-                        StreetName = "",
-                        StreetNumber = "37",
-                        ZipCode = "17634",
-                        City = "Strasbourg",
-                        Country = "France"
-                    },
-                    Account = new ProjectOwnerAccount
-                    {
-                        Id = 5,
-                        Newsletter = false,
-                        ConfidentialityCharter = true,
-                        Account = new Account
-                        {
-                            Id = 13,
-                            Mail = "",
-                            Password = ""
-                        }
-                    }
-                }
-            );
+            //    new ProjectOwner
+            //    {
+            //        Id = 5,
+            //        PhoneNumber = "4499444444",
+            //        Name = ,
+            //        Summary = ,
+            //        Description = ,
+            //        HyperLink = ,
+            //        VolunteerDescritpion = ,
+            //        Partnership = ,
+            //        Type = ProjectOwnerType.ONG,
+            //        AssociationProof = ,
+            //        Image = ,
+            //        Status = AssoStatus.registered,
+            //        Address = new Address
+            //        {
+            //            Id = 13,
+            //            StreetName = "",
+            //            StreetNumber = "37",
+            //            ZipCode = "17634",
+            //            City = "Strasbourg",
+            //            Country = "France"
+            //        },
+            //        Account = new ProjectOwnerAccount
+            //        {
+            //            Id = 5,
+            //            Newsletter = false,
+            //            ConfidentialityCharter = true,
+            //            Account = new Account
+            //            {
+            //                Id = 13,
+            //                Mail = "",
+            //                Password = ""
+            //            }
+            //        }
+            //    }
+            //);
 
-            //Instances Projects
-            this.Projects.AddRange(
+            ////Instances Projects
+            //this.Projects.AddRange(
 
-            );
+            //);
 
 
 
-            this.SaveChanges();
+            this.SaveChanges(); 
         }
 
 
