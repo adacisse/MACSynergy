@@ -13,29 +13,29 @@ namespace Projet2Crowdfunding.Service
         {
             bddContext = new BddContext();
         }
-<<<<<<< HEAD
+
         public static string EncodeMD5(string motDePasse)
         {
             string motDePasseSel = "Projet2Crowdfunding" + motDePasse + "ASP.NET MVC";
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         }
-=======
+
         //public static string EncodeMD5(string motDePasse)
         //{
         //    string motDePasseSel = "Projet2Crowdfunding" + motDePasse + "ASP.NET MVC";
         //    return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         //}
->>>>>>> 0a80781f9d5dd6b40da1eef20367a464258a8dbd
+
 
         //public int CreateParticipant(string lastName, string firstname, string mail, string password
         //, Gender gender, DateTime birthdate, string phoneNumber)
         //{
         //    string encodedPassword = EncodeMD5(password);
-<<<<<<< HEAD
+
         //    Account account = new Account() { Mail = mail, Password = encodedPassword };
-=======
+
         //    Account user = new Account() { Mail = mail, Password = encodedPassword };
->>>>>>> 0a80781f9d5dd6b40da1eef20367a464258a8dbd
+
 
 
         //    Participant participant = new Participant()
@@ -44,7 +44,7 @@ namespace Projet2Crowdfunding.Service
         //        LastName = lastName,
         //        Gender = gender,
         //        Birthdate = birthdate,
-<<<<<<< HEAD
+
         //        PhoneNumber = phoneNumber,
         //        ParticipantAccount = ParticipantAccount
         //    };
@@ -109,7 +109,7 @@ namespace Projet2Crowdfunding.Service
         //        (u => u.Mail == mail && u.Password == password);
         //    return user;
         //}
-=======
+
         //        PhoneNumber = phoneNumber
         //    };
 
@@ -173,6 +173,6 @@ namespace Projet2Crowdfunding.Service
         //            (u => u.Mail == mail && u.Password == password);
         //        return user;
         //    }
->>>>>>> 0a80781f9d5dd6b40da1eef20367a464258a8dbd
+
     }
 }
