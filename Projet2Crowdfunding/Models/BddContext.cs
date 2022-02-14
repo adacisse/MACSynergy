@@ -414,18 +414,6 @@ namespace Projet2Crowdfunding.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ParticipantAccount>()
-                .HasIndex(u => u.AccountId)
-                .IsUnique();
-
-            modelBuilder.Entity<AdministratorAccount>()
-               .HasIndex(u => u.AccountId)
-               .IsUnique();
-
-            modelBuilder.Entity<ProjectOwnerAccount>()
-                .HasIndex(u => u.AccountId)
-                .IsUnique();
-
             modelBuilder.Entity<Account>()
                 .HasIndex(u => new { u.Mail, u.Password })
                 .IsUnique();
