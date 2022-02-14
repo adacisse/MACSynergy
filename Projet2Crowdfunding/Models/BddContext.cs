@@ -41,187 +41,443 @@ namespace Projet2Crowdfunding.Models
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
 
-            //Instances Adress
-            this.Addresses.AddRange(
-                    new Address
+            //Instances Participant
+            this.Participants.AddRange(
+                new Participant
+                {
+                    Id = 1,
+                    LastName = "Cisse",
+                    FirstName = "Ada",
+                    Gender = Gender.Female,
+                    PhoneNumber = "6666666666",
+                    Birthdate = DateTime.Parse("2013-07-04"),
+                    Address = new Address
+                    {
+                        Id = 1,
+                        StreetName = "Rue de la fleur",
+                        StreetNumber = "12",
+                        ZipCode = "57888",
+                        City = "Toulouse",
+                        Country = "France"
+                    },
+                    Account = new ParticipantAccount
+                    {
+                        Id = 1,
+                        Newsletter = false,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 1,
+                            Mail = "adacisse@gmail.com",
+                            Password = "aaaaa"
+                        }
+                    }
+                },
+                new Participant
+                {
+                    Id = 2,
+                    LastName = "Rchouk",
+                    FirstName = "Sara",
+                    Gender = Gender.Female,
+                    PhoneNumber = "5555555555",
+                    Birthdate = DateTime.Parse("2011-03-14"),
+                    Address = new Address
+                    {
+                        Id = 2,
+                        StreetName = "Rue du presidant",
+                        StreetNumber = "24",
+                        ZipCode = "75007",
+                        City = "Paris",
+                        Country = "France"
+                    },
+                    Account = new ParticipantAccount
+                    {
+                        Id = 2,
+                        Newsletter = true,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 2,
+                            Mail = "sara.rchouk@gmail.com",
+                            Password = "sssss"
+                        }
+                    }
+                },
+                new Participant
+                {
+                    Id = 3,
+                    LastName = "Perez",
+                    FirstName = "Juanjo",
+                    Gender = Gender.Male,
+                    PhoneNumber = "4444114444",
+                    Birthdate = DateTime.Parse("1987-09-12"),
+                    Address = new Address
+                    {
+                        Id = 3,
+                        StreetName = "Calle de las rosas",
+                        StreetNumber = "22",
+                        ZipCode = "36611",
+                        City = "Málaga",
+                        Country = "Espagne"
+                    },
+                    Account = new ParticipantAccount
+                    {
+                        Id = 3,
+                        Newsletter = true,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 3,
+                            Mail = "juanjoperez@gmail.com",
+                            Password = "juanjuan"
+                        }
+                    }
+                },
+                new Participant
+                {
+                    Id = 4,
+                    LastName = "Dupuy",
+                    FirstName = "Laura",
+                    Gender = Gender.Female,
+                    PhoneNumber = "3333113333",
+                    Birthdate = DateTime.Parse("1994-02-09"),
+                    Address = new Address
+                    {
+                        Id = 4,
+                        StreetName = "Calle de abril",
+                        StreetNumber = "7",
+                        ZipCode = "84337",
+                        City = "Sevilla",
+                        Country = "Espagne"
+                    },
+                    Account = new ParticipantAccount
+                    {
+                        Id = 4,
+                        Newsletter = false,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 4,
+                            Mail = "lauradupuy@gmail.com",
+                            Password = "laulau"
+                        }
+                    }
+                }
+
+            );
+
+
+            //Instances Gestionnaires
+            this.Administrators.AddRange(
+                new Administrator
+                {
+                    Id = 1,
+                    LastName = "Faucillon",
+                    FirstName = "Matthieu",
+                    PhoneNumber = "3333333333",
+                    Type = AdministratorType.employee,
+                    Address = new Address
                     {
                         Id = 5,
+                        StreetName = "Rue de la gare",
+                        StreetNumber = "43",
+                        ZipCode = "97532",
+                        City = "Bordeaux",
+                        Country = "France"
+                    },
+                    Account = new AdministratorAccount
+                    {
+                        Id = 1,
+                        Account = new Account
+                        {
+                            Id = 5,
+                            Mail = "matthieu.faucillon@gmail.com",
+                            Password = "mmmmm"
+                        }
+                    }
+                },
+
+                new Administrator
+                {
+                    Id = 2,
+                    LastName = "Equisoain",
+                    FirstName = "Cristina",
+                    PhoneNumber = "4444444444",
+                    Address = new Address
+                    {
+                        Id = 6,
+                        StreetName = "Calle de Barcelona",
+                        StreetNumber = "52",
+                        ZipCode = "36666",
+                        City = "Madrid",
+                        Country = "Espagne"
+                    },
+                    Account = new AdministratorAccount
+                    {
+                        Id = 2,
+                        Account = new Account
+                        {
+                            Id = 6,
+                            Mail = "cristinaequisoain@gmail.com",
+                            Password = "ccccc"
+                        }
+                    }
+                },
+
+                new Administrator
+                {
+                    Id = 3,
+                    LastName = "Lacroix",
+                    FirstName = "Florent",
+                    PhoneNumber = "3333333311",
+                    Type = AdministratorType.employee,
+                    Address = new Address
+                    {
+                        Id = 7,
                         StreetName = "Street of Wansington",
                         StreetNumber = "31A",
                         ZipCode = "58943",
                         City = "Liverpool",
                         Country = "Anglaterre"
                     },
-                    new Address
+                    Account = new AdministratorAccount
                     {
-                        Id = 6,
+                        Id = 3,
+                        Account = new Account
+                        {
+                            Id = 7,
+                            Mail = "florentlacroix@gmail.com",
+                            Password = "floflo"
+                        }
+                    }
+                },
+
+                new Administrator
+                {
+                    Id = 4,
+                    LastName = "Martin",
+                    FirstName = "Clara",
+                    PhoneNumber = "1133333333",
+                    Type = AdministratorType.volunteer,
+                    Address = new Address
+                    {
+                        Id = 8,
                         StreetName = "Rue de Paris",
                         StreetNumber = "2",
                         ZipCode = "67444",
                         City = "Reins",
                         Country = "France"
                     },
-                    new Address
+                    Account = new AdministratorAccount
                     {
-                        Id = 7,
-                        StreetName = "Calle de abril",
-                        StreetNumber = "7",
-                        ZipCode = "84337",
-                        City = "Sevilla",
-                        Country = "Espagne"
+                        Id = 4,
+                        Account = new Account
+                        {
+                            Id = 8,
+                            Mail = "claramartin@gmail.com",
+                            Password = "clacla"
+                        }
                     }
-                );
+                }
+            );
 
-            //Instances Participant
-            this.Participants.AddRange(
-            new Participant
-            {
-                Id = 1,
-                LastName = "Cisse",
-                FirstName = "Ada",
-                Gender = Gender.Female,
-                PhoneNumber = "6666666666",
-                Birthdate = DateTime.Parse("2013-07-04"),
-                Address = new Address
+            //Instances PPs
+            this.ProjectOwners.AddRange(
+                new ProjectOwner
                 {
                     Id = 1,
-                    StreetName = "Rue de la fleur",
-                    StreetNumber = "12",
-                    ZipCode = "57888",
-                    City = "Toulouse",
-                    Country = "France"
-                },
-                Account = new ParticipantAccount {
-                    Id = 1,
-                    Newsletter = false,
-                    ConfidentialityCharter = true,
-                    Account = new Account
+                    PhoneNumber = "4499444444",
+                    Name = ,
+                    Summary = ,
+                    Description = ,
+                    HyperLink = ,
+                    VolunteerDescritpion = ,
+                    Partnership = ,
+                    Type = ProjectOwnerType.association,
+                    AssociationProof = ,
+                    Image = ,
+                    Status = AssoStatus.published,
+                    Address = new Address
+                    {
+                        Id = 9,
+                        StreetName = "",
+                        StreetNumber = "34",
+                        ZipCode = "37543",
+                        City = "Pau",
+                        Country = "France"
+                    },
+                    Account = new ProjectOwnerAccount
                     {
                         Id = 1,
-                        Mail = "adacisse@gmail.com",
-                        Password = "aaaaa"
-                    }  
+                        Newsletter = true,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 9,
+                            Mail = "",
+                            Password = ""
+                        }
+                    }
+                },
+
+                new ProjectOwner
+                {
+                    Id = 2,
+                    PhoneNumber = "4499455444",
+                    Name = ,
+                    Summary = ,
+                    Description = ,
+                    HyperLink = ,
+                    VolunteerDescritpion = ,
+                    Partnership = ,
+                    Type = ProjectOwnerType.association,
+                    AssociationProof = ,
+                    Image = ,
+                    Status = AssoStatus.published,
+                    Address = new Address
+                    {
+                        Id = 10,
+                        StreetName = "",
+                        StreetNumber = "5",
+                        ZipCode = "56543",
+                        City = "Grenoble",
+                        Country = "France"
+                    },
+                    Account = new ProjectOwnerAccount
+                    {
+                        Id = 2,
+                        Newsletter = false,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 10,
+                            Mail = "",
+                            Password = ""
+                        }
+                    }
+                },
+
+                new ProjectOwner
+                {
+                    Id = 3,
+                    PhoneNumber = "4499444444",
+                    Name = ,
+                    Summary = ,
+                    Description = ,
+                    HyperLink = ,
+                    VolunteerDescritpion = ,
+                    Partnership = ,
+                    Type = ProjectOwnerType.association,
+                    AssociationProof = ,
+                    Image = ,
+                    Status = AssoStatus.registered,
+                    Address = new Address
+                    {
+                        Id = 11,
+                        StreetName = "",
+                        StreetNumber = "17",
+                        ZipCode = "57832",
+                        City = "Dublin",
+                        Country = "Ireland"
+                    },
+                    Account = new ProjectOwnerAccount
+                    {
+                        Id = 3,
+                        Newsletter = true,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 11,
+                            Mail = "",
+                            Password = ""
+                        }
+                    }
+                },
+
+                new ProjectOwner
+                {
+                    Id = 4,
+                    PhoneNumber = "4499444444",
+                    Name = ,
+                    Summary = ,
+                    Description = ,
+                    HyperLink = ,
+                    VolunteerDescritpion = ,
+                    Partnership = ,
+                    Type = ProjectOwnerType.ONG,
+                    AssociationProof = ,
+                    Image = ,
+                    Status = AssoStatus.published,
+                    Address = new Address
+                    {
+                        Id = 12,
+                        StreetName = "",
+                        StreetNumber = "34",
+                        ZipCode = "37543",
+                        City = "Pau",
+                        Country = "France"
+                    },
+                    Account = new ProjectOwnerAccount
+                    {
+                        Id = 4,
+                        Newsletter = true,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 12,
+                            Mail = "",
+                            Password = ""
+                        }
+                    }
+                },
+
+                new ProjectOwner
+                {
+                    Id = 5,
+                    PhoneNumber = "4499444444",
+                    Name = ,
+                    Summary = ,
+                    Description = ,
+                    HyperLink = ,
+                    VolunteerDescritpion = ,
+                    Partnership = ,
+                    Type = ProjectOwnerType.ONG,
+                    AssociationProof = ,
+                    Image = ,
+                    Status = AssoStatus.registered,
+                    Address = new Address
+                    {
+                        Id = 13,
+                        StreetName = "",
+                        StreetNumber = "37",
+                        ZipCode = "17634",
+                        City = "Strasbourg",
+                        Country = "France"
+                    },
+                    Account = new ProjectOwnerAccount
+                    {
+                        Id = 5,
+                        Newsletter = false,
+                        ConfidentialityCharter = true,
+                        Account = new Account
+                        {
+                            Id = 13,
+                            Mail = "",
+                            Password = ""
+                        }
+                    }
                 }
-            },
-             new Participant
-             {
-                 Id = 2,
-                 LastName = "Rchouk",
-                 FirstName = "Sara",
-                 Gender = Gender.Female,
-                 PhoneNumber = "5555555555",
-                 Birthdate = DateTime.Parse("2011-03-14"),
-                 Address = new Address
-                 {
-                     Id = 2,
-                     StreetName = "Rue du presidant",
-                     StreetNumber = "24",
-                     ZipCode = "75007",
-                     City = "Paris",
-                     Country = "France"
-                 },
-                  Account = new ParticipantAccount
-                  {
-                      Id = 2,
-                      Newsletter = true,
-                      ConfidentialityCharter = true,
-                      Account = new Account
-                      {
-                          Id = 2,
-                          Mail = "sararchouk@gmail.com",
-                          Password = "sssss"
-                      }
-                  }
-             },
-             new Participant
-             {
-                 Id = 3,
-                 LastName = "Equisoain",
-                 FirstName = "Cristina",
-                 Gender = Gender.Female,
-                 PhoneNumber = "4444444444",
-                 Birthdate = DateTime.Parse("1994-07-04"),
-                 Address = new Address
-                 {
-                     Id = 3,
-                     StreetName = "Calle de Barcelona",
-                     StreetNumber = "52",
-                     ZipCode = "36666",
-                     City = "Madrid",
-                     Country = "Espagne"
-                 },
-                   Account = new ParticipantAccount
-                   {
-                       Id = 3,
-                       Newsletter = true,
-                       ConfidentialityCharter = true,
-                       Account = new Account
-                       {
-                           Id = 3,
-                           Mail = "cristinaequisoain@gmail.com",
-                           Password = "ccccc"
-                       }
-                   }
-             },
-             new Participant
-             {
-                 Id = 4,
-                 LastName = "Faucillon",
-                 FirstName = "Matthieu",
-                 Gender = Gender.Male,
-                 PhoneNumber = "3333333333",
-                 Birthdate = DateTime.Parse("1990-07-04"),
-                 Address = new Address
-                 {
-                     Id = 4,
-                     StreetName = "Rue de la gare",
-                     StreetNumber = "43",
-                     ZipCode = "97532",
-                     City = "Bordeaux",
-                     Country = "France"
-                 },
-                  Account = new ParticipantAccount
-                  {
-                      Id = 4,
-                      Newsletter = false,
-                      ConfidentialityCharter = true,
-                      Account = new Account
-                      {
-                          Id = 4,
-                          Mail = "matthieu.faucillon@gmail.com",
-                          Password = "mmmmm"
-                      }
-                  }
-             }
-
             );
 
-
-
-            //Instances Participant
-            this.Administrators.AddRange(
-
-            );
-
-            //Instances Participant
-            this.ProjectOwners.AddRange(
-
-            );
-
-            //Instances Participant
+            //Instances Projects
             this.Projects.AddRange(
 
             );
 
-            //Instances Participant
-            this.Steps.AddRange(
-
-            );
 
 
             this.SaveChanges();
         }
-
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -241,9 +497,22 @@ namespace Projet2Crowdfunding.Models
             modelBuilder.Entity<Account>()
                 .HasIndex(u => new { u.Mail, u.Password })
                 .IsUnique();
+
+            modelBuilder.Entity<Collection>()
+               .HasIndex(u => u.DonationId)
+               .IsUnique();
+
+            modelBuilder.Entity<Favorite>()
+              .HasIndex(u => new { u.ProjectId, u.ParticipantId })
+              .IsUnique();
+
+            modelBuilder.Entity<ProjectOwner>()
+               .HasIndex(u => u.Name)
+               .IsUnique();
+
         }
 
     }
 }
-           
+
 

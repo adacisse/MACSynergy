@@ -7,12 +7,7 @@ namespace Projet2Crowdfunding.Models
 
     public class Administrator 
     {
-        public int Id { get; set; }
-
-        [MaxLength(15)]
-        [Required]
-        [Display(Name = "Numéro de téléphone")]
-        public string PhoneNumber { get; set; }       
+        public int Id { get; set; }     
 
         [MaxLength(45)]
         [Required]
@@ -23,6 +18,12 @@ namespace Projet2Crowdfunding.Models
         [Required]
         [Display(Name = "Prenom")]
         public string FirstName { get; set; }
+
+
+        [MaxLength(15)]
+        [Required]
+        [Display(Name = "Numéro de téléphone")]
+        public string PhoneNumber { get; set; }
 
         [Required]
         public AdministratorType Type { get; set; }
