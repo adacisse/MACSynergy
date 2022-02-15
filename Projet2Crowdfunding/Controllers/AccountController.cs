@@ -67,9 +67,59 @@ namespace Projet2Crowdfunding.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult GpInscription(Account account, Administrator administrator)
+        {
+            if (ModelState.IsValid)
+            {
+                int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+
+                int idAdministrator = accountService.CreateAdministrator(idAccount, administrator.LastName,
+                    administrator.FirstName, administrator.PhoneNumber);
+
+                var userClaims = new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Name, idAccount.ToString()),
+                };
+
+                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+
+                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
+                HttpContext.SignInAsync(userPrincipal);
+
+                return Redirect("/");
+            }
+            return View(administrator);
+        }
+
         public IActionResult ParticipantInscription()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult ParticipantInscription(Account account, Participant participant)
+        {
+            if (ModelState.IsValid)
+            {
+                int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+
+                int idParticipant = accountService.CreateParticipant(idAccount, participant.LastName,
+                    participant.FirstName);
+
+                var userClaims = new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Name, idAccount.ToString()),
+                };
+
+                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+
+                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
+                HttpContext.SignInAsync(userPrincipal);
+
+                return Redirect("/");
+            }
+            return View(participant);
         }
 
         public IActionResult PPInscription()
@@ -77,29 +127,34 @@ namespace Projet2Crowdfunding.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult GpInscription(Account account, Administrator administrator)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+        [HttpPost]
+        public IActionResult PPInscription(Account account, ProjectOwner projectOwner)
+        {
+            if (ModelState.IsValid)
+            {
+                int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-        //        int idAdministrator = accountService.CreateAdministrator(utilisateur.Prenom, utilisateur.Password);
+                int idProjectOwner = accountService.CreateProjectOwner(idAccount, projectOwner.Name,
+                    projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
+                    projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
+                    projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,
+                    projectOwner.Address.ZipCode, projectOwner.Address.City, projectOwner.Address.Country);
 
-        //        var userClaims = new List<Claim>()
-        //        {
-        //            new Claim(ClaimTypes.Name, id.ToString()),
-        //        };
+                var userClaims = new List<Claim>()
+                {
+                    new Claim(ClaimTypes.Name, idAccount.ToString()),
+                };
 
-        //        var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
 
-        //        var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
-        //        HttpContext.SignInAsync(userPrincipal);
+                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
+                HttpContext.SignInAsync(userPrincipal);
 
-        //        return Redirect("/");
-        //    }
-        //    return View(utilisateur);
-        //}
+                return Redirect("/");
+            }
+            return View(projectOwner);
+        }
+
 
         public ActionResult Deconnexion()
         {
