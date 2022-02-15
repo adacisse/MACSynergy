@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,7 @@ namespace Projet2Crowdfunding.Controllers
                     var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
 
                     HttpContext.SignInAsync(userPrincipal);
+                    Thread.Sleep(2000);
 
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
@@ -104,27 +106,34 @@ namespace Projet2Crowdfunding.Controllers
         [HttpPost]
         public IActionResult ParticipantInscription(Account account, Participant participant)
         {
-            if (ModelState.IsValid)
+            if (participant.ConfidentialityCharter == true)
             {
-                int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+                if (ModelState.IsValid)
+                {
+                    int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                int idParticipant = accountService.CreateParticipant(account, idAccount, participant.LastName,
-                    participant.FirstName);
+                    int idParticipant = accountService.CreateParticipant(account, idAccount, participant.LastName,
+                        participant.FirstName);
 
-                var userClaims = new List<Claim>()
+                    var userClaims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.NameIdentifier, account.Mail),
                     new Claim(ClaimTypes.Name, account.Id.ToString()), //appelé dans la ligne 25
                     new Claim(ClaimTypes.Role, account.Role)
                 };
 
-                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+                    var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
 
-                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
-                HttpContext.SignInAsync(userPrincipal);
+                    var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
+                    HttpContext.SignInAsync(userPrincipal);
 
-                return Redirect("/");
+                    return Redirect("/");
+                }
+            } else
+            {
+                ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
             }
+            
             return View(participant);
         }
 
@@ -136,28 +145,35 @@ namespace Projet2Crowdfunding.Controllers
         [HttpPost]
         public IActionResult PPInscription(Account account, ProjectOwner projectOwner)
         {
-            if (ModelState.IsValid)
+            if (projectOwner.ConfidentialityCharter == true)
             {
-                int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+                if (ModelState.IsValid)
+                {
+                    int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                int idProjectOwner = accountService.CreateProjectOwner(account, idAccount, projectOwner.Name,
-                    projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
-                    projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
-                    projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,
-                    projectOwner.Address.ZipCode, projectOwner.Address.City, projectOwner.Address.Country);
+                    int idProjectOwner = accountService.CreateProjectOwner(account, idAccount, projectOwner.Name,
+                        projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
+                        projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
+                        projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,
+                        projectOwner.Address.ZipCode, projectOwner.Address.City, projectOwner.Address.Country);
 
-                var userClaims = new List<Claim>()
+                    var userClaims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.Name, idAccount.ToString()),
                 };
 
-                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+                    var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
 
-                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
-                HttpContext.SignInAsync(userPrincipal);
+                    var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
+                    HttpContext.SignInAsync(userPrincipal);
 
-                return Redirect("/");
+                    return Redirect("/");
+                }
+            } else
+            {
+                ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
             }
+             
             return View(projectOwner);
         }
 

@@ -1,103 +1,113 @@
 @{
-    Layout = "_LayoutDuSite2";
+    Layout = "_LayoutDuSite";
 
 }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Inscription porteur de projet</title>
-</head>
-<body>
-    <fieldset>
 
-        <h1>Bienvenue</h1>
+<title>Inscription porteur de projet</title>
 
-        <label for="Vous avez déja un compte MACSynergY?">Vous avez déja un compte Macsynergy?</label>
-        <a href="LoginPage" class="btn btn-success">Connectez-vous!</a>
-        <br />
-        <input type="text"
-               id="nom"
-               placeholder="Nom association">
-        <input type="text"
-               id="nom"
-               placeholder="Nom">
-        <br />
-        <br />
-        <input type="text"
-               id="prenom"
-               placeholder="Prénom">
+@section Menu
+{
+    <div class="col-md-8 d-flex justify-content-around">
+        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end align-items-center">
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    </div>
+}
 
-        <br />
-        <br />
 
-        <input type="text"
-               id="Adresse association"
-               placeholder="Adresse association">
-        <br />
-        <br />
+<fieldset>
 
-        <input type="text"
-               id="mail"
-               placeholder="Adresse e-mail">
-        <br />
-        <br />
-        <input type="text"
-               id="Password"
-               placeholder="Mot de passe">
-        <br />
+    <h1>Bienvenue</h1>
 
-        <input type="text"
-               id="Phonenumber"
-               placeholder="Numero de téléphone">
-        <br />
+    <label for="Vous avez déja un compte MACSynergY?">Vous avez déja un compte Macsynergy?</label>
+    <a href="LoginPage" class="btn btn-success">Connectez-vous!</a>
+    <br />
+    <input type="text"
+           id="nom"
+           placeholder="Nom association">
+    <input type="text"
+           id="nom"
+           placeholder="Nom">
+    <br />
+    <br />
+    <input type="text"
+           id="prenom"
+           placeholder="Prénom">
 
-        <input type="text"
-               id="summary"
-               placeholder="Resumé du projet">
+    <br />
+    <br />
 
-        <input type="text"
-               id="Description"
-               placeholder="Description du projet">
+    <input type="text"
+           id="Adresse association"
+           placeholder="Adresse association">
+    <br />
+    <br />
 
-        <input type="text"
-               id="Hyperlink"
-               placeholder="Lien hypertexte">
+    <input type="text"
+           id="mail"
+           placeholder="Adresse e-mail">
+    <br />
+    <br />
+    <input type="text"
+           id="Password"
+           placeholder="Mot de passe">
+    <br />
 
-        <input type="text"
-               id="VolonteerDescription"
-               placeholder="Description pour le volontariat">
+    <input type="text"
+           id="Phonenumber"
+           placeholder="Numero de téléphone">
+    <br />
 
-        <input type="text"
-               id="partnerShip"
-               placeholder="Partenariat">
+    <input type="text"
+           id="summary"
+           placeholder="Resumé du projet">
 
-        <input type="text"
-               id="Phonenumber"
-               placeholder="Numero de téléphone">
-        <label for="Homme">Association </label>
-        <input type="radio" name="gender" value="Unspecified" />
-        <label for="Femme">ONG </label>
-        <input type="radio" name="gender" value="Unspecified" />
-        <br />
-        <br />
-        <label for="Sport">Catégorie </label>
-        <select asp-for="sport">
-            <option value="1">Animal</option>
-            <option value="2">Environnement</option>
-            <option value="3">Humanitaire</option>
-            <option value="3">Education</option>
-            <option value="3">Santé</option>
-            <option value="3">Besoins élémentaires</option>
-            <option value="3">Autre</option>
-        </select>
-        <br />
-        <br />
-        <input class="form-check-input" type="checkbox" id="check2" name="Confidentialite" value="something">
-        <label class="form-check-label">J'ai lu et j'accepte la politique de confidentialité de Macsynergy</label>
-        <br />
-        <br />
-        <input type="submit" value="S'inscrire" />
-    </fieldset>
-</body>
-</html>
+    <input type="text"
+           id="Description"
+           placeholder="Description du projet">
+
+    <input type="text"
+           id="Hyperlink"
+           placeholder="Lien hypertexte">
+
+    <input type="text"
+           id="VolonteerDescription"
+           placeholder="Description pour le volontariat">
+
+    <input type="text"
+           id="partnerShip"
+           placeholder="Partenariat">
+
+    <input type="text"
+           id="Phonenumber"
+           placeholder="Numero de téléphone">
+    <label for="Homme">Association </label>
+    <input type="radio" name="gender" value="Unspecified" />
+    <label for="Femme">ONG </label>
+    <input type="radio" name="gender" value="Unspecified" />
+    <br />
+    <br />
+    <label for="Sport">Catégorie </label>
+    <select asp-for="sport">
+        <option value="1">Animal</option>
+        <option value="2">Environnement</option>
+        <option value="3">Humanitaire</option>
+        <option value="3">Education</option>
+        <option value="3">Santé</option>
+        <option value="3">Besoins élémentaires</option>
+        <option value="3">Autre</option>
+    </select>
+    <br />
+    <br />
+    <input class="form-check-input" type="checkbox" id="check2" name="Confidentialite" value="something">
+    <label class="form-check-label">J'ai lu et j'accepte la politique de confidentialité de Macsynergy</label>
+    <br />
+    <br />
+
+</fieldset>
+
+@section Footer {}
