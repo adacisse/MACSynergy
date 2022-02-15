@@ -63,7 +63,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 1,
                         Mail = "adacisse@gmail.com",
-                        Password = "aaaaa"
+                        Password = "aaaaa",
+                        Role ="participant"
                     }
                 },
                 new Participant
@@ -90,8 +91,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 2,
                         Mail = "sara.rchouk@gmail.com",
-                        Password = "sssss"
-                        
+                        Password = "sssss",
+                        Role = "participant"
                     }
                 },
                 new Participant
@@ -118,7 +119,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 3,
                         Mail = "juanjoperez@gmail.com",
-                        Password = "juanjuan"      
+                        Password = "juanjuan",
+                        Role = "participant"
                     }
                 },
                 new Participant
@@ -144,7 +146,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 4,
                         Mail = "lauradupuy@gmail.com",
-                        Password = "laulau"
+                        Password = "laulau",
+                        Role = "participant"
                     }
                 }
 
@@ -164,7 +167,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 5,
                         Mail = "matthieu.faucillon@gmail.com",
-                        Password = "mmmmm"
+                        Password = "mmmmm",
+                        Role = "admin"
                     }
                 },
 
@@ -178,7 +182,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 6,
                         Mail = "cristinaequisoain@gmail.com",
-                        Password = "ccccc"
+                        Password = "ccccc",
+                        Role = "admin"
                     }
                 },
 
@@ -193,7 +198,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 7,
                         Mail = "florentlacroix@gmail.com",
-                        Password = "floflo"
+                        Password = "floflo",
+                        Role = "admin"
                     }
                 },
 
@@ -208,7 +214,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 8,
                         Mail = "clara.martin@gmail.com",
-                        Password = "clacla"
+                        Password = "clacla",
+                        Role = "admin"
                     }
                 }
             );
@@ -565,6 +572,18 @@ namespace Projet2Crowdfunding.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Participant>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<Administrator>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
+            modelBuilder.Entity<ProjectOwner>()
+                .HasIndex(u => u.AccountId)
+                .IsUnique();
+
             modelBuilder.Entity<Account>()
                 .HasIndex(u => new { u.Mail, u.Password })
                 .IsUnique();

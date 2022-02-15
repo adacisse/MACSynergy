@@ -16,5 +16,9 @@ namespace Projet2Crowdfunding.Models
         [Required]
         [Display(Name = "Mot de passe")]
         public string Password { get; set; }
+
+        [MaxLength(12)]
+        public string Role {get; set;}
+        //Role = "admin", "participant", "po"
     }
 }

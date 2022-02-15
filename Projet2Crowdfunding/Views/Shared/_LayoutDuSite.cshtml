@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>MACSynergy Accueil</title>
+   
 
     <!--META-->
     <meta charset="utf-8" name="viewport" content="width=device-width initial-scale=1.0" />
@@ -28,14 +28,8 @@
                     <div class="col-md-2 d-flex justify-content-center">
                         <a href="/Home/Index"><img src="~/Images/logoMacSynergy.png" alt="MacSynergy" /></a>
                     </div>
-                    <div class="col-md-8 d-flex justify-content-around">
-                        <a class="nav-link" id="nav-active" href="/Home/Index" active><strong>HOME</strong></a>
-                        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
-                        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                    </div>
-                    <div class="col-md-2 d-flex justify-content-end align-items-center">
-                        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-                    </div>
+                    @RenderSection("Menu")
+                    @*@RenderSection("Menu", required: true)*@
                 </div>
             </div>
         </nav>
@@ -44,21 +38,14 @@
 
 
     @*<div id="contenu">*@
-        @RenderBody()
+    @RenderBody()
     @*</div>*@
 
-    <div class="newsletter-subscribe container">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center newsletter">Inscrivez-vous à notre newsletter</h2>
-                <p class="text-center">Recevez de nouveaux projets dans votre boite chaque semaine !</p>
-            </div>
-            <form class="row" method="post">
-                <div class="col-md-6"><input class="form-control" type="email" name="email" placeholder="Votre Email"></div>
-                <div class="col-md-2"><button class="btn btn-primary" type="button">S'abonner </button></div>
-            </form>
-        </div>
-    </div>
+
+
+   @RenderSection("Footer")
+   @*@RenderSection("Footer", required: false)*@
+   
 
     <div id="footer" class="text-center text-dark p-3">
         <a href="#" class="fa fa-facebook" style="margin-right: 10px"></a>

@@ -1,74 +1,81 @@
 @{
-    Layout = "_LayoutDuSite2";
+    Layout = "_LayoutDuSite";
 
 }
 <link rel="stylesheet" type="text/css" href="~/css/Login.css">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Inscription gestionnaire</title>
-</head>
-<body>
+
+<title>Inscription gestionnaire</title>
+
+@section Menu
+{
+    <div class="col-md-8 d-flex justify-content-around">
+        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end align-items-center">
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    </div>
+}
 
 
-    <fieldset>
+<fieldset>
 
-        <h1>Bienvenue</h1>
+    <h1>Bienvenue</h1>
 
-        <label for="Vous avez déja un compte MACSynergie?">Vous avez déja un compte Macsynergy?</label>
-        <a href="LoginPage.html" class="btn btn-success">Connectez-vous!</a>
-        <br />
-        <br />
-        <label for="nom"> Nom </label>
-        <br />
-        <input type="text" id="Nom=">
-        <br />
-        <br />
-        <label for="prenom">Prenom </label>
-        <br />
-        <input type="text" id="prenom">
-        <br />
-        <br />
+    <label for="Vous avez déja un compte MACSynergie?">Vous avez déja un compte Macsynergy?</label>
+    <a href="LoginPage.html" class="btn btn-success">Connectez-vous!</a>
+    <br />
+    <br />
+    <label for="nom"> Nom </label>
+    <br />
+    <input type="text" id="Nom=">
+    <br />
+    <br />
+    <label for="prenom">Prenom </label>
+    <br />
+    <input type="text" id="prenom">
+    <br />
+    <br />
 
-        <label for="Email">Adresse e-mail </label>
-        <br />
-        <input type="text" id="Email">
-        <br>
-        <br>
+    <label for="Email">Adresse e-mail </label>
+    <br />
+    <input type="text" id="Email">
+    <br>
+    <br>
 
-        <label for="Mot de passe">Mot de passe </label>
-        <br />
-        <input type="text" id="Mot de passe">
-        <br />
-        <br />
-        <!-- <label for="Numero de rue">Numéro de rue:</label>
-                        <input type="text" id="Adresse ">
-                <br />
-                <br />
-                <label for="Rue">Rue:</label>
-                <input type="text" id="Adresse ">
-        <br />
-        <br />
-        <label for="Ville">Ville:</label>
-        <input type="text" id="adresse">
-        <br />
-        <br />
-        <label for="Pays">Pays:</label>
-        <input type="text" id="Adresse">
-        <br />
-        <br /> -->
+    <label for="Mot de passe">Mot de passe </label>
+    <br />
+    <input type="text" id="Mot de passe">
+    <br />
+    <br />
+    <!-- <label for="Numero de rue">Numéro de rue:</label>
+                    <input type="text" id="Adresse ">
+            <br />
+            <br />
+            <label for="Rue">Rue:</label>
+            <input type="text" id="Adresse ">
+    <br />
+    <br />
+    <label for="Ville">Ville:</label>
+    <input type="text" id="adresse">
+    <br />
+    <br />
+    <label for="Pays">Pays:</label>
+    <input type="text" id="Adresse">
+    <br />
+    <br /> -->
 
-        <label for="Homme">Salarié </label>
-        <input type="radio" name="work" value="Unspecified" />
+    <label for="Homme">Salarié </label>
+    <input type="radio" name="work" value="Unspecified" />
 
-        <label for="Femme">Bénévole </label>
-        <input type="radio" name="work" value="Unspecified" />
-        <br />
-        <br />
-        <input type="submit" value="S'inscrire" />
-    </fieldset>
+    <label for="Femme">Bénévole </label>
+    <input type="radio" name="work" value="Unspecified" />
+    <br />
+    <br />
+    <input type="submit" value="S'inscrire" />
+</fieldset>
 
-</body>
-</html>
+
+@section Footer {}

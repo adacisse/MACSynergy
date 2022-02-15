@@ -1,57 +1,75 @@
+@model Projet2Crowdfunding.ViewModels.ParticipantViewModel
 @{
-    Layout = "_LayoutDuSite2";
+    Layout = "_LayoutDuSite";
 
 }
 <link rel="stylesheet" type="text/css" href="~/css/Login.css">
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>S'inscription participant</title>
+<title>Inscription participant</title>
 
-</head>
-<body>
-    <fieldset>
+@section Menu
+{
+    <div class="col-md-8 d-flex justify-content-around">
+        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end align-items-center">
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    </div>
+}
 
-        <label for="Vous avez déja un compte MACSynergie?">Vous avez déja un compte Macsynergy?</label>
-        <a href="LoginPage.html" class="btn btn-success">Connectez-vous!</a>
+
+<fieldset>
+
+    <p>CRÉATION D'UN COMPTE PARTICIPANT</p>
+    <br />
+    <br />
+
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Participant.LastName)
+        @Html.TextBoxFor(model => model.Participant.LastName, new { placeholder = "Nom" })
         <br />
         <br />
 
-        <div>
-           
-            <input
-                   type="text"
-                   id="nom"
-                   placeholder="Nom">
-            <br />
-            <br />
-            <input type="text"
-                   id="prenom"
-                   placeholder="Prénom">
-            <br />
-            <br />
-            
-            <input type="text"
-                   id="mail"
-                   placeholder="Adresse e-mail">
-            <br>
-            <br>
-            
-            <input type="text"
-                   id="Password"
-                   placeholder="Mot de passe">
-            <br />
-            <br />
-            <input class="form-check-input" type="checkbox" id="check2" name="Confidentialite" value="something">
-            <label class="form-check-label">J'ai lu et j'accepte la politique de confidentialité de Macsynergy</label>
-            <br />
-            <br />
+        @Html.LabelFor(model => model.Participant.FirstName)
+        @Html.TextBoxFor(model => model.Participant.FirstName, new { placeholder = "Prénom" })
+        <br />
+        <br />
 
-            <input type="submit" value="S'inscrire" />
+        @Html.LabelFor(model => model.Account.Mail)
+        @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Account.Mail)
         </div>
-    </fieldset>
-</body>
-</html>
+
+        <br>
+        <br>
+
+        @Html.LabelFor(model => model.Account.Password)
+        @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Account.Password)
+        </div>
+        <br />
+        <br />
+
+        @Html.CheckBoxFor(m => m.Participant.ConfidentialityCharter)
+        @Html.LabelFor(model => model.Participant.ConfidentialityCharter, "J'ai lu et j'accepte la politique de confidentialité de Macsynergy")
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Participant.ConfidentialityCharter)
+        </div>
+
+        <br />
+        <br />
+
+        <button id="bouton-log" type="submit">CREER UN COMPTE</button>
+    }
+
+
+
+</fieldset>
+
+@section Footer {}
