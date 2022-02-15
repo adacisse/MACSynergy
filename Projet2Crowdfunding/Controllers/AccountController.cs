@@ -37,7 +37,7 @@ namespace Projet2Crowdfunding.Controllers
         public IActionResult LoginPage(AccountViewModel viewModel, string returnUrl)
         //returnUrl stock /sejour/index; retourne l'Url initial à la quelle on voulais accèder avant l'autentification
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)  //Au lieu de Modelstate.isValid   
             {
                 Account account = accountService.Login(viewModel.Account.Mail, viewModel.Account.Password);
                 if (account != null)
@@ -54,6 +54,7 @@ namespace Projet2Crowdfunding.Controllers
                     var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
 
                     HttpContext.SignInAsync(userPrincipal);
+                    Thread.Sleep(2000);
 
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
@@ -103,22 +104,22 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult ParticipantInscription(ParticipantViewModel viewModel)
+        public IActionResult ParticipantInscription(Account account, Participant participant)
         {
-            if (viewModel.Participant.ConfidentialityCharter == true)
+            if (participant.ConfidentialityCharter == true)
             {
                 if (ModelState.IsValid)
                 {
-                    int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
+                    int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                    int idParticipant = accountService.CreateParticipant(viewModel.Account, idAccount, viewModel.Participant.LastName,
-                        viewModel.Participant.FirstName);
+                    int idParticipant = accountService.CreateParticipant(account, idAccount, participant.LastName,
+                        participant.FirstName);
 
                     var userClaims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.NameIdentifier, viewModel.Account.Mail),
-                    new Claim(ClaimTypes.Name, viewModel.Account.Id.ToString()), //appelé dans la ligne 25
-                    new Claim(ClaimTypes.Role, viewModel.Account.Role)
+                    new Claim(ClaimTypes.NameIdentifier, account.Mail),
+                    new Claim(ClaimTypes.Name, account.Id.ToString()), //appelé dans la ligne 25
+                    new Claim(ClaimTypes.Role, account.Role)
                 };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
@@ -126,14 +127,14 @@ namespace Projet2Crowdfunding.Controllers
                     var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
                     HttpContext.SignInAsync(userPrincipal);
 
-                    return Redirect("/Account/LoginPage");
+                    return Redirect("/");
                 }
             } else
             {
                 ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
             }
             
-            return View(viewModel);
+            return View(participant);
         }
 
         public IActionResult PPInscription()
