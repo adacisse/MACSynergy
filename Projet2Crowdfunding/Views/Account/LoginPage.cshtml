@@ -1,54 +1,50 @@
 @{
     Layout = "_LayoutDuSite2";
-   
+    ViewBag.Title = "MACSynergy Login";
 }
 <link rel="stylesheet" type="text/css" href="~/css/Login.css">
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Page d'authentification</title>
-
-
-</head>
-
-<body>
-    
-    <fieldset>
+@section Menu
+{
+    <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+    <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+    <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+}
 
 
-        <h1>Bienvenue</h1>
-        <br />
-        <input type="text"
-               name="email"
-               placeholder="Adresse e-mail" />
 
-        <br>
-        <br />
-        <input type="password"
-                      name="password"
-                      placeholder="Mot de passe" />
+<fieldset>
 
-        <br />
-        <br />
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
-            <label class="form-check-label">Rester connecté?</label>
-        </div>
-        <br />
-        <br />
-        <a href="ForgetPassword">Mot de passe oublié?</a>
-        <br />
-        <br />
-        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-        <br />
-        <br />
-        <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
-        <a href="/Account/InscriptionChoice">Inscrivez-vous!</a>
 
-    </fieldset>
-  
-</body>
-</html>
+    <h1>Bienvenue</h1>
+    <br />
+    <input type="text"
+           name="email"
+           placeholder="Adresse e-mail" />
+
+    <br>
+    <br />
+    <input type="password"
+           name="password"
+           placeholder="Mot de passe" />
+
+    <br />
+    <br />
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
+        <label class="form-check-label">Rester connecté?</label>
+    </div>
+    <br />
+    <br />
+    <a href="ForgetPassword">Mot de passe oublié?</a>
+    <br />
+    <br />
+    <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    <br />
+    <br />
+    <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
+    <a href="/Account/InscriptionChoice">Inscrivez-vous!</a>
+
+</fieldset>
+

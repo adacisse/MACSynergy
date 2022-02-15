@@ -1,9 +1,16 @@
 ﻿@{
     Layout = "_LayoutDuSite";
-    ViewBag.Title = "Accueil";
+    ViewBag.Title = "MACSynergy Accueil";
 }
 <link rel="stylesheet" type="text/css" href="~/css/Home.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+@section Menu
+{
+    <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+    <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+    <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+}
 
 <div class="img-fond">
 
@@ -241,7 +248,7 @@
             </div>
         </div>
     </div>
-    <br/><br/>
+    <br /><br />
 
 </div>
 
