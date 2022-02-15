@@ -36,7 +36,7 @@ namespace Projet2Crowdfunding.Controllers
         public IActionResult LoginPage(AccountViewModel viewModel, string returnUrl)
         //returnUrl stock /sejour/index; retourne l'Url initial à la quelle on voulais accèder avant l'autentification
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)  //Au lieu de Modelstate.isValid   
             {
                 Account account = accountService.Login(viewModel.Account.Mail, viewModel.Account.Password);
                 if (account != null)
@@ -76,7 +76,7 @@ namespace Projet2Crowdfunding.Controllers
             {
                 int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                int idAdministrator = accountService.CreateAdministrator(idAccount, administrator.LastName,
+                int idAdministrator = accountService.CreateAdministrator(account, idAccount, administrator.LastName,
                     administrator.FirstName, administrator.PhoneNumber);
 
                 var userClaims = new List<Claim>()
@@ -108,7 +108,7 @@ namespace Projet2Crowdfunding.Controllers
             {
                 int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                int idParticipant = accountService.CreateParticipant(idAccount, participant.LastName,
+                int idParticipant = accountService.CreateParticipant(account, idAccount, participant.LastName,
                     participant.FirstName);
 
                 var userClaims = new List<Claim>()
@@ -140,7 +140,7 @@ namespace Projet2Crowdfunding.Controllers
             {
                 int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                int idProjectOwner = accountService.CreateProjectOwner(idAccount, projectOwner.Name,
+                int idProjectOwner = accountService.CreateProjectOwner(account, idAccount, projectOwner.Name,
                     projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
                     projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
                     projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,

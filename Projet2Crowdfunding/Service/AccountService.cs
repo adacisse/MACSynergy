@@ -35,7 +35,7 @@ namespace Projet2Crowdfunding.Service
             return account.Id;
         }
 
-        public int CreateParticipant(int idAccount, string lastName, string firstname)
+        public int CreateParticipant(Account account, int idAccount, string lastName, string firstname)
         {
             Participant participant = new Participant()
             {
@@ -46,13 +46,15 @@ namespace Projet2Crowdfunding.Service
                 AccountId = idAccount
             };
 
+            account.Role = "participant";
+
             this.bddContext.Participants.Add(participant);
             this.bddContext.SaveChanges();
             return participant.Id;
         }
 
 
-        public int CreateProjectOwner(int idAccount, string name, string phoneNumber, 
+        public int CreateProjectOwner(Account account, int idAccount, string name, string phoneNumber, 
             string summary, string description, string hyperlink, string volunteerDescritpion, 
             string patnerShip, ProjectOwnerType type, string image, string associationProof, string streetNumber,
             string streetName, string zipCode, string city, string country)
@@ -85,12 +87,14 @@ namespace Projet2Crowdfunding.Service
                 Address = address
             };
 
+            account.Role = "po";
+
             this.bddContext.ProjectOwners.Add(projectOwner);
             this.bddContext.SaveChanges();
             return projectOwner.Id;
         }
 
-        public int CreateAdministrator(int idAccount, string lastName, string firstName, string phoneNumber)
+        public int CreateAdministrator(Account account, int idAccount, string lastName, string firstName, string phoneNumber)
         {
             Administrator administrator = new Administrator()
             {
@@ -99,6 +103,8 @@ namespace Projet2Crowdfunding.Service
                 PhoneNumber = phoneNumber,
                 AccountId = idAccount
             };
+
+            account.Role = "admin";
 
             this.bddContext.Administrators.Add(administrator);
             this.bddContext.SaveChanges();
