@@ -1,5 +1,5 @@
 @{
-    Layout = "_LayoutDuSite";
+    Layout = "_LayoutDuSite2";
 }
 <link rel="stylesheet" type="text/css" href="~/css/grid.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -10,282 +10,519 @@
         background: #aaa;
     }
 </style>
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-8 col-sm-8 col-md-8">
+<div class="img-fond">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 col-sm-8 col-md-8">
 
-            <div class="card-header" style="width:800px;  border:1px solid #d6d6d6; border-radius: 14px;">
-                <div class="card-body">
-                    <h4 class="card-title">
-                        PeopleCare se mobilise pour la construction de logement pour les victimes
-                        de l'Ouragon de Cathrina, USA
-                    </h4>
-                    <!-- Carousel -->
-                    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <div class="card-header" style="width:800px;  border:1px solid #d6d6d6; border-radius: 14px;">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            PeopleCare se mobilise pour la construction de logement pour les victimes
+                            de l'Ouragon de Cathrina, USA
+                        </h4>
+                        <!-- Carousel -->
+                        <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-                        <!-- Indicators/dots -->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0"
-                                    class="active"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                        </div>
-
-                        <!-- The slideshow/carousel -->
-                        <div class="carousel-inner" data-interval="50">
-                            <div class="carousel-item active">
-                                <img src="~/Images/katrina.png" alt="Katrina" class="d-block" style="width:100%">
+                            <!-- Indicators/dots -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="0"
+                                        class="active"></button>
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
                             </div>
-                            <div class="carousel-item">
-                                <img src="~/Images/ouragon.png" alt="Ouragon" class="d-block" style="width:100%">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="~/Images/shelter.png" alt="Shelter" class="d-block" style="width:100%">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="~/Images/flood.png" alt="Flood" class="d-block" style="width:100%">
-                            </div>
-                        </div>
 
-                        <!-- Left and right controls/icons -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#demo"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#demo"
-                                data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-
-                    <div class="container-fluid mt-3">
-
-                    </div>
-                    <div style="border-bottom:2px solid #d6d6d6; padding:15px 0px 25px 0px;"></div>
-
-                </div>
-            </div>
-
-        </div>
-        <div class="col-lg-4 col-sm-4 col-md-4">
-            <div class="card-header" style="width:400px; height:630px;border:1px solid #d6d6d6;border-radius: 14px;"
-                 title="Nom du porteur de projet">
-                <img class="card-img-top" src="~/Images/asso.png" alt="Card image"
-                     style="width:20%; border:1px solid #d6d6d6;border-radius:100px;">
-                <div class="card-body">
-                    <h4 class="card-title">Ouragon de Cathrina, USA</h4>
-                    <img class="card-img-top" src="~/Images/countdown.jpg" alt="Card image"
-                         style="width:100%; border:1px solid #d6d6d6; border-radius:14px;">
-                    <!-- <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum
-                        consectetur adipiscing elit,sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco.</p> -->
-                    <div class="progress" style="padding:2px 0px 0px 0px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                             style="width:80%">
-                            80%
-                        </div>
-                    </div>
-                    <div style="border-bottom:2px solid #d6d6d6; padding:8px 0px 25px 0px;">
-                        <span style="float:left">80% atteint de 15000 € </span>
-                        <span style="float:right">8 Jours restants</span>
-                    </div>
-                    <div style=" padding: 5px 0px 0px 224px">
-                        <a href="#" class="btn btn-success float-right" width="7px"
-                           style="text-decoration:none">
-                            Participer <img style="width:auto;" src="images/ar.png"
-                                            alt="" />
-                        </a>
-                    </div>
-                    <div class="container" style="padding: 35px">
-
-                        <div style="padding: 5px">
-                            <button type="button" class="btn btn-outline-dark"
-                                    title="Recevoir les nouveautés de ce projet">
-                                J'aime <img style="width:5%;"
-                                            src="~/Images/heart.png" alt="" />
-                            </button>
-                        </div>
-
-                        <div style="padding: 5px">
-                            <button type="button" class="btn btn-outline-dark"
-                                    title="Partager ce projet pour sensibiliser un plus grand nombre de personnes!">
-                                Partager <img style="width:5%;" src="~/Images/share.png" alt="" />
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-3">
-            <br>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#home">L'histoire</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu1">Le projet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu2">Contreparties</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu3">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu4">Commentaires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu5">Témoignages</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu6">Contributions</a>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div id="home" class="container tab-pane active">
-                    <br>
-                    <h3>L'histoire</h3>
-                    <h5>L'équipe</h5>
-                    <h5>L'idée</h5>
-                    <h5>La population cible</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
-                    </p>
-                    <!-- <h2 class="mt-5">TITLE HEADING</h2>
-                    <h5>Title description, Sep 2, 2020</h5>
-                    <div class="fakeimg">Fake Image</div>
-                    <p>Some text..</p>
-                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco.</p> -->
-                </div>
-
-                <div id="menu1" class="container tab-pane fade">
-                    <br>
-                    <h3>Le projet</h3>
-                    <p>
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
-                    </p>
-                    <h5>Le besoin (qui, pour qui, combien)</h5>
-                    <h5>Le plan d'action</h5>
-                    <h5>Les objectifs et jalons</h5>
-                    <h5>Les partenaires</h5>
-                    <div class="container mt-3">
-                        <div class="row">
-                            <div class="col-lg-5 col-sm-5 col-md-5">
-
-                                <img class="card-img-top" src="~/Images/ouragon.png" alt="Card image"
-                                     style="width:100%;border-radius: 14px;">
-                            </div>
-                            <div class="col-lg-7 col-sm-7 col-md-7">
-
-                                <div class="card-header" style="background-color:white; ">
-                                    <h4 class="card-title">Une second texte de katrina</h4>
-                                    <p class="card-text">
-                                    <p>
-                                        Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                                        adipiscing
-                                        elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim
-                                        veniam,
-                                        quis nostrud exercitation ullamco.
-                                    </p><br\>
-                                    <p>
-                                        Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                                        adipiscing
-                                        elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim
-                                        veniam,
-                                        quis nostrud exercitation ullamco.
-                                    </p>
-                                    <p>
-                                        Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                                        adipiscing
-                                        elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                        enim ad minim
-                                        veniam,
-                                        quis nostrud exercitation ullamco.
-                                    </p>
+                            <!-- The slideshow/carousel -->
+                            <div class="carousel-inner" data-interval="50">
+                                <div class="carousel-item active">
+                                    <img src="~/Images/katrina.png" alt="Katrina" class="d-block" style="width:100%">
                                 </div>
-
-
+                                <div class="carousel-item">
+                                    <img src="~/Images/ouragon.png" alt="Ouragon" class="d-block" style="width:100%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Images/shelter.png" alt="Shelter" class="d-block" style="width:90%">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="~/Images/flood.png" alt="Flood" class="d-block" style="width:100%">
+                                </div>
+                                <!-- <div class="carousel-item">
+                                    <img src="images/noye.png" alt="noye" class="d-block" style="width:100%">
+                                </div> -->
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="menu2" class="container tab-pane fade">
-                    <br>
-                    <h3>Contreparties</h3>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam.
-                    </p>
-                    <div class="card" style="border-radius: 14px;">
-                        <h4 class="card-title">Ouragon de Cathrina, USA</h4>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam,
-                            quis nostrud exercitation ullamco.
-                        </p>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam,
-                            quis nostrud exercitation ullamco.
-                        </p>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam,
-                            quis nostrud exercitation ullamco.
-                        </p>
-                    </div>
 
-                </div>
-                <div id="menu3" class="container tab-pane fade ">
-                    <br>
-                    <h3>FAQ</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                </div>
-                <div id="menu4" class="container tab-pane fade">
-                    <br>
-                    <h3>Commentaires</h3>
-                    <h5>Commentaires des passants ou des participants</h5>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                </div>
-                <div id="menu5" class="container tab-pane fade">
-                    <br>
-                    <h3>Témoignages</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    <h5>Témoignages: Partenaire</h5>
-                    <h5>Témoignages: Bénéficiares</h5>
-                    <h5>Témoignages: Bénévoles de l'association</h5>
-                </div>
-                <div id="menu6" class="container tab-pane fade">
-                    <br>
-                    <h3>Contributions</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    <h5>Historique des contributions</h5>
+                            <!-- Left and right controls/icons -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#demo"
+                                    data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#demo"
+                                    data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+
+                        <div class="container-fluid mt-3">
+
+                        </div>
+                        <div style="border-bottom:2px solid #d6d6d6; padding:15px 0px 25px 0px;"></div>
+
+                    </div>
                 </div>
 
             </div>
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="card-header"
+                     style="width:400px; height:630px;border:1px solid #d6d6d6;border-radius: 14px;">
+                    <img class="card-img-top" src="~/Images/asso.png" alt="Card image"
+                         style="width:20%; border:1px solid #d6d6d6;border-radius:100px;"
+                         title="Nom du porteur de projet">
+                    <div class="card-body">
+                        <h4 class="card-title">Ouragon de Cathrina, USA</h4>
+                        <img class="card-img-top" src="~/Images/countdown.jpg" alt="Card image"
+                             style="width:100%; border:1px solid #d6d6d6; border-radius:14px;">
+                        <!-- <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum
+                            consectetur adipiscing elit,sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco.</p> -->
+                        <div class="progress" style="padding:2px 0px 0px 0px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                 style="width:80%">
+                                80%
+                            </div>
+                        </div>
+                        <div style="border-bottom:2px solid #d6d6d6; padding:8px 0px 25px 0px;">
+                            <span style="float:left">80% atteint de 15000 € </span>
+                            <span style="float:right">8 Jours restants</span>
+                        </div>
+
+                        <div class="container" style="padding: 35px">
+
+                            <div style="padding: 5px">
+                                <button type="button" class="btn btn-outline-dark"
+                                        title="Recevoir les nouveautés de ce projet">
+                                    Je suis! <img style="width:5%;"
+                                                  src="~/Images/heart.png" alt="" />
+                                </button>
+                            </div>
+
+                            <div style="padding: 5px">
+                                <button type="button" class="btn btn-outline-dark"
+                                        title="Partager ce projet pour sensibiliser un plus grand nombre de personnes!">
+                                    Je partage <img style="width:5%;" src="~/Images/share.png" alt="" />
+                                </button>
+                            </div>
+
+                        </div>
+                        <div style=" padding: 65px 0px 0px 224px">
+                            <a href="#" class="btn btn-success float-right" width="7px"
+                               style="text-decoration:none">
+                                Participer <img style="width:auto;" src="~/Images/ar.png"
+                                                alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-3">
+                <br>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#home">L'histoire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu1">Le projet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu2">Contreparties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu3">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu4">Commentaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu5">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu6">Contributions</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div id="home" class="container tab-pane active">
+                        <br>
+                        <h3>L'histoire</h3>
+                        <h5>L'équipe</h5>
+                        <div class="py-5 bg-light team1">
+                            <div class="container">
+                                <div class="row justify-content-center mb-3">
+                                    <div class="col-md-7 text-center">
+                                        <h3 class="mb-3">Experienced & Professional Team</h3>
+                                        <h6 class="subtitle font-weight-normal">
+                                            You can relay on our amazing features
+                                            list and also our customer services will be great experience for you without
+                                            doubt and in no-time
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <!-- column  -->
+                                    <div class="col-lg-6">
+                                        <div class="card card-shadow border-0 mb-4">
+                                            <!-- Row -->
+                                            <div class="row no-gutters">
+                                                <div class="col-md-5 pro-pic"
+                                                     style="background: url(Images/p1.jpg) center center no-repeat / cover !important ">
+                                                    <div class="card-img-overlay">
+                                                        <ul class="list-inline position-relative text-center">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-facebook"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-twitter"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-instagram"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-behance"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 bg-white">
+                                                    <div class="p-4">
+                                                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
+                                                        <p>
+                                                            You can relay on our amazing features list and also our
+                                                            customer services will be great experience.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Row -->
+                                        </div>
+                                    </div>
+                                    <!-- column  -->
+                                    <div class="col-lg-6">
+                                        <div class="card card-shadow border-0 mb-4">
+                                            <!-- Row -->
+                                            <div class="row no-gutters card-shadow">
+                                                <div class="col-md-5 pro-pic"
+                                                     style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg) center center no-repeat / cover">
+                                                    <div class="card-img-overlay">
+                                                        <ul class="list-inline position-relative text-center">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-facebook"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-twitter"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-instagram"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-behance"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 bg-white">
+                                                    <div class="p-4">
+                                                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
+                                                        <p>
+                                                            You can relay on our amazing features list and also our
+                                                            customer services will be great experience.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Row -->
+                                        </div>
+                                    </div>
+                                    <!-- column  -->
+                                </div>
+                                <div class="row">
+                                    <!-- column  -->
+                                    <div class="col-lg-6">
+                                        <div class="card card-shadow border-0 mb-4">
+                                            <!-- Row -->
+                                            <div class="row no-gutters card-shadow">
+                                                <div class="col-md-5 pro-pic"
+                                                     style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg) center center no-repeat / cover">
+                                                    <div class="card-img-overlay">
+                                                        <ul class="list-inline position-relative text-center">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-facebook"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-twitter"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-instagram"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-behance"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 bg-white">
+                                                    <div class="p-4">
+                                                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
+                                                        <p>
+                                                            You can relay on our amazing features list and also our
+                                                            customer services will be great experience.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Row -->
+                                        </div>
+                                    </div>
+                                    <!-- column  -->
+                                    <div class="col-lg-6">
+                                        <div class="card card-shadow border-0 mb-4">
+                                            <!-- Row -->
+                                            <div class="row no-gutters card-shadow">
+                                                <div class="col-md-5 pro-pic"
+                                                     style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg) center center no-repeat / cover">
+                                                    <div class="card-img-overlay">
+                                                        <ul class="list-inline position-relative text-center">
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-facebook"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-twitter"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-instagram"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a href="#"
+                                                                   class="text-decoration-none d-block text-white px-1">
+                                                                    <i class="icon-social-behance"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 bg-white">
+                                                    <div class="p-4">
+                                                        <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
+                                                        <p>
+                                                            You can relay on our amazing features list and also our
+                                                            customer services will be great experience.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Row -->
+                                        </div>
+                                    </div>
+                                    <!-- column  -->
+                                </div>
+                            </div>
+                        </div>
+                        <h5>L'idée</h5>
+                        <h5>La population cible</h5>
+                        <div class="container mt-3">
+                            <img src="~/Images/obama.jpg">
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.
+                        </p>
+                    </div>
+
+                    <div id="menu1" class="container tab-pane fade">
+                        <br>
+                        <h3>Le projet</h3>
+                        <p>
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.
+                        </p>
+                        <h5>Le besoin (qui, pour qui, combien)</h5>
+                        <h5>Le plan d'action</h5>
+                        <h5>Les objectifs et jalons</h5>
+                        <h5>Les partenaires</h5>
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <img class="card-img-top" src="~/Images/ouragon.png" alt="Card image"
+                                         style="width:100%;border-radius: 14px;">
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="card-header" style="background-color:white; ">
+                                        <h4 class="card-title">Une second texte de katrina</h4>
+                                        <p class="card-text">
+                                        <p>
+                                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                                            adipiscing
+                                            elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                            enim ad minim
+                                            veniam,
+                                            quis nostrud exercitation ullamco.
+                                        </p></br>
+                                        <p>
+                                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                                            adipiscing
+                                            elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                            enim ad minim
+                                            veniam,
+                                            quis nostrud exercitation ullamco.
+                                        </p>
+                                        <p>
+                                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                                            adipiscing
+                                            elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                            enim ad minim
+                                            veniam,
+                                            quis nostrud exercitation ullamco.
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu2" class="container tab-pane fade">
+                        <br>
+                        <h3>Contreparties</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.
+                        </p>
+                        <div class="card" style="border-radius: 14px;">
+                            <h4 class="card-title">Ouragon de Cathrina, USA</h4>
+                            <p>
+                                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+                                elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam,
+                                quis nostrud exercitation ullamco.
+                            </p>
+                            <p>
+                                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+                                elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam,
+                                quis nostrud exercitation ullamco.
+                            </p>
+                            <p>
+                                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+                                elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam,
+                                quis nostrud exercitation ullamco.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div id="menu3" class="container tab-pane fade ">
+                        <br>
+                        <h3>FAQ</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.
+                        </p>
+                    </div>
+                    <div id="menu4" class="container tab-pane fade">
+                        <br>
+                        <h3>Commentaires</h3>
+                        <h5>Commentaires des passants ou des participants</h5>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.
+                        </p>
+                    </div>
+                    <div id="menu5" class="container tab-pane fade">
+                        <br>
+                        <h3>Témoignages</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.
+                        </p>
+                        <h5>Témoignages: Partenaire</h5>
+                        <h5>Témoignages: Bénéficiares</h5>
+                        <h5>Témoignages: Bénévoles de l'association</h5>
+                    </div>
+                    <div id="menu6" class="container tab-pane fade">
+                        <br>
+                        <h3>Contributions</h3>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.
+                        </p>
+                        <h5>Historique des contributions</h5>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
         </div>
 
     </div>
+</div>
 
+<div class="mt-5 p-4 bg-dark text-white text-center">
+    <p>Footer</p>
 </div>
