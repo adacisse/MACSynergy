@@ -1,4 +1,4 @@
-
+@model Projet2Crowdfunding.ViewModels.AccountViewModel
 
 @{
     Layout = "_LayoutDuSite2";
@@ -18,35 +18,43 @@
 
 <fieldset>
 
+    @using (Html.BeginForm())
+    {
+        <h1>Bienvenue</h1>
+        <br />
 
-    <h1>Bienvenue</h1>
-    <br />
-    <input type="text"
-           name="email"
-           placeholder="Adresse e-mail" />
+        @*@Html.TextBoxFor(model => model.Utilisateur.Prenom, new { @class = "form-control", placeholder = "Nom" })
+        @Html.LabelFor(model => model.Utilisateur.Prenom)
+        @Html.ValidationMessageFor(model => model.Utilisateur.Prenom)*@
+        <input type="text"
+               name="email"
+               placeholder="Adresse e-mail" />
 
-    <br>
-    <br />
-    <input type="password"
-           name="password"
-           placeholder="Mot de passe" />
+        <br>
+        <br />
+        <input type="password"
+               name="password"
+               placeholder="Mot de passe" />
 
-    <br />
-    <br />
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
-        <label class="form-check-label">Rester connecté?</label>
-    </div>
-    <br />
-    <br />
-    <a href="ForgetPassword">Mot de passe oublié?</a>
-    <br />
-    <br />
-    <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-    <br />
-    <br />
-    <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
-    <a href="/Account/InscriptionChoice">Inscrivez-vous!</a>
+        <br />
+        <br />
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
+            <label class="form-check-label">Rester connecté?</label>
+        </div>
+        <br />
+        <br />
+        <a href="ForgetPassword">Mot de passe oublié?</a>
+        <br />
+        <br />
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+        <br />
+        <br />
+        <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
+        <a href="/Account/InscriptionChoice">Inscrivez-vous!</a>
+    }
+
+
 
 </fieldset>
 

@@ -42,8 +42,9 @@ namespace Projet2Crowdfunding.Controllers
                 {
                     var userClaims = new List<Claim>()
                     {
+                        new Claim(ClaimTypes.NameIdentifier, account.Mail),
                         new Claim(ClaimTypes.Name, account.Id.ToString()), //appelé dans la ligne 25
-                        //new Claim(ClaimType.Role, utilisateur.Role.ToString());
+                        new Claim(ClaimTypes.Role, account.Role)
                     };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
@@ -79,7 +80,9 @@ namespace Projet2Crowdfunding.Controllers
 
                 var userClaims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.Name, idAccount.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, account.Mail),
+                    new Claim(ClaimTypes.Name, account.Id.ToString()), //appelé dans la ligne 25
+                    new Claim(ClaimTypes.Role, account.Role)
                 };
 
                 var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
@@ -109,7 +112,9 @@ namespace Projet2Crowdfunding.Controllers
 
                 var userClaims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.Name, idAccount.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, account.Mail),
+                    new Claim(ClaimTypes.Name, account.Id.ToString()), //appelé dans la ligne 25
+                    new Claim(ClaimTypes.Role, account.Role)
                 };
 
                 var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
