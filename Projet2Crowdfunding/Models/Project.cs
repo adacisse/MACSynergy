@@ -57,7 +57,6 @@ namespace Projet2Crowdfunding.Models
         [Column(TypeName = "text")]
         [Display(Name = "Don matériel")]
         public string MaterialDonation { get; set; }
-
-
+        
     }
 }

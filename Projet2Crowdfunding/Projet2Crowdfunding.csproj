@@ -21,5 +21,9 @@
   <ItemGroup>
     <Folder Include="Views\Account\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="wwwroot\css\LogoEtImageAssociation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\css\LogoAssociation\" />
   </ItemGroup>
 </Project>
