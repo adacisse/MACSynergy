@@ -43,7 +43,8 @@ namespace Projet2Crowdfunding.Service
                 LastName = lastName,
                 Newsletter = false,
                 ConfidentialityCharter = true,
-                AccountId = idAccount
+                AccountId = idAccount,
+                //Gender = null
             };
 
             account.Role = "participant";

@@ -1,4 +1,4 @@
-@model Projet2Crowdfunding.ViewModels.AccountViewModel
+@model Projet2Crowdfunding.ViewModels.ParticipantViewModel
 @{
     Layout = "_LayoutDuSite";
 
@@ -23,13 +23,12 @@
 
 <fieldset>
 
-    <label for="Vous avez déja un compte MACSynergie?">Vous avez déja un compte Macsynergy?</label>
-    <a href="/Account/LoginPage" class="btn btn-success">Connectez-vous!</a>
+    <p>CRÉATION D'UN COMPTE PARTICIPANT</p>
     <br />
     <br />
 
-    <div>
-
+    @using (Html.BeginForm())
+    {
         @Html.LabelFor(model => model.Participant.LastName)
         @Html.TextBoxFor(model => model.Participant.LastName, new { placeholder = "Nom" })
         <br />
@@ -42,25 +41,35 @@
 
         @Html.LabelFor(model => model.Account.Mail)
         @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
-        @Html.ValidationMessageFor(model => model.Account.Mail)
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Account.Mail)
+        </div>
+
         <br>
         <br>
 
         @Html.LabelFor(model => model.Account.Password)
-        @Html.TextBoxFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
-        @Html.ValidationMessageFor(model => model.Account.Password)
+        @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Account.Password)
+        </div>
         <br />
         <br />
 
         @Html.CheckBoxFor(m => m.Participant.ConfidentialityCharter)
         @Html.LabelFor(model => model.Participant.ConfidentialityCharter, "J'ai lu et j'accepte la politique de confidentialité de Macsynergy")
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Participant.ConfidentialityCharter)
+        </div>
 
         <br />
         <br />
 
         <button id="bouton-log" type="submit">CREER UN COMPTE</button>
+    }
 
-    </div>
+
+
 </fieldset>
 
 @section Footer {}
