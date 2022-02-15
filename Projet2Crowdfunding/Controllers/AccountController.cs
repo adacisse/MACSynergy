@@ -160,6 +160,15 @@ namespace Projet2Crowdfunding.Controllers
             return View(projectOwner);
         }
 
+        public IActionResult InscriptionChoice()
+        {
+            return View();
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
 
         public ActionResult Deconnexion()
         {
