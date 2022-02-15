@@ -57,9 +57,9 @@ namespace Projet2Crowdfunding.Controllers
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
 
-                    return Redirect("/Home/Index");
+                    return Redirect("/");
                 }
-                ModelState.AddModelError("Account.Mail", "Email et/ou mot de passe incorrect(s)");
+                ModelState.AddModelError("Account.Password", "Email et/ou mot de passe incorrect(s)");
             }
             return View(viewModel);
         }
