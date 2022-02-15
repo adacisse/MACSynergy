@@ -25,7 +25,7 @@ namespace Projet2Crowdfunding.Controllers
             if (viewModel.Authentify)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                return View(viewModel);
+                return Redirect("/Home/Index");
             }
             return View(viewModel);
         }
