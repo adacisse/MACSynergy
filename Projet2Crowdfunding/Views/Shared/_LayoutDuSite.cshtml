@@ -28,13 +28,8 @@
                     <div class="col-md-2 d-flex justify-content-center">
                         <a href="/Home/Index"><img src="~/Images/logoMacSynergy.png" alt="MacSynergy" /></a>
                     </div>
-                    <div class="col-md-8 d-flex justify-content-around">
-                        @RenderSection("Menu")
-                        @*@RenderSection("Menu", required: true)*@
-                    </div>
-                    <div class="col-md-2 d-flex justify-content-end align-items-center">
-                        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-                    </div>
+                    @RenderSection("Menu")
+                    @*@RenderSection("Menu", required: true)*@
                 </div>
             </div>
         </nav>
@@ -50,7 +45,7 @@
     <div class="newsletter-subscribe container">
         <div class="container">
             @RenderSection("Footer")
-            @*@RenderSection("Menu", required: true)*@
+            @*@RenderSection("Footer", required: false)*@
         </div>
     </div>
 

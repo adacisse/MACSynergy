@@ -21,8 +21,9 @@ namespace Projet2Crowdfunding.Controllers
        
         public IActionResult LoginPage()
         {
-           AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
-            if (viewModel.Authentify)
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
                 return Redirect("/Home/Index");
@@ -56,7 +57,7 @@ namespace Projet2Crowdfunding.Controllers
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
 
-                    return Redirect("/");
+                    return Redirect("/Home/Index");
                 }
                 ModelState.AddModelError("Account.Mail", "Email et/ou mot de passe incorrect(s)");
             }
