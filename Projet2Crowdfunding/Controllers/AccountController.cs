@@ -71,13 +71,15 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult GpInscription(Account account, Administrator administrator)
+        public IActionResult GpInscription(AccountViewModel viewModel)
         {
-            if (ModelState.IsValid)
+            if (viewModel.Account.Mail != null && viewModel.Account.Password != null &&
+                    viewModel.Administrator.FirstName != null && viewModel.Administrator.LastName != null &&
+                    viewModel.Administrator.PhoneNumber != null && viewModel.Administrator.Type != null)
             {
                 int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                int idAdministrator = accountService.CreateAdministrator(account, idAccount, administrator.LastName,
+                int idAdministrator = accountService.CreateAdministrator(idAccount, administrator.LastName,
                     administrator.FirstName, administrator.PhoneNumber);
 
                 var userClaims = new List<Claim>()
@@ -152,7 +154,7 @@ namespace Projet2Crowdfunding.Controllers
                 {
                     int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                    int idProjectOwner = accountService.CreateProjectOwner(account, idAccount, projectOwner.Name,
+                    int idProjectOwner = accountService.CreateProjectOwner(idAccount, projectOwner.Name,
                         projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
                         projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
                         projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,

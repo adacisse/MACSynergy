@@ -17,7 +17,7 @@ namespace Projet2Crowdfunding.Models
 
         [Required]
         [Display(Name = "État")]
-        public Status Status { get; set; }
+        public Status? Status { get; set; }
 
         [MaxLength(100)]
         [Required]
@@ -40,7 +40,7 @@ namespace Projet2Crowdfunding.Models
 
         [Required]
         [Display(Name = "Catégorie")]
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
 
         [Required]
         [Display(Name = "Date de démarrage")]

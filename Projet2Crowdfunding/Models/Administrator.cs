@@ -26,7 +26,7 @@ namespace Projet2Crowdfunding.Models
         public string PhoneNumber { get; set; }
 
         [Required]
-        public AdministratorType Type { get; set; }
+        public AdministratorType? Type { get; set; }
 
         [Required]
         public int? AccountId { get; set; }
