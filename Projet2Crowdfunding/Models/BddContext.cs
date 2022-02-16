@@ -178,6 +178,7 @@ namespace Projet2Crowdfunding.Models
                     LastName = "Equisoain",
                     FirstName = "Cristina",
                     PhoneNumber = "4444444444",
+                    Type = AdministratorType.volunteer,
                     Account = new Account
                     {
                         Id = 6,
@@ -238,7 +239,8 @@ namespace Projet2Crowdfunding.Models
                     "Occitanie, Centre-Val de Loire, Auvergne-Rhône-Alpes, Grand-Es,Hauts-de-France et Pays-de-la-Loire). " +
                     "Organisées autour de trois missions, hébergement" +
                     "soin et insertion," +
-                    " ses activités sont multiples : maraudes, accueil et l’hébergement de personnes en situation d’addiction, activités de réinsertion sociale et professionnelle à destination de personnes en rupture d’emploi ou handicapées, hébergement et accompagnement de femmes victimes de violences, soins de personnes en situation de précarité, hébergement et accompagnement de personnes en souffrance psychique",
+                    " ses activités sont multiples : maraudes, accueil et l’hébergement de personnes en situation d’addiction, activités de réinsertion sociale et professionnelle à destination de personnes en rupture d’emploi ou handicapées," +
+                    " hébergement et accompagnement de femmes victimes de violences, soins de personnes en situation de précarité, hébergement et accompagnement de personnes en souffrance psychique",
                     HyperLink = "https://aurore.asso.fr/association",
 
                     VolunteerDescritpion = "Les bénévoles nous apportent du bien - être et du savoir," +
@@ -329,8 +331,61 @@ namespace Projet2Crowdfunding.Models
                                Password = "bww"
                            }
 
-                       }
-                );
+                       },
+                            new ProjectOwner
+                            {
+                                Id = 3,
+                                PhoneNumber = "4499444444",
+                                Name = "Play International",
+                                Summary = "PLAY International, est née en 1999 d’une conviction profonde : le sport est à la fois un droit fondamental" +
+                                " et une façon de résoudre les problématiques de nos sociétés. ",
+                                Description = "Ce postulat a inspiré les premières initiatives de terrain de l’ONG dans des contextes d’urgence et de post - urgence.En Bolivie, " +
+                                "au Sri Lanka ou en Afghanistan, PLAY a été confronté à la nécessité prégnante d’inventer des dispositifs d’accompagnement permettant" +
+                                " à des enfants de surmonter un traumatisme ou apprendre comment se prémunir d’une maladie chronique.Lors de sa première décennie d’existence," +
+                                "en intervenant auprès de plusieurs centaines de milliers de bénéficiaires,PLAY et ses partenaires ont démontré que :" +
+                                "- Le sport est un langage universel permettant de mobiliser comme peu d’activités sont capable de le faire." +
+                                "- Le sport et le jeu ont pleinement leurs places dans le secteur humanitaire et peuvent apporter des réponses concrètes à des problématiques sociales et sanitaires," +
+                                "y compris dans les situations les plus précaires." +
+                                " L’activité physique et sportive est une matière permettant de faire beaucoup avec peu,notamment lorsque l’on se focalise sur le volet pédagogique. ",
+                                HyperLink = "https://www.play-international.org/",
+
+                                VolunteerDescritpion = "DEVENIR BÉNÉVOLE PLAY International suscite votre intérêt ? Vous avez des compétences dans un domaine précis," +
+                                "et vous souhaitez vous engager en faveur d’une association défendant des valeurs éducatives ? Intégrez notre communauté de bénévoles et rejoignez l’équipe! Nous recherchons essentiellement des bénévoles pour la course Vertigo et dans des domaines spécifiques tels que la photographie," +
+                                "de la traduction et le graphisme. CONTACTEZ - NOUS" +
+                                "REJOINDRE LE GROUPE FACEBOOK DES BÉNÉVOLES",
+
+                                Partnership = "PROPARCO, ID4D, Fond francais pour l'environnement mondial ",
+
+                                Type = ProjectOwnerType.ONG,
+                                AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofPlay",
+                                Image = "/src/wwwroot/css/LogoEtImageAssociation/PlayLogo",
+                                Status = AssoStatus.registered,
+
+                                Newsletter = true,
+                                ConfidentialityCharter = true,
+
+                                Address = new Address
+                                {
+                                    Id = 7,
+                                    StreetName = "rue de Vaugirard",
+                                    StreetNumber = "173",
+                                    ZipCode = "75015",
+                                    City = "Paris",
+                                    Country = "France"
+                                },
+
+
+                                Account = new Account
+                                {
+                                    Id = 11,
+                                    Mail = "playinternational@gmail.com",
+                                    Password = "play"
+                                }
+
+                            }
+                        );
+
+                        
 
 
             ////Instances Project
@@ -374,8 +429,8 @@ namespace Projet2Crowdfunding.Models
 
              Picture = "/src/wwwroot/css/LogoEtImageAssociation/imgProjetAurore",
              Category = Category.health,
-                            StartDate = DateTime.Parse("2021-12-12"),
-                            EndDate = DateTime.Parse("2022-04-12"),
+             StartDate  = new DateTime(2021, 11, 9, 16, 5, 7, 123),
+             EndDate = new DateTime(2022, 5, 9, 16, 5, 7, 123),
                             Video = "/src/wwwroot/css/LogoEtImageAssociation/VideoAurore",
              MaterialDonation = "Médicaments, Matériaux informatiques",
 
@@ -408,92 +463,87 @@ namespace Projet2Crowdfunding.Models
 
              Picture = "/src/wwwroot/css/LogoEtImageAssociation/imgWwf",
              Category = Category.environment,
-             StartDate = DateTime.Parse("2022-01-09") ,
-             EndDate = DateTime.Parse("2022-07-09"),
+             StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
+             EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
              Video = "/src/wwwroot/css/LogoEtImageAssociation/Videowwf",
              MaterialDonation = "Nourriture"
-         }
+         },
 
+
+         new Project
+         {
+             Id = 3,
+             Status = Status.published,
+             Name = "Préserver les mangroves du Manambolo",
+             Summary = "Situées sur le littoral Ouest de l’île de Madagascar, les mangroves de la région du Manambolo sont d’une importance cruciale pour les populations locales." +
+             "Elles n’en sont pas moins menacées : leur surexploitation et le changement climatique les détériorent de manière considérable.",
+
+             Descritpion = "Un écosystème indispensable Les mangroves jouent un rôle essentiel dans la résilience des écosystèmes face au changement climatique et dans la stabilisation des zones côtières." +
+             "Daniel Vallauri, Chargé du programme Forêts au WWF France 60 000 hectares continus le long du littoral malgache," +
+             "les mangroves sont indispensables aux populations locales.Elles leur procurent nourriture, bois de chauffage ainsi que matériaux de construction pour leurs habitations.Elles sont aussi dotées de vertus médicinales." +
+             "Face au changement climatique et aux phénomènes naturels extrêmes, la mangrove joue également un rôle capital puisqu’elle protège l’intérieur de la côte des dégâts cycloniques et de l’érosion.Enfin,elle filtre l’eau et stocke le carbone," +
+             "comme le font les forêts terrestres. A Madagascar,es mangroves de la région du Manambolo protègent notamment la future Aire Marine Protégée de l’archipel des Îles Barren contre la sédimentation venant du versant ouest de l’île.Elles garantissent également la protection de la zone humide de Manambolomaty(classée site RAMSAR)," +
+             "de la forêt primaire de Tsimembo ainsi que des plaines rizicoles de Bemamba et de Soahany contre les effets néfastes de l’augmentation du niveau de la mer causée par le changement climatique." +
+             "C’est grâce à ces écosystèmes uniques que poissons et invertébrés migrent vers les récifs et la haute mer afin de s’y réfugier" +
+             " pour se nourrir et se reproduire.La pêche représente dans la région la principale source de revenus," +
+             " mais utilise encore des techniques non durables et les techniques de stockage et de conditionnement sont peu efficaces." +
+             " Sur 15 kg de crabes pêchés par pêcheur et par jour en moyenne, 15% sont perdus du fait des mauvaises conditions de stockage. " +
+             "Ce chiffre grimpe jusqu’à 50% lors de la saison des pluies. Le retard de développement chez les pêcheurs du Manambolo s’explique, entre autres," +
+             "par leur isolement et la difficulté qu’ils ont à accéder au marché régional.Par conséquent," +
+             "leur poids dans les négociations avec les collecteurs est faible bien qu’ils soient organisés en groupement informel.Les communautés de base(COBA), acteurs clés pour la gestion des ressources naturelles," +
+             "manquent souvent de ressources techniques et organisationnelles pour être pleinement efficaces et aucune politique n’intègre véritablement les enjeux de gestion durable des mangroves.",
+
+             Picture = "/src/wwwroot/css/LogoEtImageAssociation/mangroveimage",
+             Category = Category.environment,
+             StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
+             EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
+             Video = "/src/wwwroot/css/LogoEtImageAssociation/mangrovevideo",
+             MaterialDonation = "Barques motorisées,"
+         },
+
+         new Project
+         {
+             Id = 4,
+             Status = Status.published,
+             Name = "EJO - PROJET D’APPUI POUR UNE ÉDUCATION ACTIVE ET INCLUSIVE DE TOUS LES ENFANTS.",
+
+             Summary = "Ce programme sera déployé jusqu'en 2022 au Burundi, au Kosovo, au Sénégal," +
+             " au Libéria et, dans le cadre de son incubateur, dans d'autres pays d'Afrique de l'Ouest." +
+             " Il contribuera à rendre accessible une éducation de qualité (Objectif du Développement Durable n°4) " +
+             "pour les publics les plus vulnérables comme les filles, les enfants en situation de handicap ou les minorités" +
+             " communautaires.",
+
+             Descritpion = "ace aux enjeux de qualité de l’éducation et de son accès par les populations " +
+             "les plus vulnérables, PLAY propose un projet reposant sur la création et la diffusion d’un " +
+             "programme pédagogique fondé entre autre sur la Playdagogie, méthode de pédagogie active et " +
+             "participative développée par l’ONG. Ces contenus seront diffusés à travers des programmes de" +
+             " formations d’enseignants et d’animateurs sportifs recevant les kits thématiques. " +
+             "Projet déployé dans les secteurs de l’éducation formelle et informelle, il s’attachera" +
+             " à créer des passerelles entre les deux pour renforcer la continuité de la prise en charge" +
+             " éducative des enfants. Il s’agira, lorsque possible, de travailler sur l’intégration des " +
+             "méthodes socio-sportives dans les cursus de formation des enseignants et animateurs sportifs" +
+             " en collaboration étroite avec les pouvoirs publics." +
+             "RÉSULTATS ATTENDUSPlus de 80 000 enfants, dont 40 % de filles qui acquièrent une meilleure compréhension des enjeux de scolarisation," +
+             "et compétences de vie liées à l’inclusion de leurs pairs en situation de vulnérabilité." +
+             "Plus de 1000 professionnels éducatifs formés qui acquièrent des compétences permettant de déployer des séances de jeux socio - sportifs et de Playdagogie reconnues officiellement par les Ministères des Sports," +
+             "et de l’Education nationale." +
+             "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
+
+             Picture = "/src/wwwroot/css/LogoEtImageAssociation/Playimage",
+             Category = Category.education,
+             StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
+             EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
+             Video = "/src/wwwroot/css/LogoEtImageAssociation/PlayVideo",
+             MaterialDonation = "Materiaux sportifs,"
+         }
      );
 
 
 
-            //new ProjectOwner
-            //{
-            //    Id = 2,
-            //    PhoneNumber = "4499455444",
-            //    Name = ,
-            //    Summary = ,
-            //    Description = ,
-            //    HyperLink = ,
-            //    VolunteerDescritpion = ,
-            //    Partnership = ,
-            //    Type = ProjectOwnerType.association,
-            //    AssociationProof = ,
-            //    Image = ,
-            //    Status = AssoStatus.published,
-            //    Address = new Address
-            //    {
-            //        Id = 6,
-            //        StreetName = "Street of Wansington",
-            //        StreetNumber = "31A",
-            //        ZipCode = "58943",
-            //        City = "Liverpool",
-            //        Country = "Anglaterre"
-            //    },
-            //    Account = new ProjectOwnerAccount
-            //    {
-            //        Id = 2,
-            //        Newsletter = false,
-            //        ConfidentialityCharter = true,
-            //        Account = new Account
-            //        {
-            //            Id = 10,
-            //            Mail = "",
-            //            Password = ""
-            //        }
-            //    }
-            //},
+            
 
 
-
-            //            new ProjectOwner
-            //            {
-            //                Id = 3,
-            //                PhoneNumber = "4499444444",
-            //                Name = ,
-            //                Summary = ,
-            //                Description = ,
-            //                HyperLink = ,
-            //                VolunteerDescritpion = ,
-            //                Partnership = ,
-            //                Type = ProjectOwnerType.association,
-            //                AssociationProof = ,
-            //                Image = ,
-            //                Status = AssoStatus.registered,
-            //                Address = new Address
-            //                {
-            //                    Id = 7,
-            //                    StreetName = "Calle de Barcelona",
-            //                    StreetNumber = "52",
-            //                    ZipCode = "36666",
-            //                    City = "Madrid",
-            //                    Country = "Espagne"
-            //                },
-            //                Account = new ProjectOwnerAccount
-            //                {
-            //                    Id = 3,
-            //                    Newsletter = true,
-            //                    ConfidentialityCharter = true,
-            //                    Account = new Account
-            //                    {
-            //                        Id = 11,
-            //                        Mail = "",
-            //                        Password = ""
-            //                    }
-            //                }
-            //            },
-
+            
             //            new ProjectOwner
             //            {
             //                Id = 4,
