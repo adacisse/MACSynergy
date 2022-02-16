@@ -1,8 +1,10 @@
+@model Projet2Crowdfunding.ViewModels.AccountViewModel
 @{
     Layout = "_LayoutDuSite";
 
 }
-
+<link rel="stylesheet" type="text/css" href="~/css/Login.css">
+<link rel="stylesheet" type="text/css" href="~/css/Home.css">
 
 <title>Inscription porteur de projet</title>
 
@@ -21,92 +23,138 @@
 
 <fieldset>
 
-    <h1>Bienvenue</h1>
-
-    <label for="Vous avez déja un compte MACSynergY?">Vous avez déja un compte Macsynergy?</label>
-    <a href="LoginPage" class="btn btn-success">Connectez-vous!</a>
-    <br />
-    <input type="text"
-           id="nom"
-           placeholder="Nom association">
-    <input type="text"
-           id="nom"
-           placeholder="Nom">
-    <br />
-    <br />
-    <input type="text"
-           id="prenom"
-           placeholder="Prénom">
-
+    <p>CRÉATION D'UN COMPTE PORTEUR DE PROJET</p>
     <br />
     <br />
 
-    <input type="text"
-           id="Adresse association"
-           placeholder="Adresse association">
-    <br />
-    <br />
+    @using (Html.BeginForm())
+    {
 
-    <input type="text"
-           id="mail"
-           placeholder="Adresse e-mail">
-    <br />
-    <br />
-    <input type="text"
-           id="Password"
-           placeholder="Mot de passe">
-    <br />
+<div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-    <input type="text"
-           id="Phonenumber"
-           placeholder="Numero de téléphone">
-    <br />
+    <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
 
-    <input type="text"
-           id="summary"
-           placeholder="Resumé du projet">
+    <br /><br />
 
-    <input type="text"
-           id="Description"
-           placeholder="Description du projet">
+    @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
+    @Html.TextBoxFor(model => model.Account.Mail)
 
-    <input type="text"
-           id="Hyperlink"
-           placeholder="Lien hypertexte">
+    <br /><br />
 
-    <input type="text"
-           id="VolonteerDescription"
-           placeholder="Description pour le volontariat">
+    @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
+    @Html.PasswordFor(model => model.Account.Password)
 
-    <input type="text"
-           id="partnerShip"
-           placeholder="Partenariat">
+    <br /><br />
 
-    <input type="text"
-           id="Phonenumber"
-           placeholder="Numero de téléphone">
-    <label for="Homme">Association </label>
-    <input type="radio" name="gender" value="Unspecified" />
-    <label for="Femme">ONG </label>
-    <input type="radio" name="gender" value="Unspecified" />
-    <br />
-    <br />
-    <label for="Sport">Catégorie </label>
-    <select asp-for="sport">
-        <option value="1">Animal</option>
-        <option value="2">Environnement</option>
-        <option value="3">Humanitaire</option>
-        <option value="3">Education</option>
-        <option value="3">Santé</option>
-        <option value="3">Besoins élémentaires</option>
-        <option value="3">Autre</option>
-    </select>
-    <br />
-    <br />
-    <input class="form-check-input" type="checkbox" id="check2" name="Confidentialite" value="something">
-    <label class="form-check-label">J'ai lu et j'accepte la politique de confidentialité de Macsynergy</label>
-    <br />
-    <br />
+    @Html.LabelFor(model => model.ProjectOwner.Name) <span> : &nbsp;</span>
+    @Html.TextBoxFor(model => model.ProjectOwner.Name)
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.ProjectOwner.Type) <span> : &nbsp;</span>
+    <span>Association </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "association") <span>&nbsp;</span>
+    <span>ONG </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "ONG")
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.ProjectOwner.PhoneNumber) <span> : &nbsp;</span>
+    @Html.TextBoxFor(model => model.ProjectOwner.PhoneNumber)
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.ProjectOwner.Summary)
+    @Html.TextAreaFor(model => model.ProjectOwner.Summary, new { @cols = "80", @rows = "4" })
+
+    <br /><br />
+
+    @Html.LabelFor(model => model.ProjectOwner.AssociationProof) <span> : &nbsp;</span>
+    @Html.TextBoxFor(model => model.ProjectOwner.AssociationProof)
+
+    <div>
+
+        <br /><br />
+
+        <p style="color:dimgray">ADRESSE PHYSIQUE</p>
+
+        @Html.LabelFor(model => model.ProjectOwner.Address.StreetName) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetName)
+
+        <br /><br />
+
+        @Html.LabelFor(model => model.ProjectOwner.Address.StreetNumber) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetNumber)
+
+        <br /><br />
+
+        @Html.LabelFor(model => model.ProjectOwner.Address.City) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.ProjectOwner.Address.City)
+
+        <br /><br />
+
+        @Html.LabelFor(model => model.ProjectOwner.Address.ZipCode) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.ProjectOwner.Address.ZipCode)
+
+        <br /><br />
+
+        @Html.LabelFor(model => model.ProjectOwner.Address.Country) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.ProjectOwner.Address.Country)
+
+    </div>
+
+    <br/><br/>
+
+    <div class="text-danger">
+        @Html.ValidationMessageFor(model => model.ProjectOwner)
+    </div>
+
+</div>
+
+        <br /><br />
+
+        <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+
+            <h6 style="font-size: 26px; text-align: left">CHAMPS NON REQUIS</h6>
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.ProjectOwner.Description) <br/>
+            @Html.TextAreaFor(model => model.ProjectOwner.Description, new { @cols = "80", @rows = "8" })
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.ProjectOwner.HyperLink) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.ProjectOwner.HyperLink)
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.ProjectOwner.VolunteerDescritpion) <br/>
+            @Html.TextAreaFor(model => model.ProjectOwner.VolunteerDescritpion, new { @cols = "80", @rows = "8" })
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.ProjectOwner.Partnership) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.ProjectOwner.Partnership)
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.ProjectOwner.Image) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.ProjectOwner.Image)
+
+        </div>
+
+        <br /><br />
+
+        @Html.CheckBoxFor(m => m.ProjectOwner.ConfidentialityCharter)
+        @Html.LabelFor(model => model.ProjectOwner.ConfidentialityCharter, "J'ai lu et j'accepte la politique de confidentialité de Macsynergy")
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.ProjectOwner.ConfidentialityCharter)
+        </div>
+
+        <br /><br />
+
+        <button id="bouton-log" type="submit">CREER UN COMPTE</button>
+
+    }
 
 </fieldset>
 

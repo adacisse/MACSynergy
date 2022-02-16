@@ -21,16 +21,16 @@ namespace Projet2Crowdfunding.Models
 
         [MaxLength(45)]
         [Required]
-        [Display(Name = "Nom")]
+        [Display(Name = "Nom de l'organisation")]
         public string Name { get; set; }
 
         [Column(TypeName= "text")]
         [Required]
-        [Display(Name = "Résumé")]
+        [Display(Name = "Résumé de l'organisation")]
         public string Summary { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "Description")]
+        [Display(Name = "Description de l'organisation")]
         public string Description { get; set; }
 
         [MaxLength(100)]
@@ -50,7 +50,7 @@ namespace Projet2Crowdfunding.Models
 
         [MaxLength(250)]
         [Required]
-        [Display(Name = "Justificatif")]
+        [Display(Name = "Justificatif de l'organisation")]
         public string AssociationProof { get; set; }
 
         [MaxLength(250)]
@@ -65,7 +65,6 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Charte de Confidentialité")]
         public Boolean ConfidentialityCharter { get; set; }
 
-        [Required]
         public Boolean Newsletter { get; set; }
 
         [Required]

@@ -1,3 +1,4 @@
+@model Projet2Crowdfunding.ViewModels.AccountViewModel
 @{
     Layout = "_LayoutDuSite";
 
@@ -22,59 +23,71 @@
 
 <fieldset>
 
-    <h1>Bienvenue</h1>
-
-    <label for="Vous avez déja un compte MACSynergie?">Vous avez déja un compte Macsynergy?</label>
-    <a href="LoginPage.html" class="btn btn-success">Connectez-vous!</a>
-    <br />
-    <br />
-    <label for="nom"> Nom </label>
-    <br />
-    <input type="text" id="Nom=">
-    <br />
-    <br />
-    <label for="prenom">Prenom </label>
-    <br />
-    <input type="text" id="prenom">
+    <p>CRÉATION D'UN COMPTE GESTIONNAIRE</p>
     <br />
     <br />
 
-    <label for="Email">Adresse e-mail </label>
-    <br />
-    <input type="text" id="Email">
-    <br>
-    <br>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.Administrator.LastName) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Administrator.LastName)
 
-    <label for="Mot de passe">Mot de passe </label>
-    <br />
-    <input type="text" id="Mot de passe">
-    <br />
-    <br />
-    <!-- <label for="Numero de rue">Numéro de rue:</label>
-                    <input type="text" id="Adresse ">
-            <br />
-            <br />
-            <label for="Rue">Rue:</label>
-            <input type="text" id="Adresse ">
-    <br />
-    <br />
-    <label for="Ville">Ville:</label>
-    <input type="text" id="adresse">
-    <br />
-    <br />
-    <label for="Pays">Pays:</label>
-    <input type="text" id="Adresse">
-    <br />
-    <br /> -->
+        <br />
+        <br />
 
-    <label for="Homme">Salarié </label>
-    <input type="radio" name="work" value="Unspecified" />
+        @Html.LabelFor(model => model.Administrator.FirstName) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Administrator.FirstName)
 
-    <label for="Femme">Bénévole </label>
-    <input type="radio" name="work" value="Unspecified" />
-    <br />
-    <br />
-    <input type="submit" value="S'inscrire" />
+        <br />
+        <br />
+
+        @Html.LabelFor(model => model.Administrator.PhoneNumber) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Administrator.PhoneNumber)
+
+        <br />
+        <br />
+
+        @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Account.Mail)
+
+        <br>
+        <br>
+
+        @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
+        @Html.PasswordFor(model => model.Account.Password)
+
+        <br />
+        <br />
+        <!-- <label for="Numero de rue">Numéro de rue:</label>
+                        <input type="text" id="Adresse ">
+                <br />
+                <br />
+                <label for="Rue">Rue:</label>
+                <input type="text" id="Adresse ">
+        <br />
+        <br />
+        <label for="Ville">Ville:</label>
+        <input type="text" id="adresse">
+        <br />
+        <br />
+        <label for="Pays">Pays:</label>
+        <input type="text" id="Adresse">
+        <br />
+        <br /> -->
+
+        @Html.LabelFor(model => model.Administrator.Type) <span> : &nbsp;</span>
+        <span>Salarié </span> @Html.RadioButtonFor(model => model.Administrator.Type, "employee") <span>&nbsp;</span>
+        <span>Bénévole </span> @Html.RadioButtonFor(model => model.Administrator.Type, "volunteer")
+
+        <br />
+        <br />
+
+        <button id="bouton-log" type="submit">CREER UN COMPTE</button>
+
+
+    }
+
+
 </fieldset>
 
 

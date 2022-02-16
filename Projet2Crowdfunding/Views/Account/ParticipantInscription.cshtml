@@ -29,18 +29,18 @@
 
     @using (Html.BeginForm())
     {
-        @Html.LabelFor(model => model.Participant.LastName)
-        @Html.TextBoxFor(model => model.Participant.LastName, new { placeholder = "Nom" })
+        @Html.LabelFor(model => model.Participant.LastName) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Participant.LastName)
         <br />
         <br />
 
-        @Html.LabelFor(model => model.Participant.FirstName)
-        @Html.TextBoxFor(model => model.Participant.FirstName, new { placeholder = "Prénom" })
+        @Html.LabelFor(model => model.Participant.FirstName) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Participant.FirstName)
         <br />
         <br />
 
-        @Html.LabelFor(model => model.Account.Mail)
-        @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
+        @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
+        @Html.TextBoxFor(model => model.Account.Mail)
         <div class="text-danger">
             @Html.ValidationMessageFor(model => model.Account.Mail)
         </div>
@@ -48,8 +48,8 @@
         <br>
         <br>
 
-        @Html.LabelFor(model => model.Account.Password)
-        @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
+        @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
+        @Html.PasswordFor(model => model.Account.Password)
         <div class="text-danger">
             @Html.ValidationMessageFor(model => model.Account.Password)
         </div>
