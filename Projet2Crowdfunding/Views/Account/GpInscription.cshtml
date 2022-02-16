@@ -23,7 +23,9 @@
 
 <fieldset>
 
-    <h1>Bienvenue</h1>
+    <p>CRÉATION D'UN COMPTE GESTIONNAIRE</p>
+    <br />
+    <br />
 
     @using (Html.BeginForm())
     {
@@ -73,7 +75,7 @@
         <br />
         <br /> -->
 
-        @Html.LabelFor(model => model.Administrator.Type) <span> : &nbsp;</span> 
+        @Html.LabelFor(model => model.Administrator.Type) <span> : &nbsp;</span>
         <span>Salarié </span> @Html.RadioButtonFor(model => model.Administrator.Type, "employee") <span>&nbsp;</span>
         <span>Bénévole </span> @Html.RadioButtonFor(model => model.Administrator.Type, "volunteer")
 

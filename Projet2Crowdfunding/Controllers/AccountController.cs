@@ -152,9 +152,9 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.Account.Password != null && viewModel.ProjectOwner.PhoneNumber != null && 
                 viewModel.ProjectOwner.Name != null && viewModel.ProjectOwner.Summary != null &&
                 viewModel.ProjectOwner.Type != null && viewModel.ProjectOwner.AssociationProof != null &&
-                viewModel.ProjectOwner.Status != null && viewModel.ProjectOwner.Address.StreetName != null &&
-                viewModel.ProjectOwner.Address.StreetNumber != null && viewModel.ProjectOwner.Address.ZipCode != null &&
-                viewModel.ProjectOwner.Address.City != null && viewModel.ProjectOwner.Address.Country != null)
+                viewModel.ProjectOwner.Address.StreetName != null && viewModel.ProjectOwner.Address.StreetNumber != null && 
+                viewModel.ProjectOwner.Address.ZipCode != null && viewModel.ProjectOwner.Address.City != null && 
+                viewModel.ProjectOwner.Address.Country != null)
             {
                
                 int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
@@ -181,8 +181,10 @@ namespace Projet2Crowdfunding.Controllers
                 return Redirect("/");
             }
            
-            ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "Les champs requises doivent être remplis");
-       
+            ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "La charte de confidentialité doivent être remplis");
+            ModelState.AddModelError("ProjectOwner", "Les champs obligatoires doivent être remplis");
+
+
             return View(viewModel);
         }
 
