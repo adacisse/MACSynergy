@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -35,7 +36,13 @@ namespace Projet2Crowdfunding.Service
             return account.Id;
         }
 
-        public int CreateParticipant(Account account, int idAccount, string lastName, string firstname)
+        public List<Account> GetAllAccounts()
+        {
+            List<Account> accountList = this.bddContext.Accounts.ToList();
+            return accountList;
+        }
+
+        public int CreateParticipant(int idAccount, string lastName, string firstname)
         {
             Participant participant = new Participant()
             {
@@ -47,7 +54,9 @@ namespace Projet2Crowdfunding.Service
                 //Gender = null
             };
 
-            account.Role = "participant";
+            Account account = GetAllAccounts().FirstOrDefault(r => r.Id == idAccount);
+            if (account != null)
+                account.Role = "participant";
 
             this.bddContext.Participants.Add(participant);
             this.bddContext.SaveChanges();

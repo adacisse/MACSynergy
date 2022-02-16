@@ -103,22 +103,24 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult ParticipantInscription(ParticipantViewModel viewModel)
+        public IActionResult ParticipantInscription(AccountViewModel viewModel)
         {
             if (viewModel.Participant.ConfidentialityCharter == true)
             {
-                if (ModelState.IsValid)
+                //if (ModelState.IsValid)
+                if (viewModel.Account.Mail != null && viewModel.Account.Password != null &&
+                    viewModel.Participant.FirstName != null && viewModel.Participant.LastName != null)
                 {
                     int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
 
-                    int idParticipant = accountService.CreateParticipant(viewModel.Account, idAccount, viewModel.Participant.LastName,
+                    int idParticipant = accountService.CreateParticipant(idAccount, viewModel.Participant.LastName,
                         viewModel.Participant.FirstName);
 
                     var userClaims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.NameIdentifier, viewModel.Account.Mail),
-                    new Claim(ClaimTypes.Name, viewModel.Account.Id.ToString()), //appelé dans la ligne 25
-                    new Claim(ClaimTypes.Role, viewModel.Account.Role)
+                    new Claim(ClaimTypes.Name, idAccount.ToString()), 
+                    new Claim(ClaimTypes.Role, "participant")
                 };
 
                     var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");

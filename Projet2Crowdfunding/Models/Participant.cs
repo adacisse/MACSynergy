@@ -24,7 +24,7 @@ namespace Projet2Crowdfunding.Models
         public string FirstName { get; set; }
 
         [Display(Name = "Genre")]
-        public Gender Gender { get; set; }
+        public Gender? Gender { get; set; }
 
         [Column(TypeName = "date")]
         [Display(Name = "Date de naissance")]
