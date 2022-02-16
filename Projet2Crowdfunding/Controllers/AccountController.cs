@@ -19,7 +19,8 @@ namespace Projet2Crowdfunding.Controllers
     {
         private AccountService accountService;
         private IWebHostEnvironment _env;
-        private string fileName;
+        private string fileNameProof;
+        public string fileNameLogo;
         public AccountController(IWebHostEnvironment environment)
         {
             accountService = new AccountService();
@@ -152,7 +153,7 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PPInscriptionAsync(AccountViewModel viewModel, IFormFile AssociationProof)
+        public IActionResult PPInscription(AccountViewModel viewModel, IFormFile AssociationProof)
         {
             if (viewModel.ProjectOwner.ConfidentialityCharter == true && viewModel.Account.Mail != null && 
                 viewModel.Account.Password != null && viewModel.ProjectOwner.PhoneNumber != null && 
@@ -164,11 +165,21 @@ namespace Projet2Crowdfunding.Controllers
             {   
                 if (viewModel.AssociationProof != null)
                 {
-                    fileName = Path.GetFileName(viewModel.AssociationProof.FileName);
+                    fileNameProof = Path.GetFileName(viewModel.AssociationProof.FileName);
                     var filePath = _env.ContentRootPath + "\\wwwroot\\JustificatifsPP";
-                    using (var fileSteam = new FileStream(Path.Combine(filePath, fileName), FileMode.Create))
+                    using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameProof), FileMode.Create))
                     {
                         viewModel.AssociationProof.CopyTo(fileSteam);
+                    }
+                }
+
+                if (viewModel.AssoLogo != null)
+                {
+                    fileNameLogo = Path.GetFileName(viewModel.AssoLogo.FileName);
+                    var filePath = _env.ContentRootPath + "\\wwwroot\\ImageAssos";
+                    using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameLogo), FileMode.Create))
+                    {
+                        viewModel.AssoLogo.CopyTo(fileSteam);
                     }
                 }
 
@@ -177,7 +188,7 @@ namespace Projet2Crowdfunding.Controllers
                 int idProjectOwner = accountService.CreateProjectOwner(idAccount, viewModel.ProjectOwner.Name,
                     viewModel.ProjectOwner.PhoneNumber, viewModel.ProjectOwner.Summary, viewModel.ProjectOwner.Description,
                     viewModel.ProjectOwner.HyperLink, viewModel.ProjectOwner.VolunteerDescritpion, viewModel.ProjectOwner.Partnership, 
-                    viewModel.ProjectOwner.Type, viewModel.ProjectOwner.Image, fileName, 
+                    viewModel.ProjectOwner.Type, fileNameLogo, fileNameProof, 
                     viewModel.ProjectOwner.Address.StreetName, viewModel.ProjectOwner.Address.StreetNumber, 
                     viewModel.ProjectOwner.Address.ZipCode, viewModel.ProjectOwner.Address.City, viewModel.ProjectOwner.Address.Country);                
 

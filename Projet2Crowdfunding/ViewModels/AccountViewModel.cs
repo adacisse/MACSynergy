@@ -18,5 +18,11 @@ namespace Projet2Crowdfunding.ViewModels
 
         [Display(Name = "Justificatif de l'organisation")]
         public IFormFile AssociationProof { get; set; }
+
+        public IFormFile AssoLogo { get; set; }
+
+        public IFormFile ProjectImage { get; set; }
+
+        public IFormFile ProjectVideo { get; set; }
     }
 }
