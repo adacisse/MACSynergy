@@ -65,7 +65,6 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Charte de Confidentialité")]
         public Boolean ConfidentialityCharter { get; set; }
 
-        [Required]
         public Boolean Newsletter { get; set; }
 
         [Required]

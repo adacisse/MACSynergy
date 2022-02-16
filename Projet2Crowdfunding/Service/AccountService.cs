@@ -66,7 +66,7 @@ namespace Projet2Crowdfunding.Service
 
         public int CreateProjectOwner(int idAccount, string name, string phoneNumber, 
             string summary, string description, string hyperlink, string volunteerDescritpion, 
-            string patnerShip, ProjectOwnerType type, string image, string associationProof, string streetNumber,
+            string patnerShip, ProjectOwnerType? type, string image, string associationProof, string streetNumber,
             string streetName, string zipCode, string city, string country)
         {
             Address address = new Address()

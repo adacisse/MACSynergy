@@ -146,38 +146,44 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult PPInscription(Account account, ProjectOwner projectOwner)
+        public IActionResult PPInscription(AccountViewModel viewModel)
         {
-            if (projectOwner.ConfidentialityCharter == true)
+            if (viewModel.ProjectOwner.ConfidentialityCharter == true && viewModel.Account.Mail != null && 
+                viewModel.Account.Password != null && viewModel.ProjectOwner.PhoneNumber != null && 
+                viewModel.ProjectOwner.Name != null && viewModel.ProjectOwner.Summary != null &&
+                viewModel.ProjectOwner.Type != null && viewModel.ProjectOwner.AssociationProof != null &&
+                viewModel.ProjectOwner.Status != null && viewModel.ProjectOwner.Address.StreetName != null &&
+                viewModel.ProjectOwner.Address.StreetNumber != null && viewModel.ProjectOwner.Address.ZipCode != null &&
+                viewModel.ProjectOwner.Address.City != null && viewModel.ProjectOwner.Address.Country != null)
             {
-                if (ModelState.IsValid)
-                {
-                    int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+               
+                int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
 
-                    //int idProjectOwner = accountService.CreateProjectOwner(idAccount, projectOwner.Name,
-                    //    projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
-                    //    projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
-                    //    projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,
-                    //    projectOwner.Address.ZipCode, projectOwner.Address.City, projectOwner.Address.Country);
+                int idProjectOwner = accountService.CreateProjectOwner(idAccount, viewModel.ProjectOwner.Name,
+                    viewModel.ProjectOwner.PhoneNumber, viewModel.ProjectOwner.Summary, viewModel.ProjectOwner.Description,
+                    viewModel.ProjectOwner.HyperLink, viewModel.ProjectOwner.VolunteerDescritpion, viewModel.ProjectOwner.Partnership, 
+                    viewModel.ProjectOwner.Type, viewModel.ProjectOwner.Image, viewModel.ProjectOwner.AssociationProof, 
+                    viewModel.ProjectOwner.Address.StreetName, viewModel.ProjectOwner.Address.StreetNumber, 
+                    viewModel.ProjectOwner.Address.ZipCode, viewModel.ProjectOwner.Address.City, viewModel.ProjectOwner.Address.Country);
 
-                    var userClaims = new List<Claim>()
+                var userClaims = new List<Claim>()
                 {
+                    new Claim(ClaimTypes.NameIdentifier, viewModel.Account.Mail),
                     new Claim(ClaimTypes.Name, idAccount.ToString()),
+                    new Claim(ClaimTypes.Role, "po")
                 };
 
-                    var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
+                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
 
-                    var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
-                    HttpContext.SignInAsync(userPrincipal);
+                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
+                HttpContext.SignInAsync(userPrincipal);
 
-                    return Redirect("/");
-                }
-            } else
-            {
-                ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
+                return Redirect("/");
             }
-             
-            return View(projectOwner);
+           
+            ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "Les champs requises doivent être remplis");
+       
+            return View(viewModel);
         }
 
         public IActionResult InscriptionChoice()
