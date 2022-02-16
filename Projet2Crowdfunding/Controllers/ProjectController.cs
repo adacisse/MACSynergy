@@ -10,9 +10,19 @@ namespace Projet2Crowdfunding.Controllers
     public class ProjectController : Controller
     {
         private BddContext bddContext;
+
+        public IActionResult Index()
+        {
+            return View();
+        }
         public IActionResult ProjectPage()
         {
             return View();
         }
+        public IActionResult PaymentPage()//view de dons financiers à faire
+        {
+            return View("PaymentPage");
+        }
+        
     }
 }
