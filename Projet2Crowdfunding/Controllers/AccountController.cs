@@ -77,16 +77,16 @@ namespace Projet2Crowdfunding.Controllers
                     viewModel.Administrator.FirstName != null && viewModel.Administrator.LastName != null &&
                     viewModel.Administrator.PhoneNumber != null && viewModel.Administrator.Type != null)
             {
-                int idAccount = accountService.CreateAccount(account.Mail, account.Password);
+                int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
 
-                int idAdministrator = accountService.CreateAdministrator(idAccount, administrator.LastName,
-                    administrator.FirstName, administrator.PhoneNumber);
+                int idAdministrator = accountService.CreateAdministrator(idAccount, viewModel.Administrator.LastName,
+                    viewModel.Administrator.FirstName, viewModel.Administrator.PhoneNumber, viewModel.Administrator.Type);
 
                 var userClaims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.NameIdentifier, account.Mail),
-                    new Claim(ClaimTypes.Name, account.Id.ToString()), //appelé dans la ligne 25
-                    new Claim(ClaimTypes.Role, account.Role)
+                    new Claim(ClaimTypes.NameIdentifier, viewModel.Account.Mail),
+                    new Claim(ClaimTypes.Name, idAccount.ToString()), //appelé dans la ligne 25
+                    new Claim(ClaimTypes.Role, "admin")
                 };
 
                 var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
@@ -96,7 +96,7 @@ namespace Projet2Crowdfunding.Controllers
 
                 return Redirect("/");
             }
-            return View(administrator);
+            return View(viewModel);
         }
 
         public IActionResult ParticipantInscription()
@@ -154,11 +154,11 @@ namespace Projet2Crowdfunding.Controllers
                 {
                     int idAccount = accountService.CreateAccount(account.Mail, account.Password);
 
-                    int idProjectOwner = accountService.CreateProjectOwner(idAccount, projectOwner.Name,
-                        projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
-                        projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
-                        projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,
-                        projectOwner.Address.ZipCode, projectOwner.Address.City, projectOwner.Address.Country);
+                    //int idProjectOwner = accountService.CreateProjectOwner(idAccount, projectOwner.Name,
+                    //    projectOwner.PhoneNumber, projectOwner.Summary, projectOwner.Description, projectOwner.HyperLink,
+                    //    projectOwner.VolunteerDescritpion, projectOwner.Partnership, projectOwner.Type, projectOwner.Image,
+                    //    projectOwner.AssociationProof, projectOwner.Address.StreetName, projectOwner.Address.StreetName,
+                    //    projectOwner.Address.ZipCode, projectOwner.Address.City, projectOwner.Address.Country);
 
                     var userClaims = new List<Claim>()
                 {

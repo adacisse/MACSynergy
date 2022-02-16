@@ -106,13 +106,15 @@ namespace Projet2Crowdfunding.Service
             return projectOwner.Id;
         }
 
-        public int CreateAdministrator(int idAccount, string lastName, string firstName, string phoneNumber)
+        public int CreateAdministrator(int idAccount, string lastName, string firstName, 
+            string phoneNumber, AdministratorType? type)
         {
             Administrator administrator = new Administrator()
             {
                 FirstName = firstName,
                 LastName = lastName,
                 PhoneNumber = phoneNumber,
+                Type = type,
                 AccountId = idAccount
             };
 
