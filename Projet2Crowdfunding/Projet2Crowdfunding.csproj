@@ -20,13 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Account\" />
-<<<<<<< HEAD
     <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\LogoEtImageAssociation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\css\LogoAssociation\" />
-=======
->>>>>>> a81bc6b5fc7e52d1c1c1e1149eeb67d36760ef9d
   </ItemGroup>
 </Project>
