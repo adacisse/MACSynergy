@@ -570,6 +570,7 @@ namespace Projet2Crowdfunding.Models
                     EndDate = new DateTime(2022, 5, 9, 16, 5, 7, 123),
                     Video = "/src/wwwroot/css/LogoEtImageAssociation/VideoAurore",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
+                    Location="Iceland",
 
                 },
 
@@ -603,7 +604,8 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
                     Video = "/src/wwwroot/css/LogoEtImageAssociation/Videowwf",
-                    MaterialDonation = "Nourriture"
+                    MaterialDonation = "Nourriture",
+                    Location = "Lille",
                 },
 
 
@@ -635,7 +637,8 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
                     Video = "/src/wwwroot/css/LogoEtImageAssociation/mangrovevideo",
-                    MaterialDonation = "Barques motorisées,"
+                    MaterialDonation = "Barques motorisées",
+                    Location = "Troyes"
                 },
 
                 new Project
@@ -671,7 +674,8 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "/src/wwwroot/css/LogoEtImageAssociation/PlayVideo",
-                    MaterialDonation = "Materiaux sportifs,"
+                    MaterialDonation = "Materiaux sportifs",
+                    Location = "New York"
                 },
 
                 new Project
@@ -711,7 +715,8 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "/src/wwwroot/css/LogoEtImageAssociation/handicapVideo",
-                    MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires"
+                    MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
+                    Location = "Nwagadougou"
                 }
             );
 

@@ -42,6 +42,11 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Catégorie")]
         public Category? Category { get; set; }
 
+        [MaxLength(100)]
+        [Required]
+        [Display(Name = "Localisation")]
+        public string? Location { get; set; }
+
         [Required]
         [Display(Name = "Date de démarrage")]
         public DateTime StartDate { get; set; }
