@@ -22,6 +22,7 @@
     <Folder Include="Views\Account\" />
     <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\LogoEtImageAssociation\" />
+    <Folder Include="wwwroot\ImagesPP\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\css\LogoAssociation\" />

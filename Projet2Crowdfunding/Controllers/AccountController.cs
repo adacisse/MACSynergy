@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
@@ -15,9 +18,11 @@ namespace Projet2Crowdfunding.Controllers
     public class AccountController : Controller
     {
         private AccountService accountService;
-        public AccountController()
+        private IWebHostEnvironment _hostingEnvironment;
+        public AccountController(IWebHostEnvironment environment)
         {
             accountService = new AccountService();
+            _hostingEnvironment = environment;
         }
        
         public IActionResult LoginPage()
@@ -146,12 +151,12 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult PPInscription(AccountViewModel viewModel)
+        public async Task<IActionResult> PPInscriptionAsync(AccountViewModel viewModel)
         {
             if (viewModel.ProjectOwner.ConfidentialityCharter == true && viewModel.Account.Mail != null && 
                 viewModel.Account.Password != null && viewModel.ProjectOwner.PhoneNumber != null && 
                 viewModel.ProjectOwner.Name != null && viewModel.ProjectOwner.Summary != null &&
-                viewModel.ProjectOwner.Type != null && viewModel.ProjectOwner.AssociationProof != null &&
+                viewModel.ProjectOwner.Type != null && viewModel.AssociationProof != null &&
                 viewModel.ProjectOwner.Address.StreetName != null && viewModel.ProjectOwner.Address.StreetNumber != null && 
                 viewModel.ProjectOwner.Address.ZipCode != null && viewModel.ProjectOwner.Address.City != null && 
                 viewModel.ProjectOwner.Address.Country != null)
@@ -165,6 +170,18 @@ namespace Projet2Crowdfunding.Controllers
                     viewModel.ProjectOwner.Type, viewModel.ProjectOwner.Image, viewModel.ProjectOwner.AssociationProof, 
                     viewModel.ProjectOwner.Address.StreetName, viewModel.ProjectOwner.Address.StreetNumber, 
                     viewModel.ProjectOwner.Address.ZipCode, viewModel.ProjectOwner.Address.City, viewModel.ProjectOwner.Address.Country);
+
+                if (viewModel.AssociationProof != null)
+                {
+                    var fileName = Path.GetFileName(viewModel.AssociationProof.FileName);
+                    var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "~css/JustificatifsPP", fileName);
+
+                    using (var fileSteam = new FileStream(filePath, FileMode.Create))
+                    {
+                        await viewModel.AssociationProof.CopyToAsync(fileSteam);
+                    }               
+                }
+                
 
                 var userClaims = new List<Claim>()
                 {

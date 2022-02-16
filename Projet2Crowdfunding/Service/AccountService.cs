@@ -132,7 +132,7 @@ namespace Projet2Crowdfunding.Service
         {
             string encodedPassword = EncodeMD5(password);
             Account account = this.bddContext.Accounts.FirstOrDefault
-                (a => a.Mail == mail && a.Password == password);
+                (a => a.Mail == mail && a.Password == encodedPassword);
             return account;
         }
 

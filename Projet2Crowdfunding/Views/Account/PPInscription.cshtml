@@ -67,8 +67,9 @@
 
     <br /><br />
 
-    @Html.LabelFor(model => model.ProjectOwner.AssociationProof) <span> : &nbsp;</span>
-    @Html.TextBoxFor(model => model.ProjectOwner.AssociationProof)
+    @Html.LabelFor(model => model.AssociationProof) <span> : &nbsp;</span>
+    @Html.TextBoxFor(model => model.AssociationProof, new { type = "file" })
+
 
     <div>
 
@@ -101,7 +102,7 @@
 
     </div>
 
-    <br/><br/>
+    <br /><br />
 
     <div class="text-danger">
         @Html.ValidationMessageFor(model => model.ProjectOwner)
@@ -137,8 +138,8 @@
 
             <br /><br />
 
-            @Html.LabelFor(model => model.ProjectOwner.Image) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.ProjectOwner.Image)
+            @Html.LabelFor(model => model.AssociationProof) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.AssociationProof, new { type = "file" })
 
         </div>
 

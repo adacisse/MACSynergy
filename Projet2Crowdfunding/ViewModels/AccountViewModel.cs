@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 using Projet2Crowdfunding.Models;
 
 namespace Projet2Crowdfunding.ViewModels
@@ -13,5 +15,8 @@ namespace Projet2Crowdfunding.ViewModels
         public Administrator Administrator { get; set; }
 
         public ProjectOwner ProjectOwner { get; set; }
+
+        [Display(Name = "Justificatif de l'organisation")]
+        public IFormFile AssociationProof { get; set; }
     }
 }
