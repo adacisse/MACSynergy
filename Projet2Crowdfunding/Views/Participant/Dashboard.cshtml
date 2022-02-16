@@ -3,6 +3,34 @@
     ViewBag.Title = "Accueil";
 }
 <link rel="stylesheet" href="~/css/dashbord.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+@section Menu
+{
+    @*@if (Model.Authentify)
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/Index"><strong>MON PROFIL</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else
+        {*@
+    <div class="col-md-8 d-flex justify-content-around">
+        <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end align-items-center">
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    </div>
+    @*}*@
+}
 
 <div class="dashboard-container">
     <div class="row">
@@ -10,35 +38,33 @@
 
         <div class="col-sm-3">
 
-            <div class="main-side-navigation ">
-
-                <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white border-MACS">
-                    <div class="position-sticky">
-                        <div class="list-group list-group-flush mx-3 mt-4">
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple aria-current">
-                                <i class="fa fa-tachometer fa-fw me-3"></i><span>Dashboard</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-                                <i class="fa fa-info fa-fw me-3"></i><span>Informations</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="fa fa-envelope-o fa-fw me-3"></i><span>E-mail</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="fa fa-phone fa-fw me-3"></i><span>Téléphone</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="fa fa-address-card-o fa-fw me-3"></i><span>Adresse</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="fa fa-heart-o fa-fw me-3"></i><span>Coups de coeurs</span>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                                <i class="fa fa-money fa-fw me-3"></i><span>Paiements</span>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
+            <div class="sidebar position-fixed bg-white border-MACS">
+                <ul class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#';return false;"><i class="fa fa-tachometer fa-fw me-3"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link active" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-infos';return false;"><i class="fa fa-info fa-fw me-3"></i>Informations</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-address';return false;"><i class="fa fa-address-card-o fa-fw me-3"></i>Adresse</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-phone';return false;"><i class="fa fa-phone fa-fw me-3"></i>Téléphone</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-email';return false;"><i class="fa fa-envelope-o fa-fw me-3"></i>Email</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-pwd';return false;"><i class="fa fa-key me-3"></i>Mot de passe</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-favorite';return false;"><i class="fa fa-heart-o fa-fw me-3"></i>Coups de coeur</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-payment';return false;"><i class="fa fa-money fa-fw me-3"></i>Paiements</a>
+                    </li>
+                </ul>
 
             </div>
         </div>
@@ -49,44 +75,119 @@
             <div class="main-content">
 
                 <div class="row-content border-MACS">
+                    <div id="row-infos"></div>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-6"><a>Nom</a></div>
-                            <div class="col-md-6"><a>Prénom</a></div>
+                            <div class="col-md-5"><a>Nom</a></div>
+                            <div class="col-md-5"><a>Prénom</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#infosModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"><a>Genre</a></div>
+                            <div class="col-md-5"><a>Date de naissance</a></div>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="row-content border-MACS">
+                    <div id="row-address"></div>
                     <div class="col-md-12">
-                        <a>Email</a>
+                        <div class="row">
+                            <div class="col-md-2"><a>N°</a></div>
+                            <div class="col-md-8"><a>Rue</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addressModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"><a>CP</a></div>
+                            <div class="col-md-3"><a>Ville</a></div>
+                            <div class="col-md-7"><a>Pays</a></div>
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="row-content border-MACS">
+                    <div id="row-phone"></div>
                     <div class="col-md-12">
-                        <a>Téléphone</a>
+                        <div class="row">
+                            <div class="col-md-10"><a>Téléphone</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#phoneModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="row-content border-MACS">
+                    <div id="row-email"></div>
                     <div class="col-md-12">
-                        <a>Adresse</a>
+                        <div class="row">
+                            <div class="col-md-10"><a>E-mail</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#emailModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="row-content border-MACS">
+                    <div id="row-pwd"></div>
                     <div class="col-md-12">
-                        <a>Coups de coeurs</a>
+                        <div class="row">
+                            <div class="col-md-10"><a>Mot de passe</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#pwdModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </div>
                     </div>
 
                 </div>
 
                 <div class="row-content border-MACS">
+                    <div id="row-favorite"></div>
+                    <div class="col-md-12">
+                        <a>Coups de coeur</a>
+                    </div>
+
+                </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-payment"></div>
                     <div class="col-md-12">
                         <a>Paiements</a>
                     </div>
@@ -100,3 +201,256 @@
 
 
 </div>
+
+<!-- The infosModal -->
+<div class="modal" id="infosModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez vos informations personnelles</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Modifiez les champs nécessaires</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg mt-2" value="" name="lastName" placeholder="Nom" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="firstName" placeholder="Prénom" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="gender" placeholder="Genre" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="birthDate" placeholder="Date de Naissance" type="text">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- The adressModal -->
+<div class="modal" id="addressModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre adresse</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Modifiez les champs nécessaires</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg mt-2" value="" name="streetNumber" placeholder="N°" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="street" placeholder="Rue" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="postalCode" placeholder="CP" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="City" placeholder="Ville" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="country" placeholder="Pays" type="text">
+
+                                            @*<div class="row">
+                                                    <div class="col-md2">
+                                                        <input class="form-control input-lg" value="" name="streetNumber" placehorder="N°" type="text">
+                                                    </div>
+                                                    <div class="col-md10">
+                                                        <input class="form-control input-lg" value="" name="street" placeholder="Rue" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md2">
+                                                        <input class="form-control input-lg" value="" name="postalCode" placehorder="CP" type="text">
+                                                    </div>
+                                                    <div class="col-md10">
+                                                        <input class="form-control input-lg" value="" name="City" placeholder="Ville" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md12">
+                                                        <input class="form-control input-lg" value="" name="country" placehorder="Pays" type="text">
+                                                    </div>
+                                                </div>*@
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- The phoneModal -->
+<div class="modal" id="phoneModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre téléphone</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Rentrez un numéro de téléphone valide</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg" value="" name="phone" type="text">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The emailModal -->
+<div class="modal" id="emailModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre adresse e-mail</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Rentrez une adresse e-mail valide</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg" value="" name="email" type="email">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The pwdModal -->
+<div class="modal" id="pwdModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre mot de passe</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Rentrez un mot de passe de 8 caractères</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg" placeholder="Mot de passe" name="password" type="password" minlength="8">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Footer
+    {
+    <div class="newsletter-subscribe container">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center newsletter">Inscrivez-vous à notre newsletter</h2>
+                <p class="text-center">Recevez de nouveaux projets dans votre boite chaque semaine !</p>
+            </div>
+            <form class="row" method="post">
+                <div class="col-md-6"><input class="form-control" type="email" name="email" placeholder="Votre Email"></div>
+                <div class="col-md-2"><button class="btn btn-primary" type="button">S'abonner </button></div>
+            </form>
+
+        </div>
+    </div>
+}

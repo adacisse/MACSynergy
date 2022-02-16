@@ -17,29 +17,29 @@
 }
 
 /* Sidebar */
+
+
+
 .sidebar {
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    width: 240px;
+    width: 300px;
     z-index: 600;
+    padding: 20px 15px;
 }
 
-@media (max-width: 991.98px) {
-    .sidebar {
-        width: 100%;
-    }
+.nav-link {
+    color: black;
 }
 
-.sidebar .active {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-    background-color: seagreen
+.nav-item a:hover{
+    color: seagreen;
 }
 
-.sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+.nav-pills .pill-1 .nav-link:not(.active) {
+    background-color: white;
 }
+
+.nav-pills .pill-1 .nav-link {
+    background-color: seagreen;
+}
+
