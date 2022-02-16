@@ -15,16 +15,11 @@ namespace Projet2Crowdfunding.Controllers
             return View();
         }
 
-        public IActionResult Dashboard()
+        public IActionResult PDashboard()
         {
             return View();
         }
-
-        public IActionResult ModifyParticipant()
-        {
-            return View();
-        }
-
+                
         //public IActionResult ModifyParticipant(int Id)
         //{
         //    if (Id != 0)

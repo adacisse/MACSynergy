@@ -1,0 +1,444 @@
+﻿@{
+    Layout = "_LayoutDuSite";
+}
+<link rel="stylesheet" href="~/css/dashbord.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<title>Dashboard</title>
+
+@section Menu
+{
+    @*@if (Model.Authentify)
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/Index"><strong>MON PROFIL</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else
+        {*@
+    <div class="col-md-8 d-flex justify-content-around">
+        <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end align-items-center">
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    </div>
+    @*}*@
+}
+
+<div class="dashboard-container">
+    <div class="row">
+
+
+        <div class="col-sm-3">
+
+            <div class="sidebar position-fixed bg-white border-MACS">
+                <ul class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#';return false;"><i class="fa fa-tachometer fa-fw me-3"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link active" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-infos';return false;"><i class="fa fa-info fa-fw me-3"></i>Informations</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-address';return false;"><i class="fa fa-address-card-o fa-fw me-3"></i>Adresse</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-phone';return false;"><i class="fa fa-phone fa-fw me-3"></i>Téléphone</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-logo';return false;"><i class="fa fa-picture-o fa-fw me-3"></i>Logo</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-description';return false;"><i class="fa fa-commenting-o me-3"></i>Descriptions</a>
+                    </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-myProjects';return false;"><i class="fa fa-file-text-o me-3"></i>Mes projets</a>
+                    </li> 
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+
+
+            <div class="main-content">
+
+                <div class="row-content border-MACS">
+                    <div id="row-infos"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-5"><a>Nom</a></div>
+                            <div class="col-md-5"><a>Type</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#infosModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"><a>Site internet</a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-address"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-2"><a>N°</a></div>
+                            <div class="col-md-8"><a>Rue</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addressModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"><a>CP</a></div>
+                            <div class="col-md-3"><a>Ville</a></div>
+                            <div class="col-md-7"><a>Pays</a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-phone"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-10"><a>Téléphone</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#phoneModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-logo"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-10"><a>Logo</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#logoModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-description"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-10"><a>Résumé</a></div>
+                            <div class="col-md-2">
+
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#descriptionModal">
+                                        Modifier
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:20px">
+                            <div class="col-md-10"><a>Description détaillée</a></div>
+                            <div class="col-md-3"><a></a></div>
+                        </div>
+                        <div class="row" style="margin-bottom:20px">
+                            <div class="col-md-10"><a>Volontariat</a></div>
+                            <div class="col-md-3"><a></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10"><a>Partenaires</a></div>
+                            <div class="col-md-3"><a></a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-myProjects"></div>
+                    <div class="col-md-12">
+                        <a>Mes projets</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+<!-- The infosModal -->
+<div class="modal" id="infosModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez vos informations personnelles</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Modifiez les champs nécessaires</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg mt-2" value="" name="name" placeholder="Nom" type="text">
+                                            <div class="form-check form-check-inline" style="margin-top:10px">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                <label class="form-check-label" for="inlineRadio1">Association</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                <label class="form-check-label" for="inlineRadio2">ONG</label>
+                                            </div>
+                                            <div class="input-group mb-3" style="margin-top:10px">
+                                                <span class="input-group-text" id="basic-addon3">https://</span>
+                                                <input type="text" class="form-control" id="basic-url" placeholder="Url de votre site">
+                                            </div>
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- The adressModal -->
+<div class="modal" id="addressModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre adresse</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Modifiez les champs nécessaires</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg mt-2" value="" name="streetNumber" placeholder="N°" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="street" placeholder="Rue" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="postalCode" placeholder="CP" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="City" placeholder="Ville" type="text">
+                                            <input class="form-control input-lg mt-2" value="" name="country" placeholder="Pays" type="text">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- The phoneModal -->
+<div class="modal" id="phoneModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre téléphone</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Rentrez un numéro de téléphone valide</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control input-lg" value="" name="phone" type="text">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The logoModal -->
+<div class="modal" id="logoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Changez votre logo</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Choisissez votre nouveau logo</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <input class="form-control" type="file" id="logo">
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The descriptionModal -->
+<div class="modal" id="descriptionModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Mettez à jour les descriptions</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Rentrez un texte pour chaque catégorie</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <div class="form-group">
+                                            <textarea class="form-control input-lg" placeholder="Résumé" name="resume" rows="3" style="margin-bottom:20px"></textarea>
+                                            <textarea class="form-control input-lg" placeholder="Description détaillée" name="descrition" rows="6" style="margin-bottom:20px"></textarea>
+                                            <textarea class="form-control input-lg" placeholder="Description volontariat" name="volunteerDescription" rows="6" style="margin-bottom:20px"></textarea>
+                                            <textarea class="form-control input-lg" placeholder="Partenaires" name="partners" rows="3" style="margin-bottom:20px"></textarea>
+                                        </div>
+                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Footer
+    {
+    <div class="newsletter-subscribe container">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center newsletter">Inscrivez-vous à notre newsletter</h2>
+                <p class="text-center">Recevez de nouveaux projets dans votre boite chaque semaine !</p>
+            </div>
+            <form class="row" method="post">
+                <div class="col-md-6"><input class="form-control" type="email" name="email" placeholder="Votre Email"></div>
+                <div class="col-md-2"><button class="btn btn-primary" type="button">S'abonner </button></div>
+            </form>
+
+        </div>
+    </div>
+}
