@@ -23,6 +23,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\LogoEtImageAssociation\" />
     <Folder Include="wwwroot\ImagesPP\" />
+    <Folder Include="wwwroot\JustificatifsPP\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\css\LogoAssociation\" />

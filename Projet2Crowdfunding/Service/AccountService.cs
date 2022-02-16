@@ -87,7 +87,7 @@ namespace Projet2Crowdfunding.Service
                 HyperLink = hyperlink,
                 VolunteerDescritpion = volunteerDescritpion,
                 Partnership = patnerShip,
-                AssociationProof = associationProof,
+                AssociationProof = "JustificatifsPP/" + associationProof,
                 Image = image,
                 Type = type,
                 Status = AssoStatus.registered,
