@@ -4,6 +4,7 @@
 
 }
 <link rel="stylesheet" type="text/css" href="~/css/Login.css">
+<link rel="stylesheet" type="text/css" href="~/css/Home.css">
 
 
 <title>Inscription participant</title>
@@ -23,38 +24,44 @@
 
 <fieldset>
 
-    <p>CRÉATION D'UN COMPTE PARTICIPANT</p>
-    <br />
-    <br />
+    <div class="mode-vert">
+        <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN COMPTE PARTICIPANT</h6>
+        <br />
+    </div>
 
     @using (Html.BeginForm())
     {
-        @Html.LabelFor(model => model.Participant.LastName) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.Participant.LastName)
-        <br />
-        <br />
 
-        @Html.LabelFor(model => model.Participant.FirstName) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.Participant.FirstName)
-        <br />
-        <br />
+        <div class="border-MACS pt-1 p-lg-5 pr-5 pb-5">
 
-        @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.Account.Mail)
-        <div class="text-danger">
-            @Html.ValidationMessageFor(model => model.Account.Mail)
+            @Html.LabelFor(model => model.Participant.LastName) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.Participant.LastName)
+            <br />
+            <br />
+
+            @Html.LabelFor(model => model.Participant.FirstName) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.Participant.FirstName)
+            <br />
+            <br />
+
+            @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.Account.Mail)
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Account.Mail)
+            </div>
+
+            <br>
+
+
+            @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
+            @Html.PasswordFor(model => model.Account.Password)
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Account.Password)
+            </div>
+
         </div>
 
-        <br>
-        <br>
-
-        @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
-        @Html.PasswordFor(model => model.Account.Password)
-        <div class="text-danger">
-            @Html.ValidationMessageFor(model => model.Account.Password)
-        </div>
-        <br />
-        <br />
+        <br /><br />
 
         @Html.CheckBoxFor(m => m.Participant.ConfidentialityCharter)
         @Html.LabelFor(model => model.Participant.ConfidentialityCharter, "J'ai lu et j'accepte la politique de confidentialité de Macsynergy")
@@ -62,12 +69,12 @@
             @Html.ValidationMessageFor(model => model.Participant.ConfidentialityCharter)
         </div>
 
-        <br />
-        <br />
-
+        <br /><br />
+        
         <button id="bouton-log" type="submit">CREER UN COMPTE</button>
-    }
 
+
+    }
 
 
 </fieldset>

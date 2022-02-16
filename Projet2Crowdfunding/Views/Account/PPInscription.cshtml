@@ -23,9 +23,12 @@
 
 <fieldset>
 
-    <p>CRÉATION D'UN COMPTE PORTEUR DE PROJET</p>
-    <br />
-    <br />
+    <div class="mode-vert">
+        <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN COMPTE PORTEUR DE PROJET</h6>
+        <br/>
+    </div>
+    
+    
 
     @using (Html.BeginForm(FormMethod.Post,new { enctype = "multipart/form-data"}))
     {
@@ -101,7 +104,7 @@
 
             </div>
 
-            <br /><br />
+            <br />
 
             <div class="text-danger">
                 @Html.ValidationMessageFor(model => model.ProjectOwner)

@@ -2,18 +2,12 @@
 @{ Layout = "_LayoutDuSite"; }
 
 
+<link rel="stylesheet" type="text/css" href="~/css/Login.css">
+<link rel="stylesheet" type="text/css" href="~/css/Home.css">
+
 <title>Choix d''inscription</title>
 
-<style>
-    fieldset {
-        background-color: beige;
-        width: 800px;
-        border: 15px solid seagreen;
-        padding: 50px;
-        margin: 20px;
-        text-align: justify;
-    }
-</style>
+
 
 @section Menu
 {
@@ -27,24 +21,46 @@
     </div>
 }
 
-<fieldset>
-    <div align="center">
-        <h1>S'inscrire</h1>
-        <label for="PP">Voulez-vous vous inscrire pour  </label>
-        <br />
-        <br />
+<div class="container-fluid">
 
-        <a id="bouton-log" href="/Account/ParticipantInscription" class="m-2">Participer à un projet</a>
-        @*<label for="participant">Participer à un projet </label>
-        <input type="radio" name="choice" value="Unspecified" />*@
+    <div class="row m-5" style="margin: auto">
 
-        <a id="bouton-log" href="/Account/PPInscription" class="m-2">Soummettre un projet</a>
-        @*<label for="pp">Soumettre un projet </label>
-        <input type="radio" name="choice" value="Unspecified" />*@
-        <br />
-        <br />
-        @*<input type="submit" value="Envoyer" />*@
+        <fieldset>
+
+            <div class="mode-vert">
+                <h6 style="font-size: 30px">S'INSCRIRE</h6>
+                <br />
+            </div>
+
+            <div class="border-MACS mode-vert p-5 m-5">
+
+                <h6 style="font-size: 20px; color: dimgray ">Voulez-vous vous inscrire pour</h6>
+
+                <br /><br />
+                <div style="text-align: center">
+
+
+                    <a id="bouton-log" href="/Account/ParticipantInscription" class="m-2">Participer à un projet</a>
+                    @*<label for="participant">Participer à un projet </label>
+                <input type="radio" name="choice" value="Unspecified" />*@
+
+                    <a id="bouton-log" href="/Account/PPInscription" class="m-2">Soummettre un projet</a>
+                    @*<label for="pp">Soumettre un projet </label>
+                <input type="radio" name="choice" value="Unspecified" />*@
+                    <br />
+                    <br />
+                    @*<input type="submit" value="Envoyer" />*@
+
+                </div>
+
+            </div>
+
+
+        </fieldset>
+
     </div>
-</fieldset>
+
+
+</div>
 
 @section Footer {}
