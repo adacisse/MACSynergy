@@ -33,7 +33,7 @@
         <br>
         <br />
         @Html.LabelFor(model => model.Account.Password)
-        @Html.TextBoxFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
+        @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
         @Html.ValidationMessageFor(model => model.Account.Password)
 
         <br />

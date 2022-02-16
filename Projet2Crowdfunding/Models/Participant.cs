@@ -31,11 +31,9 @@ namespace Projet2Crowdfunding.Models
         public DateTime? Birthdate { get; set; }
 
         [MaxLength(15)]
-        [Required]
         [Display(Name = "Numéro de téléphone")]
         public string PhoneNumber { get; set; }
 
-        [Required]
         public Boolean Newsletter { get; set; }
 
         [Required]
@@ -45,7 +43,6 @@ namespace Projet2Crowdfunding.Models
         public int? AddressId { get; set; }
         public virtual Address Address { get; set; }
 
-        [Required]
         public int? AccountId { get; set; }
         public virtual Account Account { get; set; }
     }

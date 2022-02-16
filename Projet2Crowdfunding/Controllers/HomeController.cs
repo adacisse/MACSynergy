@@ -20,7 +20,7 @@ namespace Projet2Crowdfunding.Controllers
         public IActionResult Index()
         {
             AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
-            if (HttpContext.User.Identity.IsAuthenticated)
+             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
                 return View(viewModel);
