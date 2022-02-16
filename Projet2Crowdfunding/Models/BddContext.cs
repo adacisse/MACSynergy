@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Projet2Crowdfunding.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,7 +64,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 1,
                         Mail = "adacisse@gmail.com",
-                        Password = "aaaaa",
+                        Password = AccountService.EncodeMD5("aaaaa"),
                         Role ="participant"
                     }
                 },
@@ -91,7 +92,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 2,
                         Mail = "sara.rchouk@gmail.com",
-                        Password = "sssss",
+                        Password = AccountService.EncodeMD5("sssss"),
                         Role = "participant"
                     }
                 },
@@ -119,7 +120,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 3,
                         Mail = "juanjoperez@gmail.com",
-                        Password = "juanjuan",
+                        Password = AccountService.EncodeMD5("juanjuan"),
                         Role = "participant"
                     }
                 },
@@ -146,7 +147,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 4,
                         Mail = "lauradupuy@gmail.com",
-                        Password = "laulau",
+                        Password = AccountService.EncodeMD5("laulau"),
                         Role = "participant"
                     }
                 }
@@ -167,7 +168,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 5,
                         Mail = "matthieu.faucillon@gmail.com",
-                        Password = "mmmmm",
+                        Password = AccountService.EncodeMD5("mmmmm"),
                         Role = "admin"
                     }
                 },
@@ -183,7 +184,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 6,
                         Mail = "cristinaequisoain@gmail.com",
-                        Password = "ccccc",
+                        Password = AccountService.EncodeMD5("ccccc"),
                         Role = "admin"
                     }
                 },
@@ -199,7 +200,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 7,
                         Mail = "florentlacroix@gmail.com",
-                        Password = "floflo",
+                        Password = AccountService.EncodeMD5("floflo"),
                         Role = "admin"
                     }
                 },
@@ -215,7 +216,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 8,
                         Mail = "clara.martin@gmail.com",
-                        Password = "clacla",
+                        Password = AccountService.EncodeMD5("clacla"),
                         Role = "admin"
                     }
                 }
@@ -276,7 +277,8 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 9,
                         Mail = "associationaurore@gmail.com",
-                        Password = "aurore"
+                        Password = AccountService.EncodeMD5("aurore"),
+                        Role = "po"
 
                     }
 
@@ -285,13 +287,13 @@ namespace Projet2Crowdfunding.Models
 
                 new ProjectOwner
                 {
-                        Id = 2,
-                        PhoneNumber = "0638023453",
-                        Name = "WWF",
-                        Summary = "Depuis 1973, le WWF France agit au quotidien afin d'offrir aux générations futures une planète vivante. Nous œuvrons pour mettre un frein à la dégradation de l'environnement et construire un avenir où les humains vivent en harmonie avec la nature." +
+                    Id = 2,
+                    PhoneNumber = "0638023453",
+                    Name = "WWF",
+                    Summary = "Depuis 1973, le WWF France agit au quotidien afin d'offrir aux générations futures une planète vivante. Nous œuvrons pour mettre un frein à la dégradation de l'environnement et construire un avenir où les humains vivent en harmonie avec la nature." +
                         " Constituée de bénévoles, Rêv’Animal a pour but :de prendre en charge,de soigner, de stériliser, et de replacer des animaux",
 
-                        Description = "Le Fonds Mondial pour la Nature (WWF) est l'une des toutes premières organisations indépendantes de protection de l'environnement dans le monde" +
+                    Description = "Le Fonds Mondial pour la Nature (WWF) est l'une des toutes premières organisations indépendantes de protection de l'environnement dans le monde" +
                         ", avec un réseau actif dans plus de 100 pays et fort du soutien de près de 6 millions de membres." +
                         " Le WWF France, Fondation reconnue d'utilité publique, oeuvre pour une planète vivante depuis Paris, Marseille, les Alpes," +
                         " la Guyane et la Nouvelle-Calédonie.Le siège du WWF International − le secrétariat de l’organisation au niveau mondial − est situé à Gland en Suisse. " +
@@ -300,47 +302,48 @@ namespace Projet2Crowdfunding.Models
                         "ancien directeur de UN Environnement a succédé à Yolanda Kakabadse. Son Altesse Royale le duc d'Édimbourg en est le Président émérite.",
 
 
-                        HyperLink = "https://www.wwf.fr/",
-                        VolunteerDescritpion = "Rejoignez ceux, membres et donateurs, partenaires et sympathisants, qui ont bâti avec nous une association riche aujourd’hui de 220 000" +
+                    HyperLink = "https://www.wwf.fr/",
+                    VolunteerDescritpion = "Rejoignez ceux, membres et donateurs, partenaires et sympathisants, qui ont bâti avec nous une association riche aujourd’hui de 220 000" +
                         " donateurs et de milliers de bénévoles, toujours disponibles pour se mobiliser et démultiplier notre capacité d’action !",
 
-                        Partnership = "Fiat Panis, UNESCO",
+                    Partnership = "Fiat Panis, UNESCO",
 
-                        Type = ProjectOwnerType.ONG,
+                    Type = ProjectOwnerType.ONG,
 
-                        AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofwwf",
+                    AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofwwf",
 
-                        Image = "/src/wwwroot/css/LogoEtImageAssociation//logoWwf",
-                        Status = AssoStatus.published,
-                        Newsletter = false,
-                        ConfidentialityCharter = true,
-                        Address = new Address
-                        {
-                            Id = 6,
-                            StreetName = "Rue Jean Vallet",
-                            StreetNumber = "3",
-                            ZipCode = "59630",
-                            City = "Bourbourg",
-                            Country = "France"
-                        },
-                            Account = new Account
-                            {
-                               Id = 10,
-                               Mail = "ongbwwf@gmail.com",
-                               Password = "bww"
-                            }
+                    Image = "/src/wwwroot/css/LogoEtImageAssociation//logoWwf",
+                    Status = AssoStatus.published,
+                    Newsletter = false,
+                    ConfidentialityCharter = true,
+                    Address = new Address
+                    {
+                        Id = 6,
+                        StreetName = "Rue Jean Vallet",
+                        StreetNumber = "3",
+                        ZipCode = "59630",
+                        City = "Bourbourg",
+                        Country = "France"
+                    },
+                    Account = new Account
+                    {
+                        Id = 10,
+                        Mail = "ongwwf@gmail.com",
+                        Password = AccountService.EncodeMD5("wwf"),
+                        Role = "po"
+                    }
 
                 },
 
 
                 new ProjectOwner
                 {
-                        Id = 3,
-                        PhoneNumber = "4499444444",
-                        Name = "Play International",
-                        Summary = "PLAY International, est née en 1999 d’une conviction profonde : le sport est à la fois un droit fondamental" +
+                    Id = 3,
+                    PhoneNumber = "4499444444",
+                    Name = "Play International",
+                    Summary = "PLAY International, est née en 1999 d’une conviction profonde : le sport est à la fois un droit fondamental" +
                         " et une façon de résoudre les problématiques de nos sociétés. ",
-                        Description = "Ce postulat a inspiré les premières initiatives de terrain de l’ONG dans des contextes d’urgence et de post - urgence.En Bolivie, " +
+                    Description = "Ce postulat a inspiré les premières initiatives de terrain de l’ONG dans des contextes d’urgence et de post - urgence.En Bolivie, " +
                         "au Sri Lanka ou en Afghanistan, PLAY a été confronté à la nécessité prégnante d’inventer des dispositifs d’accompagnement permettant" +
                         " à des enfants de surmonter un traumatisme ou apprendre comment se prémunir d’une maladie chronique.Lors de sa première décennie d’existence," +
                         "en intervenant auprès de plusieurs centaines de milliers de bénéficiaires,PLAY et ses partenaires ont démontré que :" +
@@ -348,40 +351,41 @@ namespace Projet2Crowdfunding.Models
                         "- Le sport et le jeu ont pleinement leurs places dans le secteur humanitaire et peuvent apporter des réponses concrètes à des problématiques sociales et sanitaires," +
                         "y compris dans les situations les plus précaires." +
                         " L’activité physique et sportive est une matière permettant de faire beaucoup avec peu,notamment lorsque l’on se focalise sur le volet pédagogique. ",
-                        HyperLink = "https://www.play-international.org/",
+                    HyperLink = "https://www.play-international.org/",
 
-                        VolunteerDescritpion = "DEVENIR BÉNÉVOLE PLAY International suscite votre intérêt ? Vous avez des compétences dans un domaine précis," +
+                    VolunteerDescritpion = "DEVENIR BÉNÉVOLE PLAY International suscite votre intérêt ? Vous avez des compétences dans un domaine précis," +
                         "et vous souhaitez vous engager en faveur d’une association défendant des valeurs éducatives ? Intégrez notre communauté de bénévoles et rejoignez l’équipe! Nous recherchons essentiellement des bénévoles pour la course Vertigo et dans des domaines spécifiques tels que la photographie," +
                         "de la traduction et le graphisme. CONTACTEZ - NOUS" +
                         "REJOINDRE LE GROUPE FACEBOOK DES BÉNÉVOLES",
 
-                        Partnership = "PROPARCO, ID4D, Fond francais pour l'environnement mondial ",
+                    Partnership = "PROPARCO, ID4D, Fond francais pour l'environnement mondial ",
 
-                        Type = ProjectOwnerType.ONG,
-                        AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofPlay",
-                        Image = "/src/wwwroot/css/LogoEtImageAssociation/PlayLogo",
-                        Status = AssoStatus.registered,
+                    Type = ProjectOwnerType.ONG,
+                    AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofPlay",
+                    Image = "/src/wwwroot/css/LogoEtImageAssociation/PlayLogo",
+                    Status = AssoStatus.registered,
 
-                        Newsletter = true,
-                        ConfidentialityCharter = true,
+                    Newsletter = true,
+                    ConfidentialityCharter = true,
 
-                        Address = new Address
-                        {
-                            Id = 7,
-                            StreetName = "rue de Vaugirard",
-                            StreetNumber = "173",
-                            ZipCode = "75015",
-                            City = "Paris",
-                            Country = "France"
-                        },
+                    Address = new Address
+                    {
+                        Id = 7,
+                        StreetName = "rue de Vaugirard",
+                        StreetNumber = "173",
+                        ZipCode = "75015",
+                        City = "Paris",
+                        Country = "France"
+                    },
 
 
-                            Account = new Account
-                            {
-                                    Id = 11,
-                                    Mail = "playinternational@gmail.com",
-                                    Password = "play"
-                            }
+                    Account = new Account
+                    {
+                        Id = 11,
+                        Mail = "playinternational@gmail.com",
+                        Password = AccountService.EncodeMD5("play"),
+                        Role = "po"
+                    }
 
                 },
 
@@ -433,10 +437,10 @@ namespace Projet2Crowdfunding.Models
                     Address = new Address
                     {
                         Id = 8,
-                        StreetName = "rue de Vaugirard",
-                        StreetNumber = "173",
-                        ZipCode = "75015",
-                        City = "Paris",
+                        StreetName = "avenue des freres lumieres",
+                        StreetNumber = "138",
+                        ZipCode = "69008",
+                        City = "Lyon",
                         Country = "France"
                     },
 
@@ -445,11 +449,78 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 12,
                         Mail = "handicapinternational@gmail.com",
-                        Password = "handicap"
+                        Password = AccountService.EncodeMD5("handicap"),
+                        Role = "po"
                     }
 
-                }
-            );
+                },
+
+                 new ProjectOwner
+                 {
+                     Id = 5,
+                     PhoneNumber = "0198521454",
+                     Name = "Association Synergie",
+                     Summary = "Association Synergie vient en aide aux populations vulnérables, notamment les personnes handicapées, partout dans le monde où cela est nécessaire. L’association répond à leurs besoins essentiels et spécifiques," +
+                    " améliore leurs conditions de vie et les aide à s’insérer dans la société. ",
+                     Description = "Depuis plus de 35 ans, nos équipes et nos partenaires démontrent que des solutions sont possibles, en s’appuyant sur les individus, leurs familles et leurs communautés, et en prenant en compte les ressources humaines, les savoir-faire et les matériaux disponibles sur place." +
+                    "L’association propose une approche globale qui vise à améliorer les conditions de vie des personnes handicapées ou vulnérables en combinant un ensemble d’actions complémentaires : soins aux blessés," +
+                    "appareillage et réadaptation ; actions contre les restes explosifs de guerre; insertion scolaire ou économique; prévention des maladies invalidantes; plaidoyer pour changer les lois nationales ou les normes internationales… Notre mandat L’association intervient dans les situations de pauvreté et d’exclusion, de conflits et de catastrophes aux côtés des personnes handicapées et des populations vulnérables afin:" +
+                    "d’améliorer leurs conditions de vie et de promouvoir le respect de leur dignité et de leurs droits fondamentaux " +
+                    "d’agir et de témoigner, pour que leurs besoins essentiels soient correctement couverts." +
+                    "Nos valeurs, notre charte Guidés par la volonté de promouvoir et défendre la dignité humaine, nous nous reconnaissons dans des principes éthiques auxquels notre approche du handicap donne un sens particulier." +
+                    "HUMANITÉ La valeur d’humanité est le socle de notre action de solidarité.Nous considérons chaque personne sans discrimination, et reconnaissons à chacun sa dignité.Notre action est empreinte de respect, de bienveillance et d’humilité." +
+                    "INCLUSION Nous promouvons l’inclusion de chacun dans la société et la participation de tous, dans le respect de la diversité, de l’équité et des choix de chacun. Nous reconnaissons la différence comme une richesse." +
+                    "En savoir plus sur l'inclusion " +
+                    "ENGAGEMENT Nous nous engageons avec détermination et audace, à développer des réponses adaptées, pragmatiques et innovantes. Nous agissons et mobilisons autour de nous pour combattre les injustices." +
+                    "INTÉGRITÉ " +
+                    "Nous agissons de manière indépendante, professionnelle, désintéressée et transparente." +
+                    "Nos bénéficiaires 3969 593 bénéficiaires directs en 2022 (Personnes ayant reçu un bien ou un service au cours d’un projet mis en œuvre par HI ou ses partenaires opérationnels)" +
+                    "12 975 481 bénéficiaires indirects en 2020 (Personnes bénéficiant des effets d'un bien ou d’un service reçu par un bénéficiaire direct de HI)" +
+                    "Populations exposées aux risques de maladies, de violences ou d’accidents invalidants Personnes ayant subi des traumatismes psychologiques forts Populations vulnérables, en particulier les personnes handicapées" +
+                    "Populations réfugiées et populations sinistrées ou déplacées par les crises, les conflits et les catastrophes naturelles" +
+                    "Populations exposées au danger des armes, munitions et engins explosifs dans les conflits armés ou dans leurs suitesNos domaines d’intervention" +
+                    "Aide d’urgence aux populations victimes de crises et de catastrophes naturelles" +
+                    "Prévention des handicaps et des maladies invalidantes" +
+                    "Appareillage et rééducation des personnes handicapées" +
+                    "Insertion scolaire, sociale et économique Action contre les mines, les restes explosifs de guerre et l'utilisation des armes en zones peuplées" +
+                    "Promotion des droits des personnes handicapées",
+                     HyperLink = "https://associationsynergie.fr/fr/l-association",
+
+                     VolunteerDescritpion = "Vous souhaitez rejoindre Association Synergie ? " +
+                    "Notre équipe Mobilisation est là pour répondre à vos questions, rendre votre volontariat plus simple et vivre une expérience unique !" +
+                    " N'hésitez pas à la contacter par mail : agissez@france.hi.org",
+
+                     Partnership = "BNparibas, NewYorker, Michelin, Airfrance",
+
+                     Type = ProjectOwnerType.association,
+                     AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofSynergie",
+                     Image = "/src/wwwroot/css/LogoEtImageAssociation/Synergielogo",
+                     Status = AssoStatus.registered,
+
+                     Newsletter = true,
+                     ConfidentialityCharter = true,
+
+                     Address = new Address
+                     {
+                         Id = 9,
+                         StreetName = "avenue des freres lumieres",
+                         StreetNumber = "138",
+                         ZipCode = "8547",
+                         City = "Wisconscin",
+                         Country = "USA"
+                     },
+
+
+                     Account = new Account
+                     {
+                         Id = 13,
+                         Mail = "associationsynergie@gmail.com",
+                         Password = AccountService.EncodeMD5("synergie"),
+                         Role = "po"
+                     }
+
+                 }
+            ) ;
 
                         
 
@@ -643,92 +714,6 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires"
                 }
             );
-
-
-
-            
-
-
-            
-            //            new ProjectOwner
-            //            {
-            //                Id = 4,
-            //                PhoneNumber = "4499444444",
-            //                Name = ,
-            //                Summary = ,
-            //                Description = ,
-            //                HyperLink = ,
-            //                VolunteerDescritpion = ,
-            //                Partnership = ,
-            //                Type = ProjectOwnerType.ONG,
-            //                AssociationProof = ,
-            //                Image = ,
-            //                Status = AssoStatus.published,
-            //                Address = new Address
-            //                {
-            //                    Id = 8,
-            //                    StreetName = "Rue de la gare",
-            //                    StreetNumber = "43",
-            //                    ZipCode = "97532",
-            //                    City = "Bordeaux",
-            //                    Country = "France"
-            //                },
-            //                Account = new ProjectOwnerAccount
-            //                {
-            //                    Id = 4,
-            //                    Newsletter = true,
-            //                    ConfidentialityCharter = true,
-            //                    Account = new Account
-            //                    {
-            //                        Id = 12,
-            //                        Mail = "",
-            //                        Password = ""
-            //                    }
-            //                }
-            //            },
-
-            //            new ProjectOwner
-            //            {
-            //                Id = 5,
-            //                PhoneNumber = "4499444444",
-            //                Name = ,
-            //                Summary = ,
-            //                Description = ,
-            //                HyperLink = ,
-            //                VolunteerDescritpion = ,
-            //                Partnership = ,
-            //                Type = ProjectOwnerType.ONG,
-            //                AssociationProof = ,
-            //                Image = ,
-            //                Status = AssoStatus.registered,
-            //                Address = new Address
-            //                {
-            //                    Id = 9,
-            //                    StreetName = "",
-            //                    StreetNumber = "37",
-            //                    ZipCode = "17634",
-            //                    City = "Strasbourg",
-            //                    Country = "France"
-            //                },
-            //                Account = new ProjectOwnerAccount
-            //                {
-            //                    Id = 5,
-            //                    Newsletter = false,
-            //                    ConfidentialityCharter = true,
-            //                    Account = new Account
-            //                    {
-            //                        Id = 13,
-            //                        Mail = "",
-            //                        Password = ""
-            //                    }
-            //                }
-             //          }
-            //      );
-
-            ////Instances Projects
-            //this.Projects.AddRange(
-
-            //);
 
 
 
