@@ -120,7 +120,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-5"><a><Strong>Genre: </Strong>@Model.Participant.Gender</a></div>
-                            <div class="col-md-5"><a><strong>Date de naissance: </strong>@Model.Participant.Birthdate.</a></div>
+                            <div class="col-md-5"><a><strong>Date de naissance: </strong>@Model.Participant.Birthdate.ToShortDateString()</a></div>
                         </div>
                     </div>
 
@@ -255,7 +255,7 @@
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.LastName" name="lastName" placeholder="Nom" type="text">
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.FirstName" name="firstName" placeholder="Prénom" type="text">
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.Gender" name="gender" placeholder="Genre" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.Participant.Birthdate" name="birthDate" placeholder="Date de Naissance" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.Participant.Birthdate.ToShortDateString()" name="birthDate" placeholder="Date de Naissance" type="text">
                                         </div>
                                         <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                     </fieldset>

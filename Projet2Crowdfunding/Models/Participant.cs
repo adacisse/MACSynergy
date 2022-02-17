@@ -28,7 +28,7 @@ namespace Projet2Crowdfunding.Models
 
         [Column(TypeName = "date")]
         [Display(Name = "Date de naissance")]
-        public DateTime? Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
 
         [MaxLength(15)]
         [Display(Name = "Numéro de téléphone")]
