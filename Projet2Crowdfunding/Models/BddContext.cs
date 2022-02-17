@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 using Projet2Crowdfunding.Service;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,6 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -571,8 +571,8 @@ namespace Projet2Crowdfunding.Models
                     Video = "/src/wwwroot/css/LogoEtImageAssociation/VideoAurore",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
                     Location="Iceland",
-
-                },
+                  
+        },
 
                 new Project
                 {      

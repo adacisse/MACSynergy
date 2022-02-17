@@ -24,7 +24,7 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Nom")]
         public string Name { get; set; }
 
-        [Column(TypeName = "text" )]
+        [Column(TypeName = "text")]
         [Required]
         [Display(Name = "Résumé")]
         public string Summary { get; set; }
@@ -63,5 +63,7 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Don matériel")]
         public string MaterialDonation { get; set; }
         
+       
+
     }
 }
