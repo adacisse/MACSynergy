@@ -95,7 +95,7 @@ p{
     border-style: solid;
     border-color: rgb(219, 219, 219);
 }
-.border-MACS p{
+.border-MACS p, -border-MACS span{
     color: gray;
 }
 
