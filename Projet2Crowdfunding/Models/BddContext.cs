@@ -534,9 +534,9 @@ namespace Projet2Crowdfunding.Models
                     Name = "Addictions-Maladies chroniques",
                     Summary = "L’accompagnement des personnes dans leurs pratiques addictives" +
                     "L’association Aurore est depuis de nombreuses années mobilisée dans l’accompagnement des personnes se trouvant en situation d’addictions : les professionnels mettent en place des actions de prévention," +
-                    "de réduction des risques et de soins. Les équipes pluridisciplinaires apportent des réponses adaptées prenant en compte le contexte social," +
-                    "culturel et économique de la personne en lui proposant une offre globale d’accompagnement et de soins pouvant prendre différente formes : sensibiliser et prévenir les personnes sur les comportements à risques, réduire les risques liés à la consommation de drogue, " +
-                    "aider à sortir de l’addiction par le soin communautaire ou l’entraide. ",
+                    "de réduction des risques et de soins. Les équipes pluridisciplinaires apportent des réponses adaptées prenant en compte le contexte social.", 
+                    //+ "culturel et économique de la personne en lui proposant une offre globale d’accompagnement et de soins pouvant prendre différente formes : sensibiliser et prévenir les personnes sur les comportements à risques, réduire les risques liés à la consommation de drogue, " +
+                    //"aider à sortir de l’addiction par le soin communautaire ou l’entraide. ",
 
                     Descritpion = "De quoi parle-t-on lorsqu’il est question d’abstinence ? C’est le thème sur lequel ont phosphoré cinquante usagers et professionnels de quatre dispositifs d’Aurore et de deux partenaires historiques de l’association. Un débat s’est déroulé tout au long de la journée du 24 novembre 2021. La place de l’abstinence dans le parcours de soin et de rétablissement, l’intérêt de proposer l’expérience d’une fenêtre d’abstinence, la question des traitements médicamenteux face aux demandes d’abstinence… loin des stéréotypes, les réflexions issues des expériences vécues et des positionnements professionnels ont permis à l’ensemble des participants d’exposer différentes approches des addictions." +
                     "Etablir une réflexion commune Dans son discours d’ouverture, Florian Guyot, directeur général de l’association, précise la portée d’un tel travail :" +
@@ -652,10 +652,10 @@ namespace Projet2Crowdfunding.Models
                     Name = "EJO - PROJET D’APPUI POUR UNE ÉDUCATION ACTIVE ET INCLUSIVE DE TOUS LES ENFANTS.",
 
                     Summary = "Ce programme sera déployé jusqu'en 2022 au Burundi, au Kosovo, au Sénégal," +
-                    " au Libéria et, dans le cadre de son incubateur, dans d'autres pays d'Afrique de l'Ouest." +
-                    " Il contribuera à rendre accessible une éducation de qualité (Objectif du Développement Durable n°4) " +
-                    "pour les publics les plus vulnérables comme les filles, les enfants en situation de handicap ou les minorités" +
-                    " communautaires.",
+                    " au Libéria et, dans le cadre de son incubateur, dans d'autres pays d'Afrique de l'Ouest.",
+                    //+" Il contribuera à rendre accessible une éducation de qualité (Objectif du Développement Durable n°4) " 
+                    //+ "pour les publics les plus vulnérables comme les filles, les enfants en situation de handicap ou les minorités" +
+                    //" communautaires.",
 
                     Descritpion = "Face aux enjeux de qualité de l’éducation et de son accès par les populations " +
                     "les plus vulnérables, PLAY propose un projet reposant sur la création et la diffusion d’un " +

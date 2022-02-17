@@ -80,7 +80,7 @@
                         </div>
                         <div class="row">
                             <div class="mb-4 mt-3 d-flex justify-content-center align-items-center">
-                                <a id="bouton-log" href="#">CONTRIBUER</a>
+                                <a id="bouton-log" href="Payment/PaymentPage">CONTRIBUER</a>
                             </div>
                         </div>
                     </div>
@@ -94,8 +94,7 @@
     <!-- CAROUSEL NOUVEAUTES -->
 
     <h6 class="pb-3 pt-4 d-flex justify-content-center align-items-center">
-        ----------------------------
-        NOUVEAUTES ----------------------------
+        ---------------------------- NOUVEAUTES ----------------------------
     </h6>
 
     <div class="container">
@@ -108,195 +107,352 @@
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
                         <button type="button" data-bs-target="#demo1" data-bs-slide-to="1"></button>
-                        <!-- <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button> -->
+                        <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo1" data-bs-slide-to="3"></button>
                     </div>
 
                     <!-- The slideshow/carousel -->
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/humanitaire.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/animal.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/education.png" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/autres.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    @{ Boolean cont = false;}
 
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/sante.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 2</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            @for (int i = 0; i < Model.ProjectList.Count; i++)
+                            {
+                                if (i >= 0 && i < 4)
+                                {
+                                    cont = false;
+                                    string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
+                                    <div class="col-md-3 d-flex justify-content-center">
+                                        <a href="pagelink">
+                                            <div class="single-box">
+                                                <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
+                                                <div class="img-text">
+                                                    <h2>@Model.ProjectList[i].Name</h2>
+                                                    <p>@Model.ProjectList[i].Summary</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/environnement.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/besoins.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-3 d-flex justify-content-center">
-                                    <a href="#">
-                                        <div class="single-box">
-                                            <div class="img-area"><img src="~/Images/autres.jpg" alt=""></div>
-                                            <div class="img-text">
-                                                <h2>Project 1</h2>
-                                                <p>
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem
-                                                    Ipsum has been the industry's standard dummy text ever since the
-                                                    1500s,
-                                                    when an
-                                                    unknown printer took a galley of type and scrambled it to make a
-                                                    type
-                                                    specimen book.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
+                                        </a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    cont = true;
+                                }
+                            }
                         </div>
                     </div>
+                    @if (cont == true)
+                    {
+                        <div class="carousel-item">
+                            <div class="row">
+                                @for (int i = 0; i < Model.ProjectList.Count; i++)
+                                {
+                                    if (i > 3 && i < 8)
+                                    {
+                                        cont = false;
+                                        string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
+                                        <div class="col-md-3 d-flex justify-content-center">
+                                            <a href="pagelink">
+                                                <div class="single-box">
+                                                    <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2>@Model.ProjectList[i].Name</h2>
+                                                        <p>@Model.ProjectList[i].Summary</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    else if (i > 7)
+                                    {
+                                        cont = true;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
 
-                    <!-- Left and right controls/icons -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+                    @if (cont == true)
+                    {
+                        <div class="carousel-item">
+                            <div class="row">
+                                @for (int i = 0; i < Model.ProjectList.Count; i++)
+                                {
+                                    if (i > 7 && i < 12)
+                                    {
+                                        cont = false;
+                                        string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
+                                        <div class="col-md-3 d-flex justify-content-center">
+                                            <a href="pagelink">
+                                                <div class="single-box">
+                                                    <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2>@Model.ProjectList[i].Name</h2>
+                                                        <p>@Model.ProjectList[i].Summary</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    else if (i > 11)
+                                    {
+                                        cont = true;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    @if (cont == true)
+                    {
+                        <div class="carousel-item">
+                            <div class="row">
+                                @for (int i = 0; i < Model.ProjectList.Count; i++)
+                                {
+                                    if (i > 11 && i < 15)
+                                    {
+                                        cont = false;
+                                        string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
+                                        <div class="col-md-3 d-flex justify-content-center">
+                                            <a href="pagelink">
+                                                <div class="single-box">
+                                                    <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2>@Model.ProjectList[i].Name</h2>
+                                                        <p>@Model.ProjectList[i].Summary</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    else if (i > 14)
+                                    {
+                                        cont = true;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+
                 </div>
-            </div>
-        </div>
-    </div>
+
+
+
+                            <!--<div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-3 d-flex justify-content-center">
+                                        <a href="#">
+                                            <div class="single-box">
+                                                <div class="img-area"><img src="~/Images/sante.jpg" alt=""></div>
+                                                <div class="img-text">
+                                                    <h2>Project 2</h2>
+                                                    <p>
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry. Lorem
+                                                        Ipsum has been the industry's standard dummy text ever since the
+                                                        1500s,
+                                                        when an
+                                                        unknown printer took a galley of type and scrambled it to make a
+                                                        type
+                                                        specimen book.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>-->
+
+
+                                    <!--Original aprés-->
+
+
+                                    <!--<div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row">
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/humanitaire.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/animal.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/education.png" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/autres.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/sante.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 2</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/environnement.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/besoins.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 d-flex justify-content-center">
+                                                    <a href="#">
+                                                        <div class="single-box">
+                                                            <div class="img-area"><img src="~/Images/autres.jpg" alt=""></div>
+                                                            <div class="img-text">
+                                                                <h2>Project 1</h2>
+                                                                <p>
+                                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                                    industry. Lorem
+                                                                    Ipsum has been the industry's standard dummy text ever since the
+                                                                    1500s,
+                                                                    when an
+                                                                    unknown printer took a galley of type and scrambled it to make a
+                                                                    type
+                                                                    specimen book.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>-->
+
+                                     <!--Left and right controls/icons-->
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                       
+                
+                        </div>
+                    </div>
     <br /><br /><br />
 
 </div>
