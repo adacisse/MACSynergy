@@ -12,6 +12,8 @@ namespace Projet2Crowdfunding.Service
     {
 
         private BddContext bddContext;
+        private TimeSpan timeLeftProject;
+
         public ProjectService()
         {
             bddContext = new BddContext();
@@ -37,7 +39,15 @@ namespace Projet2Crowdfunding.Service
         {
             return this.bddContext.Projects.Find(id);
         }
+        
+        
+        public TimeSpan TimeLeftCalculator(int id)
+        {
+          
+           TimeSpan timeLeftProject = this.bddContext.Projects.Find(id).EndDate - DateTime.Now;
+            return (timeLeftProject);
 
+        }
 
 
     }

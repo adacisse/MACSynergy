@@ -24,6 +24,7 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Nom")]
         public string Name { get; set; }
 
+        [MaxLength(190)]
         [Column(TypeName = "text")]
         [Required]
         [Display(Name = "Résumé")]

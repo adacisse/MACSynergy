@@ -33,5 +33,10 @@ namespace Projet2Crowdfunding.ViewModels
         public int heartCounter { get; set; }//compteur total coups de couer
 
         public double sumDonations { get; set; }//somme dons
+        public static object Models { get; private set; }
+
+        public TimeSpan TimeLeftProject { get; set; }
+
+
     }
 }

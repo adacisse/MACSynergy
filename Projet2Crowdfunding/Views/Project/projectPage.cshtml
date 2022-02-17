@@ -13,6 +13,12 @@
         height: 200px;
         background: #aaa;
     }
+    .demo-1 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
 </style>
 
 @section Menu
@@ -104,15 +110,14 @@
                 </script>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Ouragon de Cathrina, USA</h4>
+                    <h4 class="card-title">@Model.Project.Name</h4>
                     <img class="card-img-top" src="~/Images/countdown.jpg" alt="Card image"
                          style="width:100%; border:1px solid #d6d6d6; border-radius:14px;">
                     <p class="card-text">
                         <h6>Aperçu</h6>
-                        Sunt in culpa qui officia deserunt mollit anim id est laborum
-                        consectetur adipiscing elit,sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua.
-                        quis nostrud exercitation.
+                        <p class="demo-1">
+                            @Model.Project.Summary
+                        </p>
                     </p>
                     <div class="progress" style="padding:0px 0px 0px 0px;">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
@@ -122,7 +127,7 @@
                     </div>
                     <div style="border-bottom:2px solid #d6d6d6; padding:0px 0px 25px 0px;">
                         <span style="float:left">8000 € récoltés sur 10000 € </span>
-                        <span style="float:right">8 Jours restants</span>
+                        <span style="float:right"> @Model.TimeLeftProject Jours restants</span>
                     </div>
 
                     <div class="container" style="padding: 10px">
