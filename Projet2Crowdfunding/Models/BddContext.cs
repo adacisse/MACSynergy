@@ -244,16 +244,16 @@ namespace Projet2Crowdfunding.Models
                     " hébergement et accompagnement de femmes victimes de violences, soins de personnes en situation de précarité, hébergement et accompagnement de personnes en souffrance psychique",
                     HyperLink = "https://aurore.asso.fr/association",
 
-                    //VolunteerDescritpion = "Les bénévoles nous apportent du bien - être et du savoir," +
-                    //"ils nous soutiennent pour avancer dans notre vie.C'est l'art de la gratuité du cœur Vous avez une envie de partager," +
-                    //"un désir de vous engager, une compétence à faire vivre...Sans hésiter, faites nous une proposition d’activité!" +
-                    //"Vous avez envie d’animer un atelier photo ? du coaching ? du yoga ? " +
-                    //"Des exemples de ce que font les bénévoles à nos côtés : animation d’ateliers divers," +
-                    //"cours de français,sorties culturelles, aide au fonctionnement de l’épicerie solidaire, " +
-                    //"initiation à l’informatique, vestiaire, bien - être, sport, jardinage, accueil, traductions, conseil…" +
-                    //"Comme plus de 850 personnes, rejoignez - nous sur des missions bénévoles et devenez un acteur solidaire. S’engager bénévolement à AURORE, " +
-                    //"c’est se donner les moyens de l’action, auprès d’une grande association laïque.C’est agir en solidarité et avec des principes humanistes.",
-                    //Partnership = "Dons solidaire, Le chainon manquant, L'agence du don en nature",
+                    VolunteerDescritpion = "Les bénévoles nous apportent du bien - être et du savoir," +
+                    "ils nous soutiennent pour avancer dans notre vie.C'est l'art de la gratuité du cœur Vous avez une envie de partager," +
+                    "un désir de vous engager, une compétence à faire vivre...Sans hésiter, faites nous une proposition d’activité!" +
+                    "Vous avez envie d’animer un atelier photo ? du coaching ? du yoga ? " +
+                    "Des exemples de ce que font les bénévoles à nos côtés : animation d’ateliers divers," +
+                    "cours de français,sorties culturelles, aide au fonctionnement de l’épicerie solidaire, " +
+                    "initiation à l’informatique, vestiaire, bien - être, sport, jardinage, accueil, traductions, conseil…" +
+                    "Comme plus de 850 personnes, rejoignez - nous sur des missions bénévoles et devenez un acteur solidaire. S’engager bénévolement à AURORE, " +
+                    "c’est se donner les moyens de l’action, auprès d’une grande association laïque.C’est agir en solidarité et avec des principes humanistes.",
+                    Partnership = "Dons solidaire, Le chainon manquant, L'agence du don en nature",
 
                     Type = ProjectOwnerType.association,
 
