@@ -14,5 +14,15 @@ namespace Projet2Crowdfunding.Controllers
         {
             return View();
         }
+
+        public IActionResult Paypal()
+        {
+            return View();
+        }
+
+        public IActionResult CreditCard()
+        {
+            return View();
+        }
     }
 }
