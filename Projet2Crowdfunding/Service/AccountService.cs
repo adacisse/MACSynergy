@@ -166,6 +166,14 @@ namespace Projet2Crowdfunding.Service
             return null;
         }
 
+        public Participant GetParticipantFromAccountId(int Id)
+        {
+            Participant participant = this.bddContext.Participants.FirstOrDefault(p => p.AccountId == Id);
+            Address address = this.bddContext.Addresses.Find(participant.AddressId);
+            participant.Address = address;
+            return (participant);
+        }
+
         public ProjectOwner GetProjectOwner(int id)
         {
             return this.bddContext.ProjectOwners.Find(id);
