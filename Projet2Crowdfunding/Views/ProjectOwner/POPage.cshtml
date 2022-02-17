@@ -88,9 +88,9 @@
                     {
                     <span style="font-size: 14px; color: dimgrey; font-weight: 500;">Pour plus d'information : </span>
                     <a href="@Model.ProjectOwner.HyperLink" class="hyperlink2" style="font-weight: 600;">@Model.ProjectOwner.HyperLink</a>
-                    <br/><br />
+                    <br /><br />
                     }
-                    
+
                     @if (@Model.ProjectOwner.Partnership != null)
                     {
                     <p style="font-size: 14px"><span style="color:dimgrey; font-weight:500;">Nos partenaires : </span> @Model.ProjectOwner.Partnership</p>
@@ -113,17 +113,19 @@
     </div>
 </div>
 
-
+@if (@Model.ProjectOwner.VolunteerDescritpion != null)
+{
 <div class="container mt-5">
     <div class="row">
 
-        <div class="mode-vert pt-4 px-4">
+        <div class="mode-vert px-4">
             <h6 style="font-size: 30px">Voulez vous participer avec notre organisation ?</h6>
             <p style="font-size: 14px">@Model.ProjectOwner.VolunteerDescritpion</p>
         </div>
 
     </div>
 </div>
+}
 
 
 @section Footer
