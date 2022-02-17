@@ -21,7 +21,14 @@ namespace Projet2Crowdfunding.Controllers
 
         public IActionResult PODashboard()
         {
-            return View();
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                return View(viewModel);
+            }
+            return View(viewModel);
         }
 
 

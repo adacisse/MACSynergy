@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Projet2Crowdfunding.ViewModels.AccountViewModel
+@{
     Layout = "_LayoutDuSite";
 }
 <link rel="stylesheet" href="~/css/dashbord.css">
@@ -60,7 +61,7 @@
                     </li>
                     <li class="nav-item pill-1">
                         <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-myProjects';return false;"><i class="fa fa-file-text-o me-3"></i>Mes projets</a>
-                    </li> 
+                    </li>
                 </ul>
 
             </div>
@@ -75,8 +76,8 @@
                     <div id="row-infos"></div>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-5"><a>Nom</a></div>
-                            <div class="col-md-5"><a>Type</a></div>
+                            <div class="col-md-5"><a><strong>Nom: </strong>@Model.ProjectOwner.Name</a></div>
+                            <div class="col-md-5"><a><strong>Type: </strong>@Model.ProjectOwner.Type</a></div>
                             <div class="col-md-2">
 
                                 <div class="container">
@@ -87,7 +88,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-5"><a>Site internet</a></div>
+                            <div class="col-md-5"><a><strong>Site internet: </strong>@Model.Account.Mail</a></div>
                         </div>
                     </div>
 
@@ -97,8 +98,8 @@
                     <div id="row-address"></div>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-2"><a>N°</a></div>
-                            <div class="col-md-8"><a>Rue</a></div>
+                            <div class="col-md-2"><a><strong>N°: </strong>@Model.ProjectOwner.Address.StreetNumber</a></div>
+                            <div class="col-md-8"><a><strong>Rue: </strong>@Model.ProjectOwner.Address.StreetName</a></div>
                             <div class="col-md-2">
 
                                 <div class="container">
@@ -109,9 +110,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2"><a>CP</a></div>
-                            <div class="col-md-3"><a>Ville</a></div>
-                            <div class="col-md-7"><a>Pays</a></div>
+                            <div class="col-md-2"><a><strong>CP: </strong>@Model.ProjectOwner.Address.ZipCode</a></div>
+                            <div class="col-md-3"><a><strong>Ville: </strong>@Model.ProjectOwner.Address.City</a></div>
+                            <div class="col-md-7"><a><strong>Pays: </strong>@Model.ProjectOwner.Address.Country</a></div>
                         </div>
                     </div>
 
@@ -121,7 +122,7 @@
                     <div id="row-phone"></div>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-10"><a>Téléphone</a></div>
+                            <div class="col-md-10"><a><strong>Téléphone: </strong>@Model.ProjectOwner.PhoneNumber</a></div>
                             <div class="col-md-2">
 
                                 <div class="container">
@@ -139,7 +140,7 @@
                     <div id="row-logo"></div>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-10"><a>Logo</a></div>
+                            <div class="col-md-10"><a><strong>Logo: </strong><img src="@Model.ProjectOwner.Image"/></a></div>
                             <div class="col-md-2">
 
                                 <div class="container">
@@ -156,8 +157,8 @@
                 <div class="row-content border-MACS">
                     <div id="row-description"></div>
                     <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-10"><a>Résumé</a></div>
+                        <div class="row" style="margin-bottom:20px">
+                            <div class="col-md-10" align="justify"><a><strong>Résumé: </strong>@Model.ProjectOwner.Summary</a></div>
                             <div class="col-md-2">
 
                                 <div class="container">
@@ -168,15 +169,15 @@
                             </div>
                         </div>
                         <div class="row" style="margin-bottom:20px">
-                            <div class="col-md-10"><a>Description détaillée</a></div>
+                            <div class="col-md-10" align="justify"><a><strong>Description détaillée: </strong>@Model.ProjectOwner.Description</a></div>
                             <div class="col-md-3"><a></a></div>
                         </div>
                         <div class="row" style="margin-bottom:20px">
-                            <div class="col-md-10"><a>Volontariat</a></div>
+                            <div class="col-md-10" align="justify"><a><strong>Volontariat: </strong>@Model.ProjectOwner.VolunteerDescritpion</a></div>
                             <div class="col-md-3"><a></a></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-10"><a>Partenaires</a></div>
+                            <div class="col-md-10" align="justify"><a><strong>Partenaires: </strong>@Model.ProjectOwner.Partnership</a></div>
                             <div class="col-md-3"><a></a></div>
                         </div>
                     </div>
@@ -186,7 +187,7 @@
                 <div class="row-content border-MACS">
                     <div id="row-myProjects"></div>
                     <div class="col-md-12">
-                        <a>Mes projets</a>
+                        <a><strong>Mes projets</strong></a>
                     </div>
 
                 </div>
@@ -221,7 +222,7 @@
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
                                         <div class="form-group">
-                                            <input class="form-control input-lg mt-2" value="" name="name" placeholder="Nom" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Name" name="name" placeholder="Nom" type="text">
                                             <div class="form-check form-check-inline" style="margin-top:10px">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                                                 <label class="form-check-label" for="inlineRadio1">Association</label>
@@ -232,7 +233,7 @@
                                             </div>
                                             <div class="input-group mb-3" style="margin-top:10px">
                                                 <span class="input-group-text" id="basic-addon3">https://</span>
-                                                <input type="text" class="form-control" id="basic-url" placeholder="Url de votre site">
+                                                <input type="text" class="form-control" value="@Model.ProjectOwner.HyperLink" name="url" id="basic-url" placeholder="Url de votre site">
                                             </div>
                                         </div>
                                         <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
@@ -275,11 +276,11 @@
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
                                         <div class="form-group">
-                                            <input class="form-control input-lg mt-2" value="" name="streetNumber" placeholder="N°" type="text">
-                                            <input class="form-control input-lg mt-2" value="" name="street" placeholder="Rue" type="text">
-                                            <input class="form-control input-lg mt-2" value="" name="postalCode" placeholder="CP" type="text">
-                                            <input class="form-control input-lg mt-2" value="" name="City" placeholder="Ville" type="text">
-                                            <input class="form-control input-lg mt-2" value="" name="country" placeholder="Pays" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.StreetNumber" name="streetNumber" placeholder="N°" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.StreetName" name="street" placeholder="Rue" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.ZipCode" name="postalCode" placeholder="CP" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.City" name="City" placeholder="Ville" type="text">
+                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.Country" name="country" placeholder="Pays" type="text">
                                         </div>
                                         <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                     </fieldset>
@@ -321,7 +322,7 @@
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
                                         <div class="form-group">
-                                            <input class="form-control input-lg" value="" name="phone" type="text">
+                                            <input class="form-control input-lg" value="@Model.ProjectOwner.PhoneNumber" name="phone" type="text">
                                         </div>
                                         <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                     </fieldset>
