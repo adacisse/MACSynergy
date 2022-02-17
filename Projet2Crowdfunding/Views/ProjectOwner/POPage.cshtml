@@ -80,20 +80,20 @@
                 </div>
 
                 <div class="pb-4 px-4">
-                    <img src="@Model.ProjectOwner.Image" alt="Flood" class="d-block" style="width:100%">
+                    <img src="@Model.ProjectOwner.Image" alt="Flood" class="d-block" style="width:70%; margin: auto;">
                 </div>
 
                 <div class="pb-4 px-4">
                     @if (@Model.ProjectOwner.HyperLink != null)
                     {
-                    <span style="font-size: 14px; color: dimgrey; font-weight: 500;">Pour plus d'information : </span>
-                    <a href="@Model.ProjectOwner.HyperLink" class="hyperlink2" style="font-weight: 600;">@Model.ProjectOwner.HyperLink</a>
-                    <br /><br />
+                        <span style="font-size: 14px; color: dimgrey; font-weight: 500;">Pour plus d'information : </span>
+                        <a href="@Model.ProjectOwner.HyperLink" class="hyperlink2" style="font-weight: 600;">@Model.ProjectOwner.HyperLink</a>
+                        <br /><br />
                     }
 
                     @if (@Model.ProjectOwner.Partnership != null)
                     {
-                    <p style="font-size: 14px"><span style="color:dimgrey; font-weight:500;">Nos partenaires : </span> @Model.ProjectOwner.Partnership</p>
+                        <p style="font-size: 14px"><span style="color:dimgrey; font-weight:500;">Nos partenaires : </span> @Model.ProjectOwner.Partnership</p>
                     }
 
                 </div>
@@ -115,21 +115,43 @@
 
 @if (@Model.ProjectOwner.VolunteerDescritpion != null)
 {
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="mode-vert px-4">
+                <h6 style="font-size: 30px">Voulez vous participer avec notre organisation ?</h6>
+                <p style="font-size: 14px">@Model.ProjectOwner.VolunteerDescritpion</p>
+            </div>
+
+        </div>
+    </div>
+}
+
 <div class="container mt-5">
     <div class="row">
+        @foreach (var Project in Model.ProjectList)
+        {
+            string pagelink = "/Project/projectPage/" + Project.Id;
+            <div class="col-md-4 d-flex justify-content-center">
+                <a href="@pagelink">
+                    <div class="single-box">
+                        <div class="img-area"><img src="@Project.Picture" alt=""></div>
+                        <div class="img-text">
+                            <h2>@Project.Name</h2>
+                            <p>@Project.Summary</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        <div class="mode-vert px-4">
-            <h6 style="font-size: 30px">Voulez vous participer avec notre organisation ?</h6>
-            <p style="font-size: 14px">@Model.ProjectOwner.VolunteerDescritpion</p>
-        </div>
+        }
 
     </div>
 </div>
-}
 
 
 @section Footer
-    {
+{
     <div class="newsletter-subscribe container">
         <div class="container">
             <div class="intro">

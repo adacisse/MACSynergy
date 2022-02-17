@@ -11,10 +11,12 @@ namespace Projet2Crowdfunding.Controllers
     public class ProjectOwnerController : Controller
     {
         private AccountService accountService;
+        private ProjectService projectService;
 
         public ProjectOwnerController()
         {
             accountService = new AccountService();
+            projectService = new ProjectService();
         }
 
         public IActionResult PODashboard()
@@ -23,17 +25,21 @@ namespace Projet2Crowdfunding.Controllers
         }
 
 
-        public IActionResult POPage()
+        public IActionResult POPage(int? id)
         {
             AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
-                
-                return View(viewModel);
             }
+            if (id.HasValue)
+            {
+                viewModel.ProjectOwner = accountService.GetProjectOwner(id.Value);
+                viewModel.ProjectList = projectService.GetProjectsFromProjectOwnerId(id.Value);
+            }
+
             return View(viewModel);
+            
         }
 
 
