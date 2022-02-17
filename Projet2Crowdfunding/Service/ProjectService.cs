@@ -27,6 +27,17 @@ namespace Projet2Crowdfunding.Service
             return (ProjectList);
         }
 
+        public List<Project> GetAllProjects()
+        {
+            List<Project> projectList = this.bddContext.Projects.ToList();
+            return projectList;
+        }
+
+        public Project GetProject(int id)
+        {
+            return this.bddContext.Projects.Find(id);
+        }
+
 
 
     }

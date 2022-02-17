@@ -31,30 +31,30 @@
 
     @using (Html.BeginForm())
     {
-<div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+        <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-    @Html.LabelFor(model => model.Account.Mail)
-    @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
-    @Html.ValidationMessageFor(model => model.Account.Mail)
+            @Html.LabelFor(model => model.Account.Mail)
+            @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
+            @Html.ValidationMessageFor(model => model.Account.Mail)
 
-    <br>
-    <br />
-    @Html.LabelFor(model => model.Account.Password)
-    @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
-    @Html.ValidationMessageFor(model => model.Account.Password)
+            <br>
+            <br />
+            @Html.LabelFor(model => model.Account.Password)
+            @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
+            @Html.ValidationMessageFor(model => model.Account.Password)
 
-    <br /><br />
-    @*<div class="form-check">
-            <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
-            <label class="form-check-label">Rester connecté?</label>
+            <br /><br />
+            @*<div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
+                    <label class="form-check-label">Rester connecté?</label>
+                </div>
+                <br />
+                <br />*@
+
+            <a href="ForgetPassword" class="hyperlink2">Mot de passe oublié ?</a>
+
+
         </div>
-        <br />
-        <br />*@
-
-<a href="ForgetPassword" class="hyperlink2">Mot de passe oublié ?</a>
-
-
-</div>
 
         <br /> <br />
 
@@ -63,8 +63,8 @@
         <br />
         <br />
         <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
-        <a href ="InscriptionChoice" class="hyperlink">Inscrivez-vous!</a>
-        
+        <a href="InscriptionChoice" class="hyperlink">Inscrivez-vous!</a>
+
     }
 
 

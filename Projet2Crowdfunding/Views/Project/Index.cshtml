@@ -62,7 +62,32 @@
 }
 
 
+<div class="mode-vert">
+    <h6 style="font-size: 30px; color: rgb(173, 209, 42) ">PROJETS EN COURS</h6>
+    <br />
+</div>
 
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var Project in Model.ProjectList)
+        {
+            string pagelink = "/Project/projectPage/" + Project.Id;
+            <div class="col-md-4 d-flex justify-content-center">
+                <a href="@pagelink">
+                    <div class="single-box">
+                        <div class="img-area2"><img src="@Project.Picture" alt="" /></div>
+                        <div class="img-text2">
+                            <h2>@Project.Name</h2>
+                            <p>@Project.Summary</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+
+    </div>
+</div>
 
 
 @section Footer
