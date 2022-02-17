@@ -36,12 +36,6 @@ namespace Projet2Crowdfunding.Service
             return account.Id;
         }
 
-        public List<Account> GetAllAccounts()
-        {
-            List<Account> accountList = this.bddContext.Accounts.ToList();
-            return accountList;
-        }
-
         public int CreateParticipant(int idAccount, string lastName, string firstname)
         {
             Participant participant = new Participant()
@@ -136,6 +130,13 @@ namespace Projet2Crowdfunding.Service
             return account;
         }
 
+
+        public List<Account> GetAllAccounts()
+        {
+            List<Account> accountList = this.bddContext.Accounts.ToList();
+            return accountList;
+        }
+
         public Account GetAccount(int id)
         {
             return this.bddContext.Accounts.Find(id);
@@ -175,9 +176,10 @@ namespace Projet2Crowdfunding.Service
         }
 
         public ProjectOwner GetProjectOwner(int id)
-        {
+        { 
             return this.bddContext.ProjectOwners.Find(id);
         }
+
 
         public ProjectOwner GetProjectOwner(string idStr)
         {
@@ -187,6 +189,14 @@ namespace Projet2Crowdfunding.Service
                 return this.GetProjectOwner(id);
             }
             return null;
+        }
+
+        public ProjectOwner GetProjectOwnerFromAccountId(int Id)
+        {
+            ProjectOwner projectOwner = this.bddContext.ProjectOwners.FirstOrDefault(p => p.AccountId == Id);
+            Address address = this.bddContext.Addresses.Find(projectOwner.AddressId);
+            projectOwner.Address = address;
+            return (projectOwner);
         }
 
 

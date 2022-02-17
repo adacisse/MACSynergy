@@ -257,9 +257,9 @@ namespace Projet2Crowdfunding.Models
 
                     Type = ProjectOwnerType.association,
 
-                    AssociationProof = "/src/wwwroot/css/LogoAssociation/proofAuroreAsso",
+                    AssociationProof = "~/JustificatifsPP/proofAuroreAsso.png",
 
-                    Image = "/src/wwwroot/css/LogoAssociation/logoAuroreAsso",
+                    Image = "~/ImageAssos/logoAuroreAsso.png",
 
                     Status = AssoStatus.published,
                     Newsletter = true,
@@ -310,9 +310,9 @@ namespace Projet2Crowdfunding.Models
 
                     Type = ProjectOwnerType.ONG,
 
-                    AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofwwf",
+                    AssociationProof = "~/JustificatifsPP/proofwwf.jpeg",
 
-                    Image = "/src/wwwroot/css/LogoEtImageAssociation//logoWwf",
+                    Image = "~/ImageAssos/logoWwf.jpeg",
                     Status = AssoStatus.published,
                     Newsletter = false,
                     ConfidentialityCharter = true,
@@ -361,8 +361,8 @@ namespace Projet2Crowdfunding.Models
                     Partnership = "PROPARCO, ID4D, Fond francais pour l'environnement mondial ",
 
                     Type = ProjectOwnerType.ONG,
-                    AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofPlay",
-                    Image = "/src/wwwroot/css/LogoEtImageAssociation/PlayLogo",
+                    AssociationProof = "~/JustificatifsPP/proofPlay.png",
+                    Image = "~/ImageAssos/PlayLogo.jpeg",
                     Status = AssoStatus.registered,
 
                     Newsletter = true,
@@ -427,8 +427,8 @@ namespace Projet2Crowdfunding.Models
                     Partnership = "alabama, Alcure, Michelin, Airfrance",
 
                     Type = ProjectOwnerType.association,
-                    AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofhandicap",
-                    Image = "/src/wwwroot/css/LogoEtImageAssociation/handicaplogo",
+                    AssociationProof = "~/JustificatifsPP/proofhandicap.png",
+                    Image = "~/ImageAssos/handicaplogo.png",
                     Status = AssoStatus.registered,
 
                     Newsletter = true,
@@ -493,8 +493,8 @@ namespace Projet2Crowdfunding.Models
                      Partnership = "BNparibas, NewYorker, Michelin, Airfrance",
 
                      Type = ProjectOwnerType.association,
-                     AssociationProof = "/src/wwwroot/css/LogoEtImageAssociation/proofSynergie",
-                     Image = "/src/wwwroot/css/LogoEtImageAssociation/Synergielogo",
+                     AssociationProof = "~/JustificatifsPP/proofSynergieInter.png",
+                     Image = "~/ImageAssos/logoSynergieInter.png",
                      Status = AssoStatus.registered,
 
                      Newsletter = true,
@@ -564,11 +564,11 @@ namespace Projet2Crowdfunding.Models
                     "« Le meilleur tranquillisant est un bon sentiment d’appartenance » " +
                     "Boris Cyrulnik",
 
-                    Picture = "/src/wwwroot/css/LogoEtImageAssociation/imgProjetAurore",
+                    Picture = "~/ImagesProject/imgProjetAurore.jpeg",
                     Category = Category.health,
                     StartDate  = new DateTime(2021, 11, 9, 16, 5, 7, 123),
                     EndDate = new DateTime(2022, 5, 9, 16, 5, 7, 123),
-                    Video = "/src/wwwroot/css/LogoEtImageAssociation/VideoAurore",
+                    Video = "~/VideosProject/VideoAurore.jpg",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
                     Location="Iceland",
                   
@@ -599,11 +599,11 @@ namespace Projet2Crowdfunding.Models
                     "que dans 7% de son aire de répartition historique et 43% de ses habitats restants pourraient bientôt être perdus en raison de " +
                     "l’expansion agricole et de l’urbanisation. ",
 
-                    Picture = "/src/wwwroot/css/LogoEtImageAssociation/imgWwf",
+                    Picture = "~/ImagesProject/imgWwf.jpeg",
                     Category = Category.environment,
                     StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
-                    Video = "/src/wwwroot/css/LogoEtImageAssociation/Videowwf",
+                    Video = "~/VideosProject/Videowwf.jpg",
                     MaterialDonation = "Nourriture",
                     Location = "Lille",
                 },
@@ -632,11 +632,11 @@ namespace Projet2Crowdfunding.Models
                     "leur poids dans les négociations avec les collecteurs est faible bien qu’ils soient organisés en groupement informel.Les communautés de base(COBA), acteurs clés pour la gestion des ressources naturelles," +
                     "manquent souvent de ressources techniques et organisationnelles pour être pleinement efficaces et aucune politique n’intègre véritablement les enjeux de gestion durable des mangroves.",
 
-                    Picture = "/src/wwwroot/css/LogoEtImageAssociation/mangroveimage",
+                    Picture = "~/ImagesProject/mangroveimage2.jpeg",
                     Category = Category.environment,
                     StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
-                    Video = "/src/wwwroot/css/LogoEtImageAssociation/mangrovevideo",
+                    Video = "~/VideosProject/mangrovevideo.jpeg",
                     MaterialDonation = "Barques motorisées",
                     Location = "Troyes"
                 },
@@ -669,11 +669,11 @@ namespace Projet2Crowdfunding.Models
                     "et de l’Education nationale." +
                     "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
 
-                    Picture = "/src/wwwroot/css/LogoEtImageAssociation/Playimage",
+                    Picture = "~/ImagesProject/Playimage1.jpeg",
                     Category = Category.education,
                     StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
-                    Video = "/src/wwwroot/css/LogoEtImageAssociation/PlayVideo",
+                    Video = "~/VideosProject/PlayVideo.html",
                     MaterialDonation = "Materiaux sportifs",
                     Location = "New York"
                 },
@@ -710,11 +710,11 @@ namespace Projet2Crowdfunding.Models
                     "Insertion scolaire, sociale et économique Action contre les mines, les restes explosifs de guerre et l'utilisation des armes en zones peuplées" +
                     "Promotion des droits des personnes handicapées",
 
-                    Picture = "/src/wwwroot/css/LogoEtImageAssociation/handicapimage",
+                    Picture = "~/ImagesProject/handicapimage.jpeg",
                     Category = Category.humanitarian,
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
-                    Video = "/src/wwwroot/css/LogoEtImageAssociation/handicapVideo",
+                    Video = "~/VideosProject/videoHandicap.html",
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
                     Location = "Nwagadougou"
                 }
