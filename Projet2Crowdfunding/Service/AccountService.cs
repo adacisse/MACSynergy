@@ -214,6 +214,11 @@ namespace Projet2Crowdfunding.Service
             }
             return null;
         }
+        public Project GetProjectFromProjectOwnerId(int Id)
+        {
+            Project projet = this.bddContext.Projects.FirstOrDefault(p => p.Id ==Id);
+            return (projet);
+        }
 
 
         public void Dispose()

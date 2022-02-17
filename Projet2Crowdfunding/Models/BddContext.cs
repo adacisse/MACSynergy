@@ -571,8 +571,10 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/VideoAurore.jpg",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
                     Location="Iceland",
-                  
-        },
+                    ProjectOwnerId=1
+                 
+
+                },
 
                 new Project
                 {      
@@ -606,6 +608,7 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/Videowwf.jpg",
                     MaterialDonation = "Nourriture",
                     Location = "Lille",
+                    ProjectOwnerId = 2
                 },
 
 
@@ -638,7 +641,8 @@ namespace Projet2Crowdfunding.Models
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
                     Video = "/VideosProject/mangrovevideo.jpeg",
                     MaterialDonation = "Barques motorisées",
-                    Location = "Troyes"
+                    Location = "Troyes",
+                    ProjectOwnerId = 2
                 },
 
                 new Project
@@ -675,7 +679,8 @@ namespace Projet2Crowdfunding.Models
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "/VideosProject/PlayVideo.html",
                     MaterialDonation = "Materiaux sportifs",
-                    Location = "New York"
+                    Location = "New York",
+                    ProjectOwnerId = 3
                 },
 
                 new Project
@@ -716,7 +721,8 @@ namespace Projet2Crowdfunding.Models
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "/VideosProject/videoHandicap.html",
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
-                    Location = "Nwagadougou"
+                    Location = "Nwagadougou",
+                    ProjectOwnerId = 4
                 }
             );
 

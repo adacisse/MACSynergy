@@ -15,6 +15,7 @@ namespace Projet2Crowdfunding.ViewModels
         public Administrator Administrator { get; set; }
 
         public ProjectOwner ProjectOwner { get; set; }
+        public Project Project { get; set; }
 
         [Display(Name = "Justificatif de l'organisation")]
         public IFormFile AssociationProof { get; set; }
@@ -24,5 +25,7 @@ namespace Projet2Crowdfunding.ViewModels
         public IFormFile ProjectImage { get; set; }
 
         public IFormFile ProjectVideo { get; set; }
+        public int heartCounter { get; set; }//compteur total coups de couer
+        public double sumDonations { get; set; }//somme dons
     }
 }
