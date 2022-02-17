@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
@@ -15,9 +18,13 @@ namespace Projet2Crowdfunding.Controllers
     public class AccountController : Controller
     {
         private AccountService accountService;
-        public AccountController()
+        private IWebHostEnvironment _env;
+        private string fileNameProof;
+        public string fileNameLogo;
+        public AccountController(IWebHostEnvironment environment)
         {
             accountService = new AccountService();
+            _env = environment;
         }
        
         public IActionResult LoginPage()
@@ -146,25 +153,44 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult PPInscription(AccountViewModel viewModel)
+        public IActionResult PPInscription(AccountViewModel viewModel, IFormFile AssociationProof)
         {
             if (viewModel.ProjectOwner.ConfidentialityCharter == true && viewModel.Account.Mail != null && 
                 viewModel.Account.Password != null && viewModel.ProjectOwner.PhoneNumber != null && 
                 viewModel.ProjectOwner.Name != null && viewModel.ProjectOwner.Summary != null &&
-                viewModel.ProjectOwner.Type != null && viewModel.ProjectOwner.AssociationProof != null &&
+                viewModel.ProjectOwner.Type != null && viewModel.AssociationProof != null &&
                 viewModel.ProjectOwner.Address.StreetName != null && viewModel.ProjectOwner.Address.StreetNumber != null && 
                 viewModel.ProjectOwner.Address.ZipCode != null && viewModel.ProjectOwner.Address.City != null && 
                 viewModel.ProjectOwner.Address.Country != null)
-            {
-               
+            {   
+                if (viewModel.AssociationProof != null)
+                {
+                    fileNameProof = Path.GetFileName(viewModel.AssociationProof.FileName);
+                    var filePath = _env.ContentRootPath + "\\wwwroot\\JustificatifsPP";
+                    using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameProof), FileMode.Create))
+                    {
+                        viewModel.AssociationProof.CopyTo(fileSteam);
+                    }
+                }
+
+                if (viewModel.AssoLogo != null)
+                {
+                    fileNameLogo = Path.GetFileName(viewModel.AssoLogo.FileName);
+                    var filePath = _env.ContentRootPath + "\\wwwroot\\ImageAssos";
+                    using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameLogo), FileMode.Create))
+                    {
+                        viewModel.AssoLogo.CopyTo(fileSteam);
+                    }
+                }
+
                 int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
 
                 int idProjectOwner = accountService.CreateProjectOwner(idAccount, viewModel.ProjectOwner.Name,
                     viewModel.ProjectOwner.PhoneNumber, viewModel.ProjectOwner.Summary, viewModel.ProjectOwner.Description,
                     viewModel.ProjectOwner.HyperLink, viewModel.ProjectOwner.VolunteerDescritpion, viewModel.ProjectOwner.Partnership, 
-                    viewModel.ProjectOwner.Type, viewModel.ProjectOwner.Image, viewModel.ProjectOwner.AssociationProof, 
+                    viewModel.ProjectOwner.Type, fileNameLogo, fileNameProof, 
                     viewModel.ProjectOwner.Address.StreetName, viewModel.ProjectOwner.Address.StreetNumber, 
-                    viewModel.ProjectOwner.Address.ZipCode, viewModel.ProjectOwner.Address.City, viewModel.ProjectOwner.Address.Country);
+                    viewModel.ProjectOwner.Address.ZipCode, viewModel.ProjectOwner.Address.City, viewModel.ProjectOwner.Address.Country);                
 
                 var userClaims = new List<Claim>()
                 {

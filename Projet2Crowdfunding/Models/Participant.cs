@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Models
 {
-    public enum Gender { Male, Female, Other }
+    public enum Gender { Homme, Femme, Autre }
 
     public class Participant
     {
@@ -28,7 +28,7 @@ namespace Projet2Crowdfunding.Models
 
         [Column(TypeName = "date")]
         [Display(Name = "Date de naissance")]
-        public DateTime? Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
 
         [MaxLength(15)]
         [Display(Name = "Numéro de téléphone")]

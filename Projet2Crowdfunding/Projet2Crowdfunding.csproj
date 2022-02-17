@@ -21,6 +21,9 @@
   <ItemGroup>
     <Folder Include="Views\Account\" />
     <Folder Include="wwwroot\css\LogoEtImageAssociation\" />
+    <Folder Include="wwwroot\ImagesPP\" />
+    <Folder Include="wwwroot\JustificatifsPP\" />
+    <Folder Include="wwwroot\ImageAssos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\css\LogoAssociation\" />

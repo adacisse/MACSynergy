@@ -2,8 +2,6 @@
     overflow-x: hidden;
 }
 
-
-
 .row-content {
     background-color: white;
     padding: 45px 30px;
@@ -20,7 +18,35 @@ fieldset {
     color: gray;
 }
 
+.creation-title {
+    font-size: 26px;
+    text-align: left;
+    color:rgb(173, 209, 42);
+}
 
+.hyperlink {
+    color: seagreen;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    .hyperlink:hover {
+        color: rgb(33, 99, 62);
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+.hyperlink2 {
+    color: seagreen;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+    .hyperlink2:hover {
+        color: rgb(33, 99, 62);
+        font-size: 16px;
+        font-weight: 400;
+    }
 
 
 

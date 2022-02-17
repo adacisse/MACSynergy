@@ -4,7 +4,10 @@
     Layout = "_LayoutDuSite";
 }
 <link rel="stylesheet" type="text/css" href="~/css/Login.css">
+<link rel="stylesheet" type="text/css" href="~/css/Home.css">
+
 <title>MACSynergy Login</title>
+
 
 @section Menu
 {
@@ -21,40 +24,47 @@
 
 <fieldset>
 
+    <div class="mode-vert">
+        <h6 style="font-size: 30px; color: rgb(173, 209, 42) ">BIENVENUE</h6>
+        <br />
+    </div>
+
     @using (Html.BeginForm())
     {
-        <h1>Bienvenue</h1>
-        <br />
+<div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-        @Html.LabelFor(model => model.Account.Mail)
-        @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
-        @Html.ValidationMessageFor(model => model.Account.Mail)
+    @Html.LabelFor(model => model.Account.Mail)
+    @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
+    @Html.ValidationMessageFor(model => model.Account.Mail)
 
-        <br>
-        <br />
-        @Html.LabelFor(model => model.Account.Password)
-        @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
-        @Html.ValidationMessageFor(model => model.Account.Password)
+    <br>
+    <br />
+    @Html.LabelFor(model => model.Account.Password)
+    @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
+    @Html.ValidationMessageFor(model => model.Account.Password)
 
+    <br /><br />
+    @*<div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
+            <label class="form-check-label">Rester connecté?</label>
+        </div>
         <br />
-        @*<div class="form-check">
-                <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
-                <label class="form-check-label">Rester connecté?</label>
-            </div>
-            <br />
-            <br />*@
+        <br />*@
 
-        @Html.ActionLink("Mot de passe oublié ?", "ForgetPassword")
+<a href="ForgetPassword" class="hyperlink2">Mot de passe oublié ?</a>
 
-        <br />
-        <br />
+
+</div>
+
+        <br /> <br />
 
         <button id="bouton-log" type="submit">SE CONNECTER</button>
 
         <br />
         <br />
         <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
-        @Html.ActionLink("Inscrivez-vous!", "InscriptionChoice")
+        <a href ="InscriptionChoice" class="hyperlink">Inscrivez-vous!</a>
+        
     }
 
 

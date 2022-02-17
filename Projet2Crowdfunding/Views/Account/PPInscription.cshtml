@@ -23,91 +23,94 @@
 
 <fieldset>
 
-    <p>CRÉATION D'UN COMPTE PORTEUR DE PROJET</p>
-    <br />
-    <br />
+    <div class="mode-vert">
+        <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN COMPTE PORTEUR DE PROJET</h6>
+        <br/>
+    </div>
+    
+    
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm(FormMethod.Post,new { enctype = "multipart/form-data"}))
     {
 
-<div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+        <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-    <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
+            <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
-    @Html.TextBoxFor(model => model.Account.Mail)
+            @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.Account.Mail)
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
-    @Html.PasswordFor(model => model.Account.Password)
+            @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
+            @Html.PasswordFor(model => model.Account.Password)
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.ProjectOwner.Name) <span> : &nbsp;</span>
-    @Html.TextBoxFor(model => model.ProjectOwner.Name)
+            @Html.LabelFor(model => model.ProjectOwner.Name) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.ProjectOwner.Name)
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.ProjectOwner.Type) <span> : &nbsp;</span>
-    <span>Association </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "association") <span>&nbsp;</span>
-    <span>ONG </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "ONG")
+            @Html.LabelFor(model => model.ProjectOwner.Type) <span> : &nbsp;</span>
+            <span>Association </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "association") <span>&nbsp;</span>
+            <span>ONG </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "ONG")
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.ProjectOwner.PhoneNumber) <span> : &nbsp;</span>
-    @Html.TextBoxFor(model => model.ProjectOwner.PhoneNumber)
+            @Html.LabelFor(model => model.ProjectOwner.PhoneNumber) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.ProjectOwner.PhoneNumber)
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.ProjectOwner.Summary)
-    @Html.TextAreaFor(model => model.ProjectOwner.Summary, new { @cols = "80", @rows = "4" })
+            @Html.LabelFor(model => model.ProjectOwner.Summary)
+            @Html.TextAreaFor(model => model.ProjectOwner.Summary, new { @cols = "80", @rows = "4" })
 
-    <br /><br />
+            <br /><br />
 
-    @Html.LabelFor(model => model.ProjectOwner.AssociationProof) <span> : &nbsp;</span>
-    @Html.TextBoxFor(model => model.ProjectOwner.AssociationProof)
+            @Html.LabelFor(model => model.AssociationProof) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.AssociationProof, new { type = "file" })
 
-    <div>
+            <div>
 
-        <br /><br />
+                <br /><br />
 
-        <p style="color:dimgray">ADRESSE PHYSIQUE</p>
+                <p style="color:dimgray">ADRESSE PHYSIQUE</p>
 
-        @Html.LabelFor(model => model.ProjectOwner.Address.StreetName) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetName)
+                @Html.LabelFor(model => model.ProjectOwner.Address.StreetName) <span> : &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetName)
 
-        <br /><br />
+                <br /><br />
 
-        @Html.LabelFor(model => model.ProjectOwner.Address.StreetNumber) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetNumber)
+                @Html.LabelFor(model => model.ProjectOwner.Address.StreetNumber) <span> : &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetNumber)
 
-        <br /><br />
+                <br /><br />
 
-        @Html.LabelFor(model => model.ProjectOwner.Address.City) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.ProjectOwner.Address.City)
+                @Html.LabelFor(model => model.ProjectOwner.Address.City) <span> : &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Address.City)
 
-        <br /><br />
+                <br /><br />
 
-        @Html.LabelFor(model => model.ProjectOwner.Address.ZipCode) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.ProjectOwner.Address.ZipCode)
+                @Html.LabelFor(model => model.ProjectOwner.Address.ZipCode) <span> : &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Address.ZipCode)
 
-        <br /><br />
+                <br /><br />
 
-        @Html.LabelFor(model => model.ProjectOwner.Address.Country) <span> : &nbsp;</span>
-        @Html.TextBoxFor(model => model.ProjectOwner.Address.Country)
+                @Html.LabelFor(model => model.ProjectOwner.Address.Country) <span> : &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Address.Country)
 
-    </div>
+            </div>
 
-    <br/><br/>
+            <br />
 
-    <div class="text-danger">
-        @Html.ValidationMessageFor(model => model.ProjectOwner)
-    </div>
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.ProjectOwner)
+            </div>
 
-</div>
+        </div>
 
         <br /><br />
 
@@ -137,8 +140,8 @@
 
             <br /><br />
 
-            @Html.LabelFor(model => model.ProjectOwner.Image) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.ProjectOwner.Image)
+            @Html.LabelFor(model => model.AssoLogo) <span> : &nbsp;</span>
+            @Html.TextBoxFor(model => model.AssoLogo, new { type = "file" })
 
         </div>
 

@@ -87,8 +87,8 @@ namespace Projet2Crowdfunding.Service
                 HyperLink = hyperlink,
                 VolunteerDescritpion = volunteerDescritpion,
                 Partnership = patnerShip,
-                AssociationProof = associationProof,
-                Image = image,
+                AssociationProof = "~JustificatifsPP/" + associationProof,
+                Image = "~ImageAsso/" + image,
                 Type = type,
                 Status = AssoStatus.registered,
                 Newsletter = false,
@@ -132,7 +132,7 @@ namespace Projet2Crowdfunding.Service
         {
             string encodedPassword = EncodeMD5(password);
             Account account = this.bddContext.Accounts.FirstOrDefault
-                (a => a.Mail == mail && a.Password == password);
+                (a => a.Mail == mail && a.Password == encodedPassword);
             return account;
         }
 
@@ -164,6 +164,14 @@ namespace Projet2Crowdfunding.Service
                 return this.GetParticipant(id);
             }
             return null;
+        }
+
+        public Participant GetParticipantFromAccountId(int Id)
+        {
+            Participant participant = this.bddContext.Participants.FirstOrDefault(p => p.AccountId == Id);
+            Address address = this.bddContext.Addresses.Find(participant.AddressId);
+            participant.Address = address;
+            return (participant);
         }
 
         public ProjectOwner GetProjectOwner(int id)
