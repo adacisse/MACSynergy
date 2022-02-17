@@ -8,29 +8,56 @@
 
 @section Menu
 {
-    @*@if (Model.Authentify)
+    @if (Model.Authentify)
+    {
+        if (Model.Account.Role == "participant")
         {
             <div class="col-md-8 d-flex justify-content-around">
                 <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
-                <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
                 <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/Participant/Index"><strong>MON PROFIL</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
             </div>
         }
-        else
-        {*@
-    <div class="col-md-8 d-flex justify-content-around">
-        <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
-        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
-        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-    </div>
-    <div class="col-md-2 d-flex justify-content-end align-items-center">
-        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-    </div>
-    @*}*@
+        else if (Model.Account.Role == "po")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else // role == "admin"
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="#"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-8 d-flex justify-content-around">
+            <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-center">
+            <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+        </div>
+    }
 }
 
 <div class="dashboard-container">
@@ -140,7 +167,7 @@
                     <div id="row-logo"></div>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-10"><a><strong>Logo: </strong><img src="@Model.ProjectOwner.Image" alt="Logo" style="max-width:400px"/></a></div>
+                            <div class="col-md-10"><a><strong>Logo: </strong><img src="@Model.ProjectOwner.Image" alt="Logo" style="max-width:400px" /></a></div>
                             <div class="col-md-2">
 
                                 <div class="container">
