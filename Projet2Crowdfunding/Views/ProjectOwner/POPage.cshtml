@@ -113,6 +113,7 @@
     </div>
 </div>
 
+
 @if (@Model.ProjectOwner.VolunteerDescritpion != null)
 {
     <div class="container mt-5">
@@ -127,6 +128,12 @@
     </div>
 }
 
+
+<h6 class="pb-3 pt-4 d-flex justify-content-center align-items-center">
+    ----------------------------
+    NOUVEAUTES ----------------------------
+</h6>
+
 <div class="container mt-5">
     <div class="row">
         @foreach (var Project in Model.ProjectList)
@@ -135,8 +142,8 @@
             <div class="col-md-4 d-flex justify-content-center">
                 <a href="@pagelink">
                     <div class="single-box">
-                        <div class="img-area"><img src="@Project.Picture" alt=""></div>
-                        <div class="img-text">
+                        <div class="img-area2"><img src="@Project.Picture" alt=""/></div>
+                        <div class="img-text2">
                             <h2>@Project.Name</h2>
                             <p>@Project.Summary</p>
                         </div>
