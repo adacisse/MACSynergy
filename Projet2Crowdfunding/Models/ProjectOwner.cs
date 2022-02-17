@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Models
 {
-    public enum ProjectOwnerType { association, ONG}
+    public enum ProjectOwnerType { Association, ONG}
     public enum AssoStatus { registered, published}
 
     public class ProjectOwner
@@ -46,7 +46,7 @@ namespace Projet2Crowdfunding.Models
         public string Partnership { get; set; }
 
         [Required]
-        public ProjectOwnerType? Type { get; set; }
+        public ProjectOwnerType Type { get; set; }
 
         [MaxLength(250)]
         [Required]

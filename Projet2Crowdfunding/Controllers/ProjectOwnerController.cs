@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
 using Projet2Crowdfunding.ViewModels;
 using System;
@@ -47,6 +48,39 @@ namespace Projet2Crowdfunding.Controllers
 
             return View(viewModel);
             
+        }
+
+        public IActionResult ModifyProjectOwner(int Id)
+        {
+            if (Id != 0)
+            {
+                BddContext ctx = new BddContext();
+                ProjectOwner projectOwner = ctx.ProjectOwners.Find(Id);
+                if (projectOwner == null)
+                {
+                    return View("Error");
+                }
+                return View(projectOwner);
+            }
+            return View("Error");
+
+        }
+
+        [HttpPost]
+        public IActionResult ModifyProjectOwnerInfos(ProjectOwner projectOwner)
+        {
+            if (projectOwner.Id != 0)
+            {
+                ProjectOwnerService ps = new ProjectOwnerService();
+                ps.ModifyProjectOwnerInfos(projectOwner.Id, projectOwner.Name, projectOwner.Type,
+                    projectOwner.HyperLink);
+                return RedirectToAction("PODashboard");
+
+            }
+            else
+            {
+                return View("Error");
+            }
         }
 
 

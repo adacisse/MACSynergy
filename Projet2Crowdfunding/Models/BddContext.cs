@@ -255,7 +255,7 @@ namespace Projet2Crowdfunding.Models
                     "c’est se donner les moyens de l’action, auprès d’une grande association laïque.C’est agir en solidarité et avec des principes humanistes.",
                     Partnership = "Dons solidaire, Le chainon manquant, L'agence du don en nature",
 
-                    Type = ProjectOwnerType.association,
+                    Type = ProjectOwnerType.Association,
 
                     AssociationProof = "/JustificatifsPP/proofAuroreAsso.png",
 
@@ -426,7 +426,7 @@ namespace Projet2Crowdfunding.Models
 
                     Partnership = "alabama, Alcure, Michelin, Airfrance",
 
-                    Type = ProjectOwnerType.association,
+                    Type = ProjectOwnerType.Association,
                     AssociationProof = "/JustificatifsPP/proofhandicap.png",
                     Image = "/ImageAssos/handicaplogo.png",
                     Status = AssoStatus.registered,
@@ -492,7 +492,7 @@ namespace Projet2Crowdfunding.Models
 
                      Partnership = "BNparibas, NewYorker, Michelin, Airfrance",
 
-                     Type = ProjectOwnerType.association,
+                     Type = ProjectOwnerType.Association,
                      AssociationProof = "/JustificatifsPP/proofSynergieInter.png",
                      Image = "/ImageAssos/logoSynergieInter.png",
                      Status = AssoStatus.registered,
