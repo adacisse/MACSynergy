@@ -73,7 +73,69 @@ namespace Projet2Crowdfunding.Controllers
             }
         }
 
-    }
+        public IActionResult ModifyParticipantPhone(Participant participant)
+        {
+            if (participant.Id != 0)
+            {
+                ParticipantService ps = new ParticipantService();
+                ps.ModifyParticipantPhone(participant.Id, participant.PhoneNumber);
+                return RedirectToAction("PDashboard");
 
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyParticipantEmail(Account account)
+        {
+            if (account.Id != 0)
+            {
+                ParticipantService ps = new ParticipantService();
+                ps.ModifyParticipantEmail(account.Id, account.Mail);
+                return RedirectToAction("PDashboard");
+
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyParticipantPwd(Account account)
+        {
+            if (account.Id != 0)
+            {
+                ParticipantService ps = new ParticipantService();
+                ps.ModifyParticipantPwd(account.Id, account.Password);
+                return RedirectToAction("PDashboard");
+
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyParticipantAddress(Participant participant)
+        {
+            if (participant.Id != 0)
+            {
+                ParticipantService ps = new ParticipantService();
+                ps.ModifyParticipantAddress(participant.Id, participant.Address.StreetNumber, participant.Address.StreetName, participant.Address.ZipCode,
+                    participant.Address.City, participant.Address.Country);
+                return RedirectToAction("PDashboard");
+
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+    }
     
+
+
 }
