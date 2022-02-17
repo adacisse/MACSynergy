@@ -93,16 +93,16 @@
         <div class="col-lg-4 col-sm-4 col-md-4">
             <div class="card-header"
                  style="width:400px; height:630px;border:1px solid #d6d6d6;border-radius: 14px;">
-                <img class="card-img-top" src="~/Images/asso.png" alt="Card image"
+                <div id="assoLogo"><img class="card-img-top" src="~/Images/asso.png" alt="Card image"
                      style="width:15%; border:1px solid #d6d6d6;border-radius:100px;" data-bs-toggle="popover"
-                     title="Profil de PeopleCare">
+                     ; title=@Model.ProjectOwner.Name >
                 <script>
                     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
                     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
                         return new bootstrap.Popover(popoverTriggerEl)
                     })
                 </script>
-
+                </div>
                 <div class="card-body">
                     <h4 class="card-title">Ouragon de Cathrina, USA</h4>
                     <img class="card-img-top" src="~/Images/countdown.jpg" alt="Card image"
@@ -164,7 +164,8 @@
                                             </a>
                                         </div>
                                     }
-                                    else { 
+                                    else
+                                    {
 
                                     }
                                 </div>
@@ -172,7 +173,7 @@
                         }
                     }
 
-                    </div>
+                </div>
             </div>
         </div>
         <div class="container mt-3">
