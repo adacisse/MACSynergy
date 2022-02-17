@@ -251,14 +251,33 @@
                                 <p>Modifiez les champs nécessaires</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
+                                        @using (Html.BeginForm("ModifyParticipantInfos", "Participant"))
+                                        { 
                                         <div class="form-group">
-                                            <input class="form-control input-lg mt-2" value="@Model.Participant.LastName" name="lastName" placeholder="Nom" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.Participant.FirstName" name="firstName" placeholder="Prénom" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.Participant.Gender" name="gender" placeholder="Genre" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.Participant.Birthdate.ToShortDateString()" name="birthDate" placeholder="Date de Naissance" type="text">
+                                            @Html.HiddenFor(m => m.Participant.Id)
+                                            @Html.TextBoxFor(m => m.Participant.LastName, new { @class = "form-control input-lg mt-2", placeholder = "Nom" })
+                                            @Html.TextBoxFor(m => m.Participant.FirstName, new { @class = "form-control input-lg mt-2", placeholder = "Prénom" })
+                                            <div class="col-md-10">
+                                                <span style="margin-right:20px">
+                                                    Homme
+                                                    @Html.RadioButtonFor(m => m.Participant.Gender, "0", new { @class = "margin-right:10px" })
+                                                </span>
+                                                <span style="margin-right:20px">
+                                                    Femme
+                                                    @Html.RadioButtonFor(m => m.Participant.Gender, "1")
+                                                </span>
+                                                Autre
+                                                @Html.RadioButtonFor(m => m.Participant.Gender, "2")
+                                            </div>
+                                            @Html.TextBoxFor(m => m.Participant.Birthdate, new { @class = "form-control input-lg mt-2", placeholder = "Date de naissance" })
+                                            @*<input class="form-control input-lg mt-2" value="@Model.Participant.LastName" name="lastName" placeholder="Nom" type="text">*@
+                                            @*<input class="form-control input-lg mt-2" value="@Model.Participant.FirstName" name="firstName" placeholder="Prénom" type="text">
+        <input class="form-control input-lg mt-2" value="@Model.Participant.Gender" name="gender" placeholder="Genre" type="text">
+        <input class="form-control input-lg mt-2" value="@Model.Participant.Birthdate.ToShortDateString()" name="birthDate" placeholder="Date de Naissance" type="text">*@
                                         </div>
-                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
-                                    </fieldset>
+                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                            }
+</fieldset>
                                 </div>
                             </div>
                         </div>
@@ -296,7 +315,10 @@
                                 <p>Modifiez les champs nécessaires</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
+                                        @using (Html.BeginForm("ModifyParticipant", "Participant"))
+                                        {
                                         <div class="form-group">
+                                        @* @Html.TextBoxFor(m => Model.Participant.Address.StreetNumber, new { @class= "form-control input-lg mt-2", placeholder="N°" })*@
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.Address.StreetNumber" name="streetNumber" placeholder="N°" type="text">
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.Address.StreetName" name="street" placeholder="Rue" type="text">
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.Address.ZipCode" name="postalCode" placeholder="CP" type="text">
@@ -304,6 +326,7 @@
                                             <input class="form-control input-lg mt-2" value="@Model.Participant.Address.Country" name="country" placeholder="Pays" type="text">
                                         </div>
                                         <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                        }
                                     </fieldset>
                                 </div>
                             </div>

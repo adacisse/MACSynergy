@@ -34,44 +34,44 @@ namespace Projet2Crowdfunding.Controllers
             }
             return View(viewModel);
         }
-                
-        //public IActionResult ModifyParticipant(int Id)
-        //{
-        //    if (Id != 0)
-        //    {
-        //        BddContext ctx = new BddContext();
-        //        Participant participant = ctx.Participants.Find(Id);
-        //        if (participant == null)
-        //        {
-        //            return View("Error");
-        //        }
-        //        return View(participant);
-        //    }
-        //    return View("Error");
 
-        //}
+        public IActionResult ModifyParticipant(int Id)
+        {
+            if (Id != 0)
+            {
+                BddContext ctx = new BddContext();
+                Participant participant = ctx.Participants.Find(Id);
+                if (participant == null)
+                {
+                    return View("Error");
+                }
+                return View(participant);
+            }
+            return View("Error");
 
-        //[HttpPost]
-        //public IActionResult ModifyParticipant(Participant participant)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(participant);
-        //    }
+        }
 
-        //    if (participant.Id != 0)
-        //    {
-        //        ParticipantService ps = new ParticipantService();
-        //        ps.ModifyParticipant(participant.Id, participant.LastName, participant.FirstName,
-        //            participant.Gender, participant.PhoneNumber, participant.Birthdate);
-        //        return RedirectToAction("Index");
+        [HttpPost]
+        public IActionResult ModifyParticipantInfos(Participant participant)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return View(participant);
+            //}
 
-        //    }
-        //    else
-        //    {
-        //        return View("Error");
-        //    }
-        //}
+            if (participant.Id != 0)
+            {
+                ParticipantService ps = new ParticipantService();
+                ps.ModifyParticipantInfos(participant.Id, participant.LastName, participant.FirstName,
+                    participant.Gender, participant.Birthdate);
+                return RedirectToAction("PDashboard");
+
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
 
     }
 
