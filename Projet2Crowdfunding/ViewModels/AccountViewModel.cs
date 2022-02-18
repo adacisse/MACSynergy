@@ -45,6 +45,9 @@ namespace Projet2Crowdfunding.ViewModels
         
         public List<Collection> CollectionList { get; set; }
 
+        public PayPalAccount PayPalAccount { get; set; }
+
+        public CreditCard CreditCard { get; set; }
 
     }
 }

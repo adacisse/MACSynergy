@@ -21,10 +21,7 @@ namespace Projet2Crowdfunding.Controllers
             return View();
         }
 
-        public IActionResult Essaie()
-        {
-            return View();
-        }
+      
 
         //public IActionResult PaymentPage(int? id)
         //{

@@ -40,17 +40,17 @@ namespace Projet2Crowdfunding.Service
 
 
 
-        //public int CreateDonationParticipant(int Id, double amount)
-        //{
+        public int CreateParticipantDonation(int Id, double amount)
+        {
 
-        //    Donation donation = new Donation()
-        //    {
-        //        Amount = amount,
-        //    };
-        //    this.bddContext.Donations.Add(donation);
-        //    this.bddContext.SaveChanges();
-        //    return donation.Id;
-        //}
+            Donation donation = new Donation()
+            {
+                Amount = amount,
+            };
+            this.bddContext.Donations.Add(donation);
+            this.bddContext.SaveChanges();
+            return donation.Id;
+        }
 
         //public List<Donation> GetDonationsFromParticipantId(int Id)
         //{
@@ -65,17 +65,17 @@ namespace Projet2Crowdfunding.Service
 
 
 
-        public double CreateCollectionForProject(double amount, int Id)
-        {
-            Collection collection = new Collection()
+        //public double CreateCollectionForProject(double amount, int Id)
+        //{
+        //    Collection collection = new Collection()
 
-            {
-                Amount = amount
-            };
-            this.bddContext.Collections.Add(collection);
-            this.bddContext.SaveChanges();
-            return collection.Id;
-        }
+        //    {
+        //        Amount = amount
+        //    };
+        //    this.bddContext.Collections.Add(collection);
+        //    this.bddContext.SaveChanges();
+        //    return collection.Id;
+        //}
 
 
         public double AddDonationToCollection(double CurrentDonations, double addDonation)
@@ -96,7 +96,7 @@ namespace Projet2Crowdfunding.Service
 
 
 
-    //public int CreatePaypalAccount (string mail)
+    //public int CreatePaypalAccount(string mail)
     //{
     //    PayPalAccount payPalAccount = new PayPalAccount()
     //    {
