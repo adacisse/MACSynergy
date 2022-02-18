@@ -68,6 +68,9 @@ namespace Projet2Crowdfunding.Models
         public int? ProjectOwnerId { get; set; }
         public virtual ProjectOwner ProjectOwner { get; set; }
 
+        [Required]
+        public int HeartCounter { get; set; } //pour le projet
+
 
 
     }
