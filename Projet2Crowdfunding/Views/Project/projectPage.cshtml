@@ -1,8 +1,8 @@
 @model Projet2Crowdfunding.ViewModels.AccountViewModel
- 
+
 
 @{
-    Layout = "_LayoutDuSiteNoFooter";
+    Layout = "_LayoutDuSite";
 }
 <title>Project</title>
 <link rel="stylesheet" type="text/css" href="~/css/grid.css">
@@ -13,6 +13,7 @@
         height: 200px;
         background: #aaa;
     }
+
     .demo-1 {
         overflow: hidden;
         display: -webkit-box;
@@ -23,9 +24,56 @@
 
 @section Menu
 {
-    <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
-    <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
-    <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    @if (Model.Authentify)
+    {
+        if (Model.Account.Role == "participant")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-active" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else if (Model.Account.Role == "po")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-active" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else // role == "admin"
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-active" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-8 d-flex justify-content-around">
+            <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-active" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-center">
+            <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+        </div>
+    }
 }
 
 
@@ -62,18 +110,18 @@
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen alt="Ouragon" class="d-block" style="width:100%"></iframe>
                                 <!--<video width="560" height="500" controls>
-        <source src=@Model.Project.Video type="video/mp4">
-        Votre explorateur ne supporte pas la balise video.
-    </video>-->
+                                    <source src=@Model.Project.Video type="video/mp4">
+                                    Votre explorateur ne supporte pas la balise video.
+                                </video>-->
                             </div>
-    <div class="carousel-item">
-        <img src=@Model.Project.Picture alt="Ouragon" class="d-block" style="width:100%">
-    </div>
+                            <div class="carousel-item">
+                                <img src=@Model.Project.Picture alt="Ouragon" class="d-block" style="width:100%">
+                            </div>
 
-    <!-- <div class="carousel-item">
-        <img src="images/noye.png" alt="noye" class="d-block" style="width:100%">
-    </div> -->
-                            </div>
+                            <!-- <div class="carousel-item">
+                                <img src="images/noye.png" alt="noye" class="d-block" style="width:100%">
+                            </div> -->
+                        </div>
 
                         <!-- Left and right controls/icons -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#demo"
@@ -98,15 +146,16 @@
         <div class="col-lg-4 col-sm-4 col-md-4">
             <div class="card-header"
                  style="width:400px; height:630px;border:1px solid #d6d6d6;border-radius: 14px;">
-                <div id="assoLogo"><img class="card-img-top" src="@Model.ProjectOwner.Image" alt="Card image"
-                     style="width:15%; border:1px solid #d6d6d6;border-radius:100px;" data-bs-toggle="popover"
-                     ; title=@Model.ProjectOwner.Name >
-                <script>
-                    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-                    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-                        return new bootstrap.Popover(popoverTriggerEl)
-                    })
-                </script>
+                <div id="assoLogo">
+                    <img class="card-img-top" src="@Model.ProjectOwner.Image" alt="Card image"
+                         style="width:15%; border:1px solid #d6d6d6;border-radius:100px;" data-bs-toggle="popover"
+                         ; title=@Model.ProjectOwner.Name>
+                    <script>
+                        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+                        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                            return new bootstrap.Popover(popoverTriggerEl)
+                        })
+                    </script>
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">@Model.Project.Name</h4>
@@ -114,9 +163,9 @@
                          style="width:100%; border:1px solid #d6d6d6; border-radius:14px;">
                     <p class="card-text">
                         <h6>Aperçu</h6>
-                        <p class="demo-1">
-                            @Model.Project.Summary
-                        </p>
+                    <p class="demo-1">
+                        @Model.Project.Summary
+                    </p>
                     </p>
                     <div class="progress" style="padding:0px 0px 0px 0px;">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
@@ -588,18 +637,19 @@
                         <h2 class="h1-responsive font-weight-bold my-5">Le besoin du projet</h2>
                         <h4>Description des palliers</h4>
                         <p>
-                            @foreach (var Step in Model.ProjectStepsList) { 
-                            <div>
-                                <h2> L'identifiant de ce pallier est: @Step.Id</h2>
-                                <h3>Le montant de ce pallier est @Step.Amount €</h3>
+                            @foreach (var Step in Model.ProjectStepsList)
+                            {
+                                <div>
+                                    <h2> L'identifiant de ce pallier est: @Step.Id</h2>
+                                    <h3>Le montant de ce pallier est @Step.Amount €</h3>
                                 </div>
-                                <br/>
+                                <br />
                             }
-                                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                                adipiscing
-                                elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minimveniam,quis nostrud exercitation ullamco.
-</p>
+                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                            adipiscing
+                            elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minimveniam,quis nostrud exercitation ullamco.
+                        </p>
                         <p>
                             Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
                             adipiscing
@@ -714,6 +764,19 @@
 </div>
     </div>
 
-<div class="mt-5 p-4 bg-dark text-white text-center">
-    <p>Footer</p>
-</div>
+@section Footer
+    {
+    <div class="newsletter-subscribe container">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center newsletter">Inscrivez-vous à notre newsletter</h2>
+                <p class="text-center">Recevez de nouveaux projets dans votre boite chaque semaine !</p>
+            </div>
+            <form class="row" method="post">
+                <div class="col-md-6"><input class="form-control" type="email" name="email" placeholder="Votre Email"></div>
+                <div class="col-md-2"><button class="btn btn-primary" type="button">S'abonner </button></div>
+            </form>
+
+        </div>
+    </div>
+}
