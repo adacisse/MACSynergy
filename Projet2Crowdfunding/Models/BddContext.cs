@@ -566,7 +566,7 @@ namespace Projet2Crowdfunding.Models
                     "Boris Cyrulnik",
 
                     Picture = "/ImagesProject/imgProjetAurore.jpg",
-                    Category = Category.health,
+                    Category = Category.Santé,
                     StartDate  = new DateTime(2021, 11, 9, 16, 5, 7, 123),
                     EndDate = new DateTime(2022, 5, 9, 16, 5, 7, 123),
                     Video = "/VideosProject/VideoAurore.jpg",
@@ -604,7 +604,7 @@ namespace Projet2Crowdfunding.Models
                     "l’expansion agricole et de l’urbanisation. ",
 
                     Picture = "/ImagesProject/imgWwf.jpeg",
-                    Category = Category.environment,
+                    Category = Category.Environnement,
                     StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
                     Video = "/VideosProject/Videowwf.jpg",
@@ -639,7 +639,7 @@ namespace Projet2Crowdfunding.Models
                     "manquent souvent de ressources techniques et organisationnelles pour être pleinement efficaces et aucune politique n’intègre véritablement les enjeux de gestion durable des mangroves.",
 
                     Picture = "/ImagesProject/mangroveimage2.jpeg",
-                    Category = Category.environment,
+                    Category = Category.Environnement,
                     StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
                     Video = "/VideosProject/mangrovevideo.jpeg",
@@ -678,7 +678,7 @@ namespace Projet2Crowdfunding.Models
                     "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
 
                     Picture = "/ImagesProject/Playimage.jpeg",
-                    Category = Category.education,
+                    Category = Category.Education,
                     StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "/VideosProject/PlayVideo.html",
@@ -721,7 +721,7 @@ namespace Projet2Crowdfunding.Models
                     "Promotion des droits des personnes handicapées",
 
                     Picture = "/ImagesProject/handicapimage.jpeg",
-                    Category = Category.humanitarian,
+                    Category = Category.Humanitaire,
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "/VideosProject/videoHandicap.html",
