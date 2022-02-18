@@ -21,15 +21,15 @@ namespace Projet2Crowdfunding.Service
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(cvvSel)));
         }
 
-        public int CreateCreditCard(string cardNumber, string ownerName, DateTime ExpirationDate, string cvv)
+        public int CreateCreditCard(string cardNumber, string ownerName, DateTime expirationDate, string cvv)
         {
-            string encodedCvv= EncodeMD5(cvv);
+            string encodedCvv = EncodeMD5(cvv);
 
             CreditCard creditCard = new CreditCard()
             {
-                CardNumber  = cardNumber,
+                CardNumber = cardNumber,
                 OwnerName = ownerName,
-                ExpirationDate = ExpirationDate,
+                ExpirationDate = expirationDate,
                 Cvv = encodedCvv
             };
 
@@ -38,60 +38,87 @@ namespace Projet2Crowdfunding.Service
             return creditCard.Id;
         }
 
-        public int CreateDonationParticipant(int Id, double amount)
-        {
-
-            Donation donation = new Donation()
-            {
-                Amount = amount,
-            };
-            
-            this.bddContext.Donations.Add(donation);
-            this.bddContext.SaveChanges();
-            return donation.Id;
-        }
-
-        public List<Donation> GetDonationsFromParticipantId(int Id)
-        {
-            List<Donation> ParticipantDonationList = new List<Donation>();
-            var donations = bddContext.Donations.Where(p => p.ParticipantId == Id).ToList();
-            foreach (Donation donation in donations)
-            {
-                ParticipantDonationList.Add(donation);
-            }
-            return (ParticipantDonationList);
-        }
 
 
-       
-        public Collection GetProjectCollection(int id, double amount)
-        {
-           
-        }
-
-        //public int CreatePaypalAccount (string mail)
+        //public int CreateDonationParticipant(int Id, double amount)
         //{
-        //    PayPalAccount payPalAccount = new PayPalAccount()
+
+        //    Donation donation = new Donation()
         //    {
-        //        Mail = mail
+        //        Amount = amount,
         //    };
-        //    this.bddContext.PayPalAccounts.Add(payPalAccount);
+        //    this.bddContext.Donations.Add(donation);
         //    this.bddContext.SaveChanges();
-        //    return payPalAccount.Id;
+        //    return donation.Id;
         //}
 
-        //public Boolean ValidateCreditCardInfo(string cardNumber, string ownerName, DateTime ExpirationDate, string cvv)
+        //public List<Donation> GetDonationsFromParticipantId(int Id)
         //{
-
+        //    List<Donation> ParticipantDonationList = new List<Donation>();
+        //    var donations = bddContext.Donations.Where(p => p.ParticipantId == Id).ToList();
+        //    foreach (Donation donation in donations)
+        //    {
+        //        ParticipantDonationList.Add(donation);
+        //    }
+        //    return (ParticipantDonationList);
         //}
-        //return
 
-        //public Boolean ValidatePaypalAccount(string mail)
-        //{
 
-        //}
-        //return
+
+        public double CreateCollectionForProject(double amount, int Id)
+        {
+            Collection collection = new Collection()
+
+            {
+                Amount = amount
+            };
+            this.bddContext.Collections.Add(collection);
+            this.bddContext.SaveChanges();
+            return collection.Id;
+        }
+
+
+        public double AddDonationToCollection(double CurrentDonations, double addDonation)
+        {
+            double collectionAmount = CurrentDonations += addDonation;
+            {
+                return collectionAmount;
+            };
+
+        }
+
+
+
     }
+
+
+
+
+
+
+    //public int CreatePaypalAccount (string mail)
+    //{
+    //    PayPalAccount payPalAccount = new PayPalAccount()
+    //    {
+    //        Mail = mail
+    //    };
+    //    this.bddContext.PayPalAccounts.Add(payPalAccount);
+    //    this.bddContext.SaveChanges();
+    //    return payPalAccount.Id;
+    //}
+
+    //public Boolean ValidateCreditCardInfo(string cardNumber, string ownerName, DateTime ExpirationDate, string cvv)
+    //{
+
+    //}
+    //return
+
+    //public Boolean ValidatePaypalAccount(string mail)
+    //{
+
+    //}
+    //return
+    //}   
 
 }
 

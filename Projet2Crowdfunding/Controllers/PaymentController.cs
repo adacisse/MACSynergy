@@ -12,29 +12,31 @@ namespace Projet2Crowdfunding.Controllers
     public class PaymentController : Controller
     {
         private BddContext bddContext;
-        
+        private AccountService accountService;
+        private PaymentService paymentService;
+
 
         public IActionResult PaymentPage()
         {
             return View();
         }
 
-        public IActionResult DonationPage(int? id)
-        {
-            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-            }
-            if (id.HasValue)
-            {
-                viewModel.Participant = accountService.GetParticipant(id.Value);
-                viewModel.DonationList = paymentService.GetDonnationsFromParticipantId(id.Value);
-            }
+        //public IActionResult PaymentPage(int? id)
+        //{
+        //    AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+        //    if (HttpContext.User.Identity.IsAuthenticated)
+        //    {
+        //        viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+        //    }
+        //    if (id.HasValue)
+        //    {
+        //        viewModel.Participant = accountService.GetParticipant(id.Value);
+        //        viewModel.DonationList = PaymentService.GetDonationsFromParticipantId( );
+        //    }
 
-            return View(viewModel);
+        //    return View(viewModel);
 
-        }
+        //}
 
     }
 }
