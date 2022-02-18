@@ -726,6 +726,34 @@ namespace Projet2Crowdfunding.Models
                 }
             );
 
+            ////Instances PPs
+            this.Collections.AddRange(
+                new Collection
+                {
+                    Amount = 100,
+                    ProjectId = 1
+                },
+                new Collection
+                {
+                    Amount = 20,
+                    ProjectId = 2
+                },
+                new Collection
+                {
+                    Amount = 250,
+                    ProjectId = 3
+                },
+                new Collection
+                {
+                    Amount = 3000,
+                    ProjectId = 4
+                },
+                new Collection
+                {
+                    Amount = 1480,
+                    ProjectId = 5
+                }
+            );
 
 
             this.SaveChanges(); 
