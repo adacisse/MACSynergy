@@ -27,8 +27,11 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
                 viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                viewModel.ProjectList = projectService.GetProjectsFromProjectOwnerId(viewModel.ProjectOwner.Id);
+                viewModel.CollectionList = projectService.GetAllCollections();
                 return View(viewModel);
             }
+            
             return View(viewModel);
         }
 

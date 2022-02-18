@@ -85,6 +85,13 @@ namespace Projet2Crowdfunding.Service
 
         }
 
+        public List<Collection> GetAllCollections()
+        {
+            List<Collection> collectionList = this.bddContext.Collections.ToList();
+            return collectionList;
+
+        }
+
 
     }
 }
