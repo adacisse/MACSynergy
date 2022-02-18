@@ -767,7 +767,78 @@ namespace Projet2Crowdfunding.Models
                     ParticipantId = 4
                 }
                 ) ;
-
+            this.Steps.AddRange(
+                new Step
+                {
+                    Id = 1,
+                    Amount = 5000,
+                    Description = "Pour louer le local",
+                    ProjectId = 1
+                },
+                new Step
+                {
+                Id = 2,
+                    Amount = 7000,
+                    Description = "Pour louer le chateau",
+                    ProjectId = 1
+                },
+                new Step
+                {
+                    Id = 3,
+                    Amount = 15000,
+                    Description = "Pour acheter la fourniture",
+                    ProjectId = 1
+                },
+                new Step
+                {
+                    Id = 4,
+                    Amount = 7000,
+                    Description = "Pour faire à manger",
+                    ProjectId = 2
+                },
+                new Step
+                {
+                    Id = 5,
+                    Amount = 9000,
+                    Description = "Pour faire des maisons",
+                    ProjectId = 2
+                },
+                new Step
+                {
+                    Id = 6,
+                    Amount = 3000,
+                    Description = "Pour faire la fete",
+                    ProjectId = 3
+                },
+                new Step
+                {
+                    Id = 7,
+                    Amount = 45000,
+                    Description = "Pour faire un gateau",
+                    ProjectId = 3
+                },
+                new Step
+                {
+                    Id = 8,
+                    Amount = 8900,
+                    Description = "Pour faire un gateau",
+                    ProjectId = 4
+                },
+                 new Step
+                 {
+                     Id = 9,
+                     Amount = 700,
+                     Description = "Pour faire un gateau",
+                     ProjectId = 5
+                 },
+                  new Step
+                  {
+                      Id = 10,
+                      Amount = 6000,
+                      Description = "Pour faire un gateau",
+                      ProjectId = 5
+                  }
+                );
             ////Instances PPs
             this.Collections.AddRange(
                 new Collection

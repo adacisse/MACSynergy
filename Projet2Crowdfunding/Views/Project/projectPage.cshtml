@@ -57,20 +57,15 @@
                         <!-- The slideshow/carousel -->
                         <div class="carousel-inner" data-interval="50">
                             <div class="carousel-item active">
-                                <iframe width="560" height="500" src="https://www.youtube.com/embed/4h17Zqmi5Aw"
+                                <iframe width="560" height="500" src="@Model.Project.Video"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen alt="Ouragon" class="d-block" style="width:100%"></iframe>
                             </div>
                             <div class="carousel-item">
-                                <img src="~/Images/ouragon.png" alt="Ouragon" class="d-block" style="width:100%">
+                                <img src=@Model.Project.Picture alt="Ouragon" class="d-block" style="width:100%">
                             </div>
-                            <div class="carousel-item">
-                                <img src="~/Images/shelter.png" alt="Shelter" class="d-block" style="width:90%">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="~/Images/flood.png" alt="Flood" class="d-block" style="width:100%">
-                            </div>
+                            
                             <!-- <div class="carousel-item">
                                 <img src="images/noye.png" alt="noye" class="d-block" style="width:100%">
                             </div> -->
@@ -99,7 +94,7 @@
         <div class="col-lg-4 col-sm-4 col-md-4">
             <div class="card-header"
                  style="width:400px; height:630px;border:1px solid #d6d6d6;border-radius: 14px;">
-                <div id="assoLogo"><img class="card-img-top" src="~/Images/asso.png" alt="Card image"
+                <div id="assoLogo"><img class="card-img-top" src="@Model.ProjectOwner.Image" alt="Card image"
                      style="width:15%; border:1px solid #d6d6d6;border-radius:100px;" data-bs-toggle="popover"
                      ; title=@Model.ProjectOwner.Name >
                 <script>
@@ -161,9 +156,10 @@
                                     </div>
                                     @if (Model.ProjectOwner.VolunteerDescritpion != null)
                                     {
+                                        //string poPagelink = "/ProjectOwner/POPage/" + ProjectOwner.Id;
                                         <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
                                             <a href="#" class="btn btn-success float-left" width="7px"
-                                               style="text-decoration:none">
+                                               style="text-decoration:none" onclick="">
                                                 Je suis bénévole! <img style="width:auto;"
                                                                        src="~/Images/ar.png" alt="" />
                                             </a>
