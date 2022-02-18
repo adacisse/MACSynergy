@@ -21,7 +21,12 @@ namespace Projet2Crowdfunding.ViewModels
 
         public List<Project> ProjectList { get; set; }
 
+<<<<<<< HEAD
         public List<Donation> DonationList { get; set; }
+=======
+        public List<ProjectOwner> ProjectOwnerList { get; set; }
+
+>>>>>>> 7b7616b5f85caf1778439d89a1291d8edcb62028
         [Display(Name = "Justificatif de l'organisation")]
         public IFormFile AssociationProof { get; set; }
 
@@ -30,8 +35,6 @@ namespace Projet2Crowdfunding.ViewModels
         public IFormFile ProjectImage { get; set; }
 
         public IFormFile ProjectVideo { get; set; }
-
-        public int heartCounter { get; set; }//compteur total coups de couer
 
         public double sumDonations { get; set; }//somme dons
         public static object Models { get; private set; }

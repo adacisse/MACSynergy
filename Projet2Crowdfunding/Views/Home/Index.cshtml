@@ -93,7 +93,7 @@
 
     <!-- CAROUSEL NOUVEAUTES -->
 
-    <h6 class="pb-3 pt-4 d-flex justify-content-center align-items-center">
+    <h6 class="pb-3 pt-4 d-flex justify-content-center align-items-center titre-carousel">
         ---------------------------- NOUVEAUTES ----------------------------
     </h6>
 
@@ -125,7 +125,7 @@
                                     cont = false;
                                     string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
                                     <div class="col-md-3 d-flex justify-content-center">
-                                        <a href="pagelink">
+                                        <a href="@pagelink">
                                             <div class="single-box">
                                                 <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
                                                 <div class="img-text">
@@ -154,7 +154,7 @@
                                         cont = false;
                                         string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
                                         <div class="col-md-3 d-flex justify-content-center">
-                                            <a href="pagelink">
+                                            <a href="@pagelink">
                                                 <div class="single-box">
                                                     <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
                                                     <div class="img-text">
@@ -185,7 +185,7 @@
                                         cont = false;
                                         string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
                                         <div class="col-md-3 d-flex justify-content-center">
-                                            <a href="pagelink">
+                                            <a href="@pagelink">
                                                 <div class="single-box">
                                                     <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
                                                     <div class="img-text">
@@ -216,7 +216,7 @@
                                         cont = false;
                                         string pagelink = "/Project/projectPage/" + @Model.ProjectList[i].Id;
                                         <div class="col-md-3 d-flex justify-content-center">
-                                            <a href="pagelink">
+                                            <a href="@pagelink">
                                                 <div class="single-box">
                                                     <div class="img-area"><img src="@Model.ProjectList[i].Picture" alt=""></div>
                                                     <div class="img-text">
@@ -484,7 +484,7 @@
 
 <!-- CAROUSEL COUPS DE COEURS -->
 
-<h6 class="pb-3 d-flex justify-content-center align-items-center">
+<h6 class="pb-3 d-flex justify-content-center align-items-center titre-carousel">
     ---------------------------- COUPS DE COEUR
     ----------------------------
 </h6>
@@ -715,12 +715,10 @@
 </div>
 
 
-<!--CARROUSEL PROCHE DE VOUS-->
+<!--CARROUSEL ASSOCIATIONS ET ONGS-->
 
-<h6 class="pb-3 d-flex justify-content-center align-items-center">
-    ---------------------------- LES PROJETS LES PLUS
-    PROCHES DE VOUS
-    ----------------------------
+<h6 class="pb-3 d-flex justify-content-center align-items-center titre-carousel">
+    ---------------------------- NOS ASSOCIATIONS ET ONGS ----------------------------
 </h6>
 
 <div class="container">
@@ -733,183 +731,137 @@
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#demo3" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#demo3" data-bs-slide-to="1"></button>
-                    <!-- <button type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button> -->
+                    <button type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#demo2" data-bs-slide-to="3"></button>
                 </div>
 
                 <!-- The slideshow/carousel -->
+                @{ Boolean cont3 = false;}
 
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/animal.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
+                            @for (int i = 0; i < Model.ProjectOwnerList.Count; i++)
+                            {
+                                if (i >= 0 && i < 4)
+                                {
+                                    cont3 = false;
+                                    string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwnerList[i].Id;
+                                    <div class="col-md-3 d-flex justify-content-center">
+                                        <a href="@pagelink">
+                                            <div class="single-box">
+                                                <div class="img-area"><img src="@Model.ProjectOwnerList[i].Image" alt=""></div>
+                                                <div class="img-text">
+                                                    <h2>@Model.ProjectOwnerList[i].Name</h2>
+                                                    <p>@Model.ProjectOwnerList[i].Summary</p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/environnement.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="images/education.png" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/besoins.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                }
+                                else
+                                {
+                                    cont3 = true;
+                                }
+                            }
                         </div>
                     </div>
-
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/humanitaire.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 2</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
+                    @if (cont3 == true)
+                    {
+                        <div class="carousel-item">
+                            <div class="row">
+                                @for (int i = 0; i < Model.ProjectOwnerList.Count; i++)
+                                {
+                                    if (i > 3 && i < 8)
+                                    {
+                                        cont3 = false;
+                                        string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwnerList[i].Id;
+                                        <div class="col-md-3 d-flex justify-content-center">
+                                            <a href="@pagelink">
+                                                <div class="single-box">
+                                                    <div class="img-area"><img src="@Model.ProjectOwnerList[i].Image" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2>@Model.ProjectOwnerList[i].Name</h2>
+                                                        <p>@Model.ProjectOwnerList[i].Summary</p>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/autres.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/sante.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 d-flex justify-content-center">
-                                <a href="#">
-                                    <div class="single-box">
-                                        <div class="img-area"><img src="~/Images/autres.jpg" alt=""></div>
-                                        <div class="img-text">
-                                            <h2>Project 1</h2>
-                                            <p>
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem
-                                                Ipsum has been the industry's standard dummy text ever since the
-                                                1500s,
-                                                when an
-                                                unknown printer took a galley of type and scrambled it to make a
-                                                type
-                                                specimen book.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
+                                    }
+                                    else if (i > 7)
+                                    {
+                                        cont3 = true;
+                                    }
+                                }
                             </div>
                         </div>
+                    }
 
-                    </div>
+                    @if (cont3 == true)
+                    {
+                        <div class="carousel-item">
+                            <div class="row">
+                                @for (int i = 0; i < Model.ProjectOwnerList.Count; i++)
+                                {
+                                    if (i > 7 && i < 12)
+                                    {
+                                        cont3 = false;
+                                        string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwnerList[i].Id;
+                                        <div class="col-md-3 d-flex justify-content-center">
+                                            <a href="@pagelink">
+                                                <div class="single-box">
+                                                    <div class="img-area"><img src="@Model.ProjectOwnerList[i].Image" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2>@Model.ProjectOwnerList[i].Name</h2>
+                                                        <p>@Model.ProjectOwnerList[i].Summary</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    else if (i > 11)
+                                    {
+                                        cont3 = true;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+
+                    @if (cont3 == true)
+                    {
+                        <div class="carousel-item">
+                            <div class="row">
+                                @for (int i = 0; i < Model.ProjectOwnerList.Count; i++)
+                                {
+                                    if (i > 11 && i < 15)
+                                    {
+                                        cont = false;
+                                        string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwnerList[i].Id;
+                                        <div class="col-md-3 d-flex justify-content-center">
+                                            <a href="@pagelink">
+                                                <div class="single-box">
+                                                    <div class="img-area"><img src="@Model.ProjectOwnerList[i].Image" alt=""></div>
+                                                    <div class="img-text">
+                                                        <h2>@Model.ProjectOwnerList[i].Name</h2>
+                                                        <p>@Model.ProjectOwnerList[i].Summary</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                    else if (i > 14)
+                                    {
+                                        cont3 = true;
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+
                 </div>
+
+
 
                 <!-- Left and right controls/icons -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#demo3" data-bs-slide="prev">
@@ -924,6 +876,7 @@
 
 </div>
 
+<br/><br />
 
 @section Footer
     {

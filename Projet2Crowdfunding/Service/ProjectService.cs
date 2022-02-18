@@ -70,6 +70,20 @@ namespace Projet2Crowdfunding.Service
             return (timeLeftProject);
 
         }
+        //public Favorite Favorite { get; set; } à rajouter dans accoutnviewmodel
+        public void FollowMyFavorite(int? idProject, int idParticipant)
+        {
+           
+                Project project = this.bddContext.Projects.Find(idProject);
+            Favorite favorite = new Favorite();
+            if (project!= null)
+            {
+                project.HeartCounter++;
+                this.bddContext.Favorites.Add(favorite);
+                this.bddContext.SaveChanges();
+            }
+
+        }
 
 
     }
