@@ -21,5 +21,62 @@ namespace Projet2Crowdfunding.Service
                 ctx.SaveChanges();
             }
         }
+
+        public void ModifyProjectOwnerAddress(int id, string streetNumber, string streetName, string zipCode, string city, string country)
+        {
+            BddContext ctx = new BddContext();
+            ProjectOwner projectOwner = ctx.ProjectOwners.Find(id);
+            Address address = ctx.Addresses.Find(projectOwner.AddressId);
+            projectOwner.Address = address;
+
+            if (projectOwner != null)
+            {
+                projectOwner.Address.StreetNumber = streetNumber;
+                projectOwner.Address.StreetName = streetName;
+                projectOwner.Address.ZipCode = zipCode;
+                projectOwner.Address.City = city;
+                projectOwner.Address.Country = country;
+                ctx.SaveChanges();
+            }
+        }
+
+        public void ModifyProjectOwnerPhone(int id, string phoneNumber)
+        {
+            BddContext ctx = new BddContext();
+            ProjectOwner projectOwner = ctx.ProjectOwners.Find(id);
+
+            if (projectOwner != null)
+            {
+                projectOwner.PhoneNumber = phoneNumber;
+                ctx.SaveChanges();
+            }
+        }
+
+        public void ModifyProjectOwnerDescription(int id, string summary, string description, string volunteerDescritpion, string partnership)
+        {
+            BddContext ctx = new BddContext();
+            ProjectOwner projectOwner = ctx.ProjectOwners.Find(id);
+
+            if (projectOwner != null)
+            {
+                projectOwner.Summary = summary;
+                projectOwner.Description = description;
+                projectOwner.VolunteerDescritpion = volunteerDescritpion;
+                projectOwner.Partnership = partnership;
+                ctx.SaveChanges();
+            }
+        }
+
+        public void ModifyProjectOwnerLogo(int id, string image)
+        {
+            BddContext ctx = new BddContext();
+            ProjectOwner projectOwner = ctx.ProjectOwners.Find(id);
+
+            if (projectOwner != null)
+            {
+                projectOwner.Image = image;
+                ctx.SaveChanges();
+            }
+        }
     }
 }

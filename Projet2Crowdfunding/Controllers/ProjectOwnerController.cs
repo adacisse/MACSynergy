@@ -45,7 +45,6 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.ProjectOwner = accountService.GetProjectOwner(id.Value);
                 viewModel.ProjectList = projectService.GetProjectsFromProjectOwnerId(id.Value);
             }
-
             return View(viewModel);
             
         }
@@ -63,7 +62,6 @@ namespace Projet2Crowdfunding.Controllers
                 return View(projectOwner);
             }
             return View("Error");
-
         }
 
         [HttpPost]
@@ -75,7 +73,63 @@ namespace Projet2Crowdfunding.Controllers
                 ps.ModifyProjectOwnerInfos(projectOwner.Id, projectOwner.Name, projectOwner.Type,
                     projectOwner.HyperLink);
                 return RedirectToAction("PODashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
 
+        public IActionResult ModifyProjectOwnerAddress(ProjectOwner projectOwner)
+        {
+            if (projectOwner.Id != 0)
+            {
+                ProjectOwnerService ps = new ProjectOwnerService();
+                ps.ModifyProjectOwnerAddress(projectOwner.Id, projectOwner.Address.StreetNumber, projectOwner.Address.StreetName, projectOwner.Address.ZipCode,
+                    projectOwner.Address.City, projectOwner.Address.Country);
+                return RedirectToAction("PODashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyProjectOwnerPhone(ProjectOwner projectOwner)
+        {
+            if (projectOwner.Id != 0)
+            {
+                ProjectOwnerService ps = new ProjectOwnerService();
+                ps.ModifyProjectOwnerPhone(projectOwner.Id, projectOwner.PhoneNumber);
+                return RedirectToAction("PODashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyProjectOwnerDescription(ProjectOwner projectOwner)
+        {
+            if (projectOwner.Id != 0)
+            {
+                ProjectOwnerService ps = new ProjectOwnerService();
+                ps.ModifyProjectOwnerDescription(projectOwner.Id, projectOwner.Summary, projectOwner.Description, projectOwner.VolunteerDescritpion, projectOwner.Partnership);
+                return RedirectToAction("PODashboard");
+              }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyProjectOwnerLogo(ProjectOwner projectOwner)
+        {
+            if (projectOwner.Id != 0)
+            {
+                ProjectOwnerService ps = new ProjectOwnerService();
+                ps.ModifyProjectOwnerPhone(projectOwner.Id, projectOwner.Image);
+                return RedirectToAction("PODashboard");
             }
             else
             {

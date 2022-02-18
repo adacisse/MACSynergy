@@ -252,19 +252,19 @@
                                         {
                                             <div class="form-group">
                                                 @Html.HiddenFor(m => m.ProjectOwner.Id)
-                                                @Html.TextBoxFor(m => m.ProjectOwner.Name, new { @class = "form-control input-lg mt-2", placeholder = "Nom" })
-                                            <div class="col-md-10">
-                                                <span style="margin:30px">
-                                                    Association
-                                                    @Html.RadioButtonFor(m => m.ProjectOwner.Type, "0", new { @class = "margin-right:10px" })
-                                                </span>
-                                                <span style="margin-right:30px">
-                                                    ONG
-                                                    @Html.RadioButtonFor(m => m.ProjectOwner.Type, "1")
-                                                </span>
-                                            </div>
+                                                <div style="padding-bottom:10px">@Html.TextBoxFor(m => m.ProjectOwner.Name, new { @class = "form-control input-lg mt-2", placeholder = "Nom" })</div>
+                                                <div class="col-md-10">
+                                                    <span style="margin:30px">
+                                                        Association
+                                                        @Html.RadioButtonFor(m => m.ProjectOwner.Type, "0", new { @class = "margin-right:10px" })
+                                                    </span>
+                                                    <span style="margin-right:30px">
+                                                        ONG
+                                                        @Html.RadioButtonFor(m => m.ProjectOwner.Type, "1")
+                                                    </span>
+                                                </div>
                                                 @Html.TextBoxFor(m => m.ProjectOwner.HyperLink, new { @class = "form-control input-lg mt-2", placeholder = "Votre site internet" })
-                                            
+
                                             </div>
                                             <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                         }
@@ -286,7 +286,7 @@
 </div>
 
 
-<!-- The adressModal -->
+<!-- The addressModal -->
 <div class="modal" id="addressModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -306,14 +306,18 @@
                                 <p>Modifiez les champs nécessaires</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
+                                        @using (Html.BeginForm("ModifyProjectOwnerAddress", "ProjectOwner"))
+                                        {
                                         <div class="form-group">
-                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.StreetNumber" name="streetNumber" placeholder="N°" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.StreetName" name="street" placeholder="Rue" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.ZipCode" name="postalCode" placeholder="CP" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.City" name="City" placeholder="Ville" type="text">
-                                            <input class="form-control input-lg mt-2" value="@Model.ProjectOwner.Address.Country" name="country" placeholder="Pays" type="text">
+                                            @Html.HiddenFor(m => m.ProjectOwner.Id)
+                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.StreetNumber, new { @class = "form-control input-lg mt-2", placeholder = "N°" })
+                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.StreetName, new { @class = "form-control input-lg mt-2", placeholder = "Rue" })
+                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.ZipCode, new { @class = "form-control input-lg mt-2", placeholder = "CP" })
+                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.City, new { @class = "form-control input-lg mt-2", placeholder = "Ville" })
+                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.Country, new { @class = "form-control input-lg mt-2", placeholder = "Pays" })
                                         </div>
                                         <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                        }
                                     </fieldset>
                                 </div>
                             </div>
@@ -352,10 +356,14 @@
                                 <p>Rentrez un numéro de téléphone valide</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
-                                        <div class="form-group">
-                                            <input class="form-control input-lg" value="@Model.ProjectOwner.PhoneNumber" name="phone" type="text">
-                                        </div>
-                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                        @using (Html.BeginForm("ModifyProjectOwnerPhone", "ProjectOwner"))
+                                        {
+                                            @Html.HiddenFor(m => m.ProjectOwner.Id)
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.ProjectOwner.PhoneNumber, new { @class = "form-control input-lg mt-2", placeholder = "Téléphone" })
+                                            </div>
+                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                        }
                                     </fieldset>
                                 </div>
                             </div>
@@ -393,11 +401,15 @@
                                 <p>Choisissez votre nouveau logo</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
-                                        <div class="form-group">
-                                            <input class="form-control" type="file" id="logo">
-                                        </div>
-                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
-                                    </fieldset>
+                                        @using (Html.BeginForm("ModifyProjectOwnerLogo", "ProjectOwner"))
+                                        {
+                                            @Html.HiddenFor(m => m.ProjectOwner.Id)
+                                            <div class="form-group">
+                                                <input class="form-control" type="file" id="image">
+                                            </div>
+                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                        }
+                                        </fieldset>
                                 </div>
                             </div>
                         </div>
@@ -434,14 +446,18 @@
                                 <p>Rentrez un texte pour chaque catégorie</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
+                                        @using (Html.BeginForm("ModifyProjectOwnerDescription", "ProjectOwner"))
+                                        {
+                                            @Html.HiddenFor(m => m.ProjectOwner.Id)
                                         <div class="form-group">
-                                            <textarea class="form-control input-lg" placeholder="Résumé" name="resume" rows="3" style="margin-bottom:20px"></textarea>
-                                            <textarea class="form-control input-lg" placeholder="Description détaillée" name="descrition" rows="6" style="margin-bottom:20px"></textarea>
-                                            <textarea class="form-control input-lg" placeholder="Description volontariat" name="volunteerDescription" rows="6" style="margin-bottom:20px"></textarea>
-                                            <textarea class="form-control input-lg" placeholder="Partenaires" name="partners" rows="3" style="margin-bottom:20px"></textarea>
+                                            @Html.TextAreaFor(m => m.ProjectOwner.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4"})
+                                            @Html.TextAreaFor(m => m.ProjectOwner.Description, new { @class = "form-control input-lg mt-2", placeholder = "Description", rows = "4"})
+                                            @Html.TextAreaFor(m => m.ProjectOwner.VolunteerDescritpion, new { @class = "form-control input-lg mt-2", placeholder = "description volontariat", rows = "4"})
+                                            @Html.TextAreaFor(m => m.ProjectOwner.Partnership, new { @class = "form-control input-lg mt-2", placeholder = "Résumé" })
                                         </div>
-                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
-                                    </fieldset>
+                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                        }
+                                        </fieldset>
                                 </div>
                             </div>
                         </div>
