@@ -17,5 +17,10 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public int? ParticipantId { get; set; }
         public virtual Participant Participant { get; set; }
+
+        [Required]
+        public int? CollectionId { get; set; }
+        public virtual Collection Collection { get; set; }
+        
     }
 }

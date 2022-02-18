@@ -362,7 +362,7 @@ namespace Projet2Crowdfunding.Models
 
                     Type = ProjectOwnerType.ONG,
                     AssociationProof = "/JustificatifsPP/proofPlay.png",
-                    Image = "/ImageAssos/PlayLogo2.png",
+                    Image = "/ImageAssos/logoPlay.png",
                     Status = AssoStatus.registered,
 
                     Newsletter = true,
@@ -751,7 +751,7 @@ namespace Projet2Crowdfunding.Models
                 .IsUnique();
 
             modelBuilder.Entity<Collection>()
-               .HasIndex(u => u.DonationId)
+               .HasIndex(u => u.ProjectId)
                .IsUnique();
 
             modelBuilder.Entity<Favorite>()

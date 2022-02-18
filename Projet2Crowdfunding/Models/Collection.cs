@@ -15,10 +15,6 @@ namespace Projet2Crowdfunding.Models
         public double Amount { get; set; }
 
         [Required]
-        public virtual Donation Donation { get; set; }
-        public int? DonationId { get; set; }
-
-        [Required]
         public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
     }
