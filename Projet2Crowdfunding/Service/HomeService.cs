@@ -30,19 +30,44 @@ namespace Projet2Crowdfunding.Service
 
         public int GetPublishedProjects()
         {
-            return 1;
+            int NbProjects = 0;
+            List<Project> Projects = this.bddContext.Projects.ToList();
+            foreach (var project in Projects)
+            {
+                if (project.Status == Status.Publié)
+                {
+                    NbProjects++;
+                }
+            }
+            return NbProjects;
         }
 
         public int GetClosedProjects()
         {
-            return 1;
+            int NbProjects = 0;
+            List<Project> Projects = this.bddContext.Projects.ToList();
+            foreach (var project in Projects)
+            {
+                if (project.Status == Status.Clôturé)
+                {
+                    NbProjects++;
+                }
+            }
+            return NbProjects;
         }
 
-        public int GetTotalAmount()
+        public double GetTotalAmount()
         {
-            return 1;
+            double AmountTotal = 0;
+            
+            List<Project> Project = this.bddContext.Projects.Where(p => p.Status == Status.Clôturé).ToList();
+            foreach (var project in Project)
+            {
+                Collection Collection = this.bddContext.Collections.FirstOrDefault(p => p.ProjectId == project.Id);
+                AmountTotal += Collection.Amount; 
+            }
+            return AmountTotal;
         }
-
 
     }
 }

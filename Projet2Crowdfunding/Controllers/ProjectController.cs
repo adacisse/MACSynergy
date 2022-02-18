@@ -31,7 +31,8 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
             }
-            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.published);
+            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.Publié);
+            viewModel.ProjectListClosed = projectService.GetAllProjectsStatus(Status.Clôturé);
 
             return View(viewModel);
         }

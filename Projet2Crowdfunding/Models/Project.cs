@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Projet2Crowdfunding.Models
 {
     public enum Status { submittedForEvaluation, validated,  sumittedForPublishing, 
-        published, submittedForTwins, publishedTwins, closed, cancelled}
+        Publié, submittedForTwins, publishedTwins, Clôturé, cancelled}
     public enum Category { Animaux, Environnement, Humanitaire, Education, Santé, BesoinsElémentaires, Autre}
 
     public class Project

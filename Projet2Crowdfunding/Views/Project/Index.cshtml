@@ -90,6 +90,41 @@
 </div>
 
 
+@if (Model.ProjectListClosed != null)
+{
+
+    <div class="mode-vert mt-4">
+        <h6 style="font-size: 24px; color: dimgrey ">PROJETS CLOTURES</h6>
+        <br />
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            @foreach (var Project in Model.ProjectListClosed)
+            {
+                string pagelink = "/Project/projectPage/" + Project.Id;
+                <div class="col-md-3 d-flex justify-content-center pb-5">
+                    <a href="@pagelink">
+                        <div class="single-box">
+                            <div class="img-area"><img src="@Project.Picture" alt="" /></div>
+                            <div class="img-text">
+                                <h2>@Project.Name</h2>
+                                <p>@Project.Summary</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+
+        </div>
+    </div>
+
+}
+
+
+
+
 @section Footer
     {
     <div class="newsletter-subscribe container">

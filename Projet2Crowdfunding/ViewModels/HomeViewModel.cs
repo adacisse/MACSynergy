@@ -30,6 +30,6 @@ namespace Projet2Crowdfunding.ViewModels
 
         public int ClosedProjects { get; set; }
 
-        public int AmountTotal { get; set; }
+        public double AmountTotal { get; set; }
     }
 }

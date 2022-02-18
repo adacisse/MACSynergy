@@ -531,7 +531,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {
                     Id = 1,
-                    Status = Status.published,
+                    Status = Status.Publié,
                     Name = "Addictions-Maladies chroniques",
                     Summary = "L’accompagnement des personnes dans leurs pratiques addictives" +
                     "L’association Aurore est depuis de nombreuses années mobilisée dans l’accompagnement des personnes se trouvant en situation d’addictions : les professionnels mettent en place des actions de prévention," +
@@ -581,7 +581,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {      
                     Id = 2,
-                    Status = Status.published,
+                    Status = Status.Publié,
                     Name = "Doubler la population mondiale de tigres",
                     Summary = "C’est sans doute la stratégie de restauration la plus ambitieuse jamais entreprise pour une seule espèce." +
                     " En 2010, alors que le nombre de tigres est au plus bas, les gouvernements des 13 pays qui abritent encore " +
@@ -618,7 +618,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {
                     Id = 3,
-                    Status = Status.published,
+                    Status = Status.Publié,
                     Name = "Préserver les mangroves du Manambolo",
                     Summary = "Situées sur le littoral Ouest de l’île de Madagascar, les mangroves de la région du Manambolo sont d’une importance cruciale pour les populations locales." +
                     "Elles n’en sont pas moins menacées : leur surexploitation et le changement climatique les détériorent de manière considérable.",
@@ -652,7 +652,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {
                     Id = 4,
-                    Status = Status.published,
+                    Status = Status.Publié,
                     Name = "EJO - PROJET D’APPUI POUR UNE ÉDUCATION ACTIVE ET INCLUSIVE DE TOUS LES ENFANTS.",
 
                     Summary = "Ce programme sera déployé jusqu'en 2022 au Burundi, au Kosovo, au Sénégal," +
@@ -691,7 +691,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {
                     Id = 5,
-                    Status = Status.published,
+                    Status = Status.Publié,
                     Name = "Pour inventer aujourd'hui, les réponses humanitaires de demain...",
 
                     Summary = "Handicap International vient en aide aux populations vulnérables, notamment les personnes handicapées, partout dans le monde où cela est nécessaire. L’association répond à leurs besoins essentiels et spécifiques, " +

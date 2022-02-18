@@ -15,12 +15,14 @@ namespace Projet2Crowdfunding.Controllers
         private AccountService accountService;
         private ProjectService projectService;
         private ProjectOwnerService projectOwnerService;
+        private HomeService homeService;
 
         public HomeController()
         {
             accountService = new AccountService();
             projectService = new ProjectService();
             projectOwnerService = new ProjectOwnerService();
+            homeService = new HomeService();
         }
 
         public IActionResult Index()
@@ -30,8 +32,12 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
             }
-            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.published); //Ajouter aussi pour POPage
+            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.Publié); //Ajouter aussi pour POPage
             viewModel.ProjectOwnerList = projectOwnerService.GetAllProjectOwnersStatus(AssoStatus.published);
+            viewModel.Inscriptions = homeService.GetInscriptions();
+            viewModel.PublishedProjects = homeService.GetPublishedProjects();
+            viewModel.ClosedProjects = homeService.GetClosedProjects();
+            viewModel.AmountTotal = homeService.GetTotalAmount();
 
             return View(viewModel);
         }

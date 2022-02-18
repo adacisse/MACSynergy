@@ -46,7 +46,8 @@ namespace Projet2Crowdfunding.Controllers
             if (id.HasValue)
             {
                 viewModel.ProjectOwner = accountService.GetProjectOwner(id.Value);
-                viewModel.ProjectList = projectService.GetProjectsFromPOIdStatus(id.Value, Status.published);
+                viewModel.ProjectOwner.Account = accountService.GetAccount((int)viewModel.ProjectOwner.AccountId);
+                viewModel.ProjectList = projectService.GetProjectsFromPOIdStatus(id.Value, Status.Publié);
             }
             return View(viewModel);
             
