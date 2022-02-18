@@ -61,15 +61,19 @@
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen alt="Ouragon" class="d-block" style="width:100%"></iframe>
+                                <!--<video width="560" height="500" controls>
+        <source src=@Model.Project.Video type="video/mp4">
+        Votre explorateur ne supporte pas la balise video.
+    </video>-->
                             </div>
-                            <div class="carousel-item">
-                                <img src=@Model.Project.Picture alt="Ouragon" class="d-block" style="width:100%">
+    <div class="carousel-item">
+        <img src=@Model.Project.Picture alt="Ouragon" class="d-block" style="width:100%">
+    </div>
+
+    <!-- <div class="carousel-item">
+        <img src="images/noye.png" alt="noye" class="d-block" style="width:100%">
+    </div> -->
                             </div>
-                            
-                            <!-- <div class="carousel-item">
-                                <img src="images/noye.png" alt="noye" class="d-block" style="width:100%">
-                            </div> -->
-                        </div>
 
                         <!-- Left and right controls/icons -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#demo"
@@ -584,11 +588,18 @@
                         <h2 class="h1-responsive font-weight-bold my-5">Le besoin du projet</h2>
                         <h4>Description des palliers</h4>
                         <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minimveniam,quis nostrud exercitation ullamco.
-                        </p>
+                            @foreach (var Step in Model.ProjectStepsList) { 
+                            <div>
+                                <h2> L'identifiant de ce pallier est: @Step.Id</h2>
+                                <h3>Le montant de ce pallier est @Step.Amount €</h3>
+                                </div>
+                                <br/>
+                            }
+                                Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                                adipiscing
+                                elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                minimveniam,quis nostrud exercitation ullamco.
+</p>
                         <p>
                             Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
                             adipiscing

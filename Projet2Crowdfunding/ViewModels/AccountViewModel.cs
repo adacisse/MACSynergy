@@ -50,6 +50,7 @@ namespace Projet2Crowdfunding.ViewModels
         public PayPalAccount PayPalAccount { get; set; }
 
         public CreditCard CreditCard { get; set; }
+        public List<Step> ProjectStepsList { get; set; }
 
     }
 }

@@ -50,8 +50,9 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.Project = projectService.GetProject(id.Value);
                 viewModel.ProjectOwner = this.bddContext.ProjectOwners.Find(viewModel.Project.ProjectOwnerId);
                 viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
-
+                viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
             }
+
 
             return View(viewModel);
         }

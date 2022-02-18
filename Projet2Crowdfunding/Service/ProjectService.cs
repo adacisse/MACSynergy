@@ -28,7 +28,6 @@ namespace Projet2Crowdfunding.Service
             }
             return (ProjectList);
         }
-
         public List<Project> GetProjectsFromPOIdStatus(int Id, Status? status)
         {
             List<Project> ProjectList = new List<Project>();
@@ -39,6 +38,7 @@ namespace Projet2Crowdfunding.Service
             }
             return (ProjectList);
         }
+        
 
         public List<Project> GetAllProjectsStatus(Status? status)
         {
@@ -50,6 +50,7 @@ namespace Projet2Crowdfunding.Service
             }
             return (ProjectList);
         }
+        
 
         public List<Project> GetAllProjects()
         {
@@ -89,6 +90,19 @@ namespace Projet2Crowdfunding.Service
         {
             List<Collection> collectionList = this.bddContext.Collections.ToList();
             return collectionList;
+
+        }
+        public List<Step> GetStepsFromProjectId(int? idProject)
+        {
+
+            List<Step> ProjectStepsList = new List<Step>();
+            var Steps = bddContext.Steps.Where(s => s.ProjectId == idProject).ToList();
+            foreach (Step step in Steps)
+            {
+                ProjectStepsList.Add(step);
+            }
+            return (ProjectStepsList);
+
 
         }
 
