@@ -29,6 +29,28 @@ namespace Projet2Crowdfunding.Service
             return (ProjectList);
         }
 
+        public List<Project> GetProjectsFromPOIdStatus(int Id, Status? status)
+        {
+            List<Project> ProjectList = new List<Project>();
+            var projects = bddContext.Projects.Where(p => p.ProjectOwnerId == Id && p.Status == status).ToList();
+            foreach (Project project in projects)
+            {
+                ProjectList.Add(project);
+            }
+            return (ProjectList);
+        }
+
+        public List<Project> GetAllProjectsStatus(Status? status)
+        {
+            List<Project> ProjectList = new List<Project>();
+            var projects = bddContext.Projects.Where(p => p.Status == status).ToList();
+            foreach (Project project in projects)
+            {
+                ProjectList.Add(project);
+            }
+            return (ProjectList);
+        }
+
         public List<Project> GetAllProjects()
         {
             List<Project> projectList = this.bddContext.Projects.ToList();

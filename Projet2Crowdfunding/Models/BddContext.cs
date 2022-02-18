@@ -259,7 +259,7 @@ namespace Projet2Crowdfunding.Models
 
                     AssociationProof = "/JustificatifsPP/proofAuroreAsso.png",
 
-                    Image = "/ImageAssos/logoAuroreAsso.png",
+                    Image = "/ImageAssos/logoAuroreAsso.jpg",
 
                     Status = AssoStatus.published,
                     Newsletter = true,
@@ -362,7 +362,7 @@ namespace Projet2Crowdfunding.Models
 
                     Type = ProjectOwnerType.ONG,
                     AssociationProof = "/JustificatifsPP/proofPlay.png",
-                    Image = "/ImageAssos/PlayLogo.jpeg",
+                    Image = "/ImageAssos/PlayLogo2.png",
                     Status = AssoStatus.registered,
 
                     Newsletter = true,
@@ -564,7 +564,7 @@ namespace Projet2Crowdfunding.Models
                     "« Le meilleur tranquillisant est un bon sentiment d’appartenance » " +
                     "Boris Cyrulnik",
 
-                    Picture = "/ImagesProject/imgProjetAurore.jpeg",
+                    Picture = "/ImagesProject/imgProjetAurore.jpg",
                     Category = Category.health,
                     StartDate  = new DateTime(2021, 11, 9, 16, 5, 7, 123),
                     EndDate = new DateTime(2022, 5, 9, 16, 5, 7, 123),
@@ -673,7 +673,7 @@ namespace Projet2Crowdfunding.Models
                     "et de l’Education nationale." +
                     "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
 
-                    Picture = "/ImagesProject/Playimage1.jpeg",
+                    Picture = "/ImagesProject/Playimage.jpeg",
                     Category = Category.education,
                     StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),

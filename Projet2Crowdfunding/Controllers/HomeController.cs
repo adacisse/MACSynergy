@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
 using Projet2Crowdfunding.ViewModels;
 using System;
@@ -27,7 +28,7 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
             }
-            viewModel.ProjectList = projectService.GetAllProjects();
+            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.published); //Ajouter aussi pour POPage
 
             return View(viewModel);
         }

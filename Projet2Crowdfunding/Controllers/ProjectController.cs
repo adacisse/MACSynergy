@@ -29,7 +29,7 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
             }
-            viewModel.ProjectList = projectService.GetAllProjects();
+            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.published);
 
             return View(viewModel);
         }

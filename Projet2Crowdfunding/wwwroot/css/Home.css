@@ -24,18 +24,28 @@ h6 {
     border-color: rgb(219, 219, 219);
 }
 
-.img-text h2{
-    text-align: left;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-}
+    .img-text h2 {
+        height: 48px;
+        text-align: left;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
 
-.img-text p{
-    font-size: 12px;
-    text-decoration: none;
-    color: gray;
-}
+    .img-text p {
+        height: 110px;
+        font-size: 12px;
+        text-decoration: none;
+        color: gray;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
 
 .single-box{
     position: relative;
@@ -122,16 +132,26 @@ p{
 }
 
     .img-text2 h2 {
+        height: 48px;
         text-align: left;
         font-size: 14px;
         text-transform: uppercase;
         margin-bottom: 14px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 
     .img-text2 p {
+        height: 110px;
         font-size: 12px;
         text-decoration: none;
         color: gray;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
     }
 
 .img-area2 {
