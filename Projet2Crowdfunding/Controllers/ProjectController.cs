@@ -13,12 +13,14 @@ namespace Projet2Crowdfunding.Controllers
     {
         private BddContext bddContext;
         private AccountService accountService;
+        private ParticipantService participantService;
         private ProjectService projectService;
 
         public ProjectController()
         {
             accountService = new AccountService();
             projectService = new ProjectService();
+            participantService = new ParticipantService();
             bddContext = new BddContext();
         }
 

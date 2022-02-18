@@ -571,8 +571,9 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/VideoAurore.jpg",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
                     Location="Iceland",
-                    ProjectOwnerId=1
-                 
+                    ProjectOwnerId=1,
+                    HeartCounter=5
+
 
                 },
 
@@ -608,7 +609,8 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/Videowwf.jpg",
                     MaterialDonation = "Nourriture",
                     Location = "Lille",
-                    ProjectOwnerId = 2
+                    ProjectOwnerId = 2,
+                    HeartCounter = 5
                 },
 
 
@@ -642,7 +644,8 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/mangrovevideo.jpeg",
                     MaterialDonation = "Barques motorisées",
                     Location = "Troyes",
-                    ProjectOwnerId = 2
+                    ProjectOwnerId = 2,
+                    HeartCounter = 5
                 },
 
                 new Project
@@ -680,7 +683,8 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/PlayVideo.html",
                     MaterialDonation = "Materiaux sportifs",
                     Location = "New York",
-                    ProjectOwnerId = 3
+                    ProjectOwnerId = 3,
+                    HeartCounter = 5
                 },
 
                 new Project
@@ -722,9 +726,47 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/videoHandicap.html",
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
                     Location = "Nwagadougou",
-                    ProjectOwnerId = 4
+                    ProjectOwnerId = 4,
+                    HeartCounter = 5
                 }
             );
+            this.Favorites.AddRange(
+                new Favorite
+                {
+                    Id = 1,
+                    
+                    ProjectId=1,
+                    ParticipantId=1
+                },
+                new Favorite
+                {
+                    Id = 2,
+                    
+                    ProjectId = 2,
+                    ParticipantId = 1
+                },
+                new Favorite
+                {
+                    Id = 3,
+                    
+                    ProjectId = 3,
+                    ParticipantId = 3
+                },
+                new Favorite
+                {
+                    Id = 4,
+                    
+                    ProjectId = 3,
+                    ParticipantId = 4
+                },
+                new Favorite
+                {
+                    Id = 5,
+                   
+                    ProjectId = 5,
+                    ParticipantId = 4
+                }
+                ) ;
 
             ////Instances PPs
             this.Collections.AddRange(

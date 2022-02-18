@@ -10,7 +10,10 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public int? ProjectId { get; set; }
         public virtual Project Project { get; set; }
-        
+
+        //[Required]
+        //public Boolean HeartActive { get; set; } //pour le Participant
+
         [Required]
         public int? ParticipantId { get; set; }
         public virtual Participant Participant { get; set; }
