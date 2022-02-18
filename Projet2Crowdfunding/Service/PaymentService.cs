@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Projet2Crowdfunding.Models;
@@ -36,18 +38,60 @@ namespace Projet2Crowdfunding.Service
             return creditCard.Id;
         }
 
-        public int CreatePaypalAccount (string mail)
+        public int CreateDonationParticipant(int Id, double amount)
         {
-            PayPalAccount payPalAccount = new PayPalAccount()
-            {
-                Mail = mail
-            };
-            this.bddContext.PayPalAccounts.Add(payPalAccount);
-            this.bddContext.SaveChanges();
-            return payPalAccount.Id;
-        }
-       
 
+            Donation donation = new Donation()
+            {
+                Amount = amount,
+            };
+            
+            this.bddContext.Donations.Add(donation);
+            this.bddContext.SaveChanges();
+            return donation.Id;
+        }
+
+        public List<Donation> GetDonationsFromParticipantId(int Id)
+        {
+            List<Donation> ParticipantDonationList = new List<Donation>();
+            var donations = bddContext.Donations.Where(p => p.ParticipantId == Id).ToList();
+            foreach (Donation donation in donations)
+            {
+                ParticipantDonationList.Add(donation);
+            }
+            return (ParticipantDonationList);
+        }
+
+
+       
+        public Collection GetProjectCollection(int id, double amount)
+        {
+           
+        }
+
+        //public int CreatePaypalAccount (string mail)
+        //{
+        //    PayPalAccount payPalAccount = new PayPalAccount()
+        //    {
+        //        Mail = mail
+        //    };
+        //    this.bddContext.PayPalAccounts.Add(payPalAccount);
+        //    this.bddContext.SaveChanges();
+        //    return payPalAccount.Id;
+        //}
+
+        //public Boolean ValidateCreditCardInfo(string cardNumber, string ownerName, DateTime ExpirationDate, string cvv)
+        //{
+
+        //}
+        //return
+
+        //public Boolean ValidatePaypalAccount(string mail)
+        //{
+
+        //}
+        //return
     }
+
 }
 

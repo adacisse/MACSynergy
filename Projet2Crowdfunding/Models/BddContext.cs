@@ -16,7 +16,7 @@ namespace Projet2Crowdfunding.Models
         public DbSet<Collection> Collections { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<CreditCard> CreditCards { get; set; }
-        public DbSet<Donation> Donations { get; set; }
+        public DbSet<Donation> collections { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<Participant> Participants { get; set; }
@@ -28,6 +28,7 @@ namespace Projet2Crowdfunding.Models
         //public DbSet<StatisticsProjet> StatisticsProjets { get; set; }
         public DbSet<Step> Steps { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public IEnumerable<object> Donations { get; internal set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

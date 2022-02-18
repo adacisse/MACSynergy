@@ -21,6 +21,7 @@ namespace Projet2Crowdfunding.ViewModels
 
         public List<Project> ProjectList { get; set; }
 
+        public List<Donation> DonationList { get; set; }
         [Display(Name = "Justificatif de l'organisation")]
         public IFormFile AssociationProof { get; set; }
 
@@ -36,6 +37,7 @@ namespace Projet2Crowdfunding.ViewModels
         public static object Models { get; private set; }
 
         public TimeSpan TimeLeftProject { get; set; }
+        public Collection Collection { get; set; }
 
 
     }
