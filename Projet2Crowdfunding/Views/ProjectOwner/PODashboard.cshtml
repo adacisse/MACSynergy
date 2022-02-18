@@ -215,6 +215,43 @@
                     <div id="row-myProjects"></div>
                     <div class="col-md-12">
                         <a><strong>Mes projets</strong></a>
+                        <div class="container mt-3">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Catégorie</th>
+                                        <th>Localisation</th>
+                                        <th>Date de début</th>
+                                        <th>Date de fin</th>
+                                        <th>Montant récolté</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var Project in Model.ProjectList)
+                                    {
+                                        string pagelink = "/Project/projectPage/" + Project.Id;
+                                    <tr onclick='window.location.href="@pagelink";' style="cursor: pointer">
+                                        <td>@Project.Name</td>
+                                        <td>@Project.Category</td>
+                                        <td>@Project.Location</td>
+                                        <td>@Project.StartDate</td>
+                                        <td>@Project.EndDate</td>
+                                        @foreach (var Collection in Model.CollectionList)
+                                        {
+                                            if (Collection.ProjectId == Project.Id) {
+                                                
+                                                <td>@Collection.Amount €</td>
+                                            }
+                                        }
+
+
+                                    </tr>
+
+                                     }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>

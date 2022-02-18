@@ -41,6 +41,8 @@ namespace Projet2Crowdfunding.ViewModels
         public TimeSpan TimeLeftProject { get; set; }
 
         public Collection Collection { get; set; }
+        
+        public List<Collection> CollectionList { get; set; }
 
 
     }
