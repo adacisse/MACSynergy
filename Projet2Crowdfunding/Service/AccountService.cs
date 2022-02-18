@@ -214,6 +214,12 @@ namespace Projet2Crowdfunding.Service
             }
             return null;
         }
+        public Administrator GetAdminFromAccountId(int Id)
+        {
+            Administrator administrator = this.bddContext.Administrators.FirstOrDefault(p => p.AccountId == Id);
+            return (administrator);
+        }
+
         public Project GetProjectFromProjectOwnerId(int Id)
         {
             Project projet = this.bddContext.Projects.FirstOrDefault(p => p.Id ==Id);

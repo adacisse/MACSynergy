@@ -25,16 +25,72 @@ namespace Projet2Crowdfunding.Controllers
             return View();
         }
 
-        public IActionResult PDashboard()
+        public IActionResult AdminDashboard()
         {
             AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                viewModel.Participant = accountService.GetParticipantFromAccountId(viewModel.Account.Id);
+                viewModel.Administrator = accountService.GetAdminFromAccountId(viewModel.Account.Id);
                 return View(viewModel);
             }
             return View(viewModel);
+        }
+
+        public IActionResult ModifyAdminInfos(Administrator administrator)
+        {
+            if (administrator.Id != 0)
+            {
+                AdminService ps = new AdminService();
+                ps.ModifyAdminInfos(administrator.Id, administrator.LastName, administrator.FirstName);
+                return RedirectToAction("AdminDashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyAdminPhone(Administrator administrator)
+        {
+            if (administrator.Id != 0)
+            {
+                AdminService ps = new AdminService();
+                ps.ModifyAdminPhone(administrator.Id, administrator.PhoneNumber);
+                return RedirectToAction("AdminDashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyAdminEmail(Account account)
+        {
+            if (account.Id != 0)
+            {
+                AdminService ps = new AdminService();
+                ps.ModifyAdminEmail(account.Id, account.Mail);
+                return RedirectToAction("AdminDashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+        public IActionResult ModifyAdminPwd(Account account)
+        {
+            if (account.Id != 0)
+            {
+                AdminService ps = new AdminService();
+                ps.ModifyAdminPwd(account.Id, account.Password);
+                return RedirectToAction("AdminDashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
         }
     }
 }
