@@ -1,0 +1,150 @@
+﻿@{
+    Layout = "_LayoutDuSite";
+
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/css/Home.css">
+
+
+<style>
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+      
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>
+
+
+@section Menu
+{
+    <div class="col-md-8 d-flex justify-content-around">
+        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+    </div>
+    <div class="col-md-2 d-flex justify-content-end align-items-center">
+        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+    </div>
+}
+
+
+
+<div class="container d-flex justify-content-center mt-5 mb-5">
+    <div class="row g-3" style="width:600px;">
+        <div class="col-md-12">
+
+
+            <h2> Montant de participation</h2>
+            <input type="text" class="form-control" placeholder="Saisir le montant">
+            <br />
+
+            <bouton id="bouton-log" type="submit">VALIDER</bouton>
+            <br />
+            <br />
+
+            @*<div class="col-md-6">*@
+            <h2>Méthodes de paiement</h2>
+            @*</div>*@
+        </div>
+        <div class="row g-3">
+            <div class="col-md-12">
+                <button class="accordion mb-3 btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span>Paypal</span> <img src="https://i.imgur.com/7kQEsHU.png" width="30">
+                </button>
+                <div class="panel">
+                    <span class="font-weight-normal card-text">Adresse e-mail</span>
+                    <br />
+                    <div class="input"> <input type="text" class="form-control" placeholder="kevindurand@hotmail.com"> </div>
+                    <br />
+                    <bouton id="bouton-log" type="submit">VALIDER</bouton>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-12">
+                <button class="accordion btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span>Carte de crédit</span> <img src="https://i.imgur.com/2ISgYja.png" width="30">
+                </button>
+
+                <div class="panel">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body payment-card-body">
+
+
+                            <span class="font-weight-normal card-text">Numéro de la carte</span>
+                            <div class="input"> <i class="fa fa-credit-card"></i> <input type="text" class="form-control" placeholder="0000 0000 0000 0000"> </div>
+                            <div class="row mt-3 mb-3">
+                                <div class="col-md-9">
+                                    <span class="font-weight-normal card-text">Date d'expiration</span>
+                                    <div class="input"> <i class="fa fa-calendar"></i> <input type="text" class="form-control" placeholder="MM/YY"> </div>
+                                    <span class="font-weight-normal card-text">Nom du titulaire</span>
+                                    <div class="input"> <i class="fa fa-user"></i> <input type="text" class="form-control" placeholder="Kevin DURAND"> </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <span class="font-weight-normal card-text">CVV</span>
+                                    <div class="input"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="000"> </div>
+                                    <br />
+                                </div>
+                                <div class="col-md-9">
+                                 
+                                    <bouton id="bouton-log" type="submit">VALIDER</bouton>
+                                    <br />
+                                  
+                                </div>
+
+                            </div> <span class="text-muted certificate-text"><i class="fa fa-lock"></i> Votre transaction est sécurisée avec le certificat ssl</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Footer {}
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+
+

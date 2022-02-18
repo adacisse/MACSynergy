@@ -19,5 +19,17 @@ namespace Projet2Crowdfunding.ViewModels
         public ProjectOwner ProjectOwner { get; set; }
 
         public Project Project { get; set; }
+
+        public List<Project> ProjectList { get; set; }
+
+        public List<ProjectOwner> ProjectOwnerList { get; set; }
+
+        public int Inscriptions { get; set; }
+
+        public int PublishedProjects { get; set; }
+
+        public int ClosedProjects { get; set; }
+
+        public int AmountTotal { get; set; }
     }
 }
