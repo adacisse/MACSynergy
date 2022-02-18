@@ -363,7 +363,7 @@ namespace Projet2Crowdfunding.Models
                     Type = ProjectOwnerType.ONG,
                     AssociationProof = "/JustificatifsPP/proofPlay.png",
                     Image = "/ImageAssos/logoPlay.png",
-                    Status = AssoStatus.registered,
+                    Status = AssoStatus.published,
 
                     Newsletter = true,
                     ConfidentialityCharter = true,
@@ -429,7 +429,7 @@ namespace Projet2Crowdfunding.Models
                     Type = ProjectOwnerType.Association,
                     AssociationProof = "/JustificatifsPP/proofhandicap.png",
                     Image = "/ImageAssos/handicaplogo.png",
-                    Status = AssoStatus.registered,
+                    Status = AssoStatus.published,
 
                     Newsletter = true,
                     ConfidentialityCharter = true,

@@ -8,6 +8,24 @@ namespace Projet2Crowdfunding.Service
 {
     public class ProjectOwnerService
     {
+        private BddContext bddContext;
+
+        public ProjectOwnerService()
+        {
+            bddContext = new BddContext();
+        }
+
+        public List<ProjectOwner> GetAllProjectOwnersStatus(AssoStatus? status)
+        {
+            List<ProjectOwner> ProjectOwnerList = new List<ProjectOwner>();
+            var projectOwners = bddContext.ProjectOwners.Where(p => p.Status == status).ToList();
+            foreach (ProjectOwner projectOwner in projectOwners)
+            {
+                ProjectOwnerList.Add(projectOwner);
+            }
+            return (ProjectOwnerList);
+        }
+
         public void ModifyProjectOwnerInfos(int id, string name, ProjectOwnerType type, string hyperLink)
         {
             BddContext ctx = new BddContext();
