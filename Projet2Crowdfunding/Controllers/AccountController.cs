@@ -74,7 +74,14 @@ namespace Projet2Crowdfunding.Controllers
 
         public IActionResult GpInscription()
         {
-            return View();
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                return Redirect("/");
+            }
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -108,7 +115,14 @@ namespace Projet2Crowdfunding.Controllers
 
         public IActionResult ParticipantInscription()
         {
-            return View();
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                return Redirect("/");
+            }
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -149,7 +163,14 @@ namespace Projet2Crowdfunding.Controllers
 
         public IActionResult PPInscription()
         {
-            return View();
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                return Redirect("/");
+            }
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -216,12 +237,26 @@ namespace Projet2Crowdfunding.Controllers
 
         public IActionResult InscriptionChoice()
         {
-            return View();
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                return Redirect("/");
+            }
+            return View(viewModel);
         }
 
         public IActionResult ForgetPassword()
         {
-            return View();
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                return Redirect("/");
+            }
+            return View(viewModel);
         }
 
         public ActionResult Deconnexion()

@@ -3,6 +3,7 @@
 @{
     Layout = "_LayoutDuSite";
 }
+
 <link rel="stylesheet" type="text/css" href="~/css/Login.css">
 <link rel="stylesheet" type="text/css" href="~/css/Home.css">
 
@@ -11,64 +12,111 @@
 
 @section Menu
 {
-    <div class="col-md-8 d-flex justify-content-around">
-        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
-        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
-        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-    </div>
-    <div class="col-md-2 d-flex justify-content-end align-items-center">
-        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-    </div>
+    @if (Model.Authentify)
+    {
+        if (Model.Account.Role == "participant")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else if (Model.Account.Role == "po")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else // role == "admin"
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-8 d-flex justify-content-around">
+            <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-center">
+            <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+        </div>
+    }
 }
 
 
-<fieldset>
 
-    <div class="mode-vert">
-        <h6 style="font-size: 30px; color: rgb(173, 209, 42) ">BIENVENUE</h6>
-        <br />
-    </div>
 
-    @using (Html.BeginForm())
-    {
-        <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+<div class="my-5">
+    <fieldset style=" margin: auto">
 
-            @Html.LabelFor(model => model.Account.Mail)
-            @Html.TextBoxFor(model => model.Account.Mail, new { placeholder = "Adresse e-mail" })
-            @Html.ValidationMessageFor(model => model.Account.Mail)
-
-            <br>
+        <div class="mode-vert">
+            <h6 style="font-size: 30px; color: rgb(173, 209, 42) ">BIENVENUE</h6>
             <br />
-            @Html.LabelFor(model => model.Account.Password)
-            @Html.PasswordFor(model => model.Account.Password, new { placeholder = "Mot de passe" })
-            @Html.ValidationMessageFor(model => model.Account.Password)
-
-            <br /><br />
-            @*<div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
-                    <label class="form-check-label">Rester connecté?</label>
-                </div>
-                <br />
-                <br />*@
-
-            <a href="ForgetPassword" class="hyperlink2">Mot de passe oublié ?</a>
-
-
         </div>
 
-        <br /> <br />
+        @using (Html.BeginForm())
+        {
+            <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-        <button id="bouton-log" type="submit">SE CONNECTER</button>
+                @Html.LabelFor(model => model.Account.Mail) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Account.Mail)
+                @Html.ValidationMessageFor(model => model.Account.Mail)
 
-        <br />
-        <br />
-        <label for="Première fois sur MACSynergie?">Première fois sur MACSynergie?</label>
-        <a href="InscriptionChoice" class="hyperlink">Inscrivez-vous!</a>
+                <br>
+                <br />
+                @Html.LabelFor(model => model.Account.Password) <span> &nbsp;</span>
+                @Html.PasswordFor(model => model.Account.Password)
+                @Html.ValidationMessageFor(model => model.Account.Password)
 
-    }
+                <br /><br />
+                @*<div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check2" name="Rester connecté" value="something">
+                        <label class="form-check-label">Rester connecté?</label>
+                    </div>
+                    <br />
+                    <br />*@
+
+                <a href="ForgetPassword" class="hyperlink2">Mot de passe oublié ?</a>
 
 
-</fieldset>
+            </div>
+
+
+            <button id="bouton-log" type="submit" class="mt-4">SE CONNECTER</button>
+
+            <br />
+            <br />
+            <label class="mt-4">Première fois sur MACSynergie?</label>
+            <a href="InscriptionChoice" class="hyperlink">Inscrivez-vous!</a>
+
+        }
+
+
+    </fieldset>
+</div>
+
+
 
 @section Footer {}
 

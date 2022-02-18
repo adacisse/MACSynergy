@@ -10,155 +10,202 @@
 
 @section Menu
 {
-    <div class="col-md-8 d-flex justify-content-around">
-        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
-        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
-        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-    </div>
-    <div class="col-md-2 d-flex justify-content-end align-items-center">
-        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-    </div>
+    @if (Model.Authentify)
+    {
+        if (Model.Account.Role == "participant")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else if (Model.Account.Role == "po")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else // role == "admin"
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-8 d-flex justify-content-around">
+            <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-center">
+            <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+        </div>
+    }
 }
 
 
-<fieldset>
 
-    <div class="mode-vert">
-        <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN COMPTE PORTEUR DE PROJET</h6>
-        <br/>
-    </div>
-    
-    
 
-    @using (Html.BeginForm(FormMethod.Post,new { enctype = "multipart/form-data"}))
-    {
+<div class="my-5">
+    <fieldset style="margin : auto">
 
-        <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
-
-            <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.Account.Mail) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.Account.Mail)
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.Account.Password) <span> : &nbsp;</span>
-            @Html.PasswordFor(model => model.Account.Password)
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.ProjectOwner.Name) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.ProjectOwner.Name)
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.ProjectOwner.Type) <span> : &nbsp;</span>
-            <span>Association </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "Association") <span>&nbsp;</span>
-            <span>ONG </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "ONG")
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.ProjectOwner.PhoneNumber) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.ProjectOwner.PhoneNumber)
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.ProjectOwner.Summary)
-            @Html.TextAreaFor(model => model.ProjectOwner.Summary, new { @cols = "80", @rows = "4" })
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.AssociationProof) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.AssociationProof, new { type = "file" })
-
-            <div>
-
-                <br /><br />
-
-                <p style="color:dimgray">ADRESSE PHYSIQUE</p>
-
-                @Html.LabelFor(model => model.ProjectOwner.Address.StreetName) <span> : &nbsp;</span>
-                @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetName)
-
-                <br /><br />
-
-                @Html.LabelFor(model => model.ProjectOwner.Address.StreetNumber) <span> : &nbsp;</span>
-                @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetNumber)
-
-                <br /><br />
-
-                @Html.LabelFor(model => model.ProjectOwner.Address.City) <span> : &nbsp;</span>
-                @Html.TextBoxFor(model => model.ProjectOwner.Address.City)
-
-                <br /><br />
-
-                @Html.LabelFor(model => model.ProjectOwner.Address.ZipCode) <span> : &nbsp;</span>
-                @Html.TextBoxFor(model => model.ProjectOwner.Address.ZipCode)
-
-                <br /><br />
-
-                @Html.LabelFor(model => model.ProjectOwner.Address.Country) <span> : &nbsp;</span>
-                @Html.TextBoxFor(model => model.ProjectOwner.Address.Country)
-
-            </div>
-
+        <div class="mode-vert">
+            <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN COMPTE PORTEUR DE PROJET</h6>
             <br />
+        </div>
 
-            <div class="text-danger">
-                @Html.ValidationMessageFor(model => model.ProjectOwner)
+
+
+        @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+
+                <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Account.Mail) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Account.Mail)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Account.Password) <span> &nbsp;</span>
+                @Html.PasswordFor(model => model.Account.Password)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.Name) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Name)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.Type) <span> &nbsp;</span>
+                <span>Association </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "Association") <span>&nbsp;</span>
+                <span>ONG </span> @Html.RadioButtonFor(model => model.ProjectOwner.Type, "ONG")
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.PhoneNumber) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.PhoneNumber)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.Summary) <br />
+                @Html.TextAreaFor(model => model.ProjectOwner.Summary, new { @cols = "80", @rows = "4" })
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.AssociationProof) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.AssociationProof, new { type = "file" })
+
+                <div>
+
+                    <br /><br />
+
+                    <p style="color:dimgray">ADRESSE PHYSIQUE</p>
+
+                    @Html.LabelFor(model => model.ProjectOwner.Address.StreetName) <span> &nbsp;</span>
+                    @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetName)
+
+                    <br /><br />
+
+                    @Html.LabelFor(model => model.ProjectOwner.Address.StreetNumber) <span> &nbsp;</span>
+                    @Html.TextBoxFor(model => model.ProjectOwner.Address.StreetNumber)
+
+                    <br /><br />
+
+                    @Html.LabelFor(model => model.ProjectOwner.Address.City) <span> &nbsp;</span>
+                    @Html.TextBoxFor(model => model.ProjectOwner.Address.City)
+
+                    <br /><br />
+
+                    @Html.LabelFor(model => model.ProjectOwner.Address.ZipCode) <span> &nbsp;</span>
+                    @Html.TextBoxFor(model => model.ProjectOwner.Address.ZipCode)
+
+                    <br /><br />
+
+                    @Html.LabelFor(model => model.ProjectOwner.Address.Country) <span> &nbsp;</span>
+                    @Html.TextBoxFor(model => model.ProjectOwner.Address.Country)
+
+                </div>
+
+                <br />
+
+                <div class="text-danger">
+                    @Html.ValidationMessageFor(model => model.ProjectOwner)
+                </div>
+
             </div>
 
-        </div>
+            <br /><br />
 
-        <br /><br />
+            <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-        <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+                <h6 style="font-size: 26px; text-align: left">CHAMPS NON REQUIS</h6>
 
-            <h6 style="font-size: 26px; text-align: left">CHAMPS NON REQUIS</h6>
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.Description) <br />
+                @Html.TextAreaFor(model => model.ProjectOwner.Description, new { @cols = "80", @rows = "8" })
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.HyperLink) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.HyperLink)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.VolunteerDescritpion) <br />
+                @Html.TextAreaFor(model => model.ProjectOwner.VolunteerDescritpion, new { @cols = "80", @rows = "8" })
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.ProjectOwner.Partnership) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.ProjectOwner.Partnership)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.AssoLogo) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.AssoLogo, new { type = "file" })
+
+            </div>
 
             <br /><br />
 
-            @Html.LabelFor(model => model.ProjectOwner.Description) <br/>
-            @Html.TextAreaFor(model => model.ProjectOwner.Description, new { @cols = "80", @rows = "8" })
+            @Html.CheckBoxFor(m => m.ProjectOwner.ConfidentialityCharter)
+            @Html.LabelFor(model => model.ProjectOwner.ConfidentialityCharter, "J'ai lu et j'accepte la politique de confidentialité de Macsynergy")
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.ProjectOwner.ConfidentialityCharter)
+            </div>
 
             <br /><br />
 
-            @Html.LabelFor(model => model.ProjectOwner.HyperLink) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.ProjectOwner.HyperLink)
+            <button id="bouton-log" type="submit">CREER UN COMPTE</button>
 
-            <br /><br />
+        }
 
-            @Html.LabelFor(model => model.ProjectOwner.VolunteerDescritpion) <br/>
-            @Html.TextAreaFor(model => model.ProjectOwner.VolunteerDescritpion, new { @cols = "80", @rows = "8" })
+    </fieldset>
+</div>
 
-            <br /><br />
-
-            @Html.LabelFor(model => model.ProjectOwner.Partnership) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.ProjectOwner.Partnership)
-
-            <br /><br />
-
-            @Html.LabelFor(model => model.AssoLogo) <span> : &nbsp;</span>
-            @Html.TextBoxFor(model => model.AssoLogo, new { type = "file" })
-
-        </div>
-
-        <br /><br />
-
-        @Html.CheckBoxFor(m => m.ProjectOwner.ConfidentialityCharter)
-        @Html.LabelFor(model => model.ProjectOwner.ConfidentialityCharter, "J'ai lu et j'accepte la politique de confidentialité de Macsynergy")
-        <div class="text-danger">
-            @Html.ValidationMessageFor(model => model.ProjectOwner.ConfidentialityCharter)
-        </div>
-
-        <br /><br />
-
-        <button id="bouton-log" type="submit">CREER UN COMPTE</button>
-
-    }
-
-</fieldset>
 
 @section Footer {}
