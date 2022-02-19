@@ -17,16 +17,7 @@ namespace Projet2Crowdfunding.Controllers
         {
             StripeConfiguration.ApiKey = "sk_test_51KUbEVFZdOzBn1VnNLVh8lPPu6fTUDUrkMOS7lOremlO7jGBkZg54ArHR0wd3tRAQTtfYmRUGZ0xJmSMkF0RX6iV00nrUzdcIC";
         }
-        //public IActionResult ParticipantPayment()
-        //{
-        //    PaymentViewModel viewModel = new PaymentViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
-        //    if (HttpContext.User.Identity.IsAuthenticated)
-        //    {
-                
-        //    }
-        //    return View(P);
-        //}
-
+        
         [HttpPost]
         public IActionResult CreateCheckoutSession(PaymentViewModel viewModel) 
 
@@ -71,5 +62,7 @@ namespace Projet2Crowdfunding.Controllers
         {
             return View();
         }
+
+
     }
 }
