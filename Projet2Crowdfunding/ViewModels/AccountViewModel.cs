@@ -60,6 +60,7 @@ namespace Projet2Crowdfunding.ViewModels
         public List<Step> ProjectStepsList { get; set; }
         //public List<Participant>AllParticipants
 
+        public List<Favorite> MyFavoritesList { get; set; }
         public int HeartCounter { get; set; }
 
 

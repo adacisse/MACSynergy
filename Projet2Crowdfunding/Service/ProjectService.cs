@@ -103,32 +103,42 @@ namespace Projet2Crowdfunding.Service
 
             /////////////////////////////////////
             Project project = this.bddContext.Projects.Find(idProject);
-            //Favorite favorite = new Favorite();
+            
             List<Favorite> MyFavoritesList = new List<Favorite>();
             var favorites = bddContext.Favorites.Where(f => f.ProjectId == idProject).ToList();
 
             return favorites.Count;
-           //// if (project != null)
-           // {
-             //   project.HeartCounter++;
-              //  this.bddContext.Favorites.Add(favorites);
-               // this.bddContext.SaveChanges();
-           // }
-            /////////////////////
+           
+        }
+        public void AddAFavoriteForAParticipantOnAProject(int idProject, int id)
+        {//recuperer le participant depuis son account
+         //puis stocker le favorite 
+         //puis afficher le nombre de favorite dans le heartcounter
+            BddContext ctx = new BddContext();
+            Project project = ctx.Projects.Find(idProject);
+            Participant participant = ctx.Participants.Find(id);
+            if (participant != null)
+            {
+                Favorite favorite = new Favorite();
+                favorite.ProjectId = idProject;
+                favorite.ParticipantId = id;
+                ctx.SaveChanges();
+                //AccountService.GetParticipantFromAccountId(Id);
+            }
         }
 
-       // List<Project> ProjectList = new List<Project>();
-       // var projects = bddContext.Projects.Where(p => p.Status == status).ToList();
-         //   foreach (Project project in projects)
-          //  {
-           ////     ProjectList.Add(project);
-           // }
-           // return (ProjectList);
+        // List<Project> ProjectList = new List<Project>();
+        // var projects = bddContext.Projects.Where(p => p.Status == status).ToList();
+        //   foreach (Project project in projects)
+        //  {
+        ////     ProjectList.Add(project);
+        // }
+        // return (ProjectList);
         //public void
-          //  HeartCounting()
-       //// {
+        //  HeartCounting()
+        //// {
         //    Project.HeartCounter++;
-       // }
+        // }
 
     }
 }
