@@ -20,6 +20,12 @@ namespace Projet2Crowdfunding.ViewModels
 
         public Project Project { get; set; }
 
+        public Step Step1 { get; set; }
+
+        public Step Step2 { get; set; }
+
+        public Step Step3 { get; set; }
+
         public List<Project> ProjectList { get; set; }
 
         public List<Project> ProjectListClosed { get; set; }
@@ -50,8 +56,10 @@ namespace Projet2Crowdfunding.ViewModels
         public PayPalAccount PayPalAccount { get; set; }
 
         public CreditCard CreditCard { get; set; }
+
         public List<Step> ProjectStepsList { get; set; }
         //public List<Participant>AllParticipants
+
         public int HeartCounter { get; set; }
 
 

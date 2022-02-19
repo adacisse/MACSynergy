@@ -86,53 +86,102 @@
                 @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
 
-                    <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+            <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-                        <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
+                <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
 
-                        <br /><br />
+                <br /><br />
 
-                        @Html.LabelFor(model => model.Project.Name) <span> &nbsp;</span>
-                        @Html.TextBoxFor(model => model.Project.Name)
+                @Html.LabelFor(model => model.Project.Name) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Project.Name)
 
-                        <br /><br />
+                <br /><br />
 
-                        @Html.LabelFor(model => model.Project.Summary) <br />
-                        @Html.TextAreaFor(model => model.Project.Summary, new { @cols = "80", @rows = "4" })
+                @Html.LabelFor(model => model.Project.Summary) <br />
+                @Html.TextAreaFor(model => model.Project.Summary, new { @cols = "80", @rows = "4" })
 
-                        <br /><br />
+                <br /><br />
 
-                        @Html.LabelFor(model => model.Project.Descritpion) <br />
-                        @Html.TextAreaFor(model => model.Project.Descritpion, new { @cols = "80", @rows = "8" })
+                @Html.LabelFor(model => model.Project.Descritpion) <br />
+                @Html.TextAreaFor(model => model.Project.Descritpion, new { @cols = "80", @rows = "8" })
 
-                        <br /><br />
+                <br /><br />
 
-                        @Html.LabelFor(model => model.Project.Category) <span> : </span> <br />
-                        <span>Animaux </span> @Html.RadioButtonFor(model => model.Project.Category, "Animaux") <span>&nbsp;</span>
-                        <span>Environnement </span> @Html.RadioButtonFor(model => model.Project.Category, "Environnement") <span>&nbsp;</span>
-                        <span>Humanitaire </span> @Html.RadioButtonFor(model => model.Project.Category, "Humanitaire") <span>&nbsp;</span>
-                        <span>Education</span> @Html.RadioButtonFor(model => model.Project.Category, "Education") <span>&nbsp;</span>
-                        <span>Santé </span> @Html.RadioButtonFor(model => model.Project.Category, "Santé") <span>&nbsp;</span>
-                        <span>Besoins Elémentaires </span> @Html.RadioButtonFor(model => model.Project.Category, "BesoinsElémentaires") <span>&nbsp;</span>
-                        <span>Autre </span> @Html.RadioButtonFor(model => model.Project.Category, "Autre")
+                @Html.LabelFor(model => model.Project.Category) <span> : </span> <br />
+                <span>Animaux </span> @Html.RadioButtonFor(model => model.Project.Category, "Animaux") <span>&nbsp;</span>
+                <span>Environnement </span> @Html.RadioButtonFor(model => model.Project.Category, "Environnement") <span>&nbsp;</span>
+                <span>Humanitaire </span> @Html.RadioButtonFor(model => model.Project.Category, "Humanitaire") <span>&nbsp;</span>
+                <span>Education</span> @Html.RadioButtonFor(model => model.Project.Category, "Education") <span>&nbsp;</span>
+                <span>Santé </span> @Html.RadioButtonFor(model => model.Project.Category, "Santé") <span>&nbsp;</span>
+                <span>Besoins Elémentaires </span> @Html.RadioButtonFor(model => model.Project.Category, "BesoinsElémentaires") <span>&nbsp;</span>
+                <span>Autre </span> @Html.RadioButtonFor(model => model.Project.Category, "Autre")
 
-                        <br /><br />
+                <br /><br />
 
-                        @Html.LabelFor(model => model.Project.Location) <span> &nbsp;</span>
-                        @Html.TextBoxFor(model => model.Project.Location)
+                @Html.LabelFor(model => model.Project.Location) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Project.Location)
 
-                        <br /><br />
+                <br /><br />
 
-                        @Html.LabelFor(model => model.Project.EndDate) <span> &nbsp;</span>
-                        @Html.TextBoxFor(model => model.Project.EndDate, new { type = "date" })
+                @Html.LabelFor(model => model.Project.EndDate) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Project.EndDate, new { type = "date" })
 
-                        <br />
 
-                        <div class="text-danger mt-4">
-                            @Html.ValidationMessageFor(model => model.Project)
+            <div>
+
+                <br /><br />
+
+                <p style="color:dimgray">PALIERS PROPOSES (
+                <span style="color: rgb(173, 209, 42); font-weight: 500;">Uniquement le prèmier palier est obligatoire</span>
+                )</p>
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Step1.Amount) <br />
+                            @Html.TextBoxFor(model => model.Step1.Amount)
                         </div>
-
+                        <div class="col-md-8">
+                            @Html.LabelFor(model => model.Step1.Description) <br />
+                            @Html.TextAreaFor(model => model.Step1.Description, new { @cols = "70", @rows = "4" })
+                        </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-3 pe-3">
+                            @Html.LabelFor(model => model.Step2.Amount) <br />
+                            @Html.TextBoxFor(model => model.Step2.Amount)
+                        </div>
+                        <div class="col-md-8">
+                            @Html.LabelFor(model => model.Step2.Description) <br />
+                            @Html.TextAreaFor(model => model.Step2.Description, new { @cols = "70", @rows = "4" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 pe-3">
+                            @Html.LabelFor(model => model.Step3.Amount) <br />
+                            @Html.TextBoxFor(model => model.Step3.Amount)
+                        </div>
+                        <div class="col-md-8">
+                            @Html.LabelFor(model => model.Step3.Description) <br />
+                            @Html.TextAreaFor(model => model.Step3.Description, new { @cols = "70", @rows = "4" })
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+                <br />
+
+                <div class="text-danger mt-4">
+                    @Html.ValidationMessageFor(model => model.Project)
+                </div>
+
+            </div>
 
 
                     <br /><br />

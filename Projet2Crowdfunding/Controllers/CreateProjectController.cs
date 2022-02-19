@@ -59,7 +59,8 @@ namespace Projet2Crowdfunding.Controllers
 
             if (viewModel.Project.Name != null && viewModel.Project.Summary != null &&
                 viewModel.Project.Descritpion != null && viewModel.Project.Category != null &&
-                viewModel.Project.Location != null && viewModel.Project.EndDate != null)
+                viewModel.Project.Location != null && viewModel.Project.EndDate != null &&
+                viewModel.Step1.Amount != 0 && viewModel.Step1.Description != null)
             {
                 if (viewModel.ProjectImage != null)
                 {
@@ -84,7 +85,8 @@ namespace Projet2Crowdfunding.Controllers
                 int idProject = createProjectService.CreateProject(viewModel.ProjectOwner.Id, viewModel.Project.Name,
                     viewModel.Project.Summary, viewModel.Project.Descritpion, viewModel.Project.Category, 
                     viewModel.Project.Location, viewModel.Project.EndDate, fileNameImage, fileNameVideo, 
-                    viewModel.Project.MaterialDonation);
+                    viewModel.Project.MaterialDonation, viewModel.Step1.Amount, viewModel.Step1.Description,
+                    viewModel.Step2.Amount, viewModel.Step2.Description, viewModel.Step3.Amount, viewModel.Step3.Description);
 
                 var userClaims = new List<Claim>()
                 {
@@ -101,7 +103,7 @@ namespace Projet2Crowdfunding.Controllers
                 return Redirect("/ProjectOwner/PODashboard");
             }
 
-            ModelState.AddModelError("Project", "Les champs obligatoires doivent être remplis");
+            ModelState.AddModelError("Project", "Les champs obligatoires doivent être remplis. Le montan des palier doit être en numérique.");
 
 
             return View(viewModel);

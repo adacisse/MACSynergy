@@ -16,7 +16,9 @@ namespace Projet2Crowdfunding.Service
         }
 
         public int CreateProject(int idPO, string name, string summary, string description, Category? category,
-            string location, DateTime endDate, string image, string video, string materialDonation)
+            string location, DateTime endDate, string image, string video, string materialDonation, 
+            double amount1, string descriptionA1, double amount2, string descriptionA2, 
+            double amount3, string descriptionA3)
         {
 
             string imageProject = "";
@@ -75,7 +77,38 @@ namespace Projet2Crowdfunding.Service
                 Project = project
             };
 
+            Step step1 = new Step
+            {
+                Amount = amount1,
+                Description = descriptionA1,
+                Project = project
+            };
+
+            if (amount2 != 0 && descriptionA2 != null)
+            {
+                Step step2 = new Step
+                {
+                    Amount = amount2,
+                    Description = descriptionA2,
+                    Project = project
+                };
+                this.bddContext.Steps.Add(step2);
+            }
+
+            if (amount3 != 0 && descriptionA3 != null)
+            {
+                Step step3 = new Step
+                {
+                    Amount = amount3,
+                    Description = descriptionA3,
+                    Project = project
+                };
+                this.bddContext.Steps.Add(step3);
+            } 
+
             this.bddContext.Projects.Add(project);
+            this.bddContext.Collections.Add(collection);
+            this.bddContext.Steps.Add(step1);
             this.bddContext.SaveChanges();
             return project.Id;
         }

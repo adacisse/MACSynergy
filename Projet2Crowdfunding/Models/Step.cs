@@ -8,11 +8,12 @@ namespace Projet2Crowdfunding.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Montant")]
+        [Display(Name = "Montant souhaité (€)")]
         public double Amount { get; set; }
 
         [MaxLength(250)]
         [Required]
+        [Display(Name = "Description du palier")]
         public string Description { get; set; }
 
         [Required]
