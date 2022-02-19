@@ -89,6 +89,9 @@
                     <li class="nav-item pill-1">
                         <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-PToValidate';return false;"><i class="fa fa-check-square-o fa-fw me-3"></i>Projet(s) à valider</a>
                     </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" onclick='window.location.href="@Url.Action("GpInscription", "Account")";' style="cursor: pointer"><i class="fa fa-pencil-square-o fa-fw me-3"></i>Création Compte Admin</a>
+                    </li>
                 </ul>
 
             </div>
@@ -115,7 +118,7 @@
                             </div>
                         </div>
 
-                     </div>
+                    </div>
                 </div>
 
                 <div class="row-content border-MACS">
@@ -194,27 +197,27 @@
                                     @foreach (var ProjectOwner in Model.ProjectOwnerList)
                                     {
                                         {
-                                        <tr style="text-align:center">
-                                        <td>@ProjectOwner.Name</td>
-                                        <td>@ProjectOwner.Type</td>
-                                        <td>
-                                            @if (ProjectOwner.AssociationProof != null)
-                                            {
-                                                <i class="fa fa-check fa-fw me-3"></i>
-                                            }
-                                        </td>
-                                        <td>
-                                            @if (ProjectOwner.ConfidentialityCharter == true)
-                                               {
-                                            <i class="fa fa-check fa-fw me-3"></i>
-                                               }
-                                            </td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-dark btn-sm">
-                                                Valider
-                                            </button>
-                                        </td>
-                                         </tr>
+                                            <tr style="text-align:center">
+                                                <td>@ProjectOwner.Name</td>
+                                                <td>@ProjectOwner.Type</td>
+                                                <td>
+                                                    @if (ProjectOwner.AssociationProof != null)
+                                                    {
+                                                        <i class="fa fa-check fa-fw me-3"></i>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    @if (ProjectOwner.ConfidentialityCharter == true)
+                                                    {
+                                                        <i class="fa fa-check fa-fw me-3"></i>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-outline-dark btn-sm">
+                                                        Valider
+                                                    </button>
+                                                </td>
+                                            </tr>
 
                                         }
                                     }
@@ -234,36 +237,46 @@
                                 <thead>
                                     <tr>
                                         <th>Nom</th>
-                                        <th>Catégorie</th>
-                                        <th>Localisation</th>
-                                        <th>Date de début</th>
-                                        <th>Date de fin</th>
-                                        <th>Valider</th>
+                                        <th>Résumé</th>
+                                        <th>Description</th>
+                                        <th>Volontariat</th>
+                                        <th>Partenaires</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @*@foreach (var Project in Model.ProjectList)
-                                        {
-                                            string pagelink = "/Project/projectPage/" + Project.Id;
-                                            <tr onclick='window.location.href="@pagelink";' style="cursor: pointer">
-                                                <td>@Project.Name</td>
-                                                <td>@Project.Category</td>
-                                                <td>@Project.Location</td>
-                                                <td>@Project.StartDate</td>
-                                                <td>@Project.EndDate</td>
-                                                @foreach (var Collection in Model.CollectionList)
-                                                {
-                                                    if (Collection.ProjectId == Project.Id)
-                                                    {
+                                    @foreach (var Project in Model.ProjectList)
+                                    {
+                                        <tr style="text-align:center">
+                                            <td>@Project.Name</td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#summaryModal">
+                                                    Voir
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#descriptionModal">
+                                                    Voir
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#volunteerDescriptionModal">
+                                                    Voir
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#partnershipModal">
+                                                    Voir
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm">
+                                                    Valider
+                                                </button>
+                                            </td>
+                                        </tr>
 
-                                                        <td>@Collection.Amount €</td>
-                                                    }
-                                                }
-
-
-                                            </tr>
-
-                                        }*@
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -454,6 +467,154 @@
             <!-- Modal footer -->
             <div class="modal-footer border-top-0">
                 <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The summaryModal -->
+<div class="modal" id="summaryModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Résumé</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        test Résumé
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The descriptionModal -->
+<div class="modal" id="descriptionModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Description</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        test Description
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The VolunteerDescriptionModal -->
+<div class="modal" id="volunteerDescriptionModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Volontariat</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        test volontariat
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The partnershipDescriptionModal -->
+<div class="modal" id="partnershipModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Partenariat</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        test Partenariat
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
             </div>
 
         </div>
