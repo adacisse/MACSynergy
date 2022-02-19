@@ -18,12 +18,18 @@ namespace Projet2Crowdfunding.Controllers
     public class AccountController : Controller
     {
         private AccountService accountService;
+        private ProjectOwnerService projectOwnerService;
+        private ProjectService projectService;
         private IWebHostEnvironment _env;
         private string fileNameProof;
         public string fileNameLogo;
+       
+
         public AccountController(IWebHostEnvironment environment)
         {
             accountService = new AccountService();
+            projectOwnerService = new ProjectOwnerService();
+            projectService = new ProjectService();
             _env = environment;
         }
        
@@ -79,6 +85,7 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                viewModel.Account.Mail = "";
                 return View(viewModel);
             }
             return View(viewModel);
@@ -96,17 +103,14 @@ namespace Projet2Crowdfunding.Controllers
                 int idAdministrator = accountService.CreateAdministrator(idAccount, viewModel.Administrator.LastName,
                     viewModel.Administrator.FirstName, viewModel.Administrator.PhoneNumber, viewModel.Administrator.Type);
 
-                var userClaims = new List<Claim>()
+                viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated };
+                if (HttpContext.User.Identity.IsAuthenticated)
                 {
-                    new Claim(ClaimTypes.NameIdentifier, viewModel.Account.Mail),
-                    new Claim(ClaimTypes.Name, idAccount.ToString()), //appelé dans la ligne 25
-                    new Claim(ClaimTypes.Role, "admin")
-                };
-
-                var ClaimIdentity = new ClaimsIdentity(userClaims, "User Identity");
-
-                var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
-                HttpContext.SignInAsync(userPrincipal);
+                    viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                    viewModel.Administrator = accountService.GetAdminFromAccountId(viewModel.Account.Id);
+                    viewModel.ProjectOwnerList = projectOwnerService.GetAllProjectOwnersStatus(AssoStatus.registered);
+                    viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.sumittedForPublishing);
+                }
 
                 return Redirect("/Admin/AdminDashboard");
             }
