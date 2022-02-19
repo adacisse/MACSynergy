@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Projet2Crowdfunding.Models
 {
     public enum ProjectOwnerType { Association, ONG}
-    public enum AssoStatus { registered, published}
+    public enum AssoStatus { registered, published, rejected}
 
     public class ProjectOwner
     {

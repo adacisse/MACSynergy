@@ -653,7 +653,7 @@ namespace Projet2Crowdfunding.Models
                 {
                     Id = 4,
                     Status = Status.sumittedForPublishing,
-                    Name = "EJO - PROJET D’APPUI POUR UNE ÉDUCATION ACTIVE ET INCLUSIVE DE TOUS LES ENFANTS.",
+                    Name = "EJO",
 
                     Summary = "Ce programme sera déployé jusqu'en 2022 au Burundi, au Kosovo, au Sénégal," +
                     " au Libéria et, dans le cadre de son incubateur, dans d'autres pays d'Afrique de l'Ouest.",
