@@ -96,5 +96,17 @@ namespace Projet2Crowdfunding.Service
                 ctx.SaveChanges();
             }
         }
+
+        public void ModifyProjectOwnerStatus(int id, AssoStatus status)
+        {
+            BddContext ctx = new BddContext();
+            ProjectOwner projectOwner = ctx.ProjectOwners.Find(id);
+
+            if (projectOwner != null)
+
+                projectOwner.Status = status;
+                ctx.SaveChanges();
+
+        }
     }
 }

@@ -97,5 +97,20 @@ namespace Projet2Crowdfunding.Controllers
                 return View("Error");
             }
         }
+
+        [HttpPost]
+        public IActionResult ModifyProjectOwnerStatus (ProjectOwner projectOwner)
+        {
+            if (projectOwner.Id != 0)
+            {
+                ProjectOwnerService ps = new ProjectOwnerService();
+                ps.ModifyProjectOwnerStatus(projectOwner.Id, projectOwner.Status);
+                return RedirectToAction("AdminDashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
     }
 }

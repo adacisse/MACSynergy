@@ -60,7 +60,7 @@ namespace Projet2Crowdfunding.Models
 
         [Required]
         [Display(Name = "État")]
-        public AssoStatus? Status { get; set; }
+        public AssoStatus Status { get; set; }
 
         [Required]
         [Display(Name = "Charte de Confidentialité")]

@@ -196,26 +196,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var ProjectOwner in Model.ProjectOwnerList)
+                                    @foreach (var projectOwner in Model.ProjectOwnerList)
                                     {
                                         {
                                             <tr style="text-align:center">
-                                                <td>@ProjectOwner.Name</td>
-                                                <td>@ProjectOwner.Type</td>
+                                                <td>@projectOwner.Name</td>
+                                                <td>@projectOwner.Type</td>
                                                 <td>
-                                                    @if (ProjectOwner.AssociationProof != null)
+                                                    @if (projectOwner.AssociationProof != null)
                                                     {
                                                         <i class="fa fa-check fa-fw me-3"></i>
                                                     }
                                                 </td>
                                                 <td>
-                                                    @if (ProjectOwner.ConfidentialityCharter == true)
+                                                    @if (projectOwner.ConfidentialityCharter == true)
                                                     {
                                                         <i class="fa fa-check fa-fw me-3"></i>
                                                     }
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectOwnerStatusModal">
+                                                    <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectOwnerStatusModal@(projectOwner.Id)">
                                                         Status
                                                     </button>
                                                 </td>
@@ -248,14 +248,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var Project in Model.ProjectList)
+                                    @foreach (var project in Model.ProjectList)
                                     {
                                         <tr style="text-align:center">
-                                            <td>@Project.Name</td>
-                                            <td>@Project.Category</td>
-                                            <td>@Project.Location</td>
+                                            <td>@project.Name</td>
+                                            <td>@project.Category</td>
+                                            <td>@project.Location</td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#summaryModal">
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#summaryModal@(project.Id)">
                                                     Voir
                                                 </button>
                                             </td>
@@ -265,7 +265,7 @@
                                                 </button>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectStatusModal">
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectStatusModal@Project.Id">
                                                     Status
                                                 </button>
                                             </td>
@@ -468,43 +468,47 @@
     </div>
 </div>
 
+
 <!-- The summaryModal -->
-<div class="modal" id="summaryModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+@foreach (var project in Model.ProjectList)
+{
+    <div class="modal" id="summaryModal@(project.Id)">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header clearfix">
-                <div class="mx-auto"><h3>Résumé</h3></div>
-                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
-            </div>
+                <!-- Modal Header -->
+                <div class="modal-header clearfix">
+                    <div class="mx-auto"><h3>Résumé</h3></div>
+                    <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center border rounded-3 p-3">
-                                <div class="panel-body">
-                                    @Html.HiddenFor(m => m.Project.Id)
-                                    <fieldset class="d-grid">
-                                        @Html.TextAreaFor(m => m.Project.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4" })
-                                    </fieldset>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center border rounded-3 p-3">
+                                    <div class="panel-body">
+                                        @Html.HiddenFor(m => project.Id)
+                                        <fieldset class="d-grid">
+                                            @Html.TextAreaFor(m => project.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4" })
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
-            </div>
+                <!-- Modal footer -->
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
+}
 
 <!-- The descriptionModal -->
 <div class="modal" id="descriptionModal">
@@ -545,57 +549,60 @@
 
 
 <!-- The ProjectOwnerStatusModal -->
-<div class="modal" id="ProjectOwnerStatusModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+@foreach (var projectOwner in Model.ProjectOwnerList)
+{
+    <div class="modal" id="ProjectOwnerStatusModal@(projectOwner.Id)">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header clearfix">
-                <div class="mx-auto"><h3>Changement du status</h3></div>
-                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
-            </div>
+                <!-- Modal Header -->
+                <div class="modal-header clearfix">
+                    <div class="mx-auto"><h3>Changement du status</h3></div>
+                    <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center border rounded-3 p-3">
-                                <div class="panel-body">
-                                    <fieldset class="d-grid">
-                                        @using (Html.BeginForm("ModifyProjectOwnerStatus", "ProjectOwner"))
-                                        {
-                                            <div class="form-group">
-                                                @Html.HiddenFor(m => m.ProjectOwner.Id)
-                                                <div class="col-md-12">
-                                                    <span style="margin:30px">
-                                                        Valider
-                                                        @Html.RadioButtonFor(m => m.ProjectOwner.Status, "1", new { @class = "margin-right:10px" })
-                                                    </span>
-                                                    <span style="margin-right:30px">
-                                                        Rejeter
-                                                        @Html.RadioButtonFor(m => m.ProjectOwner.Status, "2")
-                                                    </span>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center border rounded-3 p-3">
+                                    <div class="panel-body">
+                                        <fieldset class="d-grid">
+                                            @using (Html.BeginForm("ModifyProjectOwnerStatus", "Admin"))
+                                            {
+                                                <div class="form-group">
+                                                    @Html.HiddenFor(m => projectOwner.Id)
+                                                    <div class="col-md-12">
+                                                        <span style="margin:30px">
+                                                            Valider
+                                                            @Html.RadioButtonFor(m => m.ProjectOwner.Status, "1", new { @class = "margin-right:10px" })
+                                                        </span>
+                                                        <span style="margin-right:30px">
+                                                            Rejeter
+                                                            @Html.RadioButtonFor(m => m.ProjectOwner.Status, "2")
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
-                                        }
-                                    </fieldset>
+                                                <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                            }
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
-            </div>
+                <!-- Modal footer -->
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
+}
 
 <!-- The ProjectStatusModalModal -->
 <div class="modal" id="ProjectStatusModalModal">
