@@ -51,6 +51,7 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.ProjectOwner = this.bddContext.ProjectOwners.Find(viewModel.Project.ProjectOwnerId);
                 viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
                 viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
+                viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
             }
 
 

@@ -51,6 +51,9 @@ namespace Projet2Crowdfunding.ViewModels
 
         public CreditCard CreditCard { get; set; }
         public List<Step> ProjectStepsList { get; set; }
+        //public List<Participant>AllParticipants
+        public int HeartCounter { get; set; }
+
 
     }
 }

@@ -192,8 +192,8 @@
                         <div style="padding: 5px">
                             <button type="button" class="btn btn-outline-dark"
                                     title="Recevoir les nouveautés de ce projet">
-                                Je suis! <img style="width:5%;"
-                                              src="~/Images/heart.png" alt="" />
+                                Je suis! @Model.Project.HeartCounter <img style="width:5%;"
+                                                                          src="~/Images/heart.png" alt="" />
                             </button>
                         </div>
                         <div style="padding: 5px">
@@ -210,6 +210,7 @@
                             <div>
                                 <div class="row" style="padding: 0px 0px 0px 5px">
                                     <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
+                                        
                                         <a href="#recolte" class="btn btn-success float-right" width="7px"
                                            style="text-decoration:none">
                                             Je veux Contribuer <img style="width:auto;"
@@ -228,7 +229,7 @@
                                         </div>
                                     }
                                     else
-                                    {
+                                    {//meme bloc en haut mais sans increment, pop up qui dis inscivez vous pour nous rejoindre
 
                                     }
                                 </div>
@@ -654,6 +655,7 @@
                                         <div>
                                             <h2> L'identifiant de ce pallier est: @Step.Id</h2>
                                             <h3>Le montant de ce pallier est @Step.Amount €</h3>
+                                            <p>Description: @Step.Description</p>
                                         </div>
                                         <br />
                                     }
@@ -671,12 +673,7 @@
                                 </p>
                                 <h4>Description dons matériels</h4>
                                 <p>
-                                    Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                                    adipiscing
-                                    elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim
-                                    veniam, quis nostrud exercitation ullamco.
+                                    @Model.Project.MaterialDonation
                                 </p>
                                 <h4>Description des tâches de bénévolats</h4>
                                 <p>
