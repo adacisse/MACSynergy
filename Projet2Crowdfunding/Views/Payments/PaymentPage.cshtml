@@ -1,73 +1,89 @@
-﻿@model Projet2Crowdfunding.ViewModels.AccountViewModel
+﻿        @model Projet2Crowdfunding.ViewModels.PaymentViewModel
 
-@{
-    Layout = "_LayoutDuSite";
+        @{
+            Layout = "_LayoutDuSite";
 
-}
-
-
-<link rel="stylesheet" type="text/css" href="~/css/Home.css">
-
-
-<style>
-    .accordion {
-        background-color: #eee;
-        color: #444;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        transition: 0.4s;
-    }
-
-
-        .active, .accordion:hover {
-            background-color: #ccc;
         }
 
 
-    .panel {
-        padding: 0 18px;
-        background-color: white;
-        display: none;
-        overflow: hidden;
-    }
-</style>
+        <link rel="stylesheet" type="text/css" href="~/css/Home.css">
 
 
-@section Menu
-{
-    <div class="col-md-8 d-flex justify-content-around">
-        <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
-        <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
-        <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-    </div>
-    <div class="col-md-2 d-flex justify-content-end align-items-center">
-        <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
-    </div>
-}
+        <style>
+            .accordion {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                text-align: left;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+            }
+
+
+                .active, .accordion:hover {
+                    background-color: #ccc;
+                }
+
+
+            .panel {
+                padding: 0 18px;
+                background-color: white;
+                display: none;
+                overflow: hidden;
+            }
+        </style>
+
+
+        @section Menu
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/ProjectPage"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+            </div>
+        }
 
 
 
-<div class="container d-flex justify-content-center mt-5 mb-5">
-    <div class="row g-3" style="width:600px;">
-        <div class="col-md-12">
+        <div class="container d-flex justify-content-center mt-5 mb-5">
+            <div class="row g-3" style="width:600px;">
+                <div class="col-md-12">
 
+                    @using (Html.BeginForm("CreateCheckoutSession", "Payments",  FormMethod.Post))
+                    {
+                        <h2> Montant de participation</h2>
+                        @Html.TextBoxFor(model => model.Amount)
+                        @*<input type="text" class="form-control" placeholder="Saisir le montant">*@
+                        <br />
+                        <br />
+                        <br />
+                        <br />
 
-            <h2> Montant de participation</h2>
-            <input type="text" class="form-control" placeholder="Saisir le montant">
-            <br />
+                            <button id="bouton-log" type="submit">PAIEMENT</button>
 
-            <bouton id="bouton-log" type="submit">VALIDER</bouton>
-            <br />
-            <br />
+                      
+                    }
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
 
-            @*<div class="col-md-6">*@
-            <h2>Méthodes de paiement</h2>
-            @*</div>*@
-        </div>
+                        @*<div class="col-md-6">*@
+                        <!--<h2>Méthodes de paiement</h2>-->
+                        @*</div>*@
+                        <!--</div>
         <div class="row g-3">
             <div class="col-md-12">
                 <button class="accordion mb-3 btn-light btn-block text-left collapsed p-3 rounded-0 border-bottom-custom" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -120,31 +136,31 @@
                         </div>
                     </div>
                 </div>
+            </div>-->
+                    </div>
             </div>
         </div>
-    </div>
-</div>
 
 
 
-@section Footer {}
+                    @section Footer {}
 
 
-<script>var acc = document.getElementsByClassName("accordion");
-    var i;
+                    <!--<script>var acc = document.getElementsByClassName("accordion");
+        var i;
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
 
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }</script>
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }</script>-->
 
 
 
