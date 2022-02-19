@@ -568,7 +568,7 @@ namespace Projet2Crowdfunding.Models
                     Picture = "/ImagesProject/imgProjetAurore.jpg",
                     Category = Category.Santé,
                     StartDate  = new DateTime(2021, 11, 9, 16, 5, 7, 123),
-                    EndDate = new DateTime(2022, 5, 9, 16, 5, 7, 123),
+                    EndDate = new DateTime(2022, 2, 24, 0, 0, 0, 0),
                     Video = "/VideosProject/VideoAurore.jpg",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
                     Location="Iceland",

@@ -66,9 +66,9 @@ namespace Projet2Crowdfunding.Service
         
         public TimeSpan TimeLeftCalculator(int id)
         {
-          
-           TimeSpan timeLeftProject = this.bddContext.Projects.Find(id).EndDate - DateTime.Now;
-            return (timeLeftProject);
+
+            TimeSpan timeLeftProject = this.bddContext.Projects.Find(id).EndDate.Subtract(DateTime.Now);
+            return timeLeftProject;
 
         }
      
@@ -110,7 +110,7 @@ namespace Projet2Crowdfunding.Service
             return favorites.Count;
            
         }
-        public void AddAFavoriteForAParticipantOnAProject(int idProject, int id)
+        public void AddAFavoriteForAParticipantOnAProject(int? idProject, int id)
         {//recuperer le participant depuis son account
          //puis stocker le favorite 
          //puis afficher le nombre de favorite dans le heartcounter
@@ -127,13 +127,7 @@ namespace Projet2Crowdfunding.Service
             }
         }
 
-        // List<Project> ProjectList = new List<Project>();
-        // var projects = bddContext.Projects.Where(p => p.Status == status).ToList();
-        //   foreach (Project project in projects)
-        //  {
-        ////     ProjectList.Add(project);
-        // }
-        // return (ProjectList);
+       
         //public void
         //  HeartCounting()
         //// {
