@@ -19,6 +19,15 @@
         document.getElementById('inc').value = i;
     }
 </script>
+<script>
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+</script>
 
 <script>
     let counterDisplayElem = document.querySelector('.counter-display');
@@ -221,30 +230,26 @@
                     <!--<h1 class="counter-display">(..)</h1>
      <button class="counter-minus">-</button>
     <button class="counter-plus">+</button>-->
-                    <div style="padding: 2px">
-                        <button type="button" class="btn btn-outline-dark"
-                                title="Recevoir les nouveautés de ce projet" onclick="">
-                            Je suis!  <img style="width:5%;"
-                                           src="~/Images/heart.png" alt="" />@Model.Project.HeartCounter
-                                    </button>
-                        <!-- <button onclick="buttonClick();">Click Me </button><text type="text" id="inc" value="0"></text> ///
-        <button onclick="displayCount()">Je suis!</button>
-        <p id="ceBoutton">0</p>
-        <script>
-            var count = (function () {
-                var countr = 0;
-                return function () { return counter += 1; }
-            })();
-            function displayCount() {
-                doucment.getElementById("ceBoutton").innerHTML = count();
-            }
-        </script>-->
-                    </div>
-                    <div style="padding: 2px">
-                        <button type="button" class="btn btn-outline-dark"
-                                title="Partager ce projet pour sensibiliser un plus grand nombre de personnes!">
-                            Je partage <img style="width:5%;" src="~/Images/share.png" alt="" />
-                        </button>
+                    <!--second option-->
+                    <div>
+                        <div class="row" style="padding: 0px 0px 0px 5px">
+                            <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
+
+                                <a href="#" class="btn btn-success" width="7px"
+                                   style="text-decoration:none">
+                                    Je suis!  <i class="fa fa-heart"></i>    @Model.Project.HeartCounter
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
+                                <a href="/Project/ProjectPage" class="btn btn-success" id="shareLink" width="7px"
+                                   style="text-decoration:none" onclick=""copyToClipboard('#shareLink')"">
+                                    Je partage <i class="fa fa-share-alt-square"></i>
+                                </a>
+                            </div>
+                            
+
+                        </div>
                     </div>
                 </div>
                         }
@@ -261,7 +266,7 @@
                                 <div class="row" style="padding: 0px 0px 0px 5px">
                                     <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
 
-                                        <a href="#recolte" class="btn btn-success float-right" width="7px"
+                                        <a href="/Payments/PaymentPage" class="btn btn-success float-right" width="7px"
                                            style="text-decoration:none">
                                             Je veux Contribuer <img style="width:auto;"
                                                                     src="~/Images/ar.png" alt="" />

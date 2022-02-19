@@ -110,6 +110,7 @@ namespace Projet2Crowdfunding.Service
             return favorites.Count;
            
         }
+        
         public void AddAFavoriteForAParticipantOnAProject(int? idProject, int id)
         {//recuperer le participant depuis son account
          //puis stocker le favorite 
