@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
 using Projet2Crowdfunding.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,11 +16,13 @@ namespace Projet2Crowdfunding.Controllers
     {
         private AccountService accountService;
         private ProjectService projectService;
+        private IWebHostEnvironment _env;
 
-        public ProjectOwnerController()
+        public ProjectOwnerController(IWebHostEnvironment environment)
         {
             accountService = new AccountService();
             projectService = new ProjectService();
+            _env = environment;
         }
 
         public IActionResult PODashboard()
@@ -127,12 +132,23 @@ namespace Projet2Crowdfunding.Controllers
             }
         }
 
-        public IActionResult ModifyProjectOwnerLogo(ProjectOwner projectOwner)
-        {
-            if (projectOwner.Id != 0)
+        public IActionResult ModifyProjectOwnerLogo(AccountViewModel viewModel, IFormFile AssoLogo)
+        {            
+            string fileName = "";
+            if (viewModel.AssoLogo != null)
+            {
+                fileName = Path.GetFileName(viewModel.AssoLogo.FileName);
+                var filePath = _env.ContentRootPath + "\\wwwroot\\ImageAssos";
+                using (var fileSteam = new FileStream(Path.Combine(filePath, fileName), FileMode.Create))
+                {
+                    viewModel.AssoLogo.CopyTo(fileSteam);
+                }
+            }
+
+            if (viewModel.ProjectOwner.Id != 0)
             {
                 ProjectOwnerService ps = new ProjectOwnerService();
-                ps.ModifyProjectOwnerPhone(projectOwner.Id, projectOwner.Image);
+                ps.ModifyProjectOwnerLogo(viewModel.ProjectOwner.Id, fileName);
                 return RedirectToAction("PODashboard");
             }
             else

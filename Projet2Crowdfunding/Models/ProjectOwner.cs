@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -75,5 +76,6 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public int? AccountId { get; set; }
         public virtual Account Account { get; set; }
+
     }
 }

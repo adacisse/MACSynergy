@@ -92,7 +92,7 @@ namespace Projet2Crowdfunding.Service
 
             if (projectOwner != null)
             {
-                projectOwner.Image = image;
+                projectOwner.Image = "/ImageAssos/" + image;
                 ctx.SaveChanges();
             }
         }

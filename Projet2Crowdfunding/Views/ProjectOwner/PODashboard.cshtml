@@ -438,12 +438,11 @@
                                 <p>Choisissez votre nouveau logo</p>
                                 <div class="panel-body">
                                     <fieldset class="d-grid">
-                                        @using (Html.BeginForm("ModifyProjectOwnerLogo", "ProjectOwner"))
+                                        @using (Html.BeginForm("ModifyProjectOwnerLogo", "ProjectOwner", FormMethod.Post, new { enctype = "multipart/form-data" }))
                                         {
                                             @Html.HiddenFor(m => m.ProjectOwner.Id)
                                         <div class="form-group">
-                                            <input class="form-control" type="file" id="image">
-                                            @*@Html.TextBoxFor(model => model.ProjectOwner.Image, new { type = "file" })*@
+                                            @Html.TextBoxFor(m => m.AssoLogo, new { type = "file" })
                                         </div>
                                             <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                         }
