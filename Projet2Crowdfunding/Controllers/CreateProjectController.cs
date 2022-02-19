@@ -73,7 +73,7 @@ namespace Projet2Crowdfunding.Controllers
 
                 if (viewModel.ProjectVideo != null)
                 {
-                    fileNameVideo = Path.GetFileName(viewModel.AssoLogo.FileName);
+                    fileNameVideo = Path.GetFileName(viewModel.ProjectVideo.FileName);
                     var filePath = _env.ContentRootPath + "\\wwwroot\\VideosProject";
                     using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameVideo), FileMode.Create))
                     {

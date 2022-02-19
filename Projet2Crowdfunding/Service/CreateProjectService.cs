@@ -22,32 +22,32 @@ namespace Projet2Crowdfunding.Service
             string imageProject = "";
             if (image != null)
             {
-                imageProject = "~ImagesProject/" + image;
+                imageProject = "/ImagesProject/" + image;
             }
             else
             {
                 switch (category)
                 {
                     case Category.Animaux:
-                        imageProject = "~ImagesProject/animal.jpg";
+                        imageProject = "/ImagesProject/animal.jpg";
                         break;
                     case Category.Education:
-                        imageProject = "~ImagesProject/education.png";
+                        imageProject = "/ImagesProject/education.png";
                         break;
                     case Category.Environnement:
-                        imageProject = "~ImagesProject/environnement.jpg";
+                        imageProject = "/ImagesProject/environnement.jpg";
                         break;
                     case Category.Humanitaire:
-                        imageProject = "~ImagesProject/humanitaire.jpg";
+                        imageProject = "/ImagesProject/humanitaire.jpg";
                         break;
                     case Category.Santé:
-                        imageProject = "~ImagesProject/sante.jpg";
+                        imageProject = "/ImagesProject/sante.jpg";
                         break;
                     case Category.BesoinsElémentaires:
-                        imageProject = "~ImagesProject/besoins.jpg";
+                        imageProject = "/ImagesProject/besoins.jpg";
                         break;
                     case Category.Autre:
-                        imageProject = "~ImagesProject/autres.jpg";
+                        imageProject = "/ImagesProject/autres.jpg";
                         break;
                 }
             }
@@ -62,7 +62,7 @@ namespace Projet2Crowdfunding.Service
                 Location = location,
                 EndDate = endDate,
                 Picture = imageProject,
-                Video = "~VideosProject/" + video,
+                Video = "/VideosProject/" + video,
                 MaterialDonation = materialDonation,
                 Status = Status.submittedForEvaluation,
                 ProjectOwnerId = idPO,
