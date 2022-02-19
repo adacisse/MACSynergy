@@ -48,7 +48,6 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Localisation")]
         public string? Location { get; set; }
 
-        [Required]
         [Display(Name = "Date de démarrage")]
         public DateTime StartDate { get; set; }
 

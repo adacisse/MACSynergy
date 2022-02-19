@@ -74,7 +74,7 @@
     {
 
         <div class="my-5">
-            <fieldset style="width : 1100px; margin:auto">
+            <fieldset style="width : 1000px; margin:auto">
 
                 <div class="mode-vert">
                     <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN PROJET</h6>
@@ -107,7 +107,7 @@
 
                         <br /><br />
 
-                        @Html.LabelFor(model => model.Project.Category) <span> &nbsp;</span>
+                        @Html.LabelFor(model => model.Project.Category) <span> : </span> <br />
                         <span>Animaux </span> @Html.RadioButtonFor(model => model.Project.Category, "Animaux") <span>&nbsp;</span>
                         <span>Environnement </span> @Html.RadioButtonFor(model => model.Project.Category, "Environnement") <span>&nbsp;</span>
                         <span>Humanitaire </span> @Html.RadioButtonFor(model => model.Project.Category, "Humanitaire") <span>&nbsp;</span>
@@ -123,18 +123,12 @@
 
                         <br /><br />
 
-                        @Html.LabelFor(model => model.Project.StartDate)
-                        @Html.TextAreaFor(model => model.Project.StartDate, new { type = "datetime" })
-
-
-                        <br /><br />
-
-                        @Html.LabelFor(model => model.Project.EndDate)
-                        @Html.TextAreaFor(model => model.Project.EndDate, new { type = "datetime" })
+                        @Html.LabelFor(model => model.Project.EndDate) <span> &nbsp;</span>
+                        @Html.TextBoxFor(model => model.Project.EndDate, new { type = "date" })
 
                         <br />
 
-                        <div class="text-danger">
+                        <div class="text-danger mt-4">
                             @Html.ValidationMessageFor(model => model.Project)
                         </div>
 
@@ -149,8 +143,8 @@
 
                         <br /><br />
 
-                        @Html.LabelFor(model => model.ProjectImage) <br />
-                        @Html.TextAreaFor(model => model.ProjectImage, new { type = "file" })
+                        @Html.LabelFor(model => model.ProjectImage) <span>&nbsp;</span>
+                        @Html.TextBoxFor(model => model.ProjectImage, new { type = "file" })
 
                         <br /><br />
 
