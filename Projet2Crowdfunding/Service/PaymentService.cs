@@ -15,42 +15,53 @@ namespace Projet2Crowdfunding.Service
             bddContext = new BddContext();
         }
 
-        public static string EncodeMD5(string cvv)
-        {
-            string cvvSel = "Projet2Crowdfunding" + cvv + "ASP.NET MVC";
-            return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(cvvSel)));
-        }
-
-        public int CreateCreditCard(string cardNumber, string ownerName, DateTime expirationDate, string cvv)
-        {
-            string encodedCvv = EncodeMD5(cvv);
-
-            CreditCard creditCard = new CreditCard()
-            {
-                CardNumber = cardNumber,
-                OwnerName = ownerName,
-                ExpirationDate = expirationDate,
-                Cvv = encodedCvv
-            };
-
-            this.bddContext.CreditCards.Add(creditCard);
-            this.bddContext.SaveChanges();
-            return creditCard.Id;
-        }
+        //public Donation CreateDonation(double amount)
+        //{
+        //    Donation donation = new Donation()
+        //    {
+        //        Amount = amount
+        //    };
+        //    return ViewModels();
+        //}
 
 
 
-        public int CreateParticipantDonation(int Id, double amount)
-        {
+        //public static string EncodeMD5(string cvv)
+        //{
+        //    string cvvSel = "Projet2Crowdfunding" + cvv + "ASP.NET MVC";
+        //    return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(cvvSel)));
+        //}
 
-            Donation donation = new Donation()
-            {
-                Amount = amount,
-            };
-            this.bddContext.Donations.Add(donation);
-            this.bddContext.SaveChanges();
-            return donation.Id;
-        }
+        //public int CreateCreditCard(string cardNumber, string ownerName, DateTime expirationDate, string cvv)
+        //{
+        //    string encodedCvv = EncodeMD5(cvv);
+
+        //    CreditCard creditCard = new CreditCard()
+        //    {
+        //        CardNumber = cardNumber,
+        //        OwnerName = ownerName,
+        //        ExpirationDate = expirationDate,
+        //        Cvv = encodedCvv
+        //    };
+
+        //    this.bddContext.CreditCards.Add(creditCard);
+        //    this.bddContext.SaveChanges();
+        //    return creditCard.Id;
+        //}
+
+
+
+        //public int CreateDonation(int Id, double amount)
+        //{
+
+        //    Donation donation = new Donation()
+        //    {
+        //        Amount = amount,
+        //    };
+        //    this.bddContext.Donations.Add(donation);
+        //    this.bddContext.SaveChanges();
+        //    return donation.Id;
+        //}
 
         //public List<Donation> GetDonationsFromParticipantId(int Id)
         //{
@@ -78,14 +89,14 @@ namespace Projet2Crowdfunding.Service
         //}
 
 
-        public double AddDonationToCollection(double CurrentDonations, double addDonation)
-        {
-            double collectionAmount = CurrentDonations += addDonation;
-            {
-                return collectionAmount;
-            };
+        //public double AddDonationToCollection(double CurrentDonations, double addDonation)
+        //{
+        //    double collectionAmount = CurrentDonations += addDonation;
+        //    {
+        //        return collectionAmount;
+        //    };
 
-        }
+        //}
 
 
 
