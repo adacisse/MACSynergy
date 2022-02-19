@@ -79,7 +79,7 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                return Redirect("/");
+                return View(viewModel);
             }
             return View(viewModel);
         }
@@ -108,7 +108,7 @@ namespace Projet2Crowdfunding.Controllers
                 var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
                 HttpContext.SignInAsync(userPrincipal);
 
-                return Redirect("/");
+                return Redirect("/Admin/AdminDashboard");
             }
             return View(viewModel);
         }
