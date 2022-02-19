@@ -218,20 +218,21 @@
                         <div class="container mt-3">
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <th>Nom</th>
                                         <th>Catégorie</th>
                                         <th>Localisation</th>
                                         <th>Date de début</th>
                                         <th>Date de fin</th>
                                         <th>Montant récolté</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var Project in Model.ProjectList)
                                     {
                                         string pagelink = "/Project/projectPage/" + Project.Id;
-                                    <tr onclick='window.location.href="@pagelink";' style="cursor: pointer">
+                                    <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
                                         <td>@Project.Name</td>
                                         <td>@Project.Category</td>
                                         <td>@Project.Location</td>
@@ -239,12 +240,22 @@
                                         <td>@Project.EndDate</td>
                                         @foreach (var Collection in Model.CollectionList)
                                         {
-                                            if (Collection.ProjectId == Project.Id) {
-                                                
+                                            if (Collection.ProjectId == Project.Id)
+                                            {
+
                                                 <td>@Collection.Amount €</td>
                                             }
                                         }
-
+                                    <td>
+                                        @if (Project.Status == Projet2Crowdfunding.Models.Status.submittedForEvaluation)
+                                        {
+                                            <p style="color:red">En attente de validation</p>
+                                        }
+                                        else
+                                        {
+                                    <p style="color:seagreen"> @Project.Status </p>
+                                        }
+                                        </td>
 
                                     </tr>
 

@@ -214,7 +214,7 @@
                         <div class="container mt-3">
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <th>Nom</th>
                                         <th>Catégorie</th>
                                         <th>Localisation</th>
@@ -227,7 +227,7 @@
                                     @*@foreach (var Project in Model.ProjectList)
                                     {
                                         string pagelink = "/Project/projectPage/" + Project.Id;
-                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer">
+                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
                                             <td>@Project.Name</td>
                                             <td>@Project.Category</td>
                                             <td>@Project.Location</td>
@@ -260,7 +260,7 @@
                         <div class="container mt-3">
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <th>Nom</th>
                                         <th>Catégorie</th>
                                         <th>Localisation</th>
@@ -272,7 +272,7 @@
                                     @*@foreach (var Project in Model.ProjectList)
                                     {
                                         string pagelink = "/Project/projectPage/" + Project.Id;
-                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer">
+                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
                                             <td>@Project.Name</td>
                                             <td>@Project.Category</td>
                                             <td>@Project.Location</td>

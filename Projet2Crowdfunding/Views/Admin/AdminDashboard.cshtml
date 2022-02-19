@@ -191,6 +191,8 @@
                                         <th>Justificatifs</th> @*AssociationProof*@
                                         <th>Charte approuvée</th> @*ConfidentialityCharter*@
                                         <th></th>
+
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -213,8 +215,8 @@
                                                     }
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-outline-dark btn-sm">
-                                                        Valider
+                                                    <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#statusModal">
+                                                        Status
                                                     </button>
                                                 </td>
                                             </tr>
@@ -237,44 +239,37 @@
                                 <thead>
                                     <tr>
                                         <th>Nom</th>
+                                        <th>Catégorie</th>
+                                        <th>Localisation</th>
                                         <th>Résumé</th>
                                         <th>Description</th>
-                                        <th>Volontariat</th>
-                                        <th>Partenaires</th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var Project in Model.ProjectList)
                                     {
-                                        <tr style="text-align:center">
-                                            <td>@Project.Name</td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#summaryModal">
-                                                    Voir
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#descriptionModal">
-                                                    Voir
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#volunteerDescriptionModal">
-                                                    Voir
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#partnershipModal">
-                                                    Voir
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm">
-                                                    Valider
-                                                </button>
-                                            </td>
-                                        </tr>
+                                    <tr style="text-align:center">
+                                        <td>@Project.Name</td>
+                                        <td>@Project.Category</td>
+                                        <td>@Project.Location</td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#summaryModal">
+                                                Voir
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#descriptionModal">
+                                                Voir
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#statusModal">
+                                                Status
+                                            </button>
+                                        </td>
+                                    </tr>
 
                                     }
                                 </tbody>
@@ -491,8 +486,9 @@
                         <div class="panel-body">
                             <div class="text-center border rounded-3 p-3">
                                 <div class="panel-body">
+                                    @Html.HiddenFor(m => m.Project.Id)
                                     <fieldset class="d-grid">
-                                        test Résumé
+                                        @Html.TextAreaFor(m => m.Project.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4" })
                                     </fieldset>
                                 </div>
                             </div>
@@ -546,86 +542,6 @@
         </div>
     </div>
 </div>
-
-<!-- The VolunteerDescriptionModal -->
-<div class="modal" id="volunteerDescriptionModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header clearfix">
-                <div class="mx-auto"><h3>Volontariat</h3></div>
-                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center border rounded-3 p-3">
-                                <div class="panel-body">
-                                    <fieldset class="d-grid">
-                                        test volontariat
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- The partnershipDescriptionModal -->
-<div class="modal" id="partnershipModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header clearfix">
-                <div class="mx-auto"><h3>Partenariat</h3></div>
-                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center border rounded-3 p-3">
-                                <div class="panel-body">
-                                    <fieldset class="d-grid">
-                                        test Partenariat
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
 
 
 @section Footer
