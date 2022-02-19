@@ -182,29 +182,42 @@
                         <div class="container mt-3">
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center">
                                         <th>Nom</th>
                                         <th>Type</th>
                                         <th>Justificatifs</th> @*AssociationProof*@
-                                        <th>CGU</th> @*ConfidentialityCharter*@
-                                        <th>Valider</th>
+                                        <th>Charte approuvée</th> @*ConfidentialityCharter*@
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @*@foreach (var ProjectOwner in Model.ProjectOwnerList)
+                                    @foreach (var ProjectOwner in Model.ProjectOwnerList)
                                     {
-                                        string pagelink = "/Project/projectPage/" + Project.Id;
-                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer">
-                                        if (ProjectOwner.AssoStatus == published)
                                         {
+                                        <tr style="text-align:center">
                                         <td>@ProjectOwner.Name</td>
                                         <td>@ProjectOwner.Type</td>
-                                        <td>@ProjectOwner.AssociationProof</td>
-                                        <td>@ProjectOwner.ConfidentialityCharter</td>
-                                        }
-                                        </tr>
+                                        <td>
+                                            @if (ProjectOwner.AssociationProof != null)
+                                            {
+                                                <i class="fa fa-check fa-fw me-3"></i>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (ProjectOwner.ConfidentialityCharter == true)
+                                               {
+                                            <i class="fa fa-check fa-fw me-3"></i>
+                                               }
+                                            </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-dark btn-sm">
+                                                Valider
+                                            </button>
+                                        </td>
+                                         </tr>
 
-                                        }*@
+                                        }
+                                    }
                                 </tbody>
                             </table>
                         </div>

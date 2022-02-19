@@ -13,11 +13,13 @@ namespace Projet2Crowdfunding.Controllers
     {
         private AccountService accountService;
         private ProjectService projectService;
+        private ProjectOwnerService projectOwnerService;
 
         public AdminController()
         {
             accountService = new AccountService();
             projectService = new ProjectService();
+            projectOwnerService = new ProjectOwnerService();
         }
 
         public IActionResult Index()
@@ -32,6 +34,7 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
                 viewModel.Administrator = accountService.GetAdminFromAccountId(viewModel.Account.Id);
+                viewModel.ProjectOwnerList = projectOwnerService.GetAllProjectOwnersStatus(AssoStatus.registered);
                 return View(viewModel);
             }
             return View(viewModel);
