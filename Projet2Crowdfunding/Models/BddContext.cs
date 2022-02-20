@@ -1018,7 +1018,7 @@ namespace Projet2Crowdfunding.Models
                      Category = Category.Santé,
                      StartDate = new DateTime(2021, 12, 9, 20, 5, 8, 245),
                      EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 245),
-                     Video = ""https://www.youtube.com/embed/qyUQP7xncpk" ///VideosProject/drepacarevideo.html",
+                     Video = "https://www.youtube.com/embed/qyUQP7xncpk", ///VideosProject/drepacarevideo.html",
                      MaterialDonation = "Don de sang, Don de materiaux de soins",
                      Location = "Afrique",
                      ProjectOwnerId = 4,
