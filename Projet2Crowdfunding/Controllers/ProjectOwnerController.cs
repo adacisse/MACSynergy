@@ -161,6 +161,34 @@ namespace Projet2Crowdfunding.Controllers
             }
         }
 
+
+        public IActionResult ModifyProject()
+        {
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                viewModel.Project = accountService.GetProjectFromProjectOwnerId(viewModel.ProjectOwner.Id);
+                List<Step> steps = projectService.GetStepsFromProjectId(viewModel.Project.Id);
+                viewModel.Step1 = steps[0];
+                viewModel.Step2 = new Step();
+                viewModel.Step3 = new Step();
+                if (steps.Count() > 1)
+                {
+                    viewModel.Step2 = steps[1];
+                }
+                if (steps.Count() > 2)
+                {
+                    viewModel.Step3 = steps[2];
+                }
+
+                return View(viewModel);
+            }
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         public IActionResult ModifyProject(AccountViewModel viewModel, IFormFile Picture)
         {
@@ -229,7 +257,7 @@ namespace Projet2Crowdfunding.Controllers
                 var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
                 HttpContext.SignInAsync(userPrincipal);
 
-                return Redirect("/ProjectOwner/PODashboard");
+                return Redirect("/ProjectOwner/PODashboard/#liste-Projects");
             }
 
             ModelState.AddModelError("Project", "Les champs obligatoires doivent être remplis. Le montan des palier doit être en numérique.");
@@ -238,8 +266,24 @@ namespace Projet2Crowdfunding.Controllers
             return View(viewModel);
         }
 
+        public IActionResult CancelModify()
+        {
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                viewModel.ProjectList = projectService.GetProjectsFromProjectOwnerId(viewModel.ProjectOwner.Id);
+                viewModel.CollectionList = projectService.GetAllCollections();
+                return View(viewModel);
+            }
+
+            return View(viewModel);
+        
+        }
+
 
 
     }
-  
+
 }

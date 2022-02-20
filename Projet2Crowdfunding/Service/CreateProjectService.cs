@@ -142,10 +142,16 @@ namespace Projet2Crowdfunding.Service
 
                 steps[0].Amount = amount1;
                 steps[0].Description = descriptionA1;
-                steps[1].Amount = amount2;
-                steps[1].Description = descriptionA2;
-                steps[2].Amount = amount3;
-                steps[2].Description = descriptionA3;
+                if (steps.Count() > 1)
+                {
+                    steps[1].Amount = amount2;
+                    steps[1].Description = descriptionA2;
+                }
+                if (steps.Count() > 2)
+                {
+                    steps[2].Amount = amount3;
+                    steps[2].Description = descriptionA3;
+                }
                 
                 ctx.SaveChanges();
             }
