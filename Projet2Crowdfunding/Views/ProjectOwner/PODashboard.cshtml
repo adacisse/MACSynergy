@@ -215,73 +215,77 @@
                 </div>
 
                 <div class="row-content border-MACS">
-                    <div id="row-myProjects"></div>
-                    <div class="col-md-12">
-                        <a><strong>Mes projets</strong></a>
-                        <div class="container mt-3">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr style="text-align: center">
-                                        <th>Nom</th>
-                                        <th>Catégorie</th>
-                                        <th>Localisation</th>
-                                        <th>Date de début</th>
-                                        <th>Date de fin</th>
-                                        <th>Montant récolté</th>
-                                        <th>Status</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="liste-Projects">
-                                    @foreach (var Project in Model.ProjectList)
-                                    {
-                                        string pagelink = "/Project/projectPage/" + Project.Id;
-                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
-                                            <td>@Project.Name</td>
-                                            <td>@Project.Category</td>
-                                            <td>@Project.Location</td>
-                                            <td>@Project.StartDate</td>
-                                            <td>@Project.EndDate</td>
-                                            @foreach (var Collection in Model.CollectionList)
-                                            {
-                                                if (Collection.ProjectId == Project.Id)
-                                                {
+                    <div class="row">
+                        <div class="col-md-12">
 
-                                                    <td>@Collection.Amount €</td>
-                                                }
-                                            }
-                                            <td>
-                                                @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                            <div id="row-myProjects">
+                                <div class="col-md-12">
+                                    <a><strong>Mes projets</strong></a>
+                                    <div class="container mt-3">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr style="text-align: center">
+                                                    <th>Nom</th>
+                                                    <th>Catégorie</th>
+                                                    <th>Localisation</th>
+                                                    <th>Date de début</th>
+                                                    <th>Date de fin</th>
+                                                    <th>Montant récolté</th>
+                                                    <th>Status</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="liste-projects">
+                                                @foreach (var Project in Model.ProjectList)
                                                 {
-                                                    <p style="color:red">En attente de validation</p>
+                                                    string pagelink = "/Project/projectPage/" + Project.Id;
+                                                <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
+                                                    <td>@Project.Name</td>
+                                                    <td>@Project.Category</td>
+                                                    <td>@Project.Location</td>
+                                                    <td>@Project.StartDate</td>
+                                                    <td>@Project.EndDate</td>
+                                                    @foreach (var Collection in Model.CollectionList)
+                                                    {
+                                                        if (Collection.ProjectId == Project.Id)
+                                                        {
 
-                                                }
-                                                else if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
-                                                {
-                                                    <p style="color:seagreen"> @Project.Status </p>
-                                                }
-                                                else
-                                                {
-                                                    <p> @Project.Status </p>
-                                                }
-                                            </td>
-
-                                            @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
-                                            {
-                                                @Html.BeginForm("ModifyProject", "ProjectOwner", FormMethod.Post)
-                                                {
+                                                            <td>@Collection.Amount €</td>
+                                                        }
+                                                    }
                                                     <td>
-                                                        <boutton type="submit" class="btn btn-outline-dark">Modifier</boutton>
+                                                        @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                        {
+                                                            <p style="color:red">En attente de validation</p>
+
+                                                        }
+                                                        else if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                        {
+                                                            <p style="color:seagreen"> @Project.Status </p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <p> @Project.Status </p>
+                                                        }
                                                     </td>
+
+                                                    <td>
+                                                        @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                        {
+                                                            string pagelink2 = "/ProjectOwner/ModifyProject/" + Project.Id;
+                                                            <a  class=" btn btn-outline-dark " href="@pagelink2">Modifier</a>
+                                                        }
+                                                    </td>
+
+                                                    </tr>
+
                                                 }
-                                                
-                                            }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
 
-                                        </tr>
-
-                                    }
-                                </tbody>
-                            </table>
+                            </div>
                         </div>
                     </div>
 

@@ -113,7 +113,7 @@ namespace Projet2Crowdfunding.Service
             return project.Id;
         }
 
-        public void ModifyProject(int idProject, string name, string summary, string description, Category? category,
+        public void ModifyProject(int? idProject, string name, string summary, string description, Category? category,
            string location, DateTime endDate, string image, string video, string materialDonation,
            double amount1, string descriptionA1, double amount2, string descriptionA2,
            double amount3, string descriptionA3)

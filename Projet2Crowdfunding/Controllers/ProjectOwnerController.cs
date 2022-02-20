@@ -190,7 +190,7 @@ namespace Projet2Crowdfunding.Controllers
         }
 
         [HttpPost]
-        public IActionResult ModifyProject(AccountViewModel viewModel, IFormFile Picture)
+        public IActionResult ModifyProject(int? id, AccountViewModel viewModel, IFormFile Picture)
         {
             string fileNameImage = "";
             string fileNameVideo = "";
@@ -198,20 +198,7 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
-                viewModel.Project = accountService.GetProjectFromProjectOwnerId(viewModel.ProjectOwner.Id);
-                List<Step> steps = projectService.GetStepsFromProjectId(viewModel.Project.Id);
-                viewModel.Step1 = steps[0];
-                viewModel.Step2 = new Step();
-                viewModel.Step3 = new Step();
-                if (steps.Count() > 1)
-                {
-                    viewModel.Step2 = steps[1];
-                }
-                if (steps.Count() > 2)
-                {
-                    viewModel.Step3 = steps[2];
-                }
+                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);               
             }
 
             if (viewModel.Project.Name != null && viewModel.Project.Summary != null &&
@@ -239,7 +226,7 @@ namespace Projet2Crowdfunding.Controllers
                     }
                 }
 
-                createProjectService.ModifyProject(viewModel.Project.Id, viewModel.Project.Name,
+                createProjectService.ModifyProject(id, viewModel.Project.Name,
                     viewModel.Project.Summary, viewModel.Project.Descritpion, viewModel.Project.Category,
                     viewModel.Project.Location, viewModel.Project.EndDate, fileNameImage, fileNameVideo,
                     viewModel.Project.MaterialDonation, viewModel.Step1.Amount, viewModel.Step1.Description,
@@ -257,7 +244,7 @@ namespace Projet2Crowdfunding.Controllers
                 var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
                 HttpContext.SignInAsync(userPrincipal);
 
-                return Redirect("/ProjectOwner/PODashboard/#liste-Projects");
+                return Redirect("/ProjectOwner/PODashboard/#liste-projects");
             }
 
             ModelState.AddModelError("Project", "Les champs obligatoires doivent être remplis. Le montan des palier doit être en numérique.");
@@ -275,7 +262,7 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
                 viewModel.ProjectList = projectService.GetProjectsFromProjectOwnerId(viewModel.ProjectOwner.Id);
                 viewModel.CollectionList = projectService.GetAllCollections();
-                return View(viewModel);
+                return Redirect("/ProjectOwner/PODashboard/#liste-projects");
             }
 
             return View(viewModel);
