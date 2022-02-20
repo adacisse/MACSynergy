@@ -90,7 +90,7 @@ namespace Projet2Crowdfunding.Controllers
                 {
                     viewModel.Project = projectService.SuppressAFavoriteForAParticipantOnAProject(id.Value, viewModel.Participant.Id);
                 }
-                 Redirect("/Project/ProjectPage/"+viewModel.Project.Id);
+                 Redirect("/Project/ProjectPage/" +viewModel.Project.Id);
             }
             
             return View(viewModel);

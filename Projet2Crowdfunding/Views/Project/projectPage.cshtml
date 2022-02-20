@@ -234,15 +234,22 @@
                     <div>
                         <div class="row" style="padding: 0px 0px 0px 5px">
                             <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
-                                @using (Html.BeginForm("AddFavoriteOnClik", "Project", FormMethod.Post, new {id= @Model.Project.Id}))
+                               
+                                @{string pagelink2 = "/Project/AddFavoriteOnClik/" + @Model.Project.Id;}
+                                <form method="post" action="@pagelink2">
+                                    <button type="submit">Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter</button>
+                                </form>
+
+                                @*@using (Html.BeginForm(FormMethod.Post))
                                 {
                                     //Html.HiddenFor(m => m.Project.HeartCounter)
-                                <button type="submit">Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter</button>
-                                }
+
+                                    <button type="submit">Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter</button>
+                                }*@
                                 <!--<a href="#" class="btn btn-success" width="7px"
-           style="text-decoration:none">
-            Je suis!  <i class="fa fa-heart"></i>    Model.Project.HeartCounter
-        </a>-->
+       style="text-decoration:none">
+        Je suis!  <i class="fa fa-heart"></i>    Model.Project.HeartCounter
+    </a>-->
                             </div>
 
                             <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
