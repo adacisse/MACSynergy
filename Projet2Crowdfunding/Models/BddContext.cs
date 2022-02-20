@@ -992,93 +992,93 @@ namespace Projet2Crowdfunding.Models
                      Location = "Afrique",
                      ProjectOwnerId = 7,
                      HeartCounter = 8
-                 },
-
-                 new Project
-                 {
-                     Id = 9,
-                     Status = Status.Clôturé,
-                     Name = "La vie aprés la guerre",
-
-                     Summary = "Les guerres ont conduit au déplacement de millions de personnes, " +
-                    "au sein de ces pays comme dans les pays voisins, notamment la Jordanie, 3e pays d’accueil des réfugiés syriens." +
-                    " Plus au Sud, au bord de la famine et sujet à d’importantes épidémies de choléra, le Yémen est plongé dans l’une des" +
-                    " plus graves crises humanitaires au monde après cinq années de conflit. Selon les Nations Unies, en 2019, 24 millions " +
-                    "de Yéménites (80% de la population) et 11,7 millions de Syriens sont en besoin d’assistance..",
-
-                     Descritpion = "Les besoins en eau et assainissement sont considérés comme l’une des principales " +
-                    "priorités de la plupart des pays de la région. Pour les seules crises en Syrie et au Yémen, plus de " +
-                    "30 millions de personnes sont concernées, de nombreuses infrastructures ayant été endommagées. Mais la " +
-                    "vraie limite pour intervenir efficacement tient pour une grande part au manque de personnes qualifiées et " +
-                    "disponibles dans ce domaine. Rendre accessibles des programmes d’apprentissage dans cette région du monde est" +
-                    " donc un enjeu majeur.Action contre la Faim et l’Université Germano-Jordanienne ont fait appel à Bioforce pour" +
-                    " conduire toute la phase de préparation et de mise en œuvre d’un Master spécialisé à Amman, avec le soutien de " +
-                    "l’OFDA (Office of Foreign Disaster Assistance, USA). Bioforce a entamé en novembre 2018 un vaste processus " +
-                    "régional de consultation des ONG internationales présentes au Moyen-Orient, des Nations Unies, des universités " +
-                    "et des ONG locales. Une phase préparatoire d’un an a ensuite permis de définir les compétences attendues des " +
-                    "futurs managers humanitaires en eau, hygiène et assainissement et de dessiner un programme de formation et de" +
-                    " dessine le programme pédagogique. Rentrée prévue en septembre 2020 pour la première promotion !Action contre la Faim a souhaité" +
-                    " renforcer les aptitudes et compétences de management d’équipe et de leadership de ses managers nationaux : nous avons donc conçu " +
-                    "ensemble une formation de 5 jours, qui a été ensuite dispensée dans 4 pays, la Jordanie (pour des équipes d’Irak, de Jordanie et du Yémen)," +
-                    " la Sierra Leone (équipes du Libéria et de Sierre Leone), le Tchad (équipes du Cameroun et du Tchad), et le Népal (équipes du Bangladesh, Népal, " +
-                    "Pakistan, Myanmar). L’objectif d’ACF était d’améliorer tant la gestion et la fidélisation des équipes que la conduite des projets prioritaires." +
-                    " En développant davantage les compétences de management et de leadership au niveau des pays, ACF souhaitait également apporter un appui au renforcement" +
-                    " de la nationalisation des équipes de coordination. Amail Bendedda, formatrice associée Bioforce qui a animé l’ensemble de ces sessions, précise :" +
-                    " « Pour monter cette formation, je me suis concentrée sur les aspects efficaces et simples des méthodes et des outils de management afin qu’ils soient" +
-                    " tout de suite utiles et utilisables. S’extraire une semaine des opérations c’est complexe et je me devais de rendre cette formation « pratico-pratique »" +
-                    " en intégrant de la théorie et de la réflexion. Il y a eu de magnifiques prises de conscience de certaines attitudes et croyances sur le management et leadership." +
-                    " Mon travail est essentiel à ce niveau-là et le coaching et la médiation m’aident énormément : établir un environnement de confiance et de sécurité pour permettre aux " +
-                    "participants une remise en question en toute bienveillance, et ainsi " +
-                    "être en mesure d’accueillir d’autres façons de faire, plus adaptées et davantage tournées vers l’Autre. »",
-
-
-                     Picture = "/ImagesProject/guerreimage.jpeg",
-                     Category = Category.Santé,
-                     StartDate = new DateTime(2020, 12, 9, 20, 5, 8, 245),
-                     EndDate = new DateTime(2021, 8, 9, 15, 6, 8, 245),
-                     Video = "/VideosProject/guerrevideo",
-                     MaterialDonation = "Denrees alimentaires",
-                     Location = "Monde",
-                     ProjectOwnerId = 5,
-                     HeartCounter = 9
-                 },
-
-                 new Project
-                 {
-                     Id = 10,
-                     Status = Status.Clôturé,
-                     Name = "Révéler le potentiel des jeunes de la France périphérique",
-
-                     Summary = "L’association Chemins d’avenirs informe, accompagne et promeut les collégiens,lycéens et étudiants de la France périphérique.Elle agit à travers un système de parrainage et la création d’un écosystème de réussite autour de ses filleuls." +
-                     "Chemins d’avenirs est la première structure à mentorer les jeunes des zones rurales et des villes petites et moyennes indépendamment de résultats scolaires ou de critères sociaux.Pour que seuls la motivation," +
-                     "la curiosité et le potentiel d’un jeune fassent la différence dans son parcours et ses projets d’avenir.",
-
-                     Descritpion = "Face aux enjeux de qualité de l’éducation et de son accès par les populations " +
-                    "les plus vulnérables, PLAY propose un projet reposant sur la création et la diffusion d’un " +
-                    "programme pédagogique fondé entre autre sur la Playdagogie, méthode de pédagogie active et " +
-                    "participative développée par l’ONG. Ces contenus seront diffusés à travers des programmes de" +
-                    " formations d’enseignants et d’animateurs sportifs recevant les kits thématiques. " +
-                    "Projet déployé dans les secteurs de l’éducation formelle et informelle, il s’attachera" +
-                    " à créer des passerelles entre les deux pour renforcer la continuité de la prise en charge" +
-                    " éducative des enfants. Il s’agira, lorsque possible, de travailler sur l’intégration des " +
-                    "méthodes socio-sportives dans les cursus de formation des enseignants et animateurs sportifs" +
-                    " en collaboration étroite avec les pouvoirs publics." +
-                    "RÉSULTATS ATTENDUSPlus de 80 000 enfants, dont 40 % de filles qui acquièrent une meilleure compréhension des enjeux de scolarisation," +
-                    "et compétences de vie liées à l’inclusion de leurs pairs en situation de vulnérabilité." +
-                    "Plus de 1000 professionnels éducatifs formés qui acquièrent des compétences permettant de déployer des séances de jeux socio - sportifs et de Playdagogie reconnues officiellement par les Ministères des Sports," +
-                    "et de l’Education nationale." +
-                    "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
-
-                     Picture = "/ImagesProject/avenirimage.jpeg",
-                     Category = Category.Education,
-                     StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
-                     EndDate = new DateTime(2021, 12, 19, 15, 6, 8, 245),
-                     Video = "/VideosProject/avenirVideo",
-                     MaterialDonation = "Materiaux sportifs",
-                     Location = "Paris",
-                     ProjectOwnerId = 3,
-                     HeartCounter = 10
                  }
+
+                 //new Project
+                 //{
+                 //    Id = 9,
+                 //    Status = Status.Clôturé,
+                 //    Name = "La vie aprés la guerre",
+
+                 //    Summary = "Les guerres ont conduit au déplacement de millions de personnes, " +
+                 //   "au sein de ces pays comme dans les pays voisins, notamment la Jordanie, 3e pays d’accueil des réfugiés syriens." +
+                 //   " Plus au Sud, au bord de la famine et sujet à d’importantes épidémies de choléra, le Yémen est plongé dans l’une des" +
+                 //   " plus graves crises humanitaires au monde après cinq années de conflit. Selon les Nations Unies, en 2019, 24 millions " +
+                 //   "de Yéménites (80% de la population) et 11,7 millions de Syriens sont en besoin d’assistance..",
+
+                 //    Descritpion = "Les besoins en eau et assainissement sont considérés comme l’une des principales " +
+                 //   "priorités de la plupart des pays de la région. Pour les seules crises en Syrie et au Yémen, plus de " +
+                 //   "30 millions de personnes sont concernées, de nombreuses infrastructures ayant été endommagées. Mais la " +
+                 //   "vraie limite pour intervenir efficacement tient pour une grande part au manque de personnes qualifiées et " +
+                 //   "disponibles dans ce domaine. Rendre accessibles des programmes d’apprentissage dans cette région du monde est" +
+                 //   " donc un enjeu majeur.Action contre la Faim et l’Université Germano-Jordanienne ont fait appel à Bioforce pour" +
+                 //   " conduire toute la phase de préparation et de mise en œuvre d’un Master spécialisé à Amman, avec le soutien de " +
+                 //   "l’OFDA (Office of Foreign Disaster Assistance, USA). Bioforce a entamé en novembre 2018 un vaste processus " +
+                 //   "régional de consultation des ONG internationales présentes au Moyen-Orient, des Nations Unies, des universités " +
+                 //   "et des ONG locales. Une phase préparatoire d’un an a ensuite permis de définir les compétences attendues des " +
+                 //   "futurs managers humanitaires en eau, hygiène et assainissement et de dessiner un programme de formation et de" +
+                 //   " dessine le programme pédagogique. Rentrée prévue en septembre 2020 pour la première promotion !Action contre la Faim a souhaité" +
+                 //   " renforcer les aptitudes et compétences de management d’équipe et de leadership de ses managers nationaux : nous avons donc conçu " +
+                 //   "ensemble une formation de 5 jours, qui a été ensuite dispensée dans 4 pays, la Jordanie (pour des équipes d’Irak, de Jordanie et du Yémen)," +
+                 //   " la Sierra Leone (équipes du Libéria et de Sierre Leone), le Tchad (équipes du Cameroun et du Tchad), et le Népal (équipes du Bangladesh, Népal, " +
+                 //   "Pakistan, Myanmar). L’objectif d’ACF était d’améliorer tant la gestion et la fidélisation des équipes que la conduite des projets prioritaires." +
+                 //   " En développant davantage les compétences de management et de leadership au niveau des pays, ACF souhaitait également apporter un appui au renforcement" +
+                 //   " de la nationalisation des équipes de coordination. Amail Bendedda, formatrice associée Bioforce qui a animé l’ensemble de ces sessions, précise :" +
+                 //   " « Pour monter cette formation, je me suis concentrée sur les aspects efficaces et simples des méthodes et des outils de management afin qu’ils soient" +
+                 //   " tout de suite utiles et utilisables. S’extraire une semaine des opérations c’est complexe et je me devais de rendre cette formation « pratico-pratique »" +
+                 //   " en intégrant de la théorie et de la réflexion. Il y a eu de magnifiques prises de conscience de certaines attitudes et croyances sur le management et leadership." +
+                 //   " Mon travail est essentiel à ce niveau-là et le coaching et la médiation m’aident énormément : établir un environnement de confiance et de sécurité pour permettre aux " +
+                 //   "participants une remise en question en toute bienveillance, et ainsi " +
+                 //   "être en mesure d’accueillir d’autres façons de faire, plus adaptées et davantage tournées vers l’Autre. »",
+
+
+                 //    Picture = "/ImagesProject/guerreimage.jpeg",
+                 //    Category = Category.Santé,
+                 //    StartDate = new DateTime(2020, 12, 9, 20, 5, 8, 245),
+                 //    EndDate = new DateTime(2021, 8, 9, 15, 6, 8, 245),
+                 //    Video = "/VideosProject/guerrevideo",
+                 //    MaterialDonation = "Denrees alimentaires",
+                 //    Location = "Monde",
+                 //    ProjectOwnerId = 5,
+                 //    HeartCounter = 9
+                 //},
+
+                 //new Project
+                 //{
+                 //    Id = 10,
+                 //    Status = Status.Clôturé,
+                 //    Name = "Révéler le potentiel des jeunes de la France périphérique",
+
+                 //    Summary = "L’association Chemins d’avenirs informe, accompagne et promeut les collégiens,lycéens et étudiants de la France périphérique.Elle agit à travers un système de parrainage et la création d’un écosystème de réussite autour de ses filleuls." +
+                 //    "Chemins d’avenirs est la première structure à mentorer les jeunes des zones rurales et des villes petites et moyennes indépendamment de résultats scolaires ou de critères sociaux.Pour que seuls la motivation," +
+                 //    "la curiosité et le potentiel d’un jeune fassent la différence dans son parcours et ses projets d’avenir.",
+
+                 //    Descritpion = "Face aux enjeux de qualité de l’éducation et de son accès par les populations " +
+                 //   "les plus vulnérables, PLAY propose un projet reposant sur la création et la diffusion d’un " +
+                 //   "programme pédagogique fondé entre autre sur la Playdagogie, méthode de pédagogie active et " +
+                 //   "participative développée par l’ONG. Ces contenus seront diffusés à travers des programmes de" +
+                 //   " formations d’enseignants et d’animateurs sportifs recevant les kits thématiques. " +
+                 //   "Projet déployé dans les secteurs de l’éducation formelle et informelle, il s’attachera" +
+                 //   " à créer des passerelles entre les deux pour renforcer la continuité de la prise en charge" +
+                 //   " éducative des enfants. Il s’agira, lorsque possible, de travailler sur l’intégration des " +
+                 //   "méthodes socio-sportives dans les cursus de formation des enseignants et animateurs sportifs" +
+                 //   " en collaboration étroite avec les pouvoirs publics." +
+                 //   "RÉSULTATS ATTENDUSPlus de 80 000 enfants, dont 40 % de filles qui acquièrent une meilleure compréhension des enjeux de scolarisation," +
+                 //   "et compétences de vie liées à l’inclusion de leurs pairs en situation de vulnérabilité." +
+                 //   "Plus de 1000 professionnels éducatifs formés qui acquièrent des compétences permettant de déployer des séances de jeux socio - sportifs et de Playdagogie reconnues officiellement par les Ministères des Sports," +
+                 //   "et de l’Education nationale." +
+                 //   "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
+
+                 //    Picture = "/ImagesProject/avenirimage.jpeg",
+                 //    Category = Category.Education,
+                 //    StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
+                 //    EndDate = new DateTime(2021, 12, 19, 15, 6, 8, 245),
+                 //    Video = "/VideosProject/avenirVideo",
+                 //    MaterialDonation = "Materiaux sportifs, kits scolaires",
+                 //    Location = "Paris",
+                 //    ProjectOwnerId = 3,
+                 //    HeartCounter = 10
+                 //}
             );
             this.Favorites.AddRange(
                 new Favorite
