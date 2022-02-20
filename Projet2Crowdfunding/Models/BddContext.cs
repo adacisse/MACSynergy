@@ -496,7 +496,7 @@ namespace Projet2Crowdfunding.Models
                      Type = ProjectOwnerType.Association,
                      AssociationProof = "/JustificatifsPP/proofSynergieInter.png",
                      Image = "/ImageAssos/logoSynergieInter.png",
-                     Status = AssoStatus.registered,
+                     Status = AssoStatus.published,
 
                      Newsletter = true,
                      ConfidentialityCharter = true,
@@ -649,7 +649,7 @@ namespace Projet2Crowdfunding.Models
                      Type = ProjectOwnerType.Association,
                      AssociationProof = "/JustificatifsPP/drepacareproof.png",
                      Image = "/ImageAssos/drepacarelogo.png",
-                     Status = AssoStatus.registered,
+                     Status = AssoStatus.published,
 
                      Newsletter = true,
                      ConfidentialityCharter = true,
@@ -1069,7 +1069,7 @@ namespace Projet2Crowdfunding.Models
                     "et de l’Education nationale." +
                     "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
 
-                     Picture = "/ImagesProject/avenirimage.jpg",
+                     Picture = "/ImagesProject/avenirimage.jpeg",
                      Category = Category.Education,
                      StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
                      EndDate = new DateTime(2021, 12, 19, 15, 6, 8, 245),
@@ -1092,7 +1092,7 @@ namespace Projet2Crowdfunding.Models
                 {
                     Id = 2,
 
-                    ProjectId = 2,
+                    ProjectId = 3,
                     ParticipantId = 1
                 },
                 new Favorite
@@ -1147,72 +1147,129 @@ namespace Projet2Crowdfunding.Models
                 {
                     Id = 1,
                     Amount = 5000,
-                    Description = "Pour louer le local",
+                    Description = "Pour acheter le terrain",
                     ProjectId = 1
                 },
                 new Step
                 {
                 Id = 2,
-                    Amount = 7000,
-                    Description = "Pour louer le chateau",
+                    Amount = 17000,
+                    Description = "Pour construire un centre de santé",
                     ProjectId = 1
                 },
                 new Step
                 {
                     Id = 3,
                     Amount = 15000,
-                    Description = "Pour acheter la fourniture",
+                    Description = "Pour équiper le centre de santé",
                     ProjectId = 1
                 },
                 new Step
                 {
                     Id = 4,
                     Amount = 7000,
-                    Description = "Pour faire à manger",
-                    ProjectId = 2
+                    Description = "Pour acheter le matériel de déminage",
+                    ProjectId = 3
                 },
                 new Step
                 {
                     Id = 5,
                     Amount = 9000,
-                    Description = "Pour faire des maisons",
-                    ProjectId = 2
+                    Description = "Pour l'entretien",
+                    ProjectId = 3
                 },
                 new Step
                 {
                     Id = 6,
                     Amount = 3000,
-                    Description = "Pour faire la fete",
+                    Description = "Pour renforcer l'équipe",
                     ProjectId = 3
                 },
                 new Step
                 {
                     Id = 7,
                     Amount = 45000,
-                    Description = "Pour faire un gateau",
-                    ProjectId = 3
+                    Description = "Pour acheter un terrain",
+                    ProjectId = 5
                 },
                 new Step
                 {
                     Id = 8,
-                    Amount = 8900,
-                    Description = "Pour faire un gateau",
-                    ProjectId = 4
+                    Amount = 20900,
+                    Description = "Pour construire un centre de santé pour les handicapés",
+                    ProjectId = 5
                 },
                  new Step
                  {
                      Id = 9,
-                     Amount = 700,
-                     Description = "Pour faire un gateau",
+                     Amount = 4700,
+                     Description = "Pour équiper le centre de matériels pour les handicapés",
                      ProjectId = 5
                  },
                   new Step
                   {
                       Id = 10,
-                      Amount = 6000,
-                      Description = "Pour faire un gateau",
-                      ProjectId = 5
-                  }
+                      Amount = 16000,
+                      Description = "Pour construire des locaux pour les réfugiés de guerre",
+                      ProjectId = 6
+                  },
+                   new Step
+                   {
+                       Id = 11,
+                       Amount = 5000,
+                       Description = "Pour mettre en place un service psychologique",
+                       ProjectId = 6
+                   },
+                    new Step
+                   {
+                       Id = 12,
+                       Amount = 10000,
+                       Description = "Pour aider les personnes à se réinserer dans la vie active",
+                       ProjectId = 6
+                   },
+                    new Step
+                    {
+                        Id = 13,
+                        Amount = 6000,
+                        Description = "Pour acheter un terrain",
+                        ProjectId = 7
+                    },
+                    new Step
+                    {
+                        Id = 14,
+                        Amount = 11000,
+                        Description = "Pour la construction",
+                        ProjectId = 7
+                    },
+                    new Step
+                    {
+                        Id = 15,
+                        Amount = 1000,
+                        Description = "Pour acheter le matériel necessaire",
+                        ProjectId = 7
+                    },
+                    new Step
+                    {
+                        Id = 16,
+                        Amount = 20000,
+                        Description = "Pour offrir un suivi efficace aux personnes touchées",
+                        ProjectId = 8
+                    },
+                    new Step
+                    {
+                        Id = 17,
+                        Amount = 16000,
+                        Description = "Pour acheter du matériel neccesaire pour les drépanocytaires",
+                        ProjectId = 8
+                    },
+                    new Step
+                    {
+                        Id = 18,
+                        Amount = 3000,
+                        Description = "Pour creer un centre pour les drépanocytaires",
+                        ProjectId = 8
+                    }
+
                 );
 
             ////Instances PPs
