@@ -1,0 +1,37 @@
+    @model Projet2Crowdfunding.ViewModels.PaymentViewModel
+
+    @{ Layout = "_LayoutDuSite"; }
+
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css">
+
+
+    <div class="container d-flex justify-content-center mt-5 mb-5">
+        <div class="row g-3" style="width:600px;">
+            <div class="col-md-12">
+
+                @using (Html.BeginForm("CreateCheckoutSession", "Payments", FormMethod.Post))
+                {
+    <h2> Montant de participation</h2>
+                    @Html.TextBoxFor(model => model.Amount) @*<input type="text" class="form-control" placeholder="Saisir le montant">*@
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                    <button id="bouton-log" type="submit">PAIEMENT</button>}
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+
+
+    @section Footer {}

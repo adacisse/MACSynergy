@@ -63,6 +63,15 @@ namespace Projet2Crowdfunding.Controllers
             return View();
         }
 
+        public IActionResult ProjectPaymentPage()
+        {
+            return View();
+        }
+
+        public IActionResult ProjectPaymentSuccess()
+        {
+            return View();
+        }
 
     }
 }
