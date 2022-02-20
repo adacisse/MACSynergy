@@ -243,7 +243,7 @@ namespace Projet2Crowdfunding.Models
                     "soin et insertion," +
                     " ses activités sont multiples : maraudes, accueil et l’hébergement de personnes en situation d’addiction, activités de réinsertion sociale et professionnelle à destination de personnes en rupture d’emploi ou handicapées," +
                     " hébergement et accompagnement de femmes victimes de violences, soins de personnes en situation de précarité, hébergement et accompagnement de personnes en souffrance psychique",
-                    HyperLink = "https://aurore.asso.fr/association",
+                    HyperLink = "https://aurore.asso.fr",
 
                     VolunteerDescritpion = "Les bénévoles nous apportent du bien - être et du savoir," +
                     "ils nous soutiennent pour avancer dans notre vie.C'est l'art de la gratuité du cœur Vous avez une envie de partager," +
@@ -254,7 +254,7 @@ namespace Projet2Crowdfunding.Models
                     "initiation à l’informatique, vestiaire, bien - être, sport, jardinage, accueil, traductions, conseil…" +
                     "Comme plus de 850 personnes, rejoignez - nous sur des missions bénévoles et devenez un acteur solidaire. S’engager bénévolement à AURORE, " +
                     "c’est se donner les moyens de l’action, auprès d’une grande association laïque.C’est agir en solidarité et avec des principes humanistes.",
-                    Partnership = "Dons solidaire, Le chainon manquant, L'agence du don en nature",
+                    Partnership = "Dons solidaire, Le chainon manquant, L'agence du don en nature.",
 
                     Type = ProjectOwnerType.Association,
 
@@ -305,7 +305,10 @@ namespace Projet2Crowdfunding.Models
 
                     HyperLink = "https://www.wwf.fr/",
                     VolunteerDescritpion = "Rejoignez ceux, membres et donateurs, partenaires et sympathisants, qui ont bâti avec nous une association riche aujourd’hui de 220 000" +
-                        " donateurs et de milliers de bénévoles, toujours disponibles pour se mobiliser et démultiplier notre capacité d’action !",
+                        " donateurs et de milliers de bénévoles, toujours disponibles pour se mobiliser et démultiplier notre capacité d’action !Le siège du WWF International − le secrétariat de l’organisation au niveau mondial − est situé à Gland en Suisse. " +
+                        "Il dirige et coordonne le réseau des bureaux du WWF dans le monde entier, favorise les partenariats mondiaux et coordonne les campagnes internationales. " +
+                        "La Fondation était jusqu'à la fin de l'année 2017, présidée par Yolanda Kakabadse et dirigée par Marco Lambertini. En 2018, Pavan Sukhdev, " +
+                        "ancien directeur de UN Environnement a succédé à Yolanda Kakabadse. Son Altesse Royale le duc d'Édimbourg en est le Président émérite.",
 
                     Partnership = "Fiat Panis, UNESCO",
 
@@ -357,7 +360,11 @@ namespace Projet2Crowdfunding.Models
                     VolunteerDescritpion = "DEVENIR BÉNÉVOLE PLAY International suscite votre intérêt ? Vous avez des compétences dans un domaine précis," +
                         "et vous souhaitez vous engager en faveur d’une association défendant des valeurs éducatives ? Intégrez notre communauté de bénévoles et rejoignez l’équipe! Nous recherchons essentiellement des bénévoles pour la course Vertigo et dans des domaines spécifiques tels que la photographie," +
                         "de la traduction et le graphisme. CONTACTEZ - NOUS" +
-                        "REJOINDRE LE GROUPE FACEBOOK DES BÉNÉVOLES",
+                        "REJOINDRE LE GROUPE FACEBOOK DES BÉNÉVOLES  PLAY et ses partenaires ont démontré que :" +
+                        "- Le sport est un langage universel permettant de mobiliser comme peu d’activités sont capable de le faire." +
+                        "- Le sport et le jeu ont pleinement leurs places dans le secteur humanitaire et peuvent apporter des réponses concrètes à des problématiques sociales et sanitaires," +
+                        "y compris dans les situations les plus précaires." +
+                        " L’activité physique et sportive est une matière permettant de faire beaucoup avec peu,notamment lorsque l’on se focalise sur le volet pédagogique.",
 
                     Partnership = "PROPARCO, ID4D, Fond francais pour l'environnement mondial ",
 
@@ -423,7 +430,15 @@ namespace Projet2Crowdfunding.Models
 
                     VolunteerDescritpion = "Vous souhaitez rejoindre Handicap International ? " +
                     "Notre équipe Mobilisation est là pour répondre à vos questions, rendre votre volontariat plus simple et vivre une expérience unique !" +
-                    " N'hésitez pas à la contacter par mail : agissez@france.hi.org",
+                    " N'hésitez pas à la contacter par mail : agissez@france.hi.org" +
+                    "Populations exposées aux risques de maladies, de violences ou d’accidents invalidants Personnes ayant subi des traumatismes psychologiques forts Populations vulnérables, en particulier les personnes handicapées" +
+                    "Populations réfugiées et populations sinistrées ou déplacées par les crises, les conflits et les catastrophes naturelles" +
+                    "Populations exposées au danger des armes, munitions et engins explosifs dans les conflits armés ou dans leurs suitesNos domaines d’intervention" +
+                    "Aide d’urgence aux populations victimes de crises et de catastrophes naturelles" +
+                    "Prévention des handicaps et des maladies invalidantes" +
+                    "Appareillage et rééducation des personnes handicapées" +
+                    "Insertion scolaire, sociale et économique Action contre les mines, les restes explosifs de guerre et l'utilisation des armes en zones peuplées" +
+                    "Promotion des droits des personnes handicapées.",
 
                     Partnership = "alabama, Alcure, Michelin, Airfrance",
 
@@ -484,12 +499,21 @@ namespace Projet2Crowdfunding.Models
                     "Prévention des handicaps et des maladies invalidantes" +
                     "Appareillage et rééducation des personnes handicapées" +
                     "Insertion scolaire, sociale et économique Action contre les mines, les restes explosifs de guerre et l'utilisation des armes en zones peuplées" +
-                    "Promotion des droits des personnes handicapées",
+                    "Promotion des droits des personnes handicapées.",
                      HyperLink = "https://associationsynergie.fr/fr/l-association",
 
                      VolunteerDescritpion = "Vous souhaitez rejoindre Association Synergie ? " +
                     "Notre équipe Mobilisation est là pour répondre à vos questions, rendre votre volontariat plus simple et vivre une expérience unique !" +
-                    " N'hésitez pas à la contacter par mail : agissez@france.hi.org",
+                    " N'hésitez pas à la contacter par mail : agissez@france.hi.org Populations exposées aux risques de maladies," +
+                    "de violences ou d’accidents invalidants Personnes ayant subi des traumatismes psychologiques forts Populations vulnérables," +
+                    "en particulier les personnes handicapées" +
+                    "Populations réfugiées et populations sinistrées ou déplacées par les crises, les conflits et les catastrophes naturelles" +
+                    "Populations exposées au danger des armes, munitions et engins explosifs dans les conflits armés ou dans leurs suitesNos domaines d’intervention" +
+                    "Aide d’urgence aux populations victimes de crises et de catastrophes naturelles" +
+                    "Prévention des handicaps et des maladies invalidantes" +
+                    "Appareillage et rééducation des personnes handicapées" +
+                    "Insertion scolaire, sociale et économique Action contre les mines, les restes explosifs de guerre et l'utilisation des armes en zones peuplées" +
+                    "Promotion des droits des personnes handicapées.",
 
                      Partnership = "BNparibas, NewYorker, Michelin, Airfrance",
 
@@ -545,7 +569,10 @@ namespace Projet2Crowdfunding.Models
                     "Amérique - latine,Europe Centrale etOrientale.Le centre de documentation est membre de Ritimo,réseau des centres de documentation et" +
                     "d’information sur le développement et la solidarité internationale.Bioforce recherche pour son siège de Vénissieux(69),un ou une assistant(e) documentaliste bénévole." +
                     "Vous êtes intéressés par Les questions portant sur la solidarité,vous aimez la lecture,et vous désirez vous investir dans la vie associative ? Si vous être disponible sur un créneau de 4 heures minimum par semaine," +
-                    "venez partager vos passions et rencontrer les humanitaires de demain en devenant bénévole au centre de documentation de Bioforce.",
+                    "venez partager vos passions et rencontrer les humanitaires de demain en devenant bénévole au centre de documentation de Bioforce.Humanitaires d’aujourd’hui ou de demain," +
+                    "humanitaires qui franchissent les frontières ou qui se mobilisent dans leur pays au sein de leur communauté, " +
+                    "organisations internationales ou nationales présentes dans les zones de crise : en Europe,en Afrique,au Moyen - Orient," +
+                    "les équipes de Bioforce leur donnent le pouvoir d’agir avec efficacité auprès des populations vulnérables en leur apportant des solutions de formation et d’accompagnement.",
 
                     Partnership = "Unesco, Michelin, Airfrance",
 
@@ -595,7 +622,10 @@ namespace Projet2Crowdfunding.Models
 
                      VolunteerDescritpion = "Vous souhaitez rejoindre Association Franceolympique ? " +
                     "Notre équipe Mobilisation est là pour répondre à vos questions, rendre votre volontariat plus simple et vivre une expérience unique !" +
-                    " N'hésitez pas à la contacter par mail : franceolympique@france.hi.org.",
+                    " N'hésitez pas à la contacter par mail : franceolympique@france.hi.org.Humanitaires d’aujourd’hui ou de demain," +
+                    "humanitaires qui franchissent les frontières ou qui se mobilisent dans leur pays au sein de leur communauté," +
+                    "organisations internationales ou nationales présentes dans les zones de crise : en Europe,en Afrique,au Moyen - Orient," +
+                    "les équipes de Bioforce leur donnent le pouvoir d’agir avec efficacité auprès des populations vulnérables en leur apportant des solutions de formation et d’accompagnement.",
 
                      Partnership = "airbnb, Allianz, Athos",
 
@@ -642,7 +672,8 @@ namespace Projet2Crowdfunding.Models
 
                      VolunteerDescritpion = "Devenir membre de l’association Drepacare c’est s’engager en tant que bénévole." +
                      "L’association Drepa31est une association dirigée par des bénévoles!Vous ou un de vos proches êtes touchés par la drépanocytose ?Vous avez un talent ? Vous souhaitez le mettre à profit de notre association ?" +
-                     "N’hésitez pas à nous rejoindre et adhérez à l’association Drepacare et devenir membre de l’Association DREPA31 pour une cotisation annuelle de 10€.",
+                     "N’hésitez pas à nous rejoindre et adhérez à l’association Drepacare et devenir membre de l’Association DREPA31 pour une cotisation annuelle de 10€.D’aider,de soutenir et favoriser la recherche scientifique." +
+                     "De servir de trait d’union entre les malades atteints de maladies héréditaires du globule rouge,les hôpitaux et les institutions administratives.Mener des actions à l’échelle nationale et internationale.",
 
                      Partnership = "Assurance maladie, mairie de toulouse, MCGRE",
 
@@ -833,7 +864,7 @@ namespace Projet2Crowdfunding.Models
                     Category = Category.Education,
                     StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
-                    Video = "/VideosProject/PlayVideo.html",
+                    Video = "/VideosProject/PlayVideo1.html",
                     MaterialDonation = "Materiaux sportifs",
                     Location = "New York",
                     ProjectOwnerId = 3,
@@ -876,7 +907,7 @@ namespace Projet2Crowdfunding.Models
                     Category = Category.Humanitaire,
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
-                    Video = "/VideosProject/videoHandicap.html",
+                    Video = "/VideosProject/handicapvideo.html",
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
                     Location = "Nwagadougou",
                     ProjectOwnerId = 4,
