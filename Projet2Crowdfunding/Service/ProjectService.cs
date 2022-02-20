@@ -95,10 +95,21 @@ namespace Projet2Crowdfunding.Service
 
         }
 
-        //public Favorite Favorite { get; set; } à rajouter dans accoutnviewmodel
-        //compter les coups de coeur sur un projets
-       //******** public void setProjectHeartCounter()
-        public int CountProjectFavoriteSum(int? idProject)
+        public void ModifyProjectStatus(int id, Status status)
+        {
+            BddContext ctx = new BddContext();
+            Project project = ctx.Projects.Find(id);
+
+            if (project != null)
+
+                project.Status = status;
+            ctx.SaveChanges();
+        }
+
+            //public Favorite Favorite { get; set; } à rajouter dans accoutnviewmodel
+            //compter les coups de coeur sur un projets
+            //******** public void setProjectHeartCounter()
+            public int CountProjectFavoriteSum(int? idProject)
         {
 
             /////////////////////////////////////

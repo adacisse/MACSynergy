@@ -112,5 +112,21 @@ namespace Projet2Crowdfunding.Controllers
                 return View("Error");
             }
         }
+
+        [HttpPost]
+        public IActionResult ModifyProjectStatus(Project project)
+        {
+            if (project.Id != 0)
+            {
+                ProjectService ps = new ProjectService();
+                ps.ModifyProjectStatus(project.Id, project.Status);
+                return RedirectToAction("AdminDashboard");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
     }
 }

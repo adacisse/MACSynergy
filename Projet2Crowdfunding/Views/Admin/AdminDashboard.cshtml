@@ -198,30 +198,30 @@
                                 <tbody>
                                     @foreach (var projectOwner in Model.ProjectOwnerList)
                                     {
-                                        {
-                                            <tr style="text-align:center">
-                                                <td>@projectOwner.Name</td>
-                                                <td>@projectOwner.Type</td>
-                                                <td>
-                                                    @if (projectOwner.AssociationProof != null)
-                                                    {
-                                                        <i class="fa fa-check fa-fw me-3"></i>
-                                                    }
-                                                </td>
-                                                <td>
-                                                    @if (projectOwner.ConfidentialityCharter == true)
-                                                    {
-                                                        <i class="fa fa-check fa-fw me-3"></i>
-                                                    }
-                                                </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectOwnerStatusModal@(projectOwner.Id)">
-                                                        Status
-                                                    </button>
-                                                </td>
-                                            </tr>
 
-                                        }
+                                        <tr style="text-align:center">
+                                            <td>@projectOwner.Name</td>
+                                            <td>@projectOwner.Type</td>
+                                            <td>
+                                                @if (projectOwner.AssociationProof != null)
+                                                {
+                                                    <i class="fa fa-check fa-fw me-3"></i>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (projectOwner.ConfidentialityCharter == true)
+                                                {
+                                                    <i class="fa fa-check fa-fw me-3"></i>
+                                                }
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectOwnerStatusModal@(projectOwner.Id)">
+                                                    Status
+                                                </button>
+                                            </td>
+                                        </tr>
+
+
                                     }
                                 </tbody>
                             </table>
@@ -244,13 +244,12 @@
                                         <th>Résumé</th>
                                         <th>Description</th>
                                         <th></th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var project in Model.ProjectList)
                                     {
-                                        <tr style="text-align:center">
+                                        <tr style="text-align:center; width:100%">
                                             <td>@project.Name</td>
                                             <td>@project.Category</td>
                                             <td>@project.Location</td>
@@ -260,12 +259,12 @@
                                                 </button>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#descriptionModal">
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#descriptionModal@(project.Id)">
                                                     Voir
                                                 </button>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ProjectStatusModal@Project.Id">
+                                                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#projectStatusModal@(project.Id)">
                                                     Status
                                                 </button>
                                             </td>
@@ -491,7 +490,7 @@
                                     <div class="panel-body">
                                         @Html.HiddenFor(m => project.Id)
                                         <fieldset class="d-grid">
-                                            @Html.TextAreaFor(m => project.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4" })
+                                            @Html.TextAreaFor(m => project.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "6" })
                                         </fieldset>
                                     </div>
                                 </div>
@@ -511,41 +510,45 @@
 }
 
 <!-- The descriptionModal -->
-<div class="modal" id="descriptionModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+@foreach (var project in Model.ProjectList)
+{
+    <div class="modal" id="descriptionModal@(project.Id)">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header clearfix">
-                <div class="mx-auto"><h3>Description</h3></div>
-                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
-            </div>
+                <!-- Modal Header -->
+                <div class="modal-header clearfix">
+                    <div class="mx-auto"><h3>Description</h3></div>
+                    <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center border rounded-3 p-3">
-                                <div class="panel-body">
-                                    <fieldset class="d-grid">
-                                        test Description
-                                    </fieldset>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center border rounded-3 p-3">
+                                    <div class="panel-body">
+                                        @Html.HiddenFor(m => project.Id)
+                                        <fieldset class="d-grid">
+                                            @Html.TextAreaFor(m => project.Descritpion, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "10" })
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
-            </div>
+                <!-- Modal footer -->
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Fermer</button>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
+}
 
 
 <!-- The ProjectOwnerStatusModal -->
@@ -605,51 +608,60 @@
 }
 
 <!-- The ProjectStatusModalModal -->
-<div class="modal" id="ProjectStatusModalModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+@foreach (var project in Model.ProjectList) {
+    <div class="modal" id="projectStatusModal@(project.Id)">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header clearfix">
-                <div class="mx-auto"><h3>Changez vos informations personnelles</h3></div>
-                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
-            </div>
+                <!-- Modal Header -->
+                <div class="modal-header clearfix">
+                    <div class="mx-auto"><h3>Changez vos informations personnelles</h3></div>
+                    <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center border rounded-3 p-3">
-                                <p>Modifiez les champs nécessaires</p>
-                                <div class="panel-body">
-                                    <fieldset class="d-grid">
-                                        @using (Html.BeginForm("ModifyAdminInfos", "Admin"))
-                                        {
-                                            <div class="form-group">
-                                                @Html.HiddenFor(m => m.Administrator.Id)
-                                                @Html.TextBoxFor(m => m.Administrator.LastName, new { @class = "form-control input-lg mt-2", placeholder = "Nom" })
-                                                <div style="padding-bottom:10px">@Html.TextBoxFor(m => m.Administrator.FirstName, new { @class = "form-control input-lg mt-2", placeholder = "Prénom" })</div>
-                                            </div>
-                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
-                                        }
-                                    </fieldset>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center border rounded-3 p-3">
+                                    <p>Modifiez les champs nécessaires</p>
+                                    <div class="panel-body">
+                                        <fieldset class="d-grid">
+                                            @using (Html.BeginForm("ModifyProjectStatus", "Admin"))
+                                            {
+                                                <div class="form-group">
+                                                    @Html.HiddenFor(m => project.Id)
+                                                    <div class="col-md-12">
+                                                        <span style="margin:30px">
+                                                            Publier
+                                                            @Html.RadioButtonFor(m => m.Project.Status, "3", new { @class = "margin-right:10px" })
+                                                        </span>
+                                                        <span style="margin-right:30px">
+                                                            Rejeter
+                                                            @Html.RadioButtonFor(m => m.Project.Status, "8")
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                            }
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
-            </div>
+                <!-- Modal footer -->
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
-
+}
 
 @section Footer
     {

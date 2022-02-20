@@ -636,7 +636,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {      
                     Id = 2,
-                    Status = Status.submittedForEvaluation,
+                    Status = Status.sumittedForPublishing,
                     Name = "Doubler la population mondiale de tigres",
                     Summary = "C’est sans doute la stratégie de restauration la plus ambitieuse jamais entreprise pour une seule espèce." +
                     " En 2010, alors que le nombre de tigres est au plus bas, les gouvernements des 13 pays qui abritent encore " +
