@@ -1272,7 +1272,7 @@ namespace Projet2Crowdfunding.Models
                     },
                     new Step
                     {
-                        Id = 18,
+                        Id = 19,
                         Amount = 15000,
                         Description = "Pour offrir un suivi efficace aux personnes malade",
                         ProjectId = 10
