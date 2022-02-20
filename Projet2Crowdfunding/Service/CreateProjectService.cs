@@ -131,6 +131,7 @@ namespace Projet2Crowdfunding.Service
                 project.Location = location;
                 project.EndDate = endDate;
                 project.MaterialDonation = materialDonation;
+                project.HeartCounter = 0;
                 if(image != "")
                 {
                     project.Picture = image;
