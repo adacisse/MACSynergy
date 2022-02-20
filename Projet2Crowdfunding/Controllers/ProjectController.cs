@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Controllers
 {
+    //[Area("Project")]
     public class ProjectController : Controller
     {
         private BddContext bddContext;
@@ -37,6 +38,7 @@ namespace Projet2Crowdfunding.Controllers
             return View(viewModel);
         }
 
+        
         public IActionResult ProjectPage(int? id)
 
         {
@@ -45,6 +47,7 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+
             }
             if (id.HasValue)
             {
@@ -53,6 +56,7 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
                 viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
                 viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
+               
             }
 
 
@@ -66,6 +70,7 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                
                 viewModel.Participant = accountService.GetParticipantFromAccountId(viewModel.Account.Id);
 
 
@@ -85,9 +90,9 @@ namespace Projet2Crowdfunding.Controllers
                 {
                     viewModel.Project = projectService.SuppressAFavoriteForAParticipantOnAProject(id.Value, viewModel.Participant.Id);
                 }
-
-
+                 Redirect("/Project/ProjectPage/"+viewModel.Project.Id);
             }
+            
             return View(viewModel);
         }
         /*      public IActionResult Index()
