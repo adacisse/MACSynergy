@@ -84,12 +84,8 @@ namespace Projet2Crowdfunding.Service
         public List<Step> GetStepsFromProjectId(int? idProject)
         {
 
-            List<Step> ProjectStepsList = new List<Step>();
-            var Steps = bddContext.Steps.Where(s => s.ProjectId == idProject).ToList();
-            foreach (Step step in Steps)
-            {
-                ProjectStepsList.Add(step);
-            }
+            List<Step> ProjectStepsList =bddContext.Steps.Where(s => s.ProjectId == idProject).ToList();
+            
             return (ProjectStepsList);
 
 
@@ -196,6 +192,12 @@ namespace Projet2Crowdfunding.Service
                 MyfavoritesList.Add(favoriteproject);
             }
             return (MyfavoritesList);
+        }
+        public float PercentageProgressBar(int idProject) {
+
+            var PercentageInProgressBar=(float)(GetCollectionByProjectId(idProject).Amount*100 / GetStepsFromProjectId(idProject).First().Amount);
+
+            return PercentageInProgressBar;
         }
     }
     }

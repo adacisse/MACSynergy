@@ -70,5 +70,9 @@ namespace Projet2Crowdfunding.Models
         [Required]
         public int HeartCounter { get; set; } //pour le projet
 
+        [Required]
+        public float PercentageInProgressBar { get; set; }
+
+
     }
 }
