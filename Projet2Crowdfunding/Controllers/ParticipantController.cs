@@ -12,10 +12,12 @@ namespace Projet2Crowdfunding.Controllers
     public class ParticipantController : Controller
     {
         private AccountService accountService;
+        private ProjectService projectService;
 
         public ParticipantController()
         {
             accountService = new AccountService();
+            projectService = new ProjectService();
         }
 
         public IActionResult Index()
@@ -30,6 +32,8 @@ namespace Projet2Crowdfunding.Controllers
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
                 viewModel.Participant = accountService.GetParticipantFromAccountId(viewModel.Account.Id);
+                viewModel.ProjectList = projectService.GetFavorites(viewModel.Participant.Id);
+                viewModel.CollectionList = projectService.GetAllCollections();
                 return View(viewModel);
             }
             return View(viewModel);

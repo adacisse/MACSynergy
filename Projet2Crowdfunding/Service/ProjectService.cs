@@ -170,20 +170,32 @@ namespace Projet2Crowdfunding.Service
             BddContext ctx = new BddContext();
             // Project project = ctx.Projects.Find(idProject);
             // Participant participant = ctx.Participants.Find(id);
-           
+
             Favorite favorite = ctx.Favorites.FirstOrDefault(f => f.ProjectId == idProject && f.ParticipantId == idParticipant);
 
 
             return favorite != null;
         }
 
-        public Collection GetCollectionByProjectId(int idProject) {
+        public Collection GetCollectionByProjectId(int idProject)
+        {
 
             BddContext ctx = new BddContext();
             Project project = ctx.Projects.Find(idProject);
             var collection = ctx.Collections.FirstOrDefault(c => c.ProjectId == idProject);
             return collection;
         }
-    }
 
+        public List<Project> GetFavorites(int idParticipant)
+        {
+            List<Project> MyfavoritesList = new List<Project>();
+            var favorites = bddContext.Favorites.Where(f => f.ParticipantId == idParticipant).ToList();
+            foreach (Favorite favorite in favorites)
+            {
+                Project favoriteproject = bddContext.Projects.Find(favorite.ProjectId);
+                MyfavoritesList.Add(favoriteproject);
+            }
+            return (MyfavoritesList);
+        }
+    }
     }
