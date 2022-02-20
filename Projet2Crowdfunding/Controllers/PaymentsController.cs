@@ -31,23 +31,23 @@ namespace Projet2Crowdfunding.Controllers
             var options = new SessionCreateOptions
             {
                 LineItems = new List<SessionLineItemOptions>
-        {
-          new SessionLineItemOptions
-          {
-            PriceData = new SessionLineItemPriceDataOptions
-            {
+                {
+                    new SessionLineItemOptions
+                    {
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
 
-            UnitAmount = (long?)(viewModel.Amount*100),
-              Currency = "eur",
-              ProductData = new SessionLineItemPriceDataProductDataOptions
-              {
-                Name = "Contribution",
-              },
+                            UnitAmount = (long?)(viewModel.Amount*100),
+                            Currency = "eur",
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = "Contribution",
+                            },
 
-            },
-            Quantity = 1,
-          },
-        },
+                        },
+                        Quantity = 1,
+                    },
+                },
                 Mode = "payment",
                 SuccessUrl = "http://localhost:5000/Payments/PaymentSuccess",
                 CancelUrl = "http://localhost:5000/Home/Index",
@@ -64,7 +64,6 @@ namespace Projet2Crowdfunding.Controllers
         {
             BddContext ctx = new BddContext();
 
-
             PaymentViewModel viewModel = new PaymentViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -78,8 +77,7 @@ namespace Projet2Crowdfunding.Controllers
         public IActionResult ProjectPaymentPage(int? id)
         {
             BddContext ctx = new BddContext();
-           
-            
+                       
             PaymentViewModel viewModel = new PaymentViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
 
             if (HttpContext.User.Identity.IsAuthenticated)
@@ -94,7 +92,6 @@ namespace Projet2Crowdfunding.Controllers
         public IActionResult PaymentSuccess()
         {
             BddContext ctx = new BddContext();
-
 
             PaymentViewModel viewModel = new PaymentViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
             if (HttpContext.User.Identity.IsAuthenticated)
@@ -112,32 +109,32 @@ namespace Projet2Crowdfunding.Controllers
             var options = new SessionCreateOptions
             {
                 LineItems = new List<SessionLineItemOptions>
-        {
-          new SessionLineItemOptions
-          {
-            PriceData = new SessionLineItemPriceDataOptions
-            {
+                {
+                    new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions
+                    {
 
-            UnitAmount = (long?)amount * 100,
-              Currency = "eur",
-              ProductData = new SessionLineItemPriceDataProductDataOptions
-              {
-                Name = "Contribution",
-              },
+                        UnitAmount = (long?)amount * 100,
+                        Currency = "eur",
+                          ProductData = new SessionLineItemPriceDataProductDataOptions
+                          {
+                            Name = "Contribution",
+                          },
 
+                    },
+                    Quantity = 1,
+                },
             },
-            Quantity = 1,
-          },
-        },
-                Mode = "payment",
-                SuccessUrl = "http://localhost:5000/Payments/PaymentSuccess",
-                CancelUrl = "http://localhost:5000/Home/Index",
+            Mode = "payment",
+            SuccessUrl = "http://localhost:5000/Payments/PaymentSuccess",
+            CancelUrl = "http://localhost:5000/Home/Index",
             };
 
             var service = new SessionService();
             Session session = service.Create(options);
 
-             viewModel = new PaymentViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            viewModel = new PaymentViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
 
             if (HttpContext.User.Identity.IsAuthenticated)
             {
