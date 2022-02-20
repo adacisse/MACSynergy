@@ -38,7 +38,7 @@ namespace Projet2Crowdfunding.Service
             }
             return (ProjectList);
         }
-        
+
 
         public List<Project> GetAllProjectsStatus(Status? status)
         {
@@ -50,7 +50,7 @@ namespace Projet2Crowdfunding.Service
             }
             return (ProjectList);
         }
-        
+
 
         public List<Project> GetAllProjects()
         {
@@ -62,8 +62,8 @@ namespace Projet2Crowdfunding.Service
         {
             return this.bddContext.Projects.Find(id);
         }
-        
-        
+
+
         public TimeSpan TimeLeftCalculator(int id)
         {
 
@@ -71,7 +71,7 @@ namespace Projet2Crowdfunding.Service
             return timeLeftProject;
 
         }
-     
+
 
         public List<Collection> GetAllCollections()
         {
@@ -80,7 +80,7 @@ namespace Projet2Crowdfunding.Service
 
         }
 
-       
+
         public List<Step> GetStepsFromProjectId(int? idProject)
         {
 
@@ -106,45 +106,65 @@ namespace Projet2Crowdfunding.Service
             ctx.SaveChanges();
         }
 
-            //public Favorite Favorite { get; set; } à rajouter dans accoutnviewmodel
-            //compter les coups de coeur sur un projets
-            //******** public void setProjectHeartCounter()
-            public int CountProjectFavoriteSum(int? idProject)
+        //public Favorite Favorite { get; set; } à rajouter dans accoutnviewmodel
+        //compter les coups de coeur sur un projets
+        //******** public void setProjectHeartCounter()
+        public int CountProjectFavoriteSum(int? idProject)
         {
 
             /////////////////////////////////////
             Project project = this.bddContext.Projects.Find(idProject);
-            
+
             List<Favorite> MyFavoritesList = new List<Favorite>();
             var favorites = bddContext.Favorites.Where(f => f.ProjectId == idProject).ToList();
 
             return favorites.Count;
-           
+
         }
-        
-        public void AddAFavoriteForAParticipantOnAProject(int? idProject, int id)
+        public Project AddAFavoriteForAParticipantOnAProject(int idProject, int idParticipant)
         {//recuperer le participant depuis son account
          //puis stocker le favorite 
          //puis afficher le nombre de favorite dans le heartcounter
             BddContext ctx = new BddContext();
-            Project project = ctx.Projects.Find(idProject);
-            Participant participant = ctx.Participants.Find(id);
-            if (participant != null)
-            {
-                Favorite favorite = new Favorite();
-                favorite.ProjectId = idProject;
-                favorite.ParticipantId = id;
-                ctx.SaveChanges();
-                //AccountService.GetParticipantFromAccountId(Id);
-            }
+            Project project = ctx.Projects.FirstOrDefault(p => p.Id == idProject);
+            project.HeartCounter++;
+            Favorite favorite = new Favorite();
+            favorite.ProjectId = idProject;
+            favorite.ParticipantId = idParticipant;
+
+            ctx.SaveChanges();
+            //AccountService.GetParticipantFromAccountId(Id);
+            return (project);
+
         }
 
-       
+
+        public Project SuppressAFavoriteForAParticipantOnAProject(int idProject, int idParticipant)
+        {
+            BddContext ctx = new BddContext();
+            Project project = ctx.Projects.FirstOrDefault(p => p.Id == idProject);
+            project.HeartCounter--;
+            Favorite favorite = ctx.Favorites.FirstOrDefault(f => f.ProjectId == idProject);
+            ctx.Favorites.Remove(favorite);
+            ctx.SaveChanges();
+            return (project);
+
+
+        }
         //public void
         //  HeartCounting()
         //// {
         //    Project.HeartCounter++;
         // }
+        public Boolean IfExistFavorite(int idProject, int idParticipant)
+        {
+            BddContext ctx = new BddContext();
+            // Project project = ctx.Projects.Find(idProject);
+            // Participant participant = ctx.Participants.Find(id);
+            Favorite favorite = ctx.Favorites.FirstOrDefault(f => f.ProjectId == idProject && f.ParticipantId == idParticipant);
+
+            return favorite != null;
+        }
+    }
 
     }
-}

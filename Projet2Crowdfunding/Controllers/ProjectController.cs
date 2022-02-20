@@ -58,7 +58,37 @@ namespace Projet2Crowdfunding.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        public IActionResult AddFavoriteOnClik(int? id)
+        {
+            AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                viewModel.Participant = accountService.GetParticipantFromAccountId(viewModel.Account.Id);
 
+
+            }
+            if (id.HasValue)
+            {
+                viewModel.Project = projectService.GetProject(id.Value);
+                viewModel.ProjectOwner = this.bddContext.ProjectOwners.Find(viewModel.Project.ProjectOwnerId);
+                viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
+                viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
+                viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
+                if (projectService.IfExistFavorite(id.Value, viewModel.Participant.Id))
+                {
+                    viewModel.Project = projectService.AddAFavoriteForAParticipantOnAProject(id.Value, viewModel.Participant.Id);
+                }
+                else
+                {
+                    viewModel.Project = projectService.SuppressAFavoriteForAParticipantOnAProject(id.Value, viewModel.Participant.Id);
+                }
+
+
+            }
+            return View(viewModel);
+        }
         /*      public IActionResult Index()
               {
                   AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
