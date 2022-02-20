@@ -50,7 +50,8 @@ namespace Projet2Crowdfunding.Service
             {
                 Amount = amount,
                 ParticipantId = participantId,
-                Collection = collection
+                Collection = collection,
+                PayDate = DateTime.Now
             };
             collection.Amount += amount;
             this.bddContext.Donations.Add(donation);
