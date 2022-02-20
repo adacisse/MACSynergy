@@ -78,19 +78,20 @@ namespace Projet2Crowdfunding.Controllers
             if (id.HasValue)
             {
                 viewModel.Project = projectService.GetProject(id.Value);
-                viewModel.ProjectOwner = this.bddContext.ProjectOwners.Find(viewModel.Project.ProjectOwnerId);
+                viewModel.ProjectOwner = projectService.GetProjectOwnerFromProjectId(id.Value);
                 viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
                 viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
                 viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
-                if (projectService.IfExistFavorite(id.Value, viewModel.Participant.Id))
+                if (!projectService.IfExistFavorite(id.Value, viewModel.Participant.Id))
                 {
                     viewModel.Project = projectService.AddAFavoriteForAParticipantOnAProject(id.Value, viewModel.Participant.Id);
+                    
                 }
                 else
-                {
+                { 
                     viewModel.Project = projectService.SuppressAFavoriteForAParticipantOnAProject(id.Value, viewModel.Participant.Id);
                 }
-                 Redirect("/Project/ProjectPage/" +viewModel.Project.Id);
+               return  Redirect("/Project/ProjectPage/" +viewModel.Project.Id);
             }
             
             return View(viewModel);

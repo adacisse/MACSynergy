@@ -794,7 +794,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Nourriture",
                     Location = "Lille",
                     ProjectOwnerId = 2,
-                    HeartCounter = 5
+                    HeartCounter = 0
                 },
 
 
@@ -829,7 +829,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Barques motorisées",
                     Location = "Troyes",
                     ProjectOwnerId = 2,
-                    HeartCounter = 5
+                    HeartCounter = 3
                 },
 
                 new Project
@@ -868,7 +868,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Materiaux sportifs",
                     Location = "New York",
                     ProjectOwnerId = 3,
-                    HeartCounter = 5
+                    HeartCounter = 0
                 },
 
                 new Project
@@ -911,7 +911,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
                     Location = "Nwagadougou",
                     ProjectOwnerId = 4,
-                    HeartCounter = 5
+                    HeartCounter = 1
                 },
 
 
@@ -962,7 +962,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Fournitures scolaires",
                     Location = "Jordanie",
                     ProjectOwnerId = 5,
-                    HeartCounter = 6
+                    HeartCounter = 1
                 },
 
                 new Project
@@ -992,7 +992,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Materiaux sportifs",
                     Location = "International",
                     ProjectOwnerId = 1,
-                    HeartCounter = 7
+                    HeartCounter = 1
                 },
 
                  new Project
@@ -1022,7 +1022,7 @@ namespace Projet2Crowdfunding.Models
                      MaterialDonation = "Don de sang, Don de materiaux de soins",
                      Location = "Afrique",
                      ProjectOwnerId = 4,
-                     HeartCounter = 8
+                     HeartCounter = 1
                  },
 
                  new Project
@@ -1071,7 +1071,7 @@ namespace Projet2Crowdfunding.Models
                      MaterialDonation = "Denrees alimentaires",
                      Location = "Monde",
                      ProjectOwnerId = 5,
-                     HeartCounter = 9
+                     HeartCounter = 0
                  },
 
                  new Project
@@ -1108,7 +1108,7 @@ namespace Projet2Crowdfunding.Models
                      MaterialDonation = "Materiaux sportifs, kits scolaires",
                      Location = "Paris",
                      ProjectOwnerId = 3,
-                     HeartCounter = 10
+                     HeartCounter = 0
                  }
             );
             this.Favorites.AddRange(

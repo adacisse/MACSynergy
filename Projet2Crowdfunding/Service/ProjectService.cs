@@ -140,8 +140,9 @@ namespace Projet2Crowdfunding.Service
             favorite.ProjectId = idProject;
             favorite.ParticipantId = idParticipant;
 
-            ctx.SaveChanges();
+            ctx.Favorites.Add(favorite);
             //AccountService.GetParticipantFromAccountId(Id);
+            ctx.SaveChanges();
             return (project);
 
         }
@@ -169,7 +170,9 @@ namespace Projet2Crowdfunding.Service
             BddContext ctx = new BddContext();
             // Project project = ctx.Projects.Find(idProject);
             // Participant participant = ctx.Participants.Find(id);
+           
             Favorite favorite = ctx.Favorites.FirstOrDefault(f => f.ProjectId == idProject && f.ParticipantId == idParticipant);
+
 
             return favorite != null;
         }
