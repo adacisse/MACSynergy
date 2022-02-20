@@ -15,15 +15,7 @@ namespace Projet2Crowdfunding.Service
             bddContext = new BddContext();
         }
 
-        //public Donation CreateDonation(double amount)
-        //{
-        //    Donation donation = new Donation()
-        //    {
-        //        Amount = amount
-        //    };
-        //    return ViewModels();
-        //}
-
+       
 
 
         //public static string EncodeMD5(string cvv)
@@ -51,17 +43,20 @@ namespace Projet2Crowdfunding.Service
 
 
 
-        //public int CreateDonation(int Id, double amount)
-        //{
-
-        //    Donation donation = new Donation()
-        //    {
-        //        Amount = amount,
-        //    };
-        //    this.bddContext.Donations.Add(donation);
-        //    this.bddContext.SaveChanges();
-        //    return donation.Id;
-        //}
+        public void CreateDonation(int? projectId, int participantId, double amount)
+        {
+            Collection collection = bddContext.Collections.FirstOrDefault(c => c.ProjectId == projectId);
+            Donation donation = new Donation()
+            {
+                Amount = amount,
+                ParticipantId = participantId,
+                Collection = collection
+            };
+            collection.Amount += amount;
+            this.bddContext.Donations.Add(donation);
+            this.bddContext.SaveChanges();
+            
+        }
 
         //public List<Donation> GetDonationsFromParticipantId(int Id)
         //{
