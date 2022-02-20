@@ -69,5 +69,19 @@ namespace Projet2Crowdfunding.Service
             return AmountTotal;
         }
 
+        public List<Project> Get8ProjetsFavorits()
+        {
+            List<Project> projectList = this.bddContext.Projects.OrderByDescending(p => p.HeartCounter).ToList();
+            List<Project> favoriteList = new List<Project>();
+            for (int i = 0; i < 8; i++)
+            {
+                if (projectList[i] != null)
+                {
+                    favoriteList.Add(projectList[i]);
+                }                
+            }
+            return favoriteList;
+        }
+
     }
 }

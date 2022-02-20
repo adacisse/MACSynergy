@@ -38,6 +38,7 @@ namespace Projet2Crowdfunding.Controllers
             viewModel.PublishedProjects = homeService.GetPublishedProjects();
             viewModel.ClosedProjects = homeService.GetClosedProjects();
             viewModel.AmountTotal = homeService.GetTotalAmount();
+            viewModel.ProjectListFavorites = homeService.Get8ProjetsFavorits();
 
             return View(viewModel);
         }

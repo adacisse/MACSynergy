@@ -30,6 +30,8 @@ namespace Projet2Crowdfunding.ViewModels
 
         public List<Project> ProjectListClosed { get; set; }
 
+        public List<Project> ProjectListFavorites{ get; set; }
+
         public List<Donation> DonationList { get; set; }
 
         public List<ProjectOwner> ProjectOwnerList { get; set; }
