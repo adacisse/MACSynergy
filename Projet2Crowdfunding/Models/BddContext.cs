@@ -1162,7 +1162,7 @@ namespace Projet2Crowdfunding.Models
                     Id = 3,
                     Amount = 15000,
                     Description = "Pour équiper le centre de santé",
-                    ProjectId = 1
+                    ProjectId = 2
                 },
                 new Step
                 {
@@ -1183,7 +1183,7 @@ namespace Projet2Crowdfunding.Models
                     Id = 6,
                     Amount = 3000,
                     Description = "Pour renforcer l'équipe",
-                    ProjectId = 3
+                    ProjectId = 4
                 },
                 new Step
                 {
@@ -1248,27 +1248,36 @@ namespace Projet2Crowdfunding.Models
                         Description = "Pour acheter le matériel necessaire",
                         ProjectId = 7
                     },
+                   
                     new Step
                     {
                         Id = 16,
-                        Amount = 20000,
-                        Description = "Pour offrir un suivi efficace aux personnes touchées",
-                        ProjectId = 8
-                    },
-                    new Step
-                    {
-                        Id = 17,
                         Amount = 16000,
                         Description = "Pour acheter du matériel neccesaire pour les drépanocytaires",
                         ProjectId = 8
                     },
                     new Step
                     {
-                        Id = 18,
+                        Id = 17,
                         Amount = 3000,
                         Description = "Pour creer un centre pour les drépanocytaires",
                         ProjectId = 8
-                    }
+                    },
+                    new Step
+                    {
+                        Id = 18,
+                        Amount = 20000,
+                        Description = "Pour offrir un suivi efficace aux personnes touchées",
+                        ProjectId = 9
+                    },
+                    new Step
+                    {
+                        Id = 18,
+                        Amount = 15000,
+                        Description = "Pour offrir un suivi efficace aux personnes malade",
+                        ProjectId = 10
+                     }
+
 
                 );
 
