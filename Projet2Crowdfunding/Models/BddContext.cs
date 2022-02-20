@@ -576,7 +576,104 @@ namespace Projet2Crowdfunding.Models
                         Role = "po"
                     }
 
-                }
+                },
+
+                 new ProjectOwner
+                 {
+                     Id = 7,
+                     PhoneNumber = "0821525658",
+                     Name = "FRANCEOlympique",
+                     Summary = "Le comte Jean de Beaumont (1975-1980), les Transalpins Franco Carraro (1980-1989) et Mario Pescante (2001-2006), le Belge Jacques Rogge (1989-2001) et actuellement l’Irlandais Patrick Hickey ont successivement présidé l’association." +
+                     "Au fil des années," +
+                     "l’ACNOE que l’on désigne aujourd’hui sous l’appellation “les Comités olympiques européens” (COE),a vu le nombre de ses membres croître," +
+                     "atteignant 50 CNO régulièrement réunis à Rome,siège de l’association depuis 1989.Les Comités d’organisation des Jeux olympiques(COJO) sont des invités réguliers de ces rassemblements.Le 29 juillet 2006," +
+                     "l'Assemblée générale extraordinaire tenue à Rome, élit Patrick Hickey (IRL), président, et Raffaele Pagnozzi (ITA), secrétaire général." +
+                     "L’ACNOE s’est fixée pour objectifs statutaires la diffusion en Europe des idéaux olympiques définis par la Charte Olympique," +
+                     "l’éducation de la jeunesse par le sport et le développement des programmes de la Solidarité Olympique ainsi que la promotion de la coopération des CNO européens par la recherche," +
+                     "l’étude de sujets d’intérêts communs,l’échange d’information et la défense de positions conjointes.",
+                     HyperLink = "https://international.franceolympique.com/international/",
+
+                     VolunteerDescritpion = "Vous souhaitez rejoindre Association Franceolympique ? " +
+                    "Notre équipe Mobilisation est là pour répondre à vos questions, rendre votre volontariat plus simple et vivre une expérience unique !" +
+                    " N'hésitez pas à la contacter par mail : franceolympique@france.hi.org.",
+
+                     Partnership = "airbnb, Allianz, Athos",
+
+                     Type = ProjectOwnerType.Association,
+                     AssociationProof = "/JustificatifsPP/franceolympiqueproof.png",
+                     Image = "/ImageAssos/franceolympiquelogo.png",
+                     Status = AssoStatus.registered,
+
+                     Newsletter = true,
+                     ConfidentialityCharter = true,
+
+                     Address = new Address
+                     {
+                         Id = 11,
+                         StreetName = "avenue de France",
+                         StreetNumber = "78",
+                         ZipCode = "75012",
+                         City = "Paris",
+                         Country = "France"
+                     },
+
+
+                     Account = new Account
+                     {
+                         Id = 15,
+                         Mail = "franceOlymique@gmail.com",
+                         Password = AccountService.EncodeMD5("france"),
+                         Role = "po"
+                     }
+
+                 },
+
+
+                 new ProjectOwner
+                 {
+                     Id = 8,
+                     PhoneNumber = "0652141213",
+                     Name = "Drepacare",
+                     Summary = "Fondé en 2010, l’association a pour but :De soutenir les malades atteints de maladies génétiques du globule rouge en particulier la Drépanocytose,ainsi que leur famille." +
+                     "De contribuer à la diffusion des informations concernant le dépistage,le suivi et les méthodes de traitements de ces maladies De favoriser la recherche scientifique." +
+                     "D’aider,de soutenir et favoriser la recherche scientifique." +
+                     "De servir de trait d’union entre les malades atteints de maladies héréditaires du globule rouge,les hôpitaux et les institutions administratives.Mener des actions à l’échelle nationale et internationale.",
+                     HyperLink = "https://www.drepa31.fr/",
+
+                     VolunteerDescritpion = "Devenir membre de l’association Drepacare c’est s’engager en tant que bénévole." +
+                     "L’association Drepa31est une association dirigée par des bénévoles!Vous ou un de vos proches êtes touchés par la drépanocytose ?Vous avez un talent ? Vous souhaitez le mettre à profit de notre association ?" +
+                     "N’hésitez pas à nous rejoindre et adhérez à l’association Drepacare et devenir membre de l’Association DREPA31 pour une cotisation annuelle de 10€.",
+
+                     Partnership = "Assurance maladie, mairie de toulouse, MCGRE",
+
+                     Type = ProjectOwnerType.Association,
+                     AssociationProof = "/JustificatifsPP/drepacareproof.png",
+                     Image = "/ImageAssos/drepacarelogo.png",
+                     Status = AssoStatus.registered,
+
+                     Newsletter = true,
+                     ConfidentialityCharter = true,
+
+                     Address = new Address
+                     {
+                         Id = 12,
+                         StreetName = "place du dr joseph Baylac",
+                         StreetNumber = "1",
+                         ZipCode = "31300",
+                         City = "Toulouse",
+                         Country = "France"
+                     },
+
+
+                     Account = new Account
+                     {
+                         Id = 16,
+                         Mail = "drepacare@gmail.com",
+                         Password = AccountService.EncodeMD5("drepacare"),
+                         Role = "po"
+                     }
+
+                 }
 
             );
 
@@ -820,7 +917,9 @@ namespace Projet2Crowdfunding.Models
                     " de la nationalisation des équipes de coordination. Amail Bendedda, formatrice associée Bioforce qui a animé l’ensemble de ces sessions, précise :" +
                     " « Pour monter cette formation, je me suis concentrée sur les aspects efficaces et simples des méthodes et des outils de management afin qu’ils soient" +
                     " tout de suite utiles et utilisables. S’extraire une semaine des opérations c’est complexe et je me devais de rendre cette formation « pratico-pratique »" +
-                    " en intégrant de la théorie et de la réflexion. Il y a eu de magnifiques prises de conscience de certaines attitudes et croyances sur le management et leadership. Mon travail est essentiel à ce niveau-là et le coaching et la médiation m’aident énormément : établir un environnement de confiance et de sécurité pour permettre aux participants une remise en question en toute bienveillance, et ainsi " +
+                    " en intégrant de la théorie et de la réflexion. Il y a eu de magnifiques prises de conscience de certaines attitudes et croyances sur le management et leadership." +
+                    " Mon travail est essentiel à ce niveau-là et le coaching et la médiation m’aident énormément : établir un environnement de confiance et de sécurité pour permettre aux " +
+                    "participants une remise en question en toute bienveillance, et ainsi " +
                     "être en mesure d’accueillir d’autres façons de faire, plus adaptées et davantage tournées vers l’Autre. »",
 
 
@@ -845,64 +944,117 @@ namespace Projet2Crowdfunding.Models
                     "de rassembler différents services proposés aux fédérations en leur permettant de renforcer " +
                     "leur position dans leur environnement international propre, au service du sport français.",
 
-
-
                     Descritpion = "SOUTIEN FINANCIER DES ACTIONS STRATÉGIQUES DES FÉDÉRATIONS" +
                     "Un budget est consacré au soutien financier des actions internationales présentant le plus fort intérêt stratégique pour le sport français :" +
                     " Candidatures à des postes de dirigeants dans les instances sportives internationales ;• Candidatureet organisations d’événements institutionnels;" +
                     "• Déplacements institutionnels à l’étranger;• Accueil du Président de la Fédération internationale en France;" +
                     "• Création et développement d’unions francophones.ACCOMPAGNEMENT DES CANDIDATURES" +
                     "En complément du soutien financier, les fédérations peuvent solliciter le PAIF pour un accompagnement stratégique et opérationnel de leurs candidatures à des postes à responsabilité dans les instances sportives internationales et à l’organisation de grands événements sportifs." +
-                    "A titre d’exemple le CNOSF a accompagné Jean-Christophe Rolland dans sa candidature au poste de Président de la Fédération internationale des sociétés d’aviron et la Fédération française de lutte dans l’obtention des championnats du monde 2017.",
-
+                    "A titre d’exemple le CNOSF a accompagné Jean-Christophe Rolland dans sa candidature au poste de Président de la Fédération internationale des sociétés " +
+                    "d’aviron et la Fédération française de lutte dans l’obtention des championnats du monde 2017.",
 
                     Picture = "/ImagesProject/olympiqueimage.jpeg",
                     Category = Category.Autre,
                     StartDate = new DateTime(2022, 1, 9, 20, 5, 8, 245),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 245),
                     Video = "/VideosProject/olympiquevideo.html",
-                    MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
+                    MaterialDonation = "Materiaux sportifs",
                     Location = "International",
                     ProjectOwnerId = 6,
                     HeartCounter = 7
-                }
+                },
+
+                 new Project
+                 {
+                     Id = 8,
+                     Status = Status.sumittedForPublishing,
+                     Name = "Amélioration de la prise en charge des drépanocytaires",
+
+                     Summary = "Amélioration du diagnostic, la prise en charge médicale et l’insertion sociale des drépanocytaires en Afrique subsaharienne et" +
+                     " entreprendre un plaidoyer et une capitalisation efficace pour pérenniser l’action.",
+
+                     Descritpion = "La drépanocytose est la première maladie génétique dans le monde. Elle affecte le sang et se traduit par des crises d’une intense douleur, une anémie et un risque accru d’infections. En Afrique subsaharienne, près de 2 % des nouveau-nés sont touchés par la maladie et 50 à 75 % d’entre eux meurent avant l’âge de cinq ans. De plus, les drépanocytaires souffrent d’exclusion en raison de l’ignorance et des préjugés liés à cette maladie." +
+                     "L’enjeu est d’améliorer la prise en charge médicale et l’intégration sociale des drépanocytaire au Cameroun," +
+                     "au Congo,en Côte d’Ivoire,à Madagascar et en RDC.Le programme propose de mettre en place le dépistage systématique dans près de 80 maternités partenaires," +
+                     "de former le personnel de santé à la prise en charge de la maladie et d’accompagner les familles  par l’éducation thérapeutique.Une sensibilisation de la population sera également menée." +
+                     "Le programme vise aussi à renforcer le réseau d’Afrique Centrale(REDAC) afin de promouvoir les échanges scientifiques et à assurer  un plaidoyer auprès des États." +
+                     "ONG accompagne le développement humain et économiquedes pays où il intervient, à travers trois cœurs de métier : laformation technique et l’insertion professionnelle, l’appui aux" +
+                     "petites entreprises, et l’accès des personnes vulnérables àl’éducation et à la santé. Avec ses partenaires, il bâtit desenvironnements permettant à toute personne de révéler ses" +
+                     "talents, se construire un avenir meilleur et devenir un acteur responsable dans son pays",
+
+
+                     Picture = "/ImagesProject/drepacareimage.jpeg",
+                     Category = Category.Santé,
+                     StartDate = new DateTime(2021, 12, 9, 20, 5, 8, 245),
+                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 245),
+                     Video = "/VideosProject/drepacarevideo.html",
+                     MaterialDonation = "",
+                     Location = "Afrique",
+                     ProjectOwnerId = 7,
+                     HeartCounter = 8
+                 }
             );
             this.Favorites.AddRange(
                 new Favorite
                 {
                     Id = 1,
-                    
-                    ProjectId=1,
-                    ParticipantId=1
+
+                    ProjectId = 1,
+                    ParticipantId = 1
                 },
                 new Favorite
                 {
                     Id = 2,
-                    
+
                     ProjectId = 2,
                     ParticipantId = 1
                 },
                 new Favorite
                 {
                     Id = 3,
-                    
+
                     ProjectId = 3,
                     ParticipantId = 3
                 },
                 new Favorite
                 {
                     Id = 4,
-                    
+
                     ProjectId = 3,
                     ParticipantId = 4
                 },
                 new Favorite
                 {
                     Id = 5,
-                   
+
                     ProjectId = 5,
                     ParticipantId = 4
+                },
+
+                new Favorite
+                {
+                    Id = 6,
+
+                    ProjectId = 6,
+                    ParticipantId = 3
+                },
+
+                new Favorite
+                {
+                    Id = 7,
+
+                    ProjectId = 7,
+                    ParticipantId = 4
+                },
+
+                new Favorite
+                {
+                    Id = 8,
+
+                    ProjectId = 8,
+                    ParticipantId = 4
                 }
+
                 ) ;
             this.Steps.AddRange(
                 new Step
