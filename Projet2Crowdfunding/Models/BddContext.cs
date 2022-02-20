@@ -937,7 +937,7 @@ namespace Projet2Crowdfunding.Models
                 new Project
                 {
                     Id = 7,
-                    Status = Status.sumittedForPublishing,
+                    Status = Status.Publié,
                     Name = "PROGRAMME D’ACCOMPAGNEMENT INTERNATIONAL DES FÉDÉRATIONS",
 
                     Summary = "Le Programme d’accompagnement international des fédérations (PAIF) a pour objectif " +
@@ -960,14 +960,14 @@ namespace Projet2Crowdfunding.Models
                     Video = "/VideosProject/olympiquevideo.html",
                     MaterialDonation = "Materiaux sportifs",
                     Location = "International",
-                    ProjectOwnerId = 6,
+                    ProjectOwnerId = 1,
                     HeartCounter = 7
                 },
 
                  new Project
                  {
                      Id = 8,
-                     Status = Status.sumittedForPublishing,
+                     Status = Status.Publié,
                      Name = "Amélioration de la prise en charge des drépanocytaires",
 
                      Summary = "Amélioration du diagnostic, la prise en charge médicale et l’insertion sociale des drépanocytaires en Afrique subsaharienne et" +
@@ -990,7 +990,7 @@ namespace Projet2Crowdfunding.Models
                      Video = "/VideosProject/drepacarevideo.html",
                      MaterialDonation = "Don de sang, Don de materiaux de soins",
                      Location = "Afrique",
-                     ProjectOwnerId = 7,
+                     ProjectOwnerId = 4,
                      HeartCounter = 8
                  }
 
@@ -1214,6 +1214,7 @@ namespace Projet2Crowdfunding.Models
                       ProjectId = 5
                   }
                 );
+
             ////Instances PPs
             this.Collections.AddRange(
                 new Collection
@@ -1223,24 +1224,50 @@ namespace Projet2Crowdfunding.Models
                 },
                 new Collection
                 {
-                    Amount = 20,
+                    Amount = 0,
                     ProjectId = 2
                 },
                 new Collection
                 {
-                    Amount = 250,
+                    Amount = 2050,
                     ProjectId = 3
                 },
                 new Collection
                 {
-                    Amount = 3000,
+                    Amount = 0,
                     ProjectId = 4
                 },
                 new Collection
                 {
-                    Amount = 1480,
+                    Amount = 1350,
                     ProjectId = 5
+                },
+                 new Collection
+                 {
+                     Amount = 300,
+                     ProjectId = 6
+                 },
+                new Collection
+                {
+                    Amount = 40,
+                    ProjectId = 7
+                },
+                new Collection
+                {
+                    Amount = 150,
+                    ProjectId = 8
+                },
+                new Collection
+                {
+                    Amount = 10500,
+                    ProjectId = 9
+                },
+                new Collection
+                {
+                    Amount = 6480,
+                    ProjectId = 10
                 }
+
             );
 
 

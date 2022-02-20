@@ -6,6 +6,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>Dashboard</title>
 
+
+
 @section Menu
 {
     @if (Model.Authentify)
@@ -13,10 +15,10 @@
         if (Model.Account.Role == "participant")
         {
             <div class="col-md-8 d-flex justify-content-around">
-                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
                 <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-active" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
@@ -25,10 +27,10 @@
         else if (Model.Account.Role == "po")
         {
             <div class="col-md-8 d-flex justify-content-around">
-                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
                 <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-active" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
@@ -37,10 +39,10 @@
         else // role == "admin"
         {
             <div class="col-md-8 d-flex justify-content-around">
-                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
                 <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-active" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
@@ -50,15 +52,16 @@
     else
     {
         <div class="col-md-8 d-flex justify-content-around">
-            <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
             <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-            <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
         </div>
         <div class="col-md-2 d-flex justify-content-end align-items-center">
             <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
         </div>
     }
 }
+
 
 <div class="dashboard-container">
     <div class="row">
@@ -226,40 +229,55 @@
                                         <th>Date de fin</th>
                                         <th>Montant récolté</th>
                                         <th>Status</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var Project in Model.ProjectList)
                                     {
                                         string pagelink = "/Project/projectPage/" + Project.Id;
-                                    <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
-                                        <td>@Project.Name</td>
-                                        <td>@Project.Category</td>
-                                        <td>@Project.Location</td>
-                                        <td>@Project.StartDate</td>
-                                        <td>@Project.EndDate</td>
-                                        @foreach (var Collection in Model.CollectionList)
-                                        {
-                                            if (Collection.ProjectId == Project.Id)
+                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
+                                            <td>@Project.Name</td>
+                                            <td>@Project.Category</td>
+                                            <td>@Project.Location</td>
+                                            <td>@Project.StartDate</td>
+                                            <td>@Project.EndDate</td>
+                                            @foreach (var Collection in Model.CollectionList)
                                             {
+                                                if (Collection.ProjectId == Project.Id)
+                                                {
 
-                                                <td>@Collection.Amount €</td>
+                                                    <td>@Collection.Amount €</td>
+                                                }
                                             }
-                                        }
-                                    <td>
-                                        @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
-                                        {
-                                            <p style="color:red">En attente de validation</p>
-                                        }
-                                        else
-                                        {
-                                    <p style="color:seagreen"> @Project.Status </p>
-                                        }
-                                        </td>
+                                            <td>
+                                                @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                {
+                                                    <p style="color:red">En attente de validation</p>
 
-                                    </tr>
+                                                }
+                                                else if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                {
+                                                    <p style="color:seagreen"> @Project.Status </p>
+                                                }
+                                                else
+                                                {
+                                                    <p> @Project.Status </p>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                {
+                                                    <input type="submit" class="btn btn-outline-dark" value="Modifier" onclick="location.href='@Url.Action("ModfifyProject", "ProjectOwner")'" />
+                                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addressModal">
+                                                        Modifier
+                                                    </button>
+                                                }
+                                            </td>
 
-                                     }
+                                        </tr>
+
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -356,15 +374,15 @@
                                     <fieldset class="d-grid">
                                         @using (Html.BeginForm("ModifyProjectOwnerAddress", "ProjectOwner"))
                                         {
-                                        <div class="form-group">
-                                            @Html.HiddenFor(m => m.ProjectOwner.Id)
-                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.StreetNumber, new { @class = "form-control input-lg mt-2", placeholder = "N°" })
-                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.StreetName, new { @class = "form-control input-lg mt-2", placeholder = "Rue" })
-                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.ZipCode, new { @class = "form-control input-lg mt-2", placeholder = "CP" })
-                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.City, new { @class = "form-control input-lg mt-2", placeholder = "Ville" })
-                                            @Html.TextBoxFor(m => Model.ProjectOwner.Address.Country, new { @class = "form-control input-lg mt-2", placeholder = "Pays" })
-                                        </div>
-                                        <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
+                                            <div class="form-group">
+                                                @Html.HiddenFor(m => m.ProjectOwner.Id)
+                                                @Html.TextBoxFor(m => Model.ProjectOwner.Address.StreetNumber, new { @class = "form-control input-lg mt-2", placeholder = "N°" })
+                                                @Html.TextBoxFor(m => Model.ProjectOwner.Address.StreetName, new { @class = "form-control input-lg mt-2", placeholder = "Rue" })
+                                                @Html.TextBoxFor(m => Model.ProjectOwner.Address.ZipCode, new { @class = "form-control input-lg mt-2", placeholder = "CP" })
+                                                @Html.TextBoxFor(m => Model.ProjectOwner.Address.City, new { @class = "form-control input-lg mt-2", placeholder = "Ville" })
+                                                @Html.TextBoxFor(m => Model.ProjectOwner.Address.Country, new { @class = "form-control input-lg mt-2", placeholder = "Pays" })
+                                            </div>
+                                            <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                         }
                                     </fieldset>
                                 </div>
@@ -452,12 +470,12 @@
                                         @using (Html.BeginForm("ModifyProjectOwnerLogo", "ProjectOwner", FormMethod.Post, new { enctype = "multipart/form-data" }))
                                         {
                                             @Html.HiddenFor(m => m.ProjectOwner.Id)
-                                        <div class="form-group">
-                                            @Html.TextBoxFor(m => m.AssoLogo, new { type = "file" })
-                                        </div>
+                                            <div class="form-group">
+                                                @Html.TextBoxFor(m => m.AssoLogo, new { type = "file" })
+                                            </div>
                                             <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                         }
-                                        </fieldset>
+                                    </fieldset>
                                 </div>
                             </div>
                         </div>
@@ -497,15 +515,15 @@
                                         @using (Html.BeginForm("ModifyProjectOwnerDescription", "ProjectOwner"))
                                         {
                                             @Html.HiddenFor(m => m.ProjectOwner.Id)
-                                        <div class="form-group">
-                                            @Html.TextAreaFor(m => m.ProjectOwner.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4"})
-                                            @Html.TextAreaFor(m => m.ProjectOwner.Description, new { @class = "form-control input-lg mt-2", placeholder = "Description", rows = "4"})
-                                            @Html.TextAreaFor(m => m.ProjectOwner.VolunteerDescritpion, new { @class = "form-control input-lg mt-2", placeholder = "description volontariat", rows = "4"})
-                                            @Html.TextAreaFor(m => m.ProjectOwner.Partnership, new { @class = "form-control input-lg mt-2", placeholder = "Résumé" })
-                                        </div>
+                                            <div class="form-group">
+                                                @Html.TextAreaFor(m => m.ProjectOwner.Summary, new { @class = "form-control input-lg mt-2", placeholder = "Résumé", rows = "4" })
+                                                @Html.TextAreaFor(m => m.ProjectOwner.Description, new { @class = "form-control input-lg mt-2", placeholder = "Description", rows = "4" })
+                                                @Html.TextAreaFor(m => m.ProjectOwner.VolunteerDescritpion, new { @class = "form-control input-lg mt-2", placeholder = "description volontariat", rows = "4" })
+                                                @Html.TextAreaFor(m => m.ProjectOwner.Partnership, new { @class = "form-control input-lg mt-2", placeholder = "Résumé" })
+                                            </div>
                                             <input class="btn btn-primary btn-block mt-3" value="Validez" type="submit">
                                         }
-                                        </fieldset>
+                                    </fieldset>
                                 </div>
                             </div>
                         </div>

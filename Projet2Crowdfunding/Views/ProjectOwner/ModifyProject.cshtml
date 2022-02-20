@@ -1,0 +1,251 @@
+﻿@model Projet2Crowdfunding.ViewModels.AccountViewModel
+@{
+    Layout = "_LayoutDuSite";
+
+}
+<link rel="stylesheet" type="text/css" href="~/css/Login.css">
+<link rel="stylesheet" type="text/css" href="~/css/Home.css">
+
+<title>Inscription porteur de projet</title>
+
+
+
+
+@section Menu
+{
+    @if (Model.Authentify)
+    {
+        if (Model.Account.Role == "participant")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else if (Model.Account.Role == "po")
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+        else // role == "admin"
+        {
+            <div class="col-md-8 d-flex justify-content-around">
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
+            </div>
+            <div class="col-md-2 d-flex justify-content-end align-items-center">
+                <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-8 d-flex justify-content-around">
+            <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-center">
+            <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
+        </div>
+    }
+}
+
+
+
+
+@if (Model.Authentify)
+{
+    if (@Model.Account.Role == "po")
+    {
+
+        <div class="my-5">
+            <fieldset style="width : 1000px; margin:auto">
+
+                <div class="mode-vert">
+                    <h6 style="font-size: 30px; color:dimgray">CRÉATION D'UN PROJET</h6>
+                    <br />
+                </div>
+
+
+
+                @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+            <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+
+                <h6 style="font-size: 26px; text-align: left">CHAMPS REQUIS</h6>
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Project.Name) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Project.Name)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Project.Summary) <br />
+                @Html.TextAreaFor(model => model.Project.Summary, new { @cols = "80", @rows = "4" })
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Project.Descritpion) <br />
+                @Html.TextAreaFor(model => model.Project.Descritpion, new { @cols = "80", @rows = "8" })
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Project.Category) <span> : </span> <br />
+                <span>Animaux </span> @Html.RadioButtonFor(model => model.Project.Category, "Animaux") <span>&nbsp;</span>
+                <span>Environnement </span> @Html.RadioButtonFor(model => model.Project.Category, "Environnement") <span>&nbsp;</span>
+                <span>Humanitaire </span> @Html.RadioButtonFor(model => model.Project.Category, "Humanitaire") <span>&nbsp;</span>
+                <span>Education</span> @Html.RadioButtonFor(model => model.Project.Category, "Education") <span>&nbsp;</span>
+                <span>Santé </span> @Html.RadioButtonFor(model => model.Project.Category, "Santé") <span>&nbsp;</span>
+                <span>Besoins Elémentaires </span> @Html.RadioButtonFor(model => model.Project.Category, "BesoinsElémentaires") <span>&nbsp;</span>
+                <span>Autre </span> @Html.RadioButtonFor(model => model.Project.Category, "Autre")
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Project.Location) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Project.Location)
+
+                <br /><br />
+
+                @Html.LabelFor(model => model.Project.EndDate) <span> &nbsp;</span>
+                @Html.TextBoxFor(model => model.Project.EndDate, new { type = "date" })
+
+
+            <div>
+
+                <br /><br />
+
+                <p style="color:dimgray">PALIERS PROPOSES (
+                <span style="color: rgb(173, 209, 42); font-weight: 500;">Uniquement le prèmier palier est obligatoire</span>
+                )</p>
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.LabelFor(model => model.Step1.Amount) <br />
+                            @Html.TextBoxFor(model => model.Step1.Amount)
+                        </div>
+                        <div class="col-md-8">
+                            @Html.LabelFor(model => model.Step1.Description) <br />
+                            @Html.TextAreaFor(model => model.Step1.Description, new { @cols = "70", @rows = "4" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 pe-3">
+                            @Html.LabelFor(model => model.Step2.Amount) <br />
+                            @Html.TextBoxFor(model => model.Step2.Amount)
+                        </div>
+                        <div class="col-md-8">
+                            @Html.LabelFor(model => model.Step2.Description) <br />
+                            @Html.TextAreaFor(model => model.Step2.Description, new { @cols = "70", @rows = "4" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 pe-3">
+                            @Html.LabelFor(model => model.Step3.Amount) <br />
+                            @Html.TextBoxFor(model => model.Step3.Amount)
+                        </div>
+                        <div class="col-md-8">
+                            @Html.LabelFor(model => model.Step3.Description) <br />
+                            @Html.TextAreaFor(model => model.Step3.Description, new { @cols = "70", @rows = "4" })
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+                <br />
+
+                <div class="text-danger mt-4">
+                    @Html.ValidationMessageFor(model => model.Project)
+                </div>
+
+            </div>
+
+
+                    <br /><br />
+
+                    <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+
+                        <h6 style="font-size: 26px; text-align: left">CHAMPS NON REQUIS</h6>
+
+                        <br /><br />
+
+                        @Html.LabelFor(model => model.ProjectImage) <span>&nbsp;</span>
+                        @Html.TextBoxFor(model => model.ProjectImage, new { type = "file" })
+
+                        <br /><br />
+
+                        @Html.LabelFor(model => model.ProjectVideo) <span>&nbsp;</span>
+                        @Html.TextBoxFor(model => model.ProjectVideo, new { type = "file" })
+
+                        <br /><br />
+
+                        @Html.LabelFor(model => model.Project.MaterialDonation) <br />
+                        @Html.TextAreaFor(model => model.Project.MaterialDonation, new { @cols = "80", @rows = "8" })
+
+                    </div>
+
+                    <br /><br />
+
+                    <button id="bouton-log" type="submit">SOUMETTRE UN PROJET</button>
+
+                }
+
+            </fieldset>
+        </div>
+
+    }
+    else
+    {
+
+        <div>
+            <p style="font-size: 16px; color:dimgray">VEUILLEZ VOUS CONNECTER EN TANT QUE PORTEUR DE PROJET POUR LANCER VOTRE PROJET</p>
+            <a href="/Account/LoginPage" class="hyperlink2">Cliquer ici pour se connecter</a>
+        </div>
+
+        <div>
+            <p style="font-size: 16px; color:dimgray">Envie de publier votre projet sur MACSynergie?</p>
+            <a href="/Account/PPInscription" class="hyperlink2">Inscrivez-vous en tant que Porteur de Projet!</a>
+        </div>
+
+    }
+
+}
+else
+{
+
+    <div class="m-5 p-5">
+        <a href="/Account/LoginPage" class="hyperlink2" style="font-size: 20px; font-weight: 600;">VEUILLEZ VOUS CONNECTER EN TANT QUE PORTEUR DE PROJET POUR LANCER VOTRE PROJET</a>
+    </div>
+
+    <div class="mx-5 mb-5 px-5 pb-5">
+        <p style="font-size: 20px; color:dimgray">Envie de publier votre projet sur MACSynergie?</p>
+        <a href="/Account/PPInscription" class="hyperlink2" style="font-weight: 600;">Inscrivez-vous en tant que Porteur de Projet!</a>
+    </div>
+
+}
+
+
+@section Footer {}
