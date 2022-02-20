@@ -105,7 +105,15 @@ namespace Projet2Crowdfunding.Service
                 project.Status = status;
             ctx.SaveChanges();
         }
-
+        public ProjectOwner GetProjectOwnerFromProjectId(int Id)
+        {
+            BddContext ctx = new BddContext();
+            Project project = ctx.Projects.Find(Id);
+            ProjectOwner projectOwner = this.bddContext.ProjectOwners.FirstOrDefault(p => p.Id == project.ProjectOwnerId);
+            Address address = this.bddContext.Addresses.Find(projectOwner.AddressId);
+            projectOwner.Address = address;
+            return (projectOwner);
+        }
         //public Favorite Favorite { get; set; } à rajouter dans accoutnviewmodel
         //compter les coups de coeur sur un projets
         //******** public void setProjectHeartCounter()

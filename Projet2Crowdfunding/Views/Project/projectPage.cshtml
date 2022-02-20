@@ -266,11 +266,12 @@
                     {
                         @if (Model.Account.Role == "participant")
                         {
+                            string pagelink1 = "/Payments/PaymentPage/" + @Model.Project.Id;
                             <div>
                                 <div class="row" style="padding: 0px 0px 0px 5px">
                                     <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
-
-                                        <a href="/Payments/PaymentPage" class="btn btn-success float-right" width="7px"
+                                        
+                                        <a href="@pagelink1" class="btn btn-success float-right" width="7px"
                                            style="text-decoration:none">
                                             Je veux Contribuer <img style="width:auto;"
                                                                     src="~/Images/ar.png" alt="" />
@@ -278,14 +279,17 @@
                                     </div>
                                     @if (Model.ProjectOwner.VolunteerDescritpion != null)
                                     {
-                                        //string poPagelink = "/ProjectOwner/POPage/" + ProjectOwner.Id;
-                                        <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
-                                            <a href="/ProjectOwner/POPage/2/#contactUs" class="btn btn-success float-left" width="7px"
-                                               style="text-decoration:none" onclick="">
-                                                Je suis bénévole! <img style="width:auto;"
-                                                                       src="~/Images/ar.png" alt="" />
-                                            </a>
-                                        </div>
+                                        
+                                            string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwner.Id;
+
+                                            <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
+                                                <a href="@pagelink/#contactUs" class="btn btn-success float-left" width="7px"
+                                                   style="text-decoration:none" onclick="">
+                                                    Je suis bénévole! <img style="width:auto;"
+                                                                           src="~/Images/ar.png" alt="" />
+                                                </a>
+                                            </div>
+                                        
                                     }
                                     else
                                     {//meme bloc en haut mais sans increment, pop up qui dis inscivez vous pour nous rejoindre
@@ -293,8 +297,10 @@
                                     }
                                 </div>
                             </div>
+
                         }
                     }
+                    
 
                 </div>
             </div>

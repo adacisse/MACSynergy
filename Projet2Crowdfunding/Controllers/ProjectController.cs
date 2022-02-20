@@ -41,6 +41,7 @@ namespace Projet2Crowdfunding.Controllers
 
         {
             AccountViewModel viewModel = new AccountViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
@@ -48,7 +49,7 @@ namespace Projet2Crowdfunding.Controllers
             if (id.HasValue)
             {
                 viewModel.Project = projectService.GetProject(id.Value);
-                viewModel.ProjectOwner = this.bddContext.ProjectOwners.Find(viewModel.Project.ProjectOwnerId);
+                viewModel.ProjectOwner = projectService.GetProjectOwnerFromProjectId(id.Value);
                 viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
                 viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
                 viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
