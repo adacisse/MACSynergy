@@ -149,7 +149,7 @@ namespace Projet2Crowdfunding.Service
             BddContext ctx = new BddContext();
             Project project = ctx.Projects.FirstOrDefault(p => p.Id == idProject);
             project.HeartCounter--;
-            Favorite favorite = ctx.Favorites.FirstOrDefault(f => f.ProjectId == idProject);
+            Favorite favorite = ctx.Favorites.FirstOrDefault(f => f.ProjectId == idProject && f.ParticipantId==idParticipant) ;
             ctx.Favorites.Remove(favorite);
             ctx.SaveChanges();
             return (project);
