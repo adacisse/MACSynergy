@@ -219,7 +219,7 @@
                         </div>
                     </div>
                     <div style="border-bottom:2px solid #d6d6d6; padding:0px 0px 25px 0px;">
-                        <span style="float:left">8000 € récoltés sur 10000 € </span>
+                        <span style="float:left">@Model.Collection.Amount € récoltés sur @Model.ProjectStepsList.First().Amount € </span>
                         <span style="float:right"> @Model.TimeLeftProject.Days Jours restants</span>
                     </div>
                     @if (Model.Authentify)

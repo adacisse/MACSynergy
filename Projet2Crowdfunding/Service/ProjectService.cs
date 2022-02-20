@@ -176,6 +176,14 @@ namespace Projet2Crowdfunding.Service
 
             return favorite != null;
         }
+
+        public Collection GetCollectionByProjectId(int idProject) {
+
+            BddContext ctx = new BddContext();
+            Project project = ctx.Projects.Find(idProject);
+            var collection = ctx.Collections.FirstOrDefault(c => c.ProjectId == idProject);
+            return collection;
+        }
     }
 
     }

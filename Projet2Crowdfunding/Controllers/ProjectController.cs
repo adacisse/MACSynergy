@@ -56,7 +56,9 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.TimeLeftProject = projectService.TimeLeftCalculator(id.Value);
                 viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
                 viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
-               
+                viewModel.Collection = projectService.GetCollectionByProjectId(id.Value);
+
+
             }
 
 

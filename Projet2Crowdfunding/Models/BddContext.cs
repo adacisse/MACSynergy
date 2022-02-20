@@ -1104,7 +1104,7 @@ namespace Projet2Crowdfunding.Models
                      Category = Category.Education,
                      StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
                      EndDate = new DateTime(2021, 12, 19, 15, 6, 8, 245),
-                     Video = "/VideosProject/avenirVideo",
+                     Video = "https://www.youtube.com/embed/K7GIIOYyp3I",///VideosProject/avenirVideo",
                      MaterialDonation = "Materiaux sportifs, kits scolaires",
                      Location = "Paris",
                      ProjectOwnerId = 3,
