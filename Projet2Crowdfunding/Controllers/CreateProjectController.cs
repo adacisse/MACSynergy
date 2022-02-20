@@ -40,7 +40,10 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                if (viewModel.Account.Role == "po")
+                {
+                    viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                }
                 return View(viewModel);
             } 
 
@@ -54,7 +57,7 @@ namespace Projet2Crowdfunding.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
-                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);                 
             }
 
             if (viewModel.Project.Name != null && viewModel.Project.Summary != null &&
