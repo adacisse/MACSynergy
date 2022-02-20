@@ -265,15 +265,16 @@
                                                     <p> @Project.Status </p>
                                                 }
                                             </td>
-                                            <td>
-                                                @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+
+                                            @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                            {
+                                                @Html.BeginForm("ModifyProject", "ProjectOwner", FormMethod.Post)
                                                 {
-                                                    <input type="submit" class="btn btn-outline-dark" value="Modifier" onclick="location.href='@Url.Action("ModfifyProject", "ProjectOwner")'" />
-                                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addressModal">
-                                                        Modifier
-                                                    </button>
+                                                    <td>
+                                                        <button type="submit" class="btn btn-outline-dark">Modifier</button>
+                                                    </td>
                                                 }
-                                            </td>
+                                            }
 
                                         </tr>
 
@@ -541,7 +542,7 @@
 </div>
 
 @section Footer
-    {
+{
     <div class="newsletter-subscribe container">
         <div class="container">
             <div class="intro">

@@ -16,8 +16,8 @@ namespace Projet2Crowdfunding.Service
         }
 
         public int CreateProject(int idPO, string name, string summary, string description, Category? category,
-            string location, DateTime endDate, string image, string video, string materialDonation, 
-            double amount1, string descriptionA1, double amount2, string descriptionA2, 
+            string location, DateTime endDate, string image, string video, string materialDonation,
+            double amount1, string descriptionA1, double amount2, string descriptionA2,
             double amount3, string descriptionA3)
         {
 
@@ -53,7 +53,7 @@ namespace Projet2Crowdfunding.Service
                         break;
                 }
             }
-            
+
 
             Project project = new Project
             {
@@ -104,7 +104,7 @@ namespace Projet2Crowdfunding.Service
                     Project = project
                 };
                 this.bddContext.Steps.Add(step3);
-            } 
+            }
 
             this.bddContext.Projects.Add(project);
             this.bddContext.Collections.Add(collection);
@@ -113,5 +113,47 @@ namespace Projet2Crowdfunding.Service
             return project.Id;
         }
 
+        public void ModifyProject(int idProject, string name, string summary, string description, Category? category,
+           string location, DateTime endDate, string image, string video, string materialDonation,
+           double amount1, string descriptionA1, double amount2, string descriptionA2,
+           double amount3, string descriptionA3)
+        {
+            BddContext ctx = new BddContext();
+            Project project = ctx.Projects.Find(idProject);
+            List<Step> steps = ctx.Steps.Where(s => s.ProjectId == idProject).ToList();
+
+            if (project != null)
+            {
+                project.Name = name;
+                project.Summary = summary;
+                project.Descritpion = description;
+                project.Category = category;
+                project.Location = location;
+                project.EndDate = endDate;
+                project.MaterialDonation = materialDonation;
+                if(image != "")
+                {
+                    project.Picture = image;
+                }
+                if (video != "")
+                {
+                    project.Video = video;
+                }
+
+                steps[0].Amount = amount1;
+                steps[0].Description = descriptionA1;
+                steps[1].Amount = amount2;
+                steps[1].Description = descriptionA2;
+                steps[2].Amount = amount3;
+                steps[2].Description = descriptionA3;
+                
+                ctx.SaveChanges();
+            }
+        }
+
+
     }
 }
+
+
+
