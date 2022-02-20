@@ -6,6 +6,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <title>Dashboard</title>
 
+
+
+
 @section Menu
 {
     @if (Model.Authentify)
@@ -13,10 +16,10 @@
         if (Model.Account.Role == "participant")
         {
             <div class="col-md-8 d-flex justify-content-around">
-                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
                 <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-active" href="/Participant/PDashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
@@ -25,10 +28,10 @@
         else if (Model.Account.Role == "po")
         {
             <div class="col-md-8 d-flex justify-content-around">
-                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
                 <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-active" href="/ProjectOwner/PODashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
@@ -37,10 +40,10 @@
         else // role == "admin"
         {
             <div class="col-md-8 d-flex justify-content-around">
-                <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+                <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
                 <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
-                <a class="nav-link" id="nav-elements" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
+                <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
+                <a class="nav-link" id="nav-active" href="/Admin/AdminDashboard"><strong>MON COMPTE</strong></a>
             </div>
             <div class="col-md-2 d-flex justify-content-end align-items-center">
                 <a id="bouton-log" href="/Account/Deconnexion">SE DECONNECTER</a>
@@ -50,15 +53,18 @@
     else
     {
         <div class="col-md-8 d-flex justify-content-around">
-            <a class="nav-link" id="nav-active" href="/Home/Index"><strong>HOME</strong></a>
+            <a class="nav-link" id="nav-elements" href="/Home/Index"><strong>HOME</strong></a>
             <a class="nav-link" id="nav-elements" href="/Project/Index"><strong>DECOUVRIR UN PROJET</strong></a>
-            <a class="nav-link" id="nav-elements" href="#"><strong>LANCER UN PROJET</strong></a>
+            <a class="nav-link" id="nav-elements" href="/CreateProject/Index"><strong>LANCER UN PROJET</strong></a>
         </div>
         <div class="col-md-2 d-flex justify-content-end align-items-center">
             <a id="bouton-log" href="/Account/LoginPage">SE CONNECTER</a>
         </div>
     }
 }
+
+
+
 
 <div class="dashboard-container">
     <div class="row">
@@ -608,7 +614,8 @@
 }
 
 <!-- The ProjectStatusModalModal -->
-@foreach (var project in Model.ProjectList) {
+@foreach (var project in Model.ProjectList)
+{
     <div class="modal" id="projectStatusModal@(project.Id)">
         <div class="modal-dialog">
             <div class="modal-content">
