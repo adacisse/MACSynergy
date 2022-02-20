@@ -199,5 +199,26 @@ namespace Projet2Crowdfunding.Service
 
             return PercentageInProgressBar;
         }
+
+        public List<Project> GetProjectDonationFromParticipant(int idParticipant)
+        {
+            List<Project> DonationProjectsList = new List<Project>();
+
+            var donation = bddContext.Donations.Where(d => d.ParticipantId == idParticipant).ToList();
+            foreach (Donation don in donation)
+            {
+                Collection collection = bddContext.Collections.Find(don.CollectionId);
+                Project donationProject = bddContext.Projects.Find(collection.ProjectId);
+
+                DonationProjectsList.Add(donationProject);
+
+            }
+            return (DonationProjectsList);
+        }
+        public List<Donation> GetDonationFromParticipant(int idParticipant)
+        {
+            List<Donation> DonationList = bddContext.Donations.Where(d => d.ParticipantId == idParticipant).ToList();
+            return (DonationList);
+        }
     }
     }

@@ -33,6 +33,8 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
                 viewModel.Participant = accountService.GetParticipantFromAccountId(viewModel.Account.Id);
                 viewModel.ProjectList = projectService.GetFavorites(viewModel.Participant.Id);
+                viewModel.ProjectList2 = projectService.GetProjectDonationFromParticipant(viewModel.Participant.Id);
+                viewModel.DonationList = projectService.GetDonationFromParticipant(viewModel.Participant.Id);
                 viewModel.CollectionList = projectService.GetAllCollections();
                 return View(viewModel);
             }

@@ -27,6 +27,7 @@ namespace Projet2Crowdfunding.ViewModels
         public Step Step3 { get; set; }
 
         public List<Project> ProjectList { get; set; }
+        public List<Project> ProjectList2 { get; set; }
 
         public List<Project> ProjectListClosed { get; set; }
 

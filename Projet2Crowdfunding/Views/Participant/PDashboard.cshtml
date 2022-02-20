@@ -268,33 +268,22 @@
                                         <th>Nom</th>
                                         <th>Catégorie</th>
                                         <th>Localisation</th>
-                                        <th>Date du paiement</th>
                                         <th>Montant payé</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @*@foreach (var Project in Model.ProjectList)
-                                        {
-                                            string pagelink = "/Project/projectPage/" + Project.Id;
+                                    @for (int i = 0; i < Model.ProjectList2.Count; i++)
+                                    {
+                                        string pagelink = "/Project/projectPage/" + @Model.ProjectList2[i].Id;
                                             <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
-                                                <td>@Project.Name</td>
-                                                <td>@Project.Category</td>
-                                                <td>@Project.Location</td>
-                                                <td>@Project.StartDate</td>
-                                                <td>@Project.EndDate</td>
-                                                @foreach (var Collection in Model.CollectionList)
-                                                {
-                                                    if (Collection.ProjectId == Project.Id)
-                                                    {
-
-                                                        <td>@Collection.Amount €</td>
-                                                    }
-                                                }
-
+                                                <td>@Model.ProjectList2[i].Name</td>
+                                                <td>@Model.ProjectList2[i].Category</td>
+                                                <td>@Model.ProjectList2[i].Location</td>
+                                                <td>@Model.DonationList[i].Amount</td>
 
                                             </tr>
 
-                                        }*@
+                                        }
                                 </tbody>
                             </table>
                         </div>
