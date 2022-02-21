@@ -193,11 +193,9 @@ namespace Projet2Crowdfunding.Service
             }
             return (MyfavoritesList);
         }
-        public float PercentageProgressBar(int idProject) {
-
-            double un = GetCollectionByProjectId(idProject).Amount * 100;
-            double deux = GetStepsFromProjectId(idProject).First().Amount;
-            float PercentageInProgressBar = (float)(un / deux);
+        public float PercentageProgressBar(int idProject) 
+        {
+            int PercentageInProgressBar = (int)(GetCollectionByProjectId(idProject).Amount * 100 / GetStepsFromProjectId(idProject).First().Amount);
 
             return PercentageInProgressBar;
         }

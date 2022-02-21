@@ -7,6 +7,21 @@
 <title>Project</title>
 <link rel="stylesheet" type="text/css" href="~/css/grid.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .progress {
+        position: relative;
+    }
+
+        .progress span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            color: black;
+        }
+</style>
+
+
 <script>
     function myFunction() {
         document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
@@ -213,6 +228,7 @@
                     <div class="progress" style="padding:0px 0px 0px 0px;">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: ViewBag.Percentage%">
                             @ViewBag.Percentage %
+                            @*<span>@ViewBag.Percentage %</span>*@
                         </div>
                     </div>
 
