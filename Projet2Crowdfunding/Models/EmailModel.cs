@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Models
 {
-    public class MailRequest
+    public class EmailModel
     {
-        public string ToEmail { get; set; }
+        public string To { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
-        public List<IFormFile> Attachments { get; set; }
-
+        public IFormFile Attachment { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }

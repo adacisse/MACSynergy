@@ -756,9 +756,7 @@ namespace Projet2Crowdfunding.Models
                     MaterialDonation = "Médicaments, Matériaux informatiques",
                     Location="Iceland",
                     ProjectOwnerId=1,
-                    HeartCounter=0
-
-
+                    HeartCounter=1
                 },
 
                 new Project
