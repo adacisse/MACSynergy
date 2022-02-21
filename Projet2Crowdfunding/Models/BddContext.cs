@@ -64,7 +64,7 @@ namespace Projet2Crowdfunding.Models
                     Account = new Account
                     {
                         Id = 1,
-                        Mail = "adacisse@gmail.com",
+                        Mail = "adacisse90@gmail.com",
                         Password = AccountService.EncodeMD5("aaaaa"),
                         Role ="participant"
                     }
