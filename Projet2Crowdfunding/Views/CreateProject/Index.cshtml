@@ -70,7 +70,7 @@
 
 @if (Model.Authentify)
 {
-    if (@Model.Account.Role == "po")
+    if (@Model.Account.Role == "po" && Model.IsPOValidated)
     {
 
         <div class="my-5">
@@ -218,6 +218,13 @@
             </fieldset>
         </div>
 
+    }
+    else if (@Model.Account.Role == "po")
+    {
+        <div class="m-5 p-5">
+            <p style="font-size: 20px; color:dimgray">Votre compte n'a pas été validé.</p> <br/><br/>
+            <p style="font-size: 20px; color:dimgray">Veuillez s'il vous plâit attendre la validation de votre compte pour pouvoir lancer votre projet.</p>
+        </div>
     }
     else
     {

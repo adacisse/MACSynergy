@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
 using Projet2Crowdfunding.ViewModels;
 using System;
@@ -43,6 +44,7 @@ namespace Projet2Crowdfunding.Controllers
                 if (viewModel.Account.Role == "po")
                 {
                     viewModel.ProjectOwner = accountService.GetProjectOwnerFromAccountId(viewModel.Account.Id);
+                    viewModel.IsPOValidated = viewModel.ProjectOwner.Status == AssoStatus.published;
                 }
                 return View(viewModel);
             } 

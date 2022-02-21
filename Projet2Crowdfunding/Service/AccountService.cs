@@ -38,6 +38,15 @@ namespace Projet2Crowdfunding.Service
 
         public int CreateParticipant(int idAccount, string lastName, string firstname)
         {
+            Address address = new Address()
+            {
+                StreetName = "",
+                StreetNumber = "",
+                ZipCode = "",
+                City = "",
+                Country = "",
+            };
+
             Participant participant = new Participant()
             {
                 FirstName = firstname,
@@ -45,6 +54,8 @@ namespace Projet2Crowdfunding.Service
                 Newsletter = false,
                 ConfidentialityCharter = true,
                 AccountId = idAccount,
+                Address = address,
+                PhoneNumber = ""
                 //Gender = null
             };
 
@@ -93,7 +104,7 @@ namespace Projet2Crowdfunding.Service
 
             Account account = GetAllAccounts().FirstOrDefault(r => r.Id == idAccount);
             if (account != null)
-                account.Role = "participant";
+                account.Role = "po";
 
             this.bddContext.ProjectOwners.Add(projectOwner);
             this.bddContext.SaveChanges();
@@ -114,12 +125,11 @@ namespace Projet2Crowdfunding.Service
 
             Account account = GetAllAccounts().FirstOrDefault(r => r.Id == idAccount);
             if (account != null)
-                account.Role = "participant";
+                account.Role = "admin";
 
             this.bddContext.Administrators.Add(administrator);
             this.bddContext.SaveChanges();
             return administrator.Id;
-
         }
 
         public Account Login(string mail, string password)
@@ -226,7 +236,7 @@ namespace Projet2Crowdfunding.Service
             return (projet);
         }
 
-
+      
         public void Dispose()
         {
             bddContext.Dispose();

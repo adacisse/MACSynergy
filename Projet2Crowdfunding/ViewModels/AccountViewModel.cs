@@ -68,5 +68,7 @@ namespace Projet2Crowdfunding.ViewModels
         public List<Favorite> MyFavoritesList { get; set; }
 
         public int HeartCounter { get; set; }
+
+        public Boolean IsPOValidated { get; set; }
     }
 }
