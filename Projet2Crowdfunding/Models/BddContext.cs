@@ -1098,7 +1098,7 @@ namespace Projet2Crowdfunding.Models
                     "et de l’Education nationale." +
                     "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
 
-                     Picture = "/ImagesProject/avenirimage.jpeg",
+                     Picture = "/ImagesProject/avenirimage.jpg",
                      Category = Category.Education,
                      StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
                      EndDate = new DateTime(2021, 12, 19, 15, 6, 8, 245),

@@ -72,27 +72,18 @@ namespace Projet2Crowdfunding.Controllers
 
             using (MailMessage mm = new MailMessage("macssynergy@gmail.com", mailTo))
             {
-                mm.Subject = "Newsletter de MACSynergy";
-                //if (viewModel.Participant != null)
-                    //{
-                    //    mm.Body = "Bienvenue " + viewModel.Participant.FirstName + " sur la Newletter de MACSynergy.\n\n Nous vous tiendrons informés de nouveautés sur notre site.\n\n\n A bientôt sur MACSYnergy!!";
-                    //}
-                    //else
-                    //{
-                    //    mm.Body = "Bienvenue sur la Newletter de MACSynergy.\n\n Nous vous tiendrons informés de nouveautés sur notre site.\n\n\n A bientôt sur MACSYnergy!!";
-                    //}
+                mm.Subject = "Newsletter de MACSynergy";                
+                mm.Body = "Bienvenue sur la Newletter de MACSynergy.\n\n\nNous vous tiendrons informés de nouveautés sur notre site.\n\n\nA bientôt sur MACSYnergy!!";
+                   
+                    //mm.IsBodyHtml = true;
+                    //var doc = new HtmlDocument();
+                    //FileStream htmlPath = new FileStream(_env.WebRootPath + "\\html\\Newsletter.html", FileMode.Open);
+                    //doc.Load(htmlPath);
+                    //mm.Body = doc.DocumentNode.OuterHtml;
 
+                mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "\\wwwroot\\Images\\logoMacSynergy.png"));
 
-
-                    mm.IsBodyHtml = true;
-                    var doc = new HtmlDocument();
-                    FileStream htmlPath = new FileStream(_env.WebRootPath + "\\html\\Newsletter.html", FileMode.Open);
-                    doc.Load(htmlPath);
-                    mm.Body = doc.DocumentNode.OuterHtml;
-
-                    mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "\\wwwroot\\Images\\logoMacSynergy.png"));
-
-                //mm.IsBodyHtml = false;
+                mm.IsBodyHtml = false;
                 using (SmtpClient smtp = new SmtpClient())
                 {
                     smtp.Host = "smtp.gmail.com";
