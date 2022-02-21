@@ -1107,7 +1107,131 @@ namespace Projet2Crowdfunding.Models
                      Location = "Paris",
                      ProjectOwnerId = 3,
                      HeartCounter = 0
-                 }
+                 },
+
+                 new Project
+                 {
+                     Id = 11,
+                     Status = Status.Publié,
+                     Name = "Projet Kirikou - Mini Transat 2022",
+
+                     Summary = "Et bien cette fois ce n'est pas un petit garçon qui combat une terrible sorcière, mais presque !" +
+                     "KIRIKOU est un voilier de 6m50," +
+                     "un petit bateau en bois! Mais c'est aussi un projet qui est à l'initiative de Léo Béroud, un jeune montagnard devenu marin. Après avoir eu la drôle d'idée d'aller naviguer en Polynésie suite à son bac," +
+                     "il décide de se lancer dans un projet un peu fou : participer à la mini transatlantique!",
+
+                     Descritpion = "KIRIKOU est un projet sur deux ans, mais il faut déjà commencer à s'équiper pour gravir cette montagne, car la route est longue jusqu'aux Antilles ! " +
+                     "C'est pourquoi Kirikou besoin de vous pour : Des vêtements chauds pour que son skipper tienne la barre malgré le vent et le mauvais temps." +
+                     "Des vivres! Parce que sur un bateau qui n'a pas de toilettes ni de lit, un plat chaud c'est tout ce qu'il faut ! " +
+                     "La place de port à Concarneau pour que Kirikou soit à l'abri des tempêtes hivernales, ainsi que son entretien général : cordages, matériel de sécurité.. Et si on dépasse l'objectif de 6 000 € ? " +
+                     "Et bien nous nous rapprocherons un peu plus du sommet!  Cela permettra de participer pour les inscriptions aux courses de qualifications ainsi que les places de port." +
+                     "Car  Kirikou va sillonner les eaux Bretonnes pendant 2 ans pour être sélectionné," +
+                     "prêt à traverser l'atlantique et partager des connaissances sur le territoire !" +
+                     "n montagnard qui devient marin,drôle d'idée ?Je m'appelle Léo," +
+                     " j'ai 22 ans.Je suis né et j'ai grandi en montagne, très loin de la mer !À trois ans, je monte sur des skis, à dix huit, je deviens pisteur-secouriste." +
+                     "Proche des cimes enneigées et des parois,es aventures montagneuses m'emmènent toujours plus loin et plus haut : en escalade, en ski ou en speed riding." +
+                     "Pendant longtemps," +
+                     "j'évolue loin de la mer et des voiles qui la parcourent !Et puis en 2018.." +
+                     "J'atterri en Polynésie. Après avoir dépassé ma peur de l'eau,(aujourd'hui encore je préfère être au dessus !) je plonge dans le grand bain et j'entends parler des bateaux à voile : ce sera mon moyen de déplacement.",
+
+                     Picture = "/ImagesProject/kirikouimage.png",
+                     Category = Category.Environnement,
+                     StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
+                     EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
+                     Video = "https://www.youtube.com/embed/0vhgdzn1IjM",///VideosProject/kirikouVideo",
+                     MaterialDonation = "Materiaux de la mer",
+                     Location = "Bordeau",
+                     ProjectOwnerId = 3,
+                     HeartCounter = 0
+                 },
+
+                  new Project
+                  {
+                      Id = 12,
+                      Status = Status.Publié,
+                      Name = "C'est pas mes oignons",
+
+                      Summary = "C'est pas mes oignons est un projet de commerce primeur, vrac et épicerie locale qui à pour objectif principal de vous régaler en vous proposant une sélection attentive de " +
+                      "produits issus de l'agriculture biologique ou naturelle (sans utilisation de pesticides). ",
+
+                      Descritpion = "Et bien, c'est avant tout regrouper un maximum de producteurs, transformateurs du coin qui m'ont déjà tapé dans les papilles et m'ont touché par leur éthique de production. " +
+                      "Le bassin maraîcher des environs étant tellement riche, il serait tellement dommage de ne pas profiter de la fraîcheur des produits de saison !! Vous ne trouvez pas ?" +
+                      "Les plantations de cacao,de bananes,d'avocats, de canne à sucre, de café et autres produits plus exotiques n'étant pas monnaie courante dans le coin,j'ai néanmoins réussi à me créer un réseau de grossistes " +
+                      "locaux ayant fait la démarche de recherche de producteurs respectant l'environnement,Une surface de vente sur Plouigneau de 50 m2 proposant :" +
+                      "Un beau rayon fruits et légumes(ma spécialité!) respectant la saisonnalité.Une quarantaine de références vrac proposant des légumineux,des féculents,du sucre,de la farine etc...Du cidre," +
+                      "de la bière,des jus et des sirops transformés dans le coin.Des plantes aromatiques et médicinales cultivées," +
+                      "séchées et conditionnées sur la commune.Du pain fait par un paysan boulanger du secteur(sa farine sera également disponible en vrac!!'humain et le produit.",
+
+                      Picture = "/ImagesProject/oignon.png",
+                      Category = Category.Autre,
+                      StartDate = new DateTime(2022, 1, 11, 10, 7, 8, 245),
+                      EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
+                      Video = "https://www.youtube.com/embed/eLGf2zWMdfc",///VideosProject/oignonVideo",
+                      MaterialDonation = "balances, Materiaux informatiques",
+                      Location = "Porto",
+                      ProjectOwnerId = 2,
+                      HeartCounter = 0
+                  },
+
+                  new Project
+                  {
+                      Id = 13,
+                      Status = Status.Publié,
+                      Name = "Création d'une maison d'édition sur le deuil",
+
+                      Summary = "La maison d'édition Résilience est créée pour donner la parole aux personnes vivants" +
+                      " un deuil suite à la perte d'un proche (enfant, conjoint(e), animaux, …)Pourquoi ce projet ?En France," +
+                      "il y a des mots à bannir : Mort,deuil,souffrance et pour cause! Ils font peur… " +
+                      "Ces mots sont anxiogènes ou susceptibles d'engendrer de la peur. ",
+
+                      Descritpion = "Souvent, les personnes endeuillées se retrouvent dans un silence, sans la possibilité d'expliquer leur parcours, de partager leurs émotions, ils se sentent incompris, ils vivent une forme d'exclusion de la société. Pourtant, rien de tel que d'exprimer ces émotions les plus enfouies, ce sont ces mots qui amènent à cheminer vers la résilience. " +
+                      "Et si nous leur donnions la parole ? C'est l'objectif 1er de cette maison d'édition : donner la parole à ceux que l'on veut oublier par manque de mots." +
+                      "Écrire peut s'avérer libérateur et est équivalent à une thérapie. Mettre des mots sur des maux parfois enfouis au plus profond de l'âme," +
+                      "libère le traumatisme et les blocages que cela engendre.Les mots libèrent," +
+                      "apaisent et pansent les blessures mais ils permettent de faire exister le proche disparu et l'intégrer dans un livre, permet de le rendre indélébile dans le temps : il a existé et il existe ! Le livre devient alors un outil de guérison et d'expression." +
+                      "Le projet permettra d'éditer plusieurs ouvrages témoignant d'un chemin de résilience face à la disparition d'un être cher, mais nous savons aussi que la créativité peut aider à s'accomplir,à devenir soi," +
+                      " c'est pour cela que nous souhaitons aussi éditer des jeux de cartes comme des oracles,  libérateurs d'émotions..",
+
+                      Picture = "/ImagesProject/mort.jpeg",
+                      Category = Category.Humanitaire,
+                      StartDate = new DateTime(2022, 1, 11, 10, 7, 8, 245),
+                      EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
+                      Video = "https://www.youtube.com/embed/_v3w7l_dWkI",///VideosProject/deuilVideo",
+                      MaterialDonation = "Imprimantes",
+                      Location = "Toulouse",
+                      ProjectOwnerId = 1,
+                      HeartCounter = 0
+                  },
+
+                  new Project
+                  {
+                      Id = 14,
+                      Status = Status.Publié,
+                      Name = "Financement de l’impression d’un livret pour aider les étudiants en médecine",
+
+                      Summary = "La question de la formation des médecins, indépendante d’autres intérêts que celui de la santé des patient.e.s, nous concerne toutes et tous." +
+                      "La problématique étant complexe," +
+                      "nous autres du collectif d’étudiants en médecine La Troupe du RIRE avons fait une synthèse du manuel de l’Organisation Mondiale de la Santé(OMS) Comprendre la promotion pharmaceutique et y répondre." +
+                      "Issu de ce travail bénévole,ce livret d’autodéfense intellectuelle est né fin 2014  ",
+
+                      Descritpion = "Le financement nous permettra d’imprimer 5000 livrets et de les distribuer gratuitement :" +
+                      "– pour vous l’envoyer en contrepartie de vos dons– pour organiser des ateliers d’éducation populaire à l’attention des étudiant.e.s en médecine sur la question de l’indépendance(ateliers débats, projections…)" +
+                      "– pour parler de cette question dans l’espace public au sein d’actions de sensibilisation– pour faire du lien avec nos enseignants(Doyen.nes, départements de médecine générale), pour participer à la mise en place d’une sensibilisation plus forte dans la formation médicale" +
+                      "2500 livrets ont déjà été imprimés grâce à des dons du Formindep et du Syndicat de la Médecine Générale, mais nous avons également dû avancer des sous pour compléter." +
+                      "Les fonds récoltés serviront donc au remboursement des étudiant.e.s et à l’impression et la distribution de nouveaux livrets.Qui sommes nous?Nous sommes des étudiant.e.s en médecine des facultés Paris 5 et Paris 7, réuni.e.s depuis 2013 au sein du collectif “La Troupe du RIRE” dont l’organisation est horizontale et informelle." +
+                      "Ce qui nous réunit, c’est d’abord une forte volonté d’éthique dans notre formation médicale initiale, par l’éducation populaire." +
+                      "En lisant à plusieurs le rapport de l’OMS Comprendre la promotion de l’industrie pharmaceutique et y répondre et entouré.e.s du Formindep et du Syndicat de la Médecine Générale (SMG), nous avons pu nous approprier ce texte et le résumer pour le rendre plus facile d’accès.L’heure est désormais venue de le diffuser, nous comptons sur vous !..",
+
+                      Picture = "/ImagesProject/pharmacie1.jpg",
+                      Category = Category.Humanitaire,
+                      StartDate = new DateTime(2021, 1, 11, 10, 7, 8, 245),
+                      EndDate = new DateTime(2022, 1, 19, 15, 6, 8, 245),
+                      Video = "https://www.youtube.com/embed/gbFo5su9V8k",///VideosProject/pharmacieVideo",
+                      MaterialDonation = "Imprimantes",
+                      Location = "Toulouse",
+                      ProjectOwnerId = 2,
+                      HeartCounter = 0
+                  }
             );
             this.Favorites.AddRange(
                 new Favorite
@@ -1168,7 +1292,38 @@ namespace Projet2Crowdfunding.Models
 
                     ProjectId = 8,
                     ParticipantId = 4
-                }
+                },
+
+                new Favorite
+                {
+                    Id = 9,
+
+                    ProjectId = 11,
+                    ParticipantId = 4
+                },
+
+                 new Favorite
+                 {
+                     Id = 10,
+
+                     ProjectId = 12,
+                     ParticipantId = 4
+                 },
+
+                  new Favorite
+                  {
+                      Id = 11,
+
+                      ProjectId = 13,
+                      ParticipantId = 4
+                  },
+                  new Favorite
+                  {
+                      Id = 12,
+
+                      ProjectId = 14,
+                      ParticipantId = 4
+                  }
 
                 ) ;
             this.Steps.AddRange(
@@ -1305,6 +1460,36 @@ namespace Projet2Crowdfunding.Models
                         Amount = 15000,
                         Description = "Pour offrir un suivi efficace aux personnes malade",
                         ProjectId = 10
+                     },
+
+                    new Step
+                    {
+                        Id = 20,
+                        Amount = 6000,
+                        Description = "Pour la mise en place du bateau Kirikou ",
+                        ProjectId = 11
+                    },
+
+                     new Step
+                     {
+                         Id = 21,
+                         Amount = 25000,
+                         Description = "Pour la location du local",
+                         ProjectId = 12
+                     },
+                     new Step
+                     {
+                         Id = 22,
+                         Amount = 25000,
+                         Description = "Pour l'achat du materiel d'impression",
+                         ProjectId = 13
+                     },
+                     new Step
+                     {
+                         Id = 23,
+                         Amount = 25000,
+                         Description = "Pour l'achat du materiel pour la formation",
+                         ProjectId = 14
                      }
 
 
@@ -1361,6 +1546,27 @@ namespace Projet2Crowdfunding.Models
                 {
                     Amount = 2480,
                     ProjectId = 10
+                },
+
+                new Collection
+                {
+                    Amount = 1000,
+                    ProjectId = 11
+                },
+                new Collection
+                {
+                    Amount = 1500,
+                    ProjectId = 12
+                },
+                new Collection
+                {
+                    Amount = 3000,
+                    ProjectId = 13
+                },
+                new Collection
+                {
+                    Amount = 4000,
+                    ProjectId = 14
                 }
 
             );
