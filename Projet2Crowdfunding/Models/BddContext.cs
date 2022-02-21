@@ -1334,7 +1334,7 @@ namespace Projet2Crowdfunding.Models
                 },
                 new Collection
                 {
-                    Amount = 50,
+                    Amount = 250,
                     ProjectId = 5
                 },
                  new Collection
@@ -1344,12 +1344,12 @@ namespace Projet2Crowdfunding.Models
                  },
                 new Collection
                 {
-                    Amount = 40,
+                    Amount = 140,
                     ProjectId = 7
                 },
                 new Collection
                 {
-                    Amount = 150,
+                    Amount = 350,
                     ProjectId = 8
                 },
                 new Collection
