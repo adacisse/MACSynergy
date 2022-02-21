@@ -463,11 +463,8 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#home">L'histoire</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#menu1">Le projet</a>
-                </li>
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Le projet</a>
+                </li> 
                 <li class="nav-item" id="recolte">
                     <a class="nav-link" data-bs-toggle="tab" href="#menu2">La récolte</a>
                 </li>
@@ -497,7 +494,7 @@
                     <!-- Section heading -->
                     <section class="team-section text-center my-5"
                              style="background-color: rgb(173, 209, 42);opacity:0.8;">
-                        <h2 class="h1-responsive font-weight-bold my-5">L'histoire</h2>
+                        <h2 class="h1-responsive font-weight-bold my-5">Le projet</h2>
                         <!-- Section description -->
                         <div class="container mt-5" align="justify" style="text-align:justify">
                             <div class="row">
@@ -529,11 +526,12 @@
 
                                             <p style="font-size: 14px"> <br\> <br\> <br\><br\></p>
                                             <p style="font-size: 14px">@Model.Project.Descritpion</p>
-                                           
+
                                         </div>
 
                                     </div>
                                 </div>
+                            </div>
                         </div>
                             <!-- Section: Description -->
                             
@@ -617,120 +615,43 @@
                                    
                 </div>
 
-                <div id="menu1" class="container tab-pane fade">
-                    <br>
-                    <section class="team-section text-center my-5"
-                             style="background-color: rgb(173, 209, 42);opacity:0.8;">
-                        <h2 class="h1-responsive font-weight-bold my-5">Le projet</h2>
-                        <!-- Section description -->
-
-                        <p>
-                            @Model.Project.Descritpion
-                            <!-- foreach (var s in Model.Project.Descritpion) {
-                                if (s == '.')
-                                {<br /> }
-
-                            }-->
-                        </p>
-                        <h5>Le besoin (qui, pour qui, combien)</h5>
-                        <h5>Le plan d'action</h5>
-                        <h5>Les objectifs et jalons</h5>
-                        <h5>Les partenaires</h5>
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col-lg-5 col-sm-5 col-md-5">
-                                    <img class="card-img-top" src="~/Images/ouragon.png" alt="Card image"
-                                         style="width:100%;border-radius: 14px;">
-                                </div>
-                                <div class="col-lg-7 col-sm-7 col-md-7">
-                                    <div class="card-header" style="background-color:white; ">
-                                        <h4 class="card-title">Une second texte de katrina</h4>
-                                        <p class="card-text">
-                                        <p>
-                                            Sunt in culpa qui officia deserunt mollit anim id est laborum
-                                            consectetur
-                                            adipiscing
-                                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim
-                                            veniam, quis nostrud exercitation ullamco.
-                                        </p><br\>
-                                            <p>
-                                                Sunt in culpa qui officia deserunt mollit anim id est laborum
-                                                consectetur
-                                                adipiscing
-                                                elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                Ut
-                                                enim ad minim
-                                                veniam,
-                                                quis nostrud exercitation ullamco.
-                                            </p>
-                                            <p>
-                                                Sunt in culpa qui officia deserunt mollit anim id est laborum
-                                                consectetur
-                                                adipiscing
-                                                elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                Ut
-                                                enim ad minim
-                                                veniam,
-                                                quis nostrud exercitation ullamco.
-                                            </p>
-                                    </div>
-
-
-                                </div>
-                                <p>
-                                    Sunt in culpa qui officia deserunt mollit anim id est laborum
-                                    consectetur
-                                    adipiscing
-                                    elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut
-                                    enim ad minim
-                                    veniam,
-                                    quis nostrud exercitation ullamco.
-                                </p></br>
-                                <p>
-                                    Sunt in culpa qui officia deserunt mollit anim id est laborum
-                                    consectetur
-                                    adipiscing
-                                    elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut
-                                    enim ad minim
-                                    veniam,
-                                    quis nostrud exercitation ullamco.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                </div>
                 <div id="menu2" class="container tab-pane fade">
                     <br>
                     <!-- Section: Idée v.1 -->
-                    <section class="team-section text-center my-5"
-                             style="background-color:rgb(173, 209, 42);opacity:0.8;">
-
+                    <section class="team-section text-center my-5" style="background-color: rgb(173, 209, 42); opacity: 0.8;"> <!-- #f6f1eb -->
                         <!-- Section heading -->
                         <h2 class="h1-responsive font-weight-bold my-5">Le besoin du projet</h2>
-                        <h4>Description des palliers</h4>
-                        <p>
-                            @foreach (var Step in Model.ProjectStepsList)
-                            {
-                                <div>
-                                    <h2> L'identifiant de ce pallier est: @Step.Id</h2>
-                                    <h3>Le montant de ce pallier est @Step.Amount €</h3>
-                                    <p>Description: @Step.Description</p>
-                                </div>
-                                <br />
-                            }
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minimveniam,quis nostrud exercitation ullamco.
-                        </p>
+                        <h4>Description des palliers de la récolte</h4>
+
+
+                        
+                            <div class="col-lg-8 col-sm-8 col-md-8">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Réf de l'étape</th>
+                                            <th scope="col">Montant à atteindre</th>
+                                            <th scope="col">Description de l'objectif</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var Step in Model.ProjectStepsList)
+                                        {
+                                            <tr>
+                                                <th scope="row">@Step.Id</th>
+                                                <td>@Step.Amount €</td>
+                                                <td> @Step.Description</td>
+
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+
+
                         <p>
                             Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
                             adipiscing
