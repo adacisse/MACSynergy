@@ -58,7 +58,7 @@ namespace Projet2Crowdfunding.Service
             return projectList;
         }
 
-        public Project GetProject(int id)
+        public Project GetProject(int? id)
         {
             return this.bddContext.Projects.Find(id);
         }
