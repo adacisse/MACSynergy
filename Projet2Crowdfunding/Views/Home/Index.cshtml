@@ -605,16 +605,16 @@
 <br/><br />
 
 @section Footer
-    {
+{
     <div class="newsletter-subscribe container">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center newsletter">Inscrivez-vous à notre newsletter</h2>
                 <p class="text-center">Recevez de nouveaux projets dans votre boite chaque semaine !</p>
             </div>
-            <form class="row" method="post">
-                <div class="col-md-6"><input class="form-control" type="email" name="email" placeholder="Votre Email"></div>
-                <div class="col-md-2"><button class="btn btn-primary" type="button">S'abonner </button></div>
+            <form class="row" method="post" action="/Home/Index">
+                <div class="col-md-6"><input class="form-control" type="mailTo" name="mailTo" placeholder="Votre Email"></div>
+                <div class="col-md-2"><button class="btn btn-primary" type="submit">S'abonner </button></div>
             </form>
 
         </div>

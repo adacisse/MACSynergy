@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HtmlAgilityPack;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
 using Projet2Crowdfunding.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
@@ -17,13 +21,15 @@ namespace Projet2Crowdfunding.Controllers
         private ProjectService projectService;
         private ProjectOwnerService projectOwnerService;
         private HomeService homeService;
+        private IWebHostEnvironment _env;
 
-        public HomeController()
+        public HomeController(IWebHostEnvironment environment)
         {
             accountService = new AccountService();
             projectService = new ProjectService();
             projectOwnerService = new ProjectOwnerService();
             homeService = new HomeService();
+            _env = environment;
         }
 
         public IActionResult Index()
@@ -44,34 +50,64 @@ namespace Projet2Crowdfunding.Controllers
             return View(viewModel);
         }
 
-        //[HttpPost]
-        //public IActionResult Index(string mailTo)
-        //{
-        //    using (MailMessage mm = new MailMessage(model.Email, model.To))
-        //    {
-        //        mm.Subject = model.Subject;
-        //        mm.Body = model.Body;
-        //        if (model.Attachment.Length > 0)
-        //        {
-        //            string fileName = Path.GetFileName(model.Attachment.FileName);
-        //            mm.Attachments.Add(new Attachment(model.Attachment.OpenReadStream(), fileName));
-        //        }
-        //        mm.IsBodyHtml = false;
-        //        using (SmtpClient smtp = new SmtpClient())
-        //        {
-        //            smtp.Host = "smtp.gmail.com";
-        //            smtp.EnableSsl = true;
-        //            NetworkCredential NetworkCred = new NetworkCredential(model.Email, model.Password);
-        //            smtp.UseDefaultCredentials = true;
-        //            smtp.Credentials = NetworkCred;
-        //            smtp.Port = 587;
-        //            smtp.Send(mm);
-        //            ViewBag.Message = "Email sent.";
-        //        }
-        //    }
+        [HttpPost]
+        public IActionResult Index(string mailTo)
+        {
+            HomeViewModel viewModel = new HomeViewModel { Authentify = HttpContext.User.Identity.IsAuthenticated }; //cookies
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                viewModel.Account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                if (viewModel.Account.Role == "participant")
+                {
+                    viewModel.Participant = accountService.GetParticipantFromAccountId(viewModel.Account.Id);
+                }
+            }           
+            viewModel.ProjectList = projectService.GetAllProjectsStatus(Status.Publié); //Ajouter aussi pour POPage
+            viewModel.ProjectOwnerList = projectOwnerService.GetAllProjectOwnersStatus(AssoStatus.published);
+            viewModel.Inscriptions = homeService.GetInscriptions();
+            viewModel.PublishedProjects = homeService.GetPublishedProjects();
+            viewModel.ClosedProjects = homeService.GetClosedProjects();
+            viewModel.AmountTotal = homeService.GetTotalAmount();
+            viewModel.ProjectListFavorites = homeService.Get8ProjetsFavorits();
 
-        //    return View();
-        //}
+            using (MailMessage mm = new MailMessage("macssynergy@gmail.com", mailTo))
+            {
+                mm.Subject = "Newsletter de MACSynergy";
+                //if (viewModel.Participant != null)
+                    //{
+                    //    mm.Body = "Bienvenue " + viewModel.Participant.FirstName + " sur la Newletter de MACSynergy.\n\n Nous vous tiendrons informés de nouveautés sur notre site.\n\n\n A bientôt sur MACSYnergy!!";
+                    //}
+                    //else
+                    //{
+                    //    mm.Body = "Bienvenue sur la Newletter de MACSynergy.\n\n Nous vous tiendrons informés de nouveautés sur notre site.\n\n\n A bientôt sur MACSYnergy!!";
+                    //}
+
+
+
+                    mm.IsBodyHtml = true;
+                    var doc = new HtmlDocument();
+                    FileStream htmlPath = new FileStream(_env.WebRootPath + "\\html\\Newsletter.html", FileMode.Open);
+                    doc.Load(htmlPath);
+                    mm.Body = doc.DocumentNode.OuterHtml;
+
+
+                //mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "\\wwwroot\\Images\\logoMacSynergy.png"));
+
+                //mm.IsBodyHtml = false;
+                using (SmtpClient smtp = new SmtpClient())
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    NetworkCredential NetworkCred = new NetworkCredential("macssynergy@gmail.com", "Macsynergy4");
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = NetworkCred;
+                    smtp.Port = 587;
+                    smtp.Send(mm);
+                }
+            }
+
+            return View(viewModel);
+        }
 
         ////CREATIN DU COMPTE HELPER
         //[HttpPost]
