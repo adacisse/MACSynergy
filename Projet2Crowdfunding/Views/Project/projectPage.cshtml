@@ -493,306 +493,128 @@
             <div class="tab-content">
                 <div id="home" class="container tab-pane active">
                     <br>
-                    <!-- Section: Description -->
+                    
                     <!-- Section heading -->
                     <section class="team-section text-center my-5"
                              style="background-color: rgb(173, 209, 42);opacity:0.8;">
                         <h2 class="h1-responsive font-weight-bold my-5">L'histoire</h2>
                         <!-- Section description -->
-                        <p>
-                            @if (Model.Authentify)
-                            {
-                                @if (Model.Account.Role == "participant")
-                                {
-                            <script>
-                                        let counterDisplayElem = document.querySelector('.counter-display');
+                        <div class="container mt-5" align="justify" style="text-align:justify">
+                            <div class="row">
+                                <div class="col-sm-7">
 
-                                        let counterOnclick = document.querySelector('.counterOnclick');
-                                        let count = 0;
-                                        updateDisplay();
-                                        counterPlusElem.addEventListener("click", () => {
-                                           //Model.MyFavoritesList.Add
+                                    <div class="border-MACS">
 
-                                        });
-
-                                        function updateDisplay() {
-                                            counterDisplayElem.innerHTML = count;
-                                        };
-                            </script>
-                                    <h1 class="counter-display">(..)</h1>
-                                    <button class="counterOnclick">Click here!</button>
-                                }
-
-                               }
-
-
-                                    There are many variations of passages of Lorem Ipsum available, but the majority
-                                            havesuffered alteration in some form, by injected humour, or randomised words which
-                                            don't look
-                                            even slightly believable.If you are going to use a passage of Lorem Ipsum, you
-                                           needto
-                                            be sure there isn't anything embarrassing hidden in the middle of text. All the
-                                            Lorem generators on the Internet tend to repeat predefined chunks as necessary, making
-                                            this the first true generator on the Internet. It uses a dictionary of over 200 Latin
-                                            words, with a handful of model sentence structures, to generate Lorem Ipsum which looks
-                                            reasonable.
-                                            The generated Lorem Ipsum is therefore always free from repetition, injected
-                                            humour,
-                                            or
-                                            non - characteristic words etc.
-                                        </ p >
-                                        < br\>
-
-                                             < p >
-                                                 There are many variations of passages of Lorem Ipsum available, but the
-                                                majority have
-                                                suffered alteration in some form, by injected humour, or randomised words
-                                                which don't
-                                                look even slightly believable. If you are going to use a passage of Lorem Ipsum,
-                                                you need
-                                                tosure there isn't anything embarrassing hidden in the middle of text. All the
-                                                LoremIpsum
-                                                generators on the Internet tend to repeat predefined chunks as necessary,
-                                                making first true generator on the Internet. It uses a dictionary of over 200 Latin
-                                                words, combined
-                                                with a handful of model sentence structures, to generate Lorem Ipsum which
-                                                looksreasonable.
-                                                The generated Lorem Ipsum is therefore always free from repetition, injected
-                                                humour,
-                                                or non - characteristic words etc.
-                                            </ p >
-                                    </ section >
-                                    < !--Section: Team v.1-- >
-                                    < section class="team-section text-center my-5" style="background-color:#f6f1eb">
-
-                                        <!-- Section heading -->
-                                        <h2 class="h1-responsive font-weight-bold my-5">Notre équipe de choc</h2>
-                                        <!-- Section description -->
-                                        <p class="grey-text w-responsive mx-auto mb-5">
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur
-                                            adipisicing elit.
-                                            Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam
-                                            voluptas nostrum quisquam
-                                            eum porro a pariatur veniam.
-                                        </p>
-
-                                        <!-- Grid row -->
-                                        <div class="row">
-
-                                            <!-- Grid column -->
-                                            <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
-                                                <div class="avatar mx-auto">
-                                                    <img src = "https://mdbootstrap.com/img/Photos/Avatars/img%20(20).webp"
-                                                         class="rounded-circle z-depth-1" alt="Sample avatar">
-                                                </div>
-                                                <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
-                                                <p class="text-uppercase blue-text"><strong>Professeur d'art</strong></p>
-                                                <p class="grey-text">
-                                                    Neque porro quisquam est, qui dolorem ipsum quia dolor
-                                                    sit
-                                                    amet, consectetur,
-                                                    adipisci sed quia non numquam modi tempora eius.
-                                                </p>
-
-                                            </div>
-                                            <!-- Grid column -->
-                                            <!-- Grid column -->
-                                            <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
-                                                <div class="avatar mx-auto">
-                                                    <img src = "https://mdbootstrap.com/img/Photos/Avatars/img%20(3).webp"
-                                                         class="rounded-circle z-depth-1" alt="Sample avatar">
-                                                </div>
-                                                <h5 class="font-weight-bold mt-4 mb-3">John Doe</h5>
-                                                <p class="text-uppercase blue-text"><strong>Comptable</strong></p>
-                                                <p class="grey-text">
-                                                    Sed ut perspiciatis unde omnis iste natus error sit
-                                                    voluptatem ipsa accusantium
-                                                    doloremque rem laudantium totam aperiam.
-                                                </p>
-
-                                            </div>
-                                            <!-- Grid column -->
-                                            <!-- Grid column -->
-                                            <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
-                                                <div class="avatar mx-auto">
-                                                    <img src = "https://mdbootstrap.com/img/Photos/Avatars/img%20(30).webp"
-                                                         class="rounded-circle z-depth-1" alt="Sample avatar">
-                                                </div>
-                                                <h5 class="font-weight-bold mt-4 mb-3">Maria Smith</h5>
-                                                <p class="text-uppercase blue-text"><strong>Photographer</strong></p>
-                                                <p class="grey-text">
-                                                    Excepteur sint occaecat cupidatat non proident, sunt in
-                                                    culpa qui officia deserunt
-                                                    mollit anim est fugiat nulla id eu laborum.
-                                                </p>
-
-                                            </div>
-                                            <!-- Grid column -->
-                                            <!-- Grid column -->
-                                            <div class="col-lg-3 col-md-6">
-                                                <div class="avatar mx-auto">
-                                                    <img src = "https://mdbootstrap.com/img/Photos/Avatars/img%20(32).webp"
-                                                         class="rounded-circle z-depth-1" alt="Sample avatar">
-                                                </div>
-                                                <h5 class="font-weight-bold mt-4 mb-3">Tom Adams</h5>
-                                                <p class="text-uppercase blue-text"><strong>Ingénieur son</strong></p>
-                                                <p class="grey-text">
-                                                    Perspiciatis repellendus ad odit consequuntur, eveniet
-                                                    earum nisi qui consectetur
-                                                    totam officia voluptates perferendis voluptatibus aut.
-                                                </p>
-
-                                            </div>
-                                            <!-- Grid column -->
-
+                                        <div class="mode-vert pt-4 px-4">
+                                            <h6 style="font-size: 30px; color: rgb(63, 63, 63)">@Model.Project.Name</h6>
+                                            <p style="font-size: 14px">@Model.Project.Summary</p>
                                         </div>
-                                        <!-- Grid row -->
 
-                                    </section>
-                                    <!-- Section: Idée v.1 -->
-                                    <section class="team-section text-center my-5"
-                                             style="background-color:rgb(173, 209, 42);opacity:0.8;">
-
-                                        <!-- Section heading -->
-                                        <h2 class="h1-responsive font-weight-bold my-5">L'idée</h2>
-                                        <!-- Section description -->
-                                        <div class="container mt-3">
-                                            <div class="row">
-                                                <div class="col-sm" style="position: relative;">
-                                                    <img src = "~/Images/infographic1.jpg" >
-                                                </ div >
-                                                < div class="col-sm text-left">
-                                                    <p>
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry.Lorem Ipsum has
-                                                       been the industry's standard dummy text ever since the 1500s, when
-                                                        an
-                                                        unknown printer took a
-                                                        galley of type and scrambled it to make a type specimen book.It has
-                                                        survived not only five
-                                                        centuries, but also the leap into electronic typesetting, remaining
-                                                        essentially unchanged.
-                                                        It was popularised in the 1960s with the release of Letraset sheets
-                                                        containing Lorem Ipsum
-                                                        passages, and more recently with desktop publishing software like
-                                                        Aldus
-                                                        PageMaker including
-                                                        versions of Lorem Ipsum.
-                                                    </p>
-
-                                                    <p>
-                                                        It is a long established fact that a reader will be distracted by
-                                                        the
-                                                        readable content of a
-                                                        page when looking at its layout.The point of using Lorem Ipsum is
-                                                        that
-                                                        it has a
-                                                        more-or-less normal distribution of letters, as opposed to using
-                                                        'Content here, content
-                                                        here', making it look like readable English. Many desktop publishing
-                                                        packages and web page
-                                                        editors now use Lorem Ipsum as their default model text, and a
-                                                        search
-                                                        for 'lorem ipsum' will
-                                                        uncover many web sites still in their infancy.Various versions have
-                                                        evolved over the years,
-                                                        sometimes by accident, sometimes on purpose (injected humour and the
-                                                        like).
-                                                    </p><br />
-
-                                                    <p>
-                                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-                                                        below for those
-                                                        interested.Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-                                                        Malorum" by Cicero are
-                                                        also reproduced in their exact original form, accompanied by English
-                                                        versions from the 1914
-                                                        translation by H.Rackham
-                                                    </p>
-                                                </div>
-                                            </div>
+                                        <div class="pb-4 px-4">
+                                            <img src="@Model.Project.Picture" alt="Flood" class="d-block" style="width:100%; margin: auto;">
                                         </div>
-                                    </section>
-                                    <!-- Section: Idée v.1 -->
-                                    <section class="team-section text-center my-5" style="background-color:#f6f1eb;">
-
-                                        <!-- Section heading -->
-                                        <h2 class="h1-responsive font-weight-bold my-5">La population cible</h2>
-                                        <p>
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem
-                                            Ipsum has
-                                            been the industry's standard dummy text ever since the 1500s, when an unknown
-                                            printer took a
-                                            galley of type and scrambled it to make a type specimen book.It has survived
-                                           not
-                                            only five
-                                            centuries, but also the leap into electronic typesetting, remaining essentially
-                                            unchanged.
-                                            It was popularised in the 1960s with the release of Letraset sheets containing
-                                            Lorem
-                                            Ipsum
-                                            passages, and more recently with desktop publishing software like Aldus
-                                            PageMaker
-                                            including
-                                            versions of Lorem Ipsum.
-                                        </p>
-
-                                        <p>
-                                            <h6>Why do we use it?</h6>
-                                            It is a long established fact that a reader will be distracted by the readable
-                                            content
-                                            of a
-                                            page when looking at its layout.The point of using Lorem Ipsum is that it has a
-                                            more-or-less normal distribution of letters, as opposed to using 'Content here,
-                                            content
-                                            here', making it look like readable English. Many desktop publishing packages and
-                                            web
-                                            page
-                                            editors now use Lorem Ipsum as their default model text, and a search for 'lorem
-                                            ipsum'
-                                            will
-                                            uncover many web sites still in their infancy.Various versions have evolved over
-                                            the
-                                            years,
-                                            sometimes by accident, sometimes on purpose (injected humour and the like).
-                                        </p>
-                                        <br />
+                                        <div class="mode-vert pt-4 px-4">
+                                            <h6 style="font-size: 30px;">Description du projet</h6>
+                                            <p style="font-size: 14px">@Model.Project.Descritpion</p>
+                                        </div>
 
 
-                                        <p>
-                                            <h6>Where does it come from?</h6>
-                                            Contrary to popular belief, Lorem Ipsum is not simply random text.It has roots in a
-                                            piece
-                                            of classical Latin literature from 45 BC, making it over 2000 years old. Richard
-                                            McClintock,
-                                            a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
-                                            obscure
-                                            Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of
-                                            the
-                                            word in classical literature, discovered the undoubtable source. Lorem Ipsum comes
-                                            from
-                                            sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of
-                                            Good
-                                            and
-                                            Evil) by Cicero, written in 45 BC.This book is a treatise on the theory of ethics,
-                                            very
-                                            popular during the Renaissance.The first line of Lorem Ipsum, "Lorem ipsum dolor
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <div class="border-MACS">
+                                        <div class="mode-vert ms-3">
+
+                                            <p style="font-size: 14px"> <br\> <br\> <br\><br\></p>
+                                            <p style="font-size: 14px">@Model.Project.Descritpion</p>
+                                           
+                                        </div>
+
+                                    </div>
+                                </div>
+                        </div>
+                            <!-- Section: Description -->
+                            
+                            <!-- Grid row 
+                            <div class="row">
+
+                                <!--
+                                    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).webp"
+                                                 class="rounded-circle z-depth-1" alt="Sample avatar">
+                                        </div>
+                                        <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
+                                        <p class="text-uppercase blue-text"><strong>Professeur d'art</strong></p>
+                                        <p class="grey-text">
+                                            Neque porro quisquam est, qui dolorem ipsum quia dolor
                                             sit
-                                            amet..", comes from a line in section 1.10.32.
-                        </p><br />
+                                            amet, consectetur,
+                                            adipisci sed quia non numquam modi tempora eius.
+                                        </p>
+                                    
+                            </div>Grid column -->
 
-                        <p>
-                            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-                            those
-                            interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
-                            Cicero are
-                            also reproduced in their exact original form, accompanied by English versions
-                            from
-                            the 1914
-                            translation by H. Rackham
-                        </p>
+                                <!-- Grid column -->
+                                <!-- Grid column 
+                                <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+                                    <div class="avatar mx-auto">
+                                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).webp"
+                                             class="rounded-circle z-depth-1" alt="Sample avatar">
+                                    </div>
+                                    <h5 class="font-weight-bold mt-4 mb-3">John Doe</h5>
+                                    <p class="text-uppercase blue-text"><strong>Comptable</strong></p>
+                                    <p class="grey-text">
+                                        Sed ut perspiciatis unde omnis iste natus error sit
+                                        voluptatem ipsa accusantium
+                                        doloremque rem laudantium totam aperiam.
+                                    </p>
+
+                                </div>-->
+                                <!-- Grid column -->
+                                <!-- Grid 
+                                <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+                                    <div class="avatar mx-auto">
+                                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).webp"
+                                             class="rounded-circle z-depth-1" alt="Sample avatar">
+                                    </div>
+                                    <h5 class="font-weight-bold mt-4 mb-3">Maria Smith</h5>
+                                    <p class="text-uppercase blue-text"><strong>Photographer</strong></p>
+                                    <p class="grey-text">
+                                        Excepteur sint occaecat cupidatat non proident, sunt in
+                                        culpa qui officia deserunt
+                                        mollit anim est fugiat nulla id eu laborum.
+                                    </p>
+
+                                </div>column -->
+                                <!-- Grid column -->
+                                <!-- Grid column 
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="avatar mx-auto">
+                                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).webp"
+                                             class="rounded-circle z-depth-1" alt="Sample avatar">
+                                    </div>
+                                    <h5 class="font-weight-bold mt-4 mb-3">Tom Adams</h5>
+                                    <p class="text-uppercase blue-text"><strong>Ingénieur son</strong></p>
+                                    <p class="grey-text">
+                                        Perspiciatis repellendus ad odit consequuntur, eveniet
+                                        earum nisi qui consectetur
+                                        totam officia voluptates perferendis voluptatibus aut.
+                                    </p>
+
+                                </div>-->
+                                <!-- Grid column -->
+
+                            <!-- </div>  -->
+                            <!-- Grid row -->
+
                     </section>
+                                    <!-- Section: Idée v.1 -->
+                                   
+                                    
+                                   
                 </div>
 
                 <div id="menu1" class="container tab-pane fade">
