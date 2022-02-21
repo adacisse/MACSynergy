@@ -27,6 +27,7 @@ namespace Projet2Crowdfunding.ViewModels
         public Step Step3 { get; set; }
 
         public List<Project> ProjectList { get; set; }
+
         public List<Project> ProjectList2 { get; set; }
 
         public List<Project> ProjectListClosed { get; set; }
@@ -61,11 +62,11 @@ namespace Projet2Crowdfunding.ViewModels
         public CreditCard CreditCard { get; set; }
 
         public List<Step> ProjectStepsList { get; set; }
+
         //public List<Participant>AllParticipants
 
         public List<Favorite> MyFavoritesList { get; set; }
-        public int HeartCounter { get; set; }
-        public float PercentageInProgressBar { get; set; }
 
+        public int HeartCounter { get; set; }
     }
 }

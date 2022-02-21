@@ -57,8 +57,7 @@ namespace Projet2Crowdfunding.Controllers
                 viewModel.ProjectStepsList = projectService.GetStepsFromProjectId(id.Value);
                 viewModel.HeartCounter = projectService.CountProjectFavoriteSum(id.Value);
                 viewModel.Collection = projectService.GetCollectionByProjectId(id.Value);
-                viewModel.PercentageInProgressBar = projectService.PercentageProgressBar(id.Value);
-
+                ViewBag.Percentage = projectService.PercentageProgressBar(id.Value);
 
             }
 
