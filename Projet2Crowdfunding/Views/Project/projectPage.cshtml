@@ -201,7 +201,7 @@
                  style="width:400px; height:630px;border:1px solid #d6d6d6;border-radius: 14px;">
                 <div id="assoLogo">
                     <img class="card-img-top" src="@Model.ProjectOwner.Image" alt="Card image"
-                         style="width:15%; border:1px solid #d6d6d6;border-radius:100px;" data-bs-toggle="popover"
+                         style="width:25%; border:1px solid #d6d6d6;border-radius:100px;" data-bs-toggle="popover"
                          ; title=@Model.ProjectOwner.Name>
                     <!--
                         <a href="/ProjectOwner/POPage"><img class="card-img-top" src="@Model.ProjectOwner.Image" alt="Card image"
@@ -251,9 +251,15 @@
 
                                             @{string pagelink2 = "/Project/AddFavoriteOnClik/" + @Model.Project.Id;}
                                             <form method="post" action="@pagelink2">
-                                                <button type="submit">Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter</button>
+                                                <button type="submit" class="btn btn-success float-right" width="7px"
+                                                        style="text-decoration:none">
+                                                    Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter
+                                                </button>
                                             </form>
-
+                                            <!--  <a href="#" class="btn btn-success" width="7px"
+                            style="text-decoration:none">
+                             Je suis!  <i class="fa fa-heart"></i>    Model.Project.HeartCounter
+                                                                    </a>-->
                                             @*@using (Html.BeginForm(FormMethod.Post))
                                 {
                                     //Html.HiddenFor(m => m.Project.HeartCounter)
@@ -267,10 +273,15 @@
                                         </div>
 
                                         <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
-                                            <a href="/Project/ProjectPage" class="btn btn-success" id="shareLink" width="7px"
-                                               style="text-decoration:none" onclick="" copyToClipboard('#shareLink')"">
+                                            @{string pagelink3 = "/Project/projectPage/" + @Model.Project.Id;}
+                                            <button onclick="copyToClipboard('#pagelink3')" class="btn btn-success float-right" width="7px"
+                                                    style="text-decoration:none">
                                                 Je partage <i class="fa fa-share-alt-square"></i>
-                                            </a>
+                                            </button>
+                                            <!-- <a href="pagelink3" class="btn btn-success" action="co" id="shareLink" width="7px"
+                               style="text-decoration:none" onclick="" copyToClipboard('#shareLink')"">
+                                Je partage <i class="fa fa-share-alt-square"></i>
+                            </a>-->
                                         </div>
 
 
@@ -280,8 +291,67 @@
                         }
                         else
                         {
+                            <div class="container" style="padding: 10px">
+
+                                <!--second option-->
+                                <div>
+                                    <div class="row" style="padding: 0px 0px 0px 5px">
+                                        <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
+
+                                            <!--second option {string pagelink2 = "/Project/AddFavoriteOnClik/" + Model.Project.Id;}
+                            <form method="post" action="pagelink2">-->
+                                            <button class="btn btn-success float-right" width="7px"
+                                                    style="text-decoration:none"; data-bs-toggle="popover" ; title="Authentifiez-vous comme participant pour suivre ce projet">
+                                                Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter
+                                            </button>
+                                            <!-- </form>-->
+                                        </div>
+
+                                        <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
+                                            @{string pagelink3 = "/Project/projectPage/" + @Model.Project.Id;}
+                                            <a href="@pagelink3" class="btn btn-success" action="co" id="shareLink" width="7px"
+                                               style="text-decoration:none" onclick="" copyToClipboard('#shareLink')"">
+                                                Je partage <i class="fa fa-share-alt-square"></i>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
 
                         }
+                    }
+                    else
+                    { <div class="container" style="padding: 10px">
+
+                            <!--second option-->
+                            <div>
+                                <div class="row" style="padding: 0px 0px 0px 5px">
+                                    <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
+
+                                        <!--second option {string pagelink2 = "/Project/AddFavoriteOnClik/" + Model.Project.Id;}
+                        <form method="post" action="pagelink2">-->
+                                        <button class="btn btn-success float-right" width="7px"
+                                                style="text-decoration:none" data-bs-toggle="popover" ; title="Authentifiez-vous comme participant pour suivre ce projet">
+                                            Je suis! <i class="fa fa-heart"></i> @Model.Project.HeartCounter
+                                        </button>
+                                        <!-- </form>-->
+                                    </div>
+
+                                    <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
+                                        @{string pagelink3 = "/Project/projectPage/" + @Model.Project.Id;}
+                                        <a href="@pagelink3" class="btn btn-success" action="co" id="shareLink" width="7px"
+                                           style="text-decoration:none" onclick="" copyToClipboard('#shareLink')"">
+                                            Je partage <i class="fa fa-share-alt-square"></i>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
                     }
                     @if (Model.Authentify)
                     {
@@ -312,15 +382,77 @@
                                         </div>
 
                                     }
-                                    else
-                                    {//meme bloc en haut mais sans increment, pop up qui dis inscivez vous pour nous rejoindre
+
+                                </div>
+                            </div>
+
+                        }
+                        else
+                        {//meme bloc en haut mais sans increment, pop up qui dis inscivez vous pour nous rejoindre
+                            <!--string pagelink1 = "/Payments/ProjectPaymentPage/" + Model.Project.Id;-->
+                            <div>
+                                <div class="row" style="padding: 0px 0px 0px 5px">
+                                    <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
+
+                                        <a href="#" class="btn btn-success float-right" width="7px"
+                                           style="text-decoration:none" data-bs-toggle="popover" ; title="Authentifiez-vous comme participant pour contribuer">
+                                            Je veux Contribuer <img style="width:auto;"
+                                                                    src="~/Images/ar.png" alt="" />
+                                        </a>
+                                    </div>
+                                    @if (Model.ProjectOwner.VolunteerDescritpion != null)
+                                    {
+
+                                        string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwner.Id;
+
+                                        <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
+                                            <a href="@pagelink/#contactUs" class="btn btn-success float-left" width="7px"
+                                               style="text-decoration:none"  data-bs-toggle="popover" ; title="Authentifiez-vous comme participant pour vous porter bénévole"onclick="">
+                                                Je suis bénévole! <img style="width:auto;"
+                                                                       src="~/Images/ar.png" alt="" />
+                                            </a>
+                                        </div>
 
                                     }
+
                                 </div>
                             </div>
 
                         }
                     }
+                    else
+                    {
+                        //meme bloc en haut mais sans increment, pop up qui dis inscivez vous pour nous rejoindre
+                        <!--string pagelink1 = "/Payments/ProjectPaymentPage/" + Model.Project.Id;-->
+                        <div>
+                            <div class="row" style="padding: 0px 0px 0px 5px">
+                                <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
+
+                                    <a href="#" class="btn btn-success float-right" width="7px"
+                                       style="text-decoration:none" data-bs-toggle="popover" ; title="Authentifiez-vous comme participant pour contribuer">
+                                        Je veux Contribuer <img style="width:auto;"
+                                                                src="~/Images/ar.png" alt="" />
+                                    </a>
+                                </div>
+                                @if (Model.ProjectOwner.VolunteerDescritpion != null)
+                                {
+
+                                    string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwner.Id;
+
+                                    <div class="col-sm-6" style="position: relative; padding: 0px 0px 0px 0px">
+                                        <a href="@pagelink/#contactUs" class="btn btn-success float-left" width="7px"
+                                           style="text-decoration:none" data-bs-toggle="popover" ; title="Authentifiez-vous comme participant pour vous porter bénévole" onclick="">
+                                            Je suis bénévole! <img style="width:auto;"
+                                                                   src="~/Images/ar.png" alt="" />
+                                        </a>
+                                    </div>
+
+                                }
+
+                            </div>
+                        </div>
+                    }
+
 
 
                 </div>
