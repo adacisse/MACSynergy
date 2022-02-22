@@ -717,12 +717,12 @@ namespace Projet2Crowdfunding.Models
                     Status = Status.Publié,
                     Name = "Addictions-Maladies chroniques",
                     Summary = "L’accompagnement des personnes dans leurs pratiques addictives" +
-                    "L’association Aurore est depuis de nombreuses années mobilisée dans l’accompagnement des personnes se trouvant en situation d’addictions : les professionnels mettent en place des actions de prévention," +
-                    "de réduction des risques et de soins. Les équipes pluridisciplinaires apportent des réponses adaptées prenant en compte le contexte social.",
-                    //+ "culturel et économique de la personne en lui proposant une offre globale d’accompagnement et de soins pouvant prendre différente formes : sensibiliser et prévenir les personnes sur les comportements à risques, réduire les risques liés à la consommation de drogue, " +
-                    //"aider à sortir de l’addiction par le soin communautaire ou l’entraide. ",
-
-                    Descritpion = "De quoi parle-t-on lorsqu’il est question d’abstinence ? C’est le thème sur lequel ont phosphoré cinquante usagers et professionnels de" +
+                    "L’association Aurore est depuis de nombreuses années mobilisée dans l’accompagnement des personnes se trouvant en situation d’addictions :" +
+                    "les professionnels mettent en place des actions de prévention," +
+                    "de réduction des risques et de soins." +
+                    " Les équipes pluridisciplinaires apportent des réponses adaptées prenant en compte le contexte social.",
+                
+                    Descritpion = "De quoi parle-t-on lorsqu’il est question d’abstinence? C’est le thème sur lequel ont phosphoré cinquante usagers et professionnels de" +
                     " quatre dispositifs d’Aurore et de deux partenaires historiques de l’association. Un débat s’est déroulé tout au long de la journée du 24 novembre 2021." +
                     " La place de l’abstinence dans le parcours de soin et de rétablissement, l’intérêt de proposer l’expérience d’une fenêtre d’abstinence, la question des " +
                     "traitements médicamenteux face aux demandes d’abstinence… loin des stéréotypes, les réflexions issues des expériences vécues et des positionnements professionnels" +
@@ -738,7 +738,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 11, 9, 16, 5, 7, 123),
                     EndDate = new DateTime(2022, 2, 24, 0, 0, 0, 0),
                     Video = "https://www.youtube.com/embed/Y_-TnjTNVFA",// "/VideosProject/VideoAurore.jpg",
-                    MaterialDonation = "Médicaments, Matériaux informatiques",
+                    MaterialDonation = "Médicaments, Matériaux informatiques, Bonbons pour arreter de fumer. ",
                     Location = "Iceland",
                     ProjectOwnerId = 1,
                     HeartCounter = 1
@@ -771,7 +771,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/FK3dav4bA4s",///VideosProject/Videowwf.jpg",
-                    MaterialDonation = "Nourriture",
+                    MaterialDonation = "Matèriaux de constructions, Aliments pour nourrir les tigres",
                     Location = "Lille",
                     ProjectOwnerId = 2,
                     HeartCounter = 0
@@ -790,7 +790,7 @@ namespace Projet2Crowdfunding.Models
                     "Daniel Vallauri, Chargé du programme Forêts au WWF France 60 000 hectares continus le long du littoral malgache," +
                     "les mangroves sont indispensables aux populations locales.Elles leur procurent nourriture, bois de chauffage ainsi que matériaux de construction pour leurs habitations.Elles sont aussi dotées de vertus médicinales." +
                     "Face au changement climatique et aux phénomènes naturels extrêmes, la mangrove joue également un rôle capital puisqu’elle protège l’intérieur de la côte des dégâts cycloniques et de l’érosion.Enfin,elle filtre l’eau et stocke le carbone," +
-                    "comme le font les forêts terrestres. A Madagascar,es mangroves de la région du Manambolo protègent notamment la future Aire Marine Protégée de l’archipel des Îles Barren contre la sédimentation venant du versant ouest de l’île.Elles garantissent également la protection de la zone humide de Manambolomaty(classée site RAMSAR)," +
+                    "comme le font les forêts terrestres. A Madagascar,les mangroves de la région du Manambolo protègent notamment la future Aire Marine Protégée de l’archipel des Îles Barren contre la sédimentation venant du versant ouest de l’île.Elles garantissent également la protection de la zone humide de Manambolomaty(classée site RAMSAR)," +
                     "de la forêt primaire de Tsimembo ainsi que des plaines rizicoles de Bemamba et de Soahany contre les effets néfastes de l’augmentation du niveau de la mer causée par le changement climatique." +
                     "C’est grâce à ces écosystèmes uniques que poissons et invertébrés migrent.",
 
@@ -799,7 +799,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
                     Video = "https://www.youtube.com/embed/-ennmy8Iias",//VideosProject/mangrovevideo.jpeg",
-                    MaterialDonation = "Barques motorisées",
+                    MaterialDonation = "Barques motorisées, ",
                     Location = "Troyes",
                     ProjectOwnerId = 2,
                     HeartCounter = 3
@@ -1162,7 +1162,7 @@ namespace Projet2Crowdfunding.Models
                       StartDate = new DateTime(2021, 1, 11, 10, 7, 8, 245),
                       EndDate = new DateTime(2022, 1, 19, 15, 6, 8, 245),
                       Video = "https://www.youtube.com/embed/gbFo5su9V8k",///VideosProject/pharmacieVideo",
-                      MaterialDonation = "Imprimantes",
+                      MaterialDonation = "Imprimantes, Feuilles, Encres, ",
                       Location = "Toulouse",
                       ProjectOwnerId = 2,
                       HeartCounter = 0
@@ -1408,76 +1408,102 @@ namespace Projet2Crowdfunding.Models
 
                 );
 
+            this.Donations.AddRange(
+                new Donation
+                {
+                    Id = 1,
+                    Amount = 50,
+                    PayDate = DateTime.Parse("2022-01-04"),
+                    ParticipantId = 1,  
+                    CollectionId = 1
+                }
+             );
+
+
             ////Instances PPs
             this.Collections.AddRange(
                 new Collection
                 {
-                    Amount = 100,
+                    Id = 1,
+                    Amount = 300,
                     ProjectId = 1
                 },
                 new Collection
                 {
+                    Id =2,
                     Amount = 0,
                     ProjectId = 2
                 },
                 new Collection
                 {
+                    Id = 3,
                     Amount = 550,
                     ProjectId = 3
                 },
                 new Collection
                 {
+                    Id = 4,
                     Amount = 0,
                     ProjectId = 4
                 },
                 new Collection
                 {
+                    Id = 5,
                     Amount = 250,
                     ProjectId = 5
                 },
                  new Collection
                  {
+                     Id = 6,
                      Amount = 300,
                      ProjectId = 6
                  },
                 new Collection
                 {
+                    Id = 7,
                     Amount = 140,
                     ProjectId = 7
                 },
                 new Collection
                 {
+                    Id = 8,
                     Amount = 350,
                     ProjectId = 8
                 },
                 new Collection
                 {
+                    Id = 9,
                     Amount = 1500,
                     ProjectId = 9
                 },
                 new Collection
                 {
+                    Id = 10,
                     Amount = 2480,
                     ProjectId = 10
                 },
 
                 new Collection
                 {
+                    Id = 11,
                     Amount = 1000,
                     ProjectId = 11
                 },
                 new Collection
                 {
+                    Id = 12,
                     Amount = 1500,
                     ProjectId = 12
                 },
                 new Collection
                 {
+                    Id = 13,
                     Amount = 3000,
                     ProjectId = 13
                 },
                 new Collection
                 {
+                    Id = 14,
                     Amount = 4000,
                     ProjectId = 14
                 }
@@ -1487,6 +1513,9 @@ namespace Projet2Crowdfunding.Models
 
             this.SaveChanges();
         }
+
+         
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
