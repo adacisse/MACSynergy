@@ -771,7 +771,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/FK3dav4bA4s",///VideosProject/Videowwf.jpg",
-                    MaterialDonation = "Matèriaux de constructions, Aliments pour nourrir les tigres",
+                    MaterialDonation = "Matèriaux de constructions, Aliments pour nourrir les tigres.",
                     Location = "Lille",
                     ProjectOwnerId = 2,
                     HeartCounter = 0
@@ -799,7 +799,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
                     Video = "https://www.youtube.com/embed/-ennmy8Iias",//VideosProject/mangrovevideo.jpeg",
-                    MaterialDonation = "Barques motorisées, ",
+                    MaterialDonation = "Barques motorisées, Matériaux de déminage, Matériaux d'entretiens.",
                     Location = "Troyes",
                     ProjectOwnerId = 2,
                     HeartCounter = 3
@@ -834,7 +834,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/unW8EgFJXN4",//"/VideosProject/PlayVideo1.html",
-                    MaterialDonation = "Materiaux sportifs",
+                    MaterialDonation = "Materiaux sportifs, Matériaux scolaires, Lotissement.",
                     Location = "New York",
                     ProjectOwnerId = 3,
                     HeartCounter = 0
@@ -862,7 +862,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
                     EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/1g7tLluDQfI",//"/VideosProject/handicapvideo.html",
-                    MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires",
+                    MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires.",
                     Location = "Nwagadougou",
                     ProjectOwnerId = 4,
                     HeartCounter = 1
@@ -902,7 +902,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2021, 8, 09, 20, 5, 8, 245),
                     EndDate = new DateTime(2022, 4, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/oCUrC29eq6Y",//VideosProject/bioforcevideo.html",
-                    MaterialDonation = "Fournitures scolaires",
+                    MaterialDonation = "Fournitures scolaires, Terrains, Meubles d'amé1nagement.",
                     Location = "Jordanie",
                     ProjectOwnerId = 5,
                     HeartCounter = 1
@@ -935,7 +935,7 @@ namespace Projet2Crowdfunding.Models
                     StartDate = new DateTime(2022, 1, 9, 20, 5, 8, 245),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/b9-mxoxEcRY", // VideosProject/olympiquevideo.html,
-                    MaterialDonation = "Materiaux sportifs",
+                    MaterialDonation = "Materiaux sportifs, Chaises, Produits d'entretien.",
                     Location = "International",
                     ProjectOwnerId = 1,
                     HeartCounter = 1
@@ -964,7 +964,7 @@ namespace Projet2Crowdfunding.Models
                      StartDate = new DateTime(2021, 12, 9, 20, 5, 8, 245),
                      EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 245),
                      Video = "https://www.youtube.com/embed/qyUQP7xncpk", ///VideosProject/drepacarevideo.html",
-                     MaterialDonation = "Don de sang, Don de materiaux de soins",
+                     MaterialDonation = "Don de sang, Don de materiaux de soins, Dons de médicaments contre la Drepano",
                      Location = "Afrique",
                      ProjectOwnerId = 4,
                      HeartCounter = 1
@@ -1002,7 +1002,7 @@ namespace Projet2Crowdfunding.Models
                      StartDate = new DateTime(2020, 12, 9, 20, 5, 8, 245),
                      EndDate = new DateTime(2021, 8, 9, 15, 6, 8, 245),
                      Video = "/VideosProject/guerrevideo",
-                     MaterialDonation = "Denrees alimentaires",
+                     MaterialDonation = "Denrees alimentaires, Espace d'accueil pour les réfugiés, Matelats",
                      Location = "Monde",
                      ProjectOwnerId = 5,
                      HeartCounter = 0
@@ -1038,7 +1038,7 @@ namespace Projet2Crowdfunding.Models
                      StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
                      EndDate = new DateTime(2021, 12, 19, 15, 6, 8, 245),
                      Video = "https://www.youtube.com/embed/K7GIIOYyp3I",///VideosProject/avenirVideo",
-                     MaterialDonation = "Materiaux sportifs, kits scolaires",
+                     MaterialDonation = "Materiaux sportifs, kits scolaires, Terrain de jeux",
                      Location = "Paris",
                      ProjectOwnerId = 3,
                      HeartCounter = 0
@@ -1073,7 +1073,7 @@ namespace Projet2Crowdfunding.Models
                      StartDate = new DateTime(2021, 6, 19, 15, 6, 8, 245),
                      EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
                      Video = "https://www.youtube.com/embed/0vhgdzn1IjM",///VideosProject/kirikouVideo",
-                     MaterialDonation = "Materiaux de la mer",
+                     MaterialDonation = "Materiaux de la mer, Bateau, Prduits d'entretiens.",
                      Location = "Bordeau",
                      ProjectOwnerId = 3,
                      HeartCounter = 0
@@ -1102,7 +1102,7 @@ namespace Projet2Crowdfunding.Models
                       StartDate = new DateTime(2022, 1, 11, 10, 7, 8, 245),
                       EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
                       Video = "https://www.youtube.com/embed/eLGf2zWMdfc",///VideosProject/oignonVideo",
-                      MaterialDonation = "balances, Materiaux informatiques",
+                      MaterialDonation = "balances, Materiaux informatiques, Locaux de vente. ",
                       Location = "Porto",
                       ProjectOwnerId = 2,
                       HeartCounter = 0
@@ -1132,7 +1132,7 @@ namespace Projet2Crowdfunding.Models
                       StartDate = new DateTime(2022, 1, 11, 10, 7, 8, 245),
                       EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
                       Video = "https://www.youtube.com/embed/_v3w7l_dWkI",///VideosProject/deuilVideo",
-                      MaterialDonation = "Imprimantes",
+                      MaterialDonation = "Imprimantes, Encres, Feuilles.",
                       Location = "Toulouse",
                       ProjectOwnerId = 1,
                       HeartCounter = 0
