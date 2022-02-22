@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using Projet2Crowdfunding.Models;
 
 namespace Projet2Crowdfunding.Service
@@ -236,7 +237,21 @@ namespace Projet2Crowdfunding.Service
             return (projet);
         }
 
-      
+        public Boolean IsMailValid (string mail)
+        {
+            if (mail != null)
+            {
+                Regex rgx = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                if (rgx.IsMatch(mail.ToString()))
+                {
+                    return true;
+                }
+            }            
+        
+            return false;
+        }
+
+
         public void Dispose()
         {
             bddContext.Dispose();

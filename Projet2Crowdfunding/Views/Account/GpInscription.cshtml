@@ -77,59 +77,65 @@
         @using (Html.BeginForm())
         {
 
-            <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
+    <div class="border-MACS mode-vert pt-1 p-lg-5 pr-5 pb-5">
 
-                @Html.LabelFor(model => model.Administrator.LastName) <span> &nbsp;</span>
-                @Html.TextBoxFor(model => model.Administrator.LastName)
+        @Html.LabelFor(model => model.Administrator.LastName) <span> &nbsp;</span>
+        @Html.TextBoxFor(model => model.Administrator.LastName)
 
-                <br />
-                <br />
+        <br />
+        <br />
 
-                @Html.LabelFor(model => model.Administrator.FirstName) <span>&nbsp;</span>
-                @Html.TextBoxFor(model => model.Administrator.FirstName)
+        @Html.LabelFor(model => model.Administrator.FirstName) <span>&nbsp;</span>
+        @Html.TextBoxFor(model => model.Administrator.FirstName)
 
-                <br />
-                <br />
+        <br />
+        <br />
 
-                @Html.LabelFor(model => model.Administrator.PhoneNumber) <span> &nbsp;</span>
-                @Html.TextBoxFor(model => model.Administrator.PhoneNumber)
+        @Html.LabelFor(model => model.Administrator.PhoneNumber) <span> &nbsp;</span>
+        @Html.TextBoxFor(model => model.Administrator.PhoneNumber)
 
-                <br />
-                <br />
+        <br />
+        <br />
 
-                @Html.LabelFor(model => model.Account.Mail) <span> &nbsp;</span>
-                @Html.TextBoxFor(model => model.Account.Mail)
+        @Html.LabelFor(model => model.Account.Mail) <span> &nbsp;</span>
+        @Html.TextBoxFor(model => model.Account.Mail)
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Account.Mail)
+        </div>
 
-                <br>
-                <br>
+        <br />
+        <br />
 
-                @Html.LabelFor(model => model.Account.Password) <span> &nbsp;</span>
-                @Html.PasswordFor(model => model.Account.Password)
+        @Html.LabelFor(model => model.Account.Password) <span> &nbsp;</span>
+        @Html.PasswordFor(model => model.Account.Password)
+        <div class="text-danger">
+            @Html.ValidationMessageFor(model => model.Account.Password)
+        </div>
 
-                <br />
-                <br />
-                <!-- <label for="Numero de rue">Numéro de rue:</label>
-                                <input type="text" id="Adresse ">
-                        <br />
-                        <br />
-                        <label for="Rue">Rue:</label>
-                        <input type="text" id="Adresse ">
-                <br />
-                <br />
-                <label for="Ville">Ville:</label>
-                <input type="text" id="adresse">
-                <br />
-                <br />
-                <label for="Pays">Pays:</label>
-                <input type="text" id="Adresse">
-                <br />
-                <br /> -->
+        <br />
+        <br />
+        <!-- <label for="Numero de rue">Numéro de rue:</label>
+                    <input type="text" id="Adresse ">
+            <br />
+            <br />
+            <label for="Rue">Rue:</label>
+            <input type="text" id="Adresse ">
+    <br />
+    <br />
+    <label for="Ville">Ville:</label>
+    <input type="text" id="adresse">
+    <br />
+    <br />
+    <label for="Pays">Pays:</label>
+    <input type="text" id="Adresse">
+    <br />
+    <br /> -->
 
-                @Html.LabelFor(model => model.Administrator.Type) <span> &nbsp;</span>
-                <span>Salarié </span> @Html.RadioButtonFor(model => model.Administrator.Type, "employee") <span>&nbsp;</span>
-                <span>Bénévole </span> @Html.RadioButtonFor(model => model.Administrator.Type, "volunteer")
+        @Html.LabelFor(model => model.Administrator.Type) <span> &nbsp;</span>
+        <span>Salarié </span> @Html.RadioButtonFor(model => model.Administrator.Type, "employee") <span>&nbsp;</span>
+        <span>Bénévole </span> @Html.RadioButtonFor(model => model.Administrator.Type, "volunteer")
 
-            </div>
+    </div>
 
             <br />
             <br />

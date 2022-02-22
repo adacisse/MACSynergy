@@ -13,7 +13,7 @@ namespace Projet2Crowdfunding.Models
         public string Mail { get; set; }
 
         [MaxLength(100)]
-        [Required, MinLength(5)]
+        [Required]
         [Display(Name = "Mot de passe")]
         public string Password { get; set; }
 

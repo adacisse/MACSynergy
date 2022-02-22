@@ -165,7 +165,7 @@ namespace Projet2Crowdfunding.Controllers
                     "Montant donné : " + amount + " € \n\n\n" +
                     "A bientôt sur MACSynergy!";
 
-                mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "\\wwwroot\\Images\\logoMacSynergy.png"));
+                mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "/wwwroot/Images/logoMacSynergy.png"));
 
                 mm.IsBodyHtml = false;
 

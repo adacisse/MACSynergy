@@ -631,7 +631,7 @@ namespace Projet2Crowdfunding.Models
 
                      Type = ProjectOwnerType.Association,
                      AssociationProof = "/JustificatifsPP/franceolympiqueproof.png",
-                     Image = "/ImageAssos/franceolympiquelogo.png",
+                     Image = "/ImageAssos/olympiquelogo.png",
                      Status = AssoStatus.registered,
 
                      Newsletter = true,

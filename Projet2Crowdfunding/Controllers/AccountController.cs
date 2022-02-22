@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
@@ -94,7 +95,7 @@ namespace Projet2Crowdfunding.Controllers
         [HttpPost]
         public IActionResult GpInscription(AccountViewModel viewModel)
         {
-            if (viewModel.Account.Mail != null && viewModel.Account.Password != null &&
+            if (accountService.IsMailValid(viewModel.Account.Mail) && viewModel.Account.Password.Length > 4 &&
                     viewModel.Administrator.FirstName != null && viewModel.Administrator.LastName != null &&
                     viewModel.Administrator.PhoneNumber != null && viewModel.Administrator.Type != null)
             {
@@ -114,8 +115,12 @@ namespace Projet2Crowdfunding.Controllers
 
                 return Redirect("/Admin/AdminDashboard");
             }
-            ModelState.AddModelError("Administrator.Account.Mail", "Veuillez saisir un email valide");
-            ModelState.AddModelError("Administrator.Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+
+            if (!accountService.IsMailValid(viewModel.Account.Mail))
+                ModelState.AddModelError("Account.Mail", "Veuillez saisir un email valide");
+
+            if (viewModel.Account.Password != null && viewModel.Account.Password.Length < 5)
+                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
 
             return View(viewModel);
         }
@@ -135,10 +140,10 @@ namespace Projet2Crowdfunding.Controllers
         [HttpPost]
         public IActionResult ParticipantInscription(AccountViewModel viewModel)
         {
-            if (viewModel.Participant.ConfidentialityCharter == true)
+            if (viewModel.Participant.ConfidentialityCharter)
             {
                 //if (ModelState.IsValid)
-                if (viewModel.Account.Mail != null && viewModel.Account.Password != null &&
+                if (accountService.IsMailValid(viewModel.Account.Mail) && viewModel.Account.Password.Length > 4  &&
                     viewModel.Participant.FirstName != null && viewModel.Participant.LastName != null)
                 {
                     int idAccount = accountService.CreateAccount(viewModel.Account.Mail, viewModel.Account.Password);
@@ -162,9 +167,15 @@ namespace Projet2Crowdfunding.Controllers
                 }
             } 
 
-            ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
-            ModelState.AddModelError("Participant.Account.Mail", "Veuillez saisir un email valide");
-            ModelState.AddModelError("Participant.Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+            if (!accountService.IsMailValid(viewModel.Account.Mail))            
+                ModelState.AddModelError("Account.Mail", "Veuillez saisir un email valide");
+            
+            if (viewModel.Account.Password != null && viewModel.Account.Password.Length < 5)            
+                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+            
+            if (!viewModel.Participant.ConfidentialityCharter)
+                ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
+                        
 
             return View(viewModel);
         }
@@ -184,8 +195,8 @@ namespace Projet2Crowdfunding.Controllers
         [HttpPost]
         public IActionResult PPInscription(AccountViewModel viewModel, IFormFile AssociationProof)
         {
-            if (viewModel.ProjectOwner.ConfidentialityCharter == true && viewModel.Account.Mail != null && 
-                viewModel.Account.Password != null && viewModel.ProjectOwner.PhoneNumber != null && 
+            if (viewModel.ProjectOwner.ConfidentialityCharter == true && accountService.IsMailValid(viewModel.Account.Mail) && 
+                viewModel.Account.Password.Length > 4 && viewModel.ProjectOwner.PhoneNumber != null && 
                 viewModel.ProjectOwner.Name != null && viewModel.ProjectOwner.Summary != null &&
                 viewModel.ProjectOwner.Type != null && viewModel.AssociationProof != null &&
                 viewModel.ProjectOwner.Address.StreetName != null && viewModel.ProjectOwner.Address.StreetNumber != null && 
@@ -235,11 +246,18 @@ namespace Projet2Crowdfunding.Controllers
 
                 return Redirect("/");
             }
-           
+
             ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "La charte de confidentialité doivent être remplis");
-            ModelState.AddModelError("ProjectOwner", "Les champs obligatoires doivent être remplis");
-            ModelState.AddModelError("ProjectOwner.Account.Mail", "Veuillez saisir un email valide");
-            ModelState.AddModelError("ProjectOwner.Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+
+            if (!viewModel.ProjectOwner.ConfidentialityCharter)
+                ModelState.AddModelError("ProjectOwner", "Les champs obligatoires doivent être remplis");                   
+         
+            if (!accountService.IsMailValid(viewModel.Account.Mail))
+                ModelState.AddModelError("Account.Mail", "Veuillez saisir un email valide");
+
+            if (viewModel.Account.Password != null && viewModel.Account.Password.Length < 5)
+                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+            
 
             return View(viewModel);
         }
