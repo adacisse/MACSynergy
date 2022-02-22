@@ -66,7 +66,7 @@ namespace Projet2Crowdfunding.Models
                         Id = 1,
                         Mail = "adacisse90@gmail.com",
                         Password = AccountService.EncodeMD5("aaaaa"),
-                        Role ="participant"
+                        Role = "participant"
                     }
                 },
                 new Participant
@@ -545,7 +545,7 @@ namespace Projet2Crowdfunding.Models
                      }
 
                  },
-            
+
 
 
 
@@ -588,7 +588,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 10,
                         StreetName = "Avenue du 8 Mai 1945",
-                            StreetNumber = "41",
+                        StreetNumber = "41",
                         ZipCode = "69200",
                         City = "Venisseux",
                         Country = "France"
@@ -631,7 +631,7 @@ namespace Projet2Crowdfunding.Models
 
                      Type = ProjectOwnerType.Association,
                      AssociationProof = "/JustificatifsPP/franceolympiqueproof.png",
-                     Image = "/ImageAssos/olympiquelogo.png",
+                     Image = "/ImageAssos/franceolympiquelogo.png",
                      Status = AssoStatus.registered,
 
                      Newsletter = true,
@@ -718,49 +718,34 @@ namespace Projet2Crowdfunding.Models
                     Name = "Addictions-Maladies chroniques",
                     Summary = "L’accompagnement des personnes dans leurs pratiques addictives" +
                     "L’association Aurore est depuis de nombreuses années mobilisée dans l’accompagnement des personnes se trouvant en situation d’addictions : les professionnels mettent en place des actions de prévention," +
-                    "de réduction des risques et de soins. Les équipes pluridisciplinaires apportent des réponses adaptées prenant en compte le contexte social.", 
+                    "de réduction des risques et de soins. Les équipes pluridisciplinaires apportent des réponses adaptées prenant en compte le contexte social.",
                     //+ "culturel et économique de la personne en lui proposant une offre globale d’accompagnement et de soins pouvant prendre différente formes : sensibiliser et prévenir les personnes sur les comportements à risques, réduire les risques liés à la consommation de drogue, " +
                     //"aider à sortir de l’addiction par le soin communautaire ou l’entraide. ",
 
-                    Descritpion = "De quoi parle-t-on lorsqu’il est question d’abstinence ? C’est le thème sur lequel ont phosphoré cinquante usagers et professionnels de quatre dispositifs d’Aurore et de deux partenaires historiques de l’association. Un débat s’est déroulé tout au long de la journée du 24 novembre 2021. La place de l’abstinence dans le parcours de soin et de rétablissement, l’intérêt de proposer l’expérience d’une fenêtre d’abstinence, la question des traitements médicamenteux face aux demandes d’abstinence… loin des stéréotypes, les réflexions issues des expériences vécues et des positionnements professionnels ont permis à l’ensemble des participants d’exposer différentes approches des addictions." +
+                    Descritpion = "De quoi parle-t-on lorsqu’il est question d’abstinence ? C’est le thème sur lequel ont phosphoré cinquante usagers et professionnels de" +
+                    " quatre dispositifs d’Aurore et de deux partenaires historiques de l’association. Un débat s’est déroulé tout au long de la journée du 24 novembre 2021." +
+                    " La place de l’abstinence dans le parcours de soin et de rétablissement, l’intérêt de proposer l’expérience d’une fenêtre d’abstinence, la question des " +
+                    "traitements médicamenteux face aux demandes d’abstinence… loin des stéréotypes, les réflexions issues des expériences vécues et des positionnements professionnels" +
+                    " ont permis des participants d’exposer différentes approches des addictions." +
                     "Etablir une réflexion commune Dans son discours d’ouverture, Florian Guyot, directeur général de l’association, précise la portée d’un tel travail :" +
-                    " « C’est une journée importante, parce que se réunir pour élaborer ensemble autour de pratiques, et essayer de co - construire  de capitaliser, est quelque chose auquel je tiens beaucoup ». L’association Aurore, " +
-                    "comme l’ensemble de la société,est de plus en plus confrontées aux enjeux des addictions.De la consommation de crack dans les espaces publics aux nouvelles pratiques comme le « chemsex »," +
-                    "les consommations excessives ont un impact lourd sur les consommateurs, notamment sur leur situation sociale et psychologique. " +
-                    "L’association Aurore, experte sur ces questions depuis plusieurs décennies, propose différentes approches.Les dispositifs s’adaptent aux situation et aux spécificités des publics.Sans chercher à opposer les méthodes," +
-                    "s’arrêter le temps d’une journée sur la clinique de l’abstinence, était pour le moins nécessaire." +
-                    "Le SSR La Maison de Kate »,le CSAPA « Revivre, l’amitié sans alcool, les communautés thérapeutiques « Maison André le Gorrec » et « d’Aubervilliers » mais également l’Espoir du Val d’Oise et le Centre de Psychothérapie d’Osny… Six dispositifs présentant six façons très complémentaires de travailler l’abstinence comme outils d’accompagnement thérapeutique." +
-                    "Concrètement, quel travail autour de l’abstinence ? La « fenêtre d’abstinence » proposée aux patients, implique un travail complet autour de la capacité de changement et de la créativité.L’abstinence est un préalable et non une fin en soi et sert de socle à la mise en place « d’autre chose »." +
-                    "Le groupe,l’entraide,l’exemplarité des plus anciens,le travail sur les émotions, la prévention de la rechute,la prise de conscience de dépendances autres que celles aux produits," +
-                    "tout ceci fait émerger chez l’usager des changements de comportements, qui eux - mêmes, permettent de mettre à distance la consommation." +
-                    "Ainsi, notre vision de la dépendance influence les approches, est - ce une « maladie » de type allergique dont le seul remède est l’abstinence pour échapper à une issue fatale,ou peut - elle être guérie à un moment donné et ainsi permettre aux patients de contrôler leur consommation ? Le concept de maladie implique l’existence de symptômes,que faire du manque," +
-                    "du vide, de la souffrance, de l’obsession et de la compulsion, de la frustration, de la peur, de l’inconfort, de la dépression, de la souffrance etc… " +
-                    "« Savoir que c’est une maladie permet de comprendre les compulsions, les comportements et de pouvoir agir dessus," +
-                    "mais aussi de déculpabiliser ». Tous s’accordent à dire qu’un travail sur le changement des comportements est nécessaire et que cela passe par l’entraide et le groupe, dénominateurs communs des six services présents « L’abstinence," +
-                    "c’est la construction d’un état d’esprit » indique un usager dans la salle." +
-                    "communautaire," +
-                    "le suivi individuel,la rechute et sa prévention et la gestion des traitements.Après une matinée de réflexion à large spectre,il s’agissait de concentrer la focale sur des enjeux de terrains et de pratiques.Les échanges," +
-                    "très riches là encore, ont permis de montrer l’impact de l’abstinence dans les démarches de soin.Jean - Pierre Couteron, psychologue clinicien et ancien président de la Fédération Addiction et Jean - Maxence Granier, ont pu faire la synthèse des échanges dans un dialogue improvisé.C’est surtout la notion de lien qui ressortira de leur échange.Comme si l’abstinence permettait de structurer les approches," +
-                    "individuelles comme groupales autour d’un « terrain commun clairement défini," +
-                    "avec un groupe et une équipe ». Remettre l’usager au centre. Placer les usagers au centre des démarches d’accompagnement est probablement ce qui ressort en premier de cette journée, dont les actes seront bientôt disponibles. « Pour conclure le plus important est de remettre le patient au centre," +
-                    "de savoir ce que la personne veut, et de ne pas essayer de la faire rentrer dans un modèle » nous dit Alexandra Roy, counsellor au Centre de Psychothérapie d’Osny. Comme de nombreux intervenants l’ont rappelé à plusieurs reprises : le soin est un processus," +
-                    "dont le travail en équipe et le groupe sont des ciments essentiels. En 2022, la réflexion se poursuivra en collaboration avec la Fédération Addiction autour d’un colloque. " +
-                    "« Le meilleur tranquillisant est un bon sentiment d’appartenance » " +
-                    "Boris Cyrulnik",
+                    " « C’est une journée importante, parce que se réunir pour élaborer ensemble autour de pratiques, et essayer de co - construire  de capitaliser, " +
+                    "est quelque chose auquel je tiens beaucoup ». L’association Aurore, " +
+                    "la société,est de plus en plus confrontées aux enjeux des addictions.De la consommation de crack dans les espaces publics aux nouvelles pratiques comme le « chemsex »," +
+                    "les consommations excessives ont un impact lourd sur les consommateurs, notamment sur leur situation sociale et psychologique. ",
 
                     Picture = "/ImagesProject/imgProjetAurore.jpg",
                     Category = Category.Santé,
-                    StartDate  = new DateTime(2021, 11, 9, 16, 5, 7, 123),
+                    StartDate = new DateTime(2021, 11, 9, 16, 5, 7, 123),
                     EndDate = new DateTime(2022, 2, 24, 0, 0, 0, 0),
                     Video = "https://www.youtube.com/embed/Y_-TnjTNVFA",// "/VideosProject/VideoAurore.jpg",
                     MaterialDonation = "Médicaments, Matériaux informatiques",
-                    Location="Iceland",
-                    ProjectOwnerId=1,
-                    HeartCounter=1
+                    Location = "Iceland",
+                    ProjectOwnerId = 1,
+                    HeartCounter = 1
                 },
 
                 new Project
-                {      
+                {
                     Id = 2,
                     Status = Status.sumittedForPublishing,
                     Name = "Doubler la population mondiale de tigres",
@@ -778,11 +763,8 @@ namespace Projet2Crowdfunding.Models
                     "Recherché pour sa peau mais aussi pour diverses parties de son corps, supposées soigner plusieurs pathologies dans la médecine " +
                     "traditionnelle chinoise, Panthera tigris est victime d’un trafic international, exercé par de puissantes mafias. Si sa chasse est" +
                     " désormais interdite, en Asie, on continue de tuer le tigre pour s’approprier symboliquement sa puissance, fabriquer des médicaments" +
-                    " utilisés dans la médecine traditionnelle ou encore pour en faire des articles de décoration, des tentures, des tapis ou des objets" +
-                    " souvenirs. De 2000 à 2018, 1142 saisies de tigres ont été réalisées dans 32 pays, correspondant à 2359 tigres, soit au moins 124 " +
-                    "animaux par an. La destruction de son habitat constitue également une menace sérieuse pour le félin. Il ne subsiste plus aujourd’hui " +
-                    "que dans 7% de son aire de répartition historique et 43% de ses habitats restants pourraient bientôt être perdus en raison de " +
-                    "l’expansion agricole et de l’urbanisation. ",
+                    " utilisés dans la médecine traditionnelle ou encore pour en faire des articles de décoration ou des objets" +
+                    " souvenirs. De 2000 à 2018, 1142 saisies de tigres ont été réalisées dans 32 pays.  ",
 
                     Picture = "/ImagesProject/imgWwf.jpeg",
                     Category = Category.Environnement,
@@ -810,20 +792,13 @@ namespace Projet2Crowdfunding.Models
                     "Face au changement climatique et aux phénomènes naturels extrêmes, la mangrove joue également un rôle capital puisqu’elle protège l’intérieur de la côte des dégâts cycloniques et de l’érosion.Enfin,elle filtre l’eau et stocke le carbone," +
                     "comme le font les forêts terrestres. A Madagascar,es mangroves de la région du Manambolo protègent notamment la future Aire Marine Protégée de l’archipel des Îles Barren contre la sédimentation venant du versant ouest de l’île.Elles garantissent également la protection de la zone humide de Manambolomaty(classée site RAMSAR)," +
                     "de la forêt primaire de Tsimembo ainsi que des plaines rizicoles de Bemamba et de Soahany contre les effets néfastes de l’augmentation du niveau de la mer causée par le changement climatique." +
-                    "C’est grâce à ces écosystèmes uniques que poissons et invertébrés migrent vers les récifs et la haute mer afin de s’y réfugier" +
-                    " pour se nourrir et se reproduire.La pêche représente dans la région la principale source de revenus," +
-                    " mais utilise encore des techniques non durables et les techniques de stockage et de conditionnement sont peu efficaces." +
-                    " Sur 15 kg de crabes pêchés par pêcheur et par jour en moyenne, 15% sont perdus du fait des mauvaises conditions de stockage. " +
-                    "Ce chiffre grimpe jusqu’à 50% lors de la saison des pluies. Le retard de développement chez les pêcheurs du Manambolo s’explique, entre autres," +
-                    "par leur isolement et la difficulté qu’ils ont à accéder au marché régional.Par conséquent," +
-                    "leur poids dans les négociations avec les collecteurs est faible bien qu’ils soient organisés en groupement informel.Les communautés de base(COBA), acteurs clés pour la gestion des ressources naturelles," +
-                    "manquent souvent de ressources techniques et organisationnelles pour être pleinement efficaces et aucune politique n’intègre véritablement les enjeux de gestion durable des mangroves.",
+                    "C’est grâce à ces écosystèmes uniques que poissons et invertébrés migrent.",
 
                     Picture = "/ImagesProject/mangroveimage2.jpeg",
                     Category = Category.Environnement,
                     StartDate = new DateTime(2021, 12, 9, 15, 6, 8, 200),
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
-                    Video = "https://www.youtube.com/embed/-ennmy8Iias",///VideosProject/mangrovevideo.jpeg",
+                    Video = "https://www.youtube.com/embed/-ennmy8Iias",//VideosProject/mangrovevideo.jpeg",
                     MaterialDonation = "Barques motorisées",
                     Location = "Troyes",
                     ProjectOwnerId = 2,
@@ -855,8 +830,7 @@ namespace Projet2Crowdfunding.Models
                     "RÉSULTATS ATTENDUSPlus de 80 000 enfants, dont 40 % de filles qui acquièrent une meilleure compréhension des enjeux de scolarisation," +
                     "et compétences de vie liées à l’inclusion de leurs pairs en situation de vulnérabilité." +
                     "Plus de 1000 professionnels éducatifs formés qui acquièrent des compétences permettant de déployer des séances de jeux socio - sportifs et de Playdagogie reconnues officiellement par les Ministères des Sports," +
-                    "et de l’Education nationale." +
-                    "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
+                    "et de l’Education nationale.",
 
                     Picture = "/ImagesProject/Playimage.jpeg",
                     Category = Category.Education,
@@ -884,22 +858,7 @@ namespace Projet2Crowdfunding.Models
                     "d’améliorer leurs conditions de vie et de promouvoir le respect de leur dignité et de leurs droits fondamentaux " +
                     "d’agir et de témoigner, pour que leurs besoins essentiels soient correctement couverts." +
                     "Nos valeurs, notre charte Guidés par la volonté de promouvoir et défendre la dignité humaine, nous nous reconnaissons dans des principes éthiques auxquels notre approche du handicap donne un sens particulier." +
-                    "HUMANITÉ La valeur d’humanité est le socle de notre action de solidarité.Nous considérons chaque personne sans discrimination, et reconnaissons à chacun sa dignité.Notre action est empreinte de respect, de bienveillance et d’humilité." +
-                    "INCLUSION Nous promouvons l’inclusion de chacun dans la société et la participation de tous, dans le respect de la diversité, de l’équité et des choix de chacun. Nous reconnaissons la différence comme une richesse." +
-                    "En savoir plus sur l'inclusion " +
-                    "ENGAGEMENT Nous nous engageons avec détermination et audace, à développer des réponses adaptées, pragmatiques et innovantes. Nous agissons et mobilisons autour de nous pour combattre les injustices." +
-                    "INTÉGRITÉ " +
-                    "Nous agissons de manière indépendante, professionnelle, désintéressée et transparente." +
-                    "Nos bénéficiaires 3969 593 bénéficiaires directs en 2022 (Personnes ayant reçu un bien ou un service au cours d’un projet mis en œuvre par HI ou ses partenaires opérationnels)" +
-                    "12 975 481 bénéficiaires indirects en 2020 (Personnes bénéficiant des effets d'un bien ou d’un service reçu par un bénéficiaire direct de HI)" +
-                    "Populations exposées aux risques de maladies, de violences ou d’accidents invalidants Personnes ayant subi des traumatismes psychologiques forts Populations vulnérables, en particulier les personnes handicapées" +
-                    "Populations réfugiées et populations sinistrées ou déplacées par les crises, les conflits et les catastrophes naturelles" +
-                    "Populations exposées au danger des armes, munitions et engins explosifs dans les conflits armés ou dans leurs suitesNos domaines d’intervention" +
-                    "Aide d’urgence aux populations victimes de crises et de catastrophes naturelles" +
-                    "Prévention des handicaps et des maladies invalidantes" +
-                    "Appareillage et rééducation des personnes handicapées" +
-                    "Insertion scolaire, sociale et économique Action contre les mines, les restes explosifs de guerre et l'utilisation des armes en zones peuplées" +
-                    "Promotion des droits des personnes handicapées",
+                    "HUMANITÉ La valeur d’humanité. ",
 
                     Picture = "/ImagesProject/handicapimage.jpeg",
                     Category = Category.Humanitaire,
@@ -937,19 +896,8 @@ namespace Projet2Crowdfunding.Models
                     "régional de consultation des ONG internationales présentes au Moyen-Orient, des Nations Unies, des universités " +
                     "et des ONG locales. Une phase préparatoire d’un an a ensuite permis de définir les compétences attendues des " +
                     "futurs managers humanitaires en eau, hygiène et assainissement et de dessiner un programme de formation et de" +
-                    " dessine le programme pédagogique. Rentrée prévue en septembre 2020 pour la première promotion !Action contre la Faim a souhaité" +
-                    " renforcer les aptitudes et compétences de management d’équipe et de leadership de ses managers nationaux : nous avons donc conçu " +
-                    "ensemble une formation de 5 jours, qui a été ensuite dispensée dans 4 pays, la Jordanie (pour des équipes d’Irak, de Jordanie et du Yémen)," +
-                    " la Sierra Leone (équipes du Libéria et de Sierre Leone), le Tchad (équipes du Cameroun et du Tchad), et le Népal (équipes du Bangladesh, Népal, " +
-                    "Pakistan, Myanmar). L’objectif d’ACF était d’améliorer tant la gestion et la fidélisation des équipes que la conduite des projets prioritaires." +
-                    " En développant davantage les compétences de management et de leadership au niveau des pays, ACF souhaitait également apporter un appui au renforcement" +
-                    " de la nationalisation des équipes de coordination. Amail Bendedda, formatrice associée Bioforce qui a animé l’ensemble de ces sessions, précise :" +
-                    " « Pour monter cette formation, je me suis concentrée sur les aspects efficaces et simples des méthodes et des outils de management afin qu’ils soient" +
-                    " tout de suite utiles et utilisables. S’extraire une semaine des opérations c’est complexe et je me devais de rendre cette formation « pratico-pratique »" +
-                    " en intégrant de la théorie et de la réflexion. Il y a eu de magnifiques prises de conscience de certaines attitudes et croyances sur le management et leadership." +
-                    " Mon travail est essentiel à ce niveau-là et le coaching et la médiation m’aident énormément : établir un environnement de confiance et de sécurité pour permettre aux " +
-                    "participants une remise en question en toute bienveillance, et ainsi " +
-                    "être en mesure d’accueillir d’autres façons de faire, plus adaptées et davantage tournées vers l’Autre. »",
+                    " dessine le programme pédagogique. Rentrée en septembre 2020 pour la première promotion !Action contre la Faim a souhaité" +
+                    " renforcer les aptitudes et compétences de management.",
 
 
                     Picture = "/ImagesProject/bioforceimage.jpeg",
@@ -980,7 +928,10 @@ namespace Projet2Crowdfunding.Models
                     "• Création et développement d’unions francophones.ACCOMPAGNEMENT DES CANDIDATURES" +
                     "En complément du soutien financier, les fédérations peuvent solliciter le PAIF pour un accompagnement stratégique et opérationnel de leurs candidatures à des postes à responsabilité dans les instances sportives internationales et à l’organisation de grands événements sportifs." +
                     "A titre d’exemple le CNOSF a accompagné Jean-Christophe Rolland dans sa candidature au poste de Président de la Fédération internationale des sociétés " +
-                    "d’aviron et la Fédération française de lutte dans l’obtention des championnats du monde 2017.",
+                    "d’aviron et la Fédération française de lutte dans l’obtention des championnats du monde 2017. " +
+                    "Nos valeurs,notre charte Guidés par la volonté de promouvoir et défendre la dignité humaine," +
+                    "nous nous reconnaissons dans des principes éthiques auxquels notre approche du handicap donne un sens particulier." +
+                    "HUMANITÉ La valeur d’humanité.",
 
                     Picture = "/ImagesProject/olympiqueimage.jpeg",
                     Category = Category.Autre,
@@ -1008,8 +959,7 @@ namespace Projet2Crowdfunding.Models
                      "de former le personnel de santé à la prise en charge de la maladie et d’accompagner les familles  par l’éducation thérapeutique.Une sensibilisation de la population sera également menée." +
                      "Le programme vise aussi à renforcer le réseau d’Afrique Centrale(REDAC) afin de promouvoir les échanges scientifiques et à assurer  un plaidoyer auprès des États." +
                      "ONG accompagne le développement humain et économiquedes pays où il intervient, à travers trois cœurs de métier : laformation technique et l’insertion professionnelle, l’appui aux" +
-                     "petites entreprises, et l’accès des personnes vulnérables àl’éducation et à la santé. Avec ses partenaires, il bâtit desenvironnements permettant à toute personne de révéler ses" +
-                     "talents, se construire un avenir meilleur et devenir un acteur responsable dans son pays",
+                     "petites entreprises, et l’accès des personnes vulnérables àl’éducation et à la santé avec ses partenaires pour batir un monde meilleur.",
 
 
                      Picture = "/ImagesProject/drepacareimage.jpeg",
@@ -1047,18 +997,7 @@ namespace Projet2Crowdfunding.Models
                     "et des ONG locales. Une phase préparatoire d’un an a ensuite permis de définir les compétences attendues des " +
                     "futurs managers humanitaires en eau, hygiène et assainissement et de dessiner un programme de formation et de" +
                     " dessine le programme pédagogique. Rentrée prévue en septembre 2020 pour la première promotion !Action contre la Faim a souhaité" +
-                    " renforcer les aptitudes et compétences de management d’équipe et de leadership de ses managers nationaux : nous avons donc conçu " +
-                    "ensemble une formation de 5 jours, qui a été ensuite dispensée dans 4 pays, la Jordanie (pour des équipes d’Irak, de Jordanie et du Yémen)," +
-                    " la Sierra Leone (équipes du Libéria et de Sierre Leone), le Tchad (équipes du Cameroun et du Tchad), et le Népal (équipes du Bangladesh, Népal, " +
-                    "Pakistan, Myanmar). L’objectif d’ACF était d’améliorer tant la gestion et la fidélisation des équipes que la conduite des projets prioritaires." +
-                    " En développant davantage les compétences de management et de leadership au niveau des pays, ACF souhaitait également apporter un appui au renforcement" +
-                    " de la nationalisation des équipes de coordination. Amail Bendedda, formatrice associée Bioforce qui a animé l’ensemble de ces sessions, précise :" +
-                    " « Pour monter cette formation, je me suis concentrée sur les aspects efficaces et simples des méthodes et des outils de management afin qu’ils soient" +
-                    " tout de suite utiles et utilisables. S’extraire une semaine des opérations c’est complexe et je me devais de rendre cette formation « pratico-pratique »" +
-                    " en intégrant de la théorie et de la réflexion. Il y a eu de magnifiques prises de conscience de certaines attitudes et croyances sur le management et leadership." +
-                    " Mon travail est essentiel à ce niveau-là et le coaching et la médiation m’aident énormément : établir un environnement de confiance et de sécurité pour permettre aux " +
-                    "participants une remise en question en toute bienveillance, et ainsi " +
-                    "être en mesure d’accueillir d’autres façons de faire, plus adaptées et davantage tournées vers l’Autre. »",
+                    " renforcer les aptitudes et compétences.",
 
 
                      Picture = "/ImagesProject/guerreimage.jpg",
@@ -1095,8 +1034,7 @@ namespace Projet2Crowdfunding.Models
                     "RÉSULTATS ATTENDUSPlus de 80 000 enfants, dont 40 % de filles qui acquièrent une meilleure compréhension des enjeux de scolarisation," +
                     "et compétences de vie liées à l’inclusion de leurs pairs en situation de vulnérabilité." +
                     "Plus de 1000 professionnels éducatifs formés qui acquièrent des compétences permettant de déployer des séances de jeux socio - sportifs et de Playdagogie reconnues officiellement par les Ministères des Sports," +
-                    "et de l’Education nationale." +
-                    "Plus de quinze institutions et associations locales s’inscrivent dans une dynamique d’intégration du sport  comme outil d’éducation au sein de leurs dispositifs.",
+                    "et de l’Education nationale.",
 
                      Picture = "/ImagesProject/avenirimage.jpg",
                      Category = Category.Education,
@@ -1131,8 +1069,7 @@ namespace Projet2Crowdfunding.Models
                      " j'ai 22 ans.Je suis né et j'ai grandi en montagne, très loin de la mer !À trois ans, je monte sur des skis, à dix huit, je deviens pisteur-secouriste." +
                      "Proche des cimes enneigées et des parois,es aventures montagneuses m'emmènent toujours plus loin et plus haut : en escalade, en ski ou en speed riding." +
                      "Pendant longtemps," +
-                     "j'évolue loin de la mer et des voiles qui la parcourent !Et puis en 2018.." +
-                     "J'atterri en Polynésie. Après avoir dépassé ma peur de l'eau,(aujourd'hui encore je préfère être au dessus !) je plonge dans le grand bain et j'entends parler des bateaux à voile : ce sera mon moyen de déplacement.",
+                     "j'évolue loin de la mer et des voiles qui la parcourent. ",
 
                      Picture = "/ImagesProject/kirikouimage.png",
                      Category = Category.Environnement,
@@ -1160,7 +1097,8 @@ namespace Projet2Crowdfunding.Models
                       "locaux ayant fait la démarche de recherche de producteurs respectant l'environnement,Une surface de vente sur Plouigneau de 50 m2 proposant :" +
                       "Un beau rayon fruits et légumes(ma spécialité!) respectant la saisonnalité.Une quarantaine de références vrac proposant des légumineux,des féculents,du sucre,de la farine etc...Du cidre," +
                       "de la bière,des jus et des sirops transformés dans le coin.Des plantes aromatiques et médicinales cultivées," +
-                      "séchées et conditionnées sur la commune.Du pain fait par un paysan boulanger du secteur(sa farine sera également disponible en vrac!!'humain et le produit.",
+                      "séchées et conditionnées sur la commune.Du pain fait par un paysan boulanger du secteur(sa farine sera également disponible en vrac!!'humain et le produit." +
+                      "Notre association de primeurs veut pousser la population a manger correctement.C'est à dire bio, frais et sans pesticides. Notre devise est de protéger nos clients en leur offrant des aliments de qualité.",
 
                       Picture = "/ImagesProject/oignon.png",
                       Category = Category.Autre,
@@ -1190,7 +1128,7 @@ namespace Projet2Crowdfunding.Models
                       "libère le traumatisme et les blocages que cela engendre.Les mots libèrent," +
                       "apaisent et pansent les blessures mais ils permettent de faire exister le proche disparu et l'intégrer dans un livre, permet de le rendre indélébile dans le temps : il a existé et il existe ! Le livre devient alors un outil de guérison et d'expression." +
                       "Le projet permettra d'éditer plusieurs ouvrages témoignant d'un chemin de résilience face à la disparition d'un être cher, mais nous savons aussi que la créativité peut aider à s'accomplir,à devenir soi," +
-                      " c'est pour cela que nous souhaitons aussi éditer des jeux de cartes comme des oracles,  libérateurs d'émotions..",
+                      " c'est pour cela que nous souhaitons aussi éditer des jeux de cartes comme des oracles,  libérateurs d'émotions pour permettre aux personnes touchées de se libérer et de se sentir bien dans leur peau et dans leur tete. ",
 
                       Picture = "/ImagesProject/mort.jpeg",
                       Category = Category.Humanitaire,
@@ -1220,7 +1158,7 @@ namespace Projet2Crowdfunding.Models
                       "2500 livrets ont déjà été imprimés grâce à des dons du Formindep et du Syndicat de la Médecine Générale, mais nous avons également dû avancer des sous pour compléter." +
                       "Les fonds récoltés serviront donc au remboursement des étudiant.e.s et à l’impression et la distribution de nouveaux livrets.Qui sommes nous?Nous sommes des étudiant.e.s en médecine des facultés Paris 5 et Paris 7, réuni.e.s depuis 2013 au sein du collectif “La Troupe du RIRE” dont l’organisation est horizontale et informelle." +
                       "Ce qui nous réunit, c’est d’abord une forte volonté d’éthique dans notre formation médicale initiale, par l’éducation populaire." +
-                      "En lisant à plusieurs le rapport de l’OMS Comprendre la promotion de l’industrie pharmaceutique et y répondre et entouré.e.s du Formindep et du Syndicat de la Médecine Générale (SMG), nous avons pu nous approprier ce texte et le résumer pour le rendre plus facile d’accès.L’heure est désormais venue de le diffuser, nous comptons sur vous !..",
+                      "En lisant à plusieurs le rapport de l’OMS promotion de l’industrie pharmaceutique et y répondre et entourés du Formin et du Syndicat de la SMG..",
 
                       Picture = "/ImagesProject/pharmacie1.jpg",
                       Category = Category.Humanitaire,
@@ -1325,34 +1263,39 @@ namespace Projet2Crowdfunding.Models
                       ParticipantId = 4
                   }
 
-                ) ;
+                );
             this.Steps.AddRange(
                 new Step
                 {
                     Id = 1,
-                    Amount = 5000,
-                    Description = "Pour acheter le terrain",
+                    Amount = 10000,
+                    Description = "Cette somme permettra de louer un local pour en faire un espace de santé pour les personnes addictives. Ca leur permettra" +
+                    "de se confier à des professionnels du domaine qui mettent en place des actions de prévention",
+
                     ProjectId = 1
                 },
                 new Step
                 {
-                Id = 2,
+                    Id = 2,
                     Amount = 17000,
-                    Description = "Pour construire un centre de santé",
+                    Description = "Cette deuxième étape permettra de payer pour un premier temps " +
+                    "les professionels chargés de la formation de nos futurs bénévols et nous permettra d'acheter des équipements" +
+                    " nécessaires pour accompagner nos patients et les professionnels de santé.",
                     ProjectId = 1
                 },
                 new Step
                 {
                     Id = 3,
                     Amount = 15000,
-                    Description = "Pour équiper le centre de santé",
+                    Description = "Ce montant va nous permettre de  ",
                     ProjectId = 2
                 },
                 new Step
                 {
                     Id = 4,
-                    Amount = 7000,
-                    Description = "Pour acheter le matériel de déminage",
+                    Amount = 47000,
+                    Description = "Cette première partie de la collecte, nous permettra d'acheter " +
+                    "le matériel necéssaire pour la mise en place du processus du déminage",
                     ProjectId = 3
                 },
                 new Step
@@ -1405,12 +1348,12 @@ namespace Projet2Crowdfunding.Models
                        ProjectId = 6
                    },
                     new Step
-                   {
-                       Id = 12,
-                       Amount = 10000,
-                       Description = "Pour aider les personnes à se réinserer dans la vie active",
-                       ProjectId = 6
-                   },
+                    {
+                        Id = 12,
+                        Amount = 10000,
+                        Description = "Pour aider les personnes à se réinserer dans la vie active",
+                        ProjectId = 6
+                    },
                     new Step
                     {
                         Id = 13,
@@ -1432,7 +1375,7 @@ namespace Projet2Crowdfunding.Models
                         Description = "Pour acheter le matériel necessaire",
                         ProjectId = 7
                     },
-                   
+
                     new Step
                     {
                         Id = 16,
@@ -1460,7 +1403,7 @@ namespace Projet2Crowdfunding.Models
                         Amount = 15000,
                         Description = "Pour offrir un suivi efficace aux personnes malade",
                         ProjectId = 10
-                     },
+                    },
 
                     new Step
                     {
@@ -1572,7 +1515,7 @@ namespace Projet2Crowdfunding.Models
             );
 
 
-            this.SaveChanges(); 
+            this.SaveChanges();
         }
 
 
