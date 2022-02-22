@@ -11,3 +11,7 @@ a.nounderline:link
  text-decoration:none; 
 } 
 </style>
+
+.popover{
+    background-color: white;
+}
