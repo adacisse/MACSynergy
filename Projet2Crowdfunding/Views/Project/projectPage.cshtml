@@ -463,7 +463,7 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#home">Le projet</a>
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home" >Le projet</a>
                 </li> 
                 <li class="nav-item" id="recolte">
                     <a class="nav-link" data-bs-toggle="tab" href="#menu2">La récolte</a>
@@ -493,8 +493,8 @@
                     
                     <!-- Section heading -->
                     <section class="team-section text-center my-5"
-                             style="background-color: rgb(173, 209, 42);opacity:0.8;">
-                        <h2 class="h1-responsive font-weight-bold my-5">Le projet</h2>
+                             style="background-color: #8fbc8f; opacity: 0.8;">
+                        <h2 class="h1-responsive font-weight-bold my-5">A propos de notre projet</h2>
                         <!-- Section description -->
                         <div class="container mt-5" align="justify" style="text-align:justify">
                             <div class="row">
@@ -618,14 +618,38 @@
                 <div id="menu2" class="container tab-pane fade">
                     <br>
                     <!-- Section: Idée v.1 -->
-                    <section class="team-section text-center my-5" style="background-color: rgb(173, 209, 42); opacity: 0.8;"> <!-- #f6f1eb -->
+                    <section class="team-section text-center my-5" style="background-color: white; opacity: 0.8;">
+                        <!-- #f6f1eb rgb(173, 209, 42)#f6f1eb-->
                         <!-- Section heading -->
-                        <h2 class="h1-responsive font-weight-bold my-5">Le besoin du projet</h2>
-                        <h4>Description des palliers de la récolte</h4>
-
-
+                        <h2 class="h1-responsive font-weight-bold my-5">Que faire pour soutenir ce projet?</h2>
                         
-                            <div class="col-lg-8 col-sm-8 col-md-8">
+                       
+
+                        <div class="pb-4 px-4">
+                            <div class="mode-vert ms-3" align="justify">
+
+
+
+                                @if (Model.ProjectOwner.VolunteerDescritpion != null)
+                                {
+                                    string pagelink = "/ProjectOwner/POPage/" + @Model.ProjectOwner.Id;
+                                    <p>
+                                        Pour soutenir notre action vous pouvez faire un don matériel ou un don en nature selon votre souhait.
+                                        Pour les plus motivés nous vous proposons de découvrir <a href="@pagelink">@Model.ProjectOwner.Name</a> à travers notre profil sur MACSynergy.
+                                    </p>
+                                }
+                                <p>
+                                    Les palliers sont des jalons qui permettent à ce projet d'aboutir progressivement. Chaque pallier correspond à un ou plusieurs objectifs que le pallier atteint nous permet de réaliser.<br />
+                                    Voici un tableau qui reprend les éléments clés de ces palliers.Nous comptons sur votre soutien pour aller au plus loin et au plus vite avec ce projet:
+                                </p>
+                            </div>
+                            <div class="border-MACS" align="center">
+
+                                <div class="mode-vert pt-4 px-4">
+                                    <h6 style="font-size: 30px; color: rgb(63, 63, 63)">Description des palliers de la récolte</h6>
+                                    <!-- <p style="font-size: 14px">@Model.Project.Summary</p>-->
+                                    <br />
+                                </div>
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -637,39 +661,29 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach (var Step in Model.ProjectStepsList)
+                                        @for (int i = 0; i < Model.ProjectStepsList.Count; i++)
+
                                         {
+                                            int j=i+1;
                                             <tr>
-                                                <th scope="row">@Step.Id</th>
-                                                <td>@Step.Amount €</td>
-                                                <td> @Step.Description</td>
+                                                <th scope="row">@j</th>
+                                                <td>@Model.ProjectStepsList[i].Amount €</td>
+                                                <td> @Model.ProjectStepsList[i].Description</td>
 
                                             </tr>
                                         }
                                     </tbody>
                                 </table>
                             </div>
-                        
+
+                        </div>
+                        <div>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+                        <div class="mode-vert pt-4 px-4">
+                            <h6 style="font-size: 30px; color: rgb(63, 63, 63)">Description dons matériels</h6>
+                            <p style="font-size: 14px">@Model.Project.MaterialDonation</p>
+                        </div>
 
 
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim
-                            veniam,quis nostrud exercitation ullamco.
-                        </p>
-                        <h4>Description dons matériels</h4>
-                        <p>
-                            @Model.Project.MaterialDonation
-                        </p>
-                        <h4>Description des tâches de bénévolats</h4>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim  veniam, quis nostrud exercitation ullamco.
-                        </p>
                     </section>
                 </div>
                 <div id="menu3" class="container tab-pane fade">
