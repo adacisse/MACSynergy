@@ -333,7 +333,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 10,
                         Mail = "ongwwf@gmail.com",
-                        Password = AccountService.EncodeMD5("wwf"),
+                        Password = AccountService.EncodeMD5("wwfwwf"),
                         Role = "po"
                     }
 
@@ -391,7 +391,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 11,
                         Mail = "playinternational@gmail.com",
-                        Password = AccountService.EncodeMD5("play"),
+                        Password = AccountService.EncodeMD5("playplay"),
                         Role = "po"
                     }
 

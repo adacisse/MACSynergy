@@ -114,6 +114,9 @@ namespace Projet2Crowdfunding.Controllers
 
                 return Redirect("/Admin/AdminDashboard");
             }
+            ModelState.AddModelError("Administrator.Account.Mail", "Veuillez saisir un email valide");
+            ModelState.AddModelError("Administrator.Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+
             return View(viewModel);
         }
 
@@ -157,11 +160,12 @@ namespace Projet2Crowdfunding.Controllers
 
                     return Redirect("/");
                 }
-            } else
-            {
-                ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
-            }
-            
+            } 
+
+            ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
+            ModelState.AddModelError("Participant.Account.Mail", "Veuillez saisir un email valide");
+            ModelState.AddModelError("Participant.Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+
             return View(viewModel);
         }
 
@@ -234,7 +238,8 @@ namespace Projet2Crowdfunding.Controllers
            
             ModelState.AddModelError("ProjectOwner.ConfidentialityCharter", "La charte de confidentialité doivent être remplis");
             ModelState.AddModelError("ProjectOwner", "Les champs obligatoires doivent être remplis");
-
+            ModelState.AddModelError("ProjectOwner.Account.Mail", "Veuillez saisir un email valide");
+            ModelState.AddModelError("ProjectOwner.Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
 
             return View(viewModel);
         }

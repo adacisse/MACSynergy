@@ -81,7 +81,7 @@ namespace Projet2Crowdfunding.Controllers
                     //doc.Load(htmlPath);
                     //mm.Body = doc.DocumentNode.OuterHtml;
 
-                mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "\\wwwroot\\Images\\logoMacSynergy.png"));
+                mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "/wwwroot/Images/logoMacSynergy.png"));
 
                 mm.IsBodyHtml = false;
                 using (SmtpClient smtp = new SmtpClient())
