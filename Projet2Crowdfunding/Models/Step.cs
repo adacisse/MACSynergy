@@ -11,7 +11,7 @@ namespace Projet2Crowdfunding.Models
         [Display(Name = "Montant souhaité (€)")]
         public double Amount { get; set; }
 
-        [MaxLength(250)]
+        [MaxLength(400)]
         [Required]
         [Display(Name = "Description du palier")]
         public string Description { get; set; }

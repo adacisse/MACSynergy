@@ -813,9 +813,6 @@ namespace Projet2Crowdfunding.Models
 
                     Summary = "Ce programme sera déployé jusqu'en 2022 au Burundi, au Kosovo, au Sénégal," +
                     " au Libéria et, dans le cadre de son incubateur, dans d'autres pays d'Afrique de l'Ouest.",
-                    //+" Il contribuera à rendre accessible une éducation de qualité (Objectif du Développement Durable n°4) " 
-                    //+ "pour les publics les plus vulnérables comme les filles, les enfants en situation de handicap ou les minorités" +
-                    //" communautaires.",
 
                     Descritpion = "Face aux enjeux de qualité de l’éducation et de son accès par les populations " +
                     "les plus vulnérables, PLAY propose un projet reposant sur la création et la diffusion d’un " +
@@ -1055,7 +1052,7 @@ namespace Projet2Crowdfunding.Models
 
                      Summary = "Et bien cette fois ce n'est pas un petit garçon qui combat une terrible sorcière, mais presque !" +
                      "KIRIKOU est un voilier de 6m50," +
-                     "un petit bateau en bois! Mais c'est aussi un projet qui est à l'initiative de Léo Béroud, un jeune montagnard devenu marin. Après avoir eu la drôle d'idée d'aller naviguer en Polynésie suite à son bac," +
+                     "un petit bateau en bois! Mais c'est aussi un projet qui est à l'initiative de l'association Léo Béroud, un jeune montagnard devenu marin. Après avoir eu la drôle d'idée d'aller naviguer en Polynésie suite à son bac," +
                      "il décide de se lancer dans un projet un peu fou : participer à la mini transatlantique!",
 
                      Descritpion = "KIRIKOU est un projet sur deux ans, mais il faut déjà commencer à s'équiper pour gravir cette montagne, car la route est longue jusqu'aux Antilles ! " +
@@ -1287,7 +1284,8 @@ namespace Projet2Crowdfunding.Models
                 {
                     Id = 3,
                     Amount = 15000,
-                    Description = "Ce montant va nous permettre de  ",
+                    Description = "Ce montant va nous permettre de lancer L’initiative " +
+                    "Tiger X 2 pour permettre à  l'espace de ne pas disparaitre et à se reproduire",
                     ProjectId = 2
                 },
                 new Step
@@ -1295,143 +1293,115 @@ namespace Projet2Crowdfunding.Models
                     Id = 4,
                     Amount = 47000,
                     Description = "Cette première partie de la collecte, nous permettra d'acheter " +
-                    "le matériel necéssaire pour la mise en place du processus du déminage",
+                    "le matériel necéssaire pour la mise en place du processus du déminage et protèger " +
+                    "la future Aire Marine de l’archipel des Îles Barren contre la sédimentation",
                     ProjectId = 3
                 },
+              
                 new Step
                 {
                     Id = 5,
-                    Amount = 9000,
-                    Description = "Pour l'entretien",
-                    ProjectId = 3
-                },
-                new Step
-                {
-                    Id = 6,
                     Amount = 3000,
-                    Description = "Pour renforcer l'équipe",
+                    Description = "Cette collecte nous permettra d'acheter des kits thématiques pour mettre en " +
+                    "place les formations d’enseignants et d’animateurs sportifs.",
                     ProjectId = 4
                 },
                 new Step
                 {
-                    Id = 7,
+                    Id = 6,
                     Amount = 45000,
-                    Description = "Pour acheter un terrain",
+                    Description = "Ces dons vont nous permettre d'acheter du matériel pour les handicapés et va aussi " +
+                    "nous permetttre de facilité leur insertion scolaire ou professionnelle dans la vie de tous les jours ",
                     ProjectId = 5
                 },
                 new Step
                 {
-                    Id = 8,
+                    Id = 7,
                     Amount = 20900,
-                    Description = "Pour construire un centre de santé pour les handicapés",
+                    Description = "Ensuite, à ce deuxième statde, nous souhaitons mettre en place un centre " +
+                    "de santé pour les handicapés. Ce qui leur permettra d'échanger entre eux.",
                     ProjectId = 5
                 },
-                 new Step
-                 {
-                     Id = 9,
-                     Amount = 4700,
-                     Description = "Pour équiper le centre de matériels pour les handicapés",
-                     ProjectId = 5
-                 },
+               
                   new Step
                   {
-                      Id = 10,
+                      Id = 8,
                       Amount = 16000,
-                      Description = "Pour construire des locaux pour les réfugiés de guerre",
+                      Description = "Cette collecte nous permettra de construire des locaux pour " +
+                      "les réfugiés de guerre et de leur permettre de se réinsérer professionnellement et de mettre en " +
+                      "place un service psychologique pour leur permettre d'évacuer et de se confier.",
                       ProjectId = 6
                   },
-                   new Step
-                   {
-                       Id = 11,
-                       Amount = 5000,
-                       Description = "Pour mettre en place un service psychologique",
-                       ProjectId = 6
-                   },
+                 
+              
                     new Step
                     {
-                        Id = 12,
-                        Amount = 10000,
-                        Description = "Pour aider les personnes à se réinserer dans la vie active",
-                        ProjectId = 6
-                    },
-                    new Step
-                    {
-                        Id = 13,
-                        Amount = 6000,
-                        Description = "Pour acheter un terrain",
-                        ProjectId = 7
-                    },
-                    new Step
-                    {
-                        Id = 14,
-                        Amount = 11000,
-                        Description = "Pour la construction",
-                        ProjectId = 7
-                    },
-                    new Step
-                    {
-                        Id = 15,
-                        Amount = 1000,
-                        Description = "Pour acheter le matériel necessaire",
+                        Id = 9,
+                        Amount = 60000,
+                        Description = "Cette collecte sera consacrée au soutien financier des actions internationales présentant " +
+                        "le plus fort intérêt stratégique pour le sport français." +
+                        " Elle permettra d'acheter le matériel nécessaire pour les jeux olympiques. ",
                         ProjectId = 7
                     },
 
                     new Step
                     {
-                        Id = 16,
+                        Id = 10,
                         Amount = 16000,
-                        Description = "Pour acheter du matériel neccesaire pour les drépanocytaires",
+                        Description = "Pour acheter du matériel neccesaire pour les drépanocytaires et " +
+                        "faire un centre de santé pour permettre la prise en charge rapide des personnes touchées. Elle permettra de rendre accessible les médicaments" +
+                        " en aidant les patients à avoir des mutuelles gratuitement.",
                         ProjectId = 8
                     },
+                   
                     new Step
                     {
-                        Id = 17,
-                        Amount = 3000,
-                        Description = "Pour creer un centre pour les drépanocytaires",
-                        ProjectId = 8
-                    },
-                    new Step
-                    {
-                        Id = 18,
+                        Id = 11,
                         Amount = 20000,
-                        Description = "Pour offrir un suivi efficace aux personnes touchées",
+                        Description = "Cette cagnotte va permettre d'offrir un suivi efficace aux personnes " +
+                        "touchées par la guerre et leur permettre d'avoir accès à l'eau et aux aliments de premières nécessités.",
                         ProjectId = 9
                     },
                     new Step
                     {
-                        Id = 19,
+                        Id = 12,
                         Amount = 15000,
-                        Description = "Pour offrir un suivi efficace aux personnes malade",
+                        Description = "Cette somme permettra de faire comprendre les enjeux " +
+                        "de la scolarisation à plus de 80 000 enfants, dont 40 % de filles",
                         ProjectId = 10
                     },
 
                     new Step
                     {
-                        Id = 20,
+                        Id = 13,
                         Amount = 6000,
-                        Description = "Pour la mise en place du bateau Kirikou ",
+                        Description = "Cette collecte permettra de participer pour les inscriptions aux courses de qualifications ainsi que les places de port." +
+                        "car  le bateau Kirikou va sillonner les eaux Bretonnes pendant 2 ans pour être sélectionné.",
                         ProjectId = 11
                     },
 
                      new Step
                      {
-                         Id = 21,
+                         Id = 14,
                          Amount = 25000,
-                         Description = "Pour la location du local",
+                         Description = " Le but de cette collecte est avant tout de regrouper un maximum de producteurs" +
+                         " et transformateurs en rendant accessible tous les matériaux nécessaires à la mise en place d'un projet de primeur",
                          ProjectId = 12
                      },
                      new Step
                      {
-                         Id = 22,
+                         Id = 15,
                          Amount = 25000,
-                         Description = "Pour l'achat du materiel d'impression",
+                         Description = "Pour l'achat du materiel d'impression pour pouvoir donner la parole à " +
+                         "ceux qui ont des personnes à ne pas oublier. ",
                          ProjectId = 13
                      },
                      new Step
                      {
-                         Id = 23,
+                         Id = 16,
                          Amount = 25000,
-                         Description = "Pour l'achat du materiel pour la formation",
+                         Description = "Le financement nous permettra d’imprimer 5000 livrets et de les distribuer gratuitement " +
+                         "tout en sensibilisant les personnes interessées",
                          ProjectId = 14
                      }
 
