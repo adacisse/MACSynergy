@@ -8,8 +8,11 @@ using System.Text;
 
 namespace Projet2Crowdfunding.Service
 {
+    
     public class ParticipantService
     {
+
+
         public void ModifyParticipantInfos(int id, string lastName, string firstName, Gender gender, DateTime birthdate)
         {
             BddContext ctx = new BddContext();
@@ -86,5 +89,37 @@ namespace Projet2Crowdfunding.Service
                 ctx.SaveChanges();
             }
         }
+
+        public void DeleteParticipantFromAccountId(int idAccount)
+        {
+            BddContext ctx = new BddContext();
+            Account account = ctx.Accounts.Find(idAccount);
+            Participant participant = ctx.Participants.FirstOrDefault(p => p.AccountId == idAccount);
+            Address address = ctx.Addresses.FirstOrDefault(a => a.Id == participant.AddressId);
+            List<Donation> donationList = ctx.Donations.Where(d => d.ParticipantId == participant.Id).ToList();
+            List<Favorite> favoriteList = ctx.Favorites.Where(f => f.ParticipantId == participant.Id).ToList();
+
+            foreach (Favorite fav in favoriteList)
+            {
+                Project project = ctx.Projects.FirstOrDefault(p => p.Id == fav.ProjectId);
+                project.HeartCounter--;
+                ctx.Favorites.Remove(fav);
+                ctx.SaveChanges();
+            }
+
+            foreach (Donation don in donationList)
+            {
+                ctx.Donations.Remove(don);
+                ctx.SaveChanges();
+            }
+
+            ctx.Accounts.Remove(account);
+            ctx.Participants.Remove(participant);
+            ctx.Addresses.Remove(address);
+            ctx.SaveChanges();
+        }
+
+
+
     }
 }

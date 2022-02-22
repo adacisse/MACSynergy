@@ -94,6 +94,8 @@ namespace Projet2Crowdfunding.Controllers
                     smtp.Port = 587;
                     smtp.Send(mm);
                 }
+
+                accountService.CreateNewsletter(mailTo);
             }
 
             return View(viewModel);

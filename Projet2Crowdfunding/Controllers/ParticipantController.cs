@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Projet2Crowdfunding.Models;
 using Projet2Crowdfunding.Service;
 using Projet2Crowdfunding.ViewModels;
@@ -139,6 +140,20 @@ namespace Projet2Crowdfunding.Controllers
                 return View("Error");
             }
         }
+
+        public IActionResult DeleteParticipant()
+        {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                Account account = accountService.GetAccount(HttpContext.User.Identity.Name);
+                ParticipantService participantService = new ParticipantService();
+                participantService.DeleteParticipantFromAccountId(account.Id);
+                HttpContext.SignOutAsync();
+            }
+
+            return Redirect("/Home/Index");
+        }
+
 
     }
     

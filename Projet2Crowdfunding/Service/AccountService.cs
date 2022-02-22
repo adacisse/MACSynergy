@@ -251,6 +251,17 @@ namespace Projet2Crowdfunding.Service
             return false;
         }
 
+        public void CreateNewsletter (string mail)
+        {
+            NewsLetter newsLetter = new NewsLetter()
+            {
+                Mail = mail
+            };
+
+            bddContext.Add(newsLetter);
+            bddContext.SaveChanges();
+        }
+
 
         public void Dispose()
         {

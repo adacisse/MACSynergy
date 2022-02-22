@@ -92,6 +92,9 @@
                     <li class="nav-item pill-1">
                         <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-myProjects';return false;"><i class="fa fa-file-text-o me-3"></i>Mes projets</a>
                     </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-delete';return false;"><i class="fa fa-trash-o me-3"></i>Suppression du compte</a>
+                    </li>
                 </ul>
 
             </div>
@@ -239,57 +242,71 @@
                                                 @foreach (var Project in Model.ProjectList)
                                                 {
                                                     string pagelink = "/Project/projectPage/" + Project.Id;
-                                                <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
-                                                    <td>@Project.Name</td>
-                                                    <td>@Project.Category</td>
-                                                    <td>@Project.Location</td>
-                                                    <td>@Project.StartDate</td>
-                                                    <td>@Project.EndDate</td>
-                                                    @foreach (var Collection in Model.CollectionList)
-                                                    {
-                                                        if (Collection.ProjectId == Project.Id)
+                                                    <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align: center">
+                                                        <td>@Project.Name</td>
+                                                        <td>@Project.Category</td>
+                                                        <td>@Project.Location</td>
+                                                        <td>@Project.StartDate</td>
+                                                        <td>@Project.EndDate</td>
+                                                        @foreach (var Collection in Model.CollectionList)
                                                         {
+                                                            if (Collection.ProjectId == Project.Id)
+                                                            {
 
-                                                            <td>@Collection.Amount €</td>
+                                                                <td>@Collection.Amount €</td>
+                                                            }
                                                         }
-                                                    }
-                                                    <td>
-                                                        @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
-                                                        {
-                                                            <p style="color:red">En attente de validation</p>
+                                                        <td>
+                                                            @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                            {
+                                                                <p style="color:red">En attente de validation</p>
 
-                                                        }
-                                                        else if (Project.Status == Projet2Crowdfunding.Models.Status.Publié)
-                                                        {
-                                                            <p style="color:seagreen"> @Project.Status </p>
-                                                        }
-                                                        else
-                                                        {
-                                                            <p> @Project.Status </p>
-                                                        }
-                                                    </td>
+                                                            }
+                                                            else if (Project.Status == Projet2Crowdfunding.Models.Status.Publié)
+                                                            {
+                                                                <p style="color:seagreen"> @Project.Status </p>
+                                                            }
+                                                            else
+                                                            {
+                                                                <p> @Project.Status </p>
+                                                            }
+                                                        </td>
 
-                                                    <td>
-                                                        @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
-                                                        {
-                                                            string pagelink2 = "/ProjectOwner/ModifyProject/" + Project.Id;
-                                                            <a  class=" btn btn-outline-dark " href="@pagelink2">Modifier</a>
-                                                        }
-                                                    </td>
+                                                        <td>
+                                                            @if (Project.Status == Projet2Crowdfunding.Models.Status.sumittedForPublishing)
+                                                            {
+                                                                string pagelink2 = "/ProjectOwner/ModifyProject/" + Project.Id;
+                                                                <a class=" btn btn-outline-dark " href="@pagelink2">Modifier</a>
+                                                            }
+                                                        </td>
 
                                                     </tr>
-
                                                 }
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-delete"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-10"><a><strong>Suppression du compte</strong></a></div>
+                            <div class="col-md-2">
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#suppModal">
+                                        Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
 
@@ -545,6 +562,46 @@
         </div>
     </div>
 </div>
+
+<!-- The suppModal -->
+<div class="modal" id="suppModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Suppression du compte</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Voulez vous supprimer définitivement votre compte ?</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        <input class="btn btn-primary btn-block mt-3" style="width:25%; margin:auto " value="Supprimer">                                      
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 
 @section Footer
 {

@@ -97,6 +97,9 @@
                     <li class="nav-item pill-1">
                         <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-payment';return false;"><i class="fa fa-money fa-fw me-3"></i>Paiements</a>
                     </li>
+                    <li class="nav-item pill-1">
+                        <a class="nav-link" data-bs-toggle="pill" href="" onclick="document.location=document.location.toString().split('#')[0]+'#row-delete';return false;"><i class="fa fa-trash-o me-3"></i>Suppression du compte</a>
+                    </li>
                 </ul>
 
             </div>
@@ -203,9 +206,6 @@
                                     </button>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
 
@@ -229,27 +229,27 @@
                                 </thead>
                                 <tbody>
                                     @foreach (var Project in Model.ProjectList)
-                                        {
-                                            string pagelink = "/Project/projectPage/" + Project.Id;
-                                            <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
-                                                <td>@Project.Name</td>
-                                                <td>@Project.Category</td>
-                                                <td>@Project.Location</td>
-                                                <td>@Project.StartDate.ToString("dd/MM/yyyy")</td>
-                                                <td>@Project.EndDate.ToString("dd/MM/yyyy")</td>
-                                                @foreach (var Collection in Model.CollectionList)
+                                    {
+                                        string pagelink = "/Project/projectPage/" + Project.Id;
+                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
+                                            <td>@Project.Name</td>
+                                            <td>@Project.Category</td>
+                                            <td>@Project.Location</td>
+                                            <td>@Project.StartDate.ToString("dd/MM/yyyy")</td>
+                                            <td>@Project.EndDate.ToString("dd/MM/yyyy")</td>
+                                            @foreach (var Collection in Model.CollectionList)
+                                            {
+                                                if (Collection.ProjectId == Project.Id)
                                                 {
-                                                    if (Collection.ProjectId == Project.Id)
-                                                    {
 
-                                                        <td>@Collection.Amount €</td>
-                                                    }
+                                                    <td>@Collection.Amount €</td>
                                                 }
+                                            }
 
 
-                                            </tr>
+                                        </tr>
 
-                                        }
+                                    }
                                 </tbody>
                             </table>
                         </div>
@@ -276,29 +276,41 @@
                                     @for (int i = 0; i < Model.ProjectList2.Count; i++)
                                     {
                                         string pagelink = "/Project/projectPage/" + @Model.ProjectList2[i].Id;
-                                            <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
-                                                <td>@Model.ProjectList2[i].Name</td>
-                                                <td>@Model.ProjectList2[i].Category</td>
-                                                <td>@Model.ProjectList2[i].Location</td>
-                                                <td>@Model.DonationList[i].PayDate.ToString("dd/MM/yyyy")</td>
-                                                <td>@Model.DonationList[i].Amount €</td>
+                                        <tr onclick='window.location.href="@pagelink";' style="cursor: pointer; text-align:center">
+                                            <td>@Model.ProjectList2[i].Name</td>
+                                            <td>@Model.ProjectList2[i].Category</td>
+                                            <td>@Model.ProjectList2[i].Location</td>
+                                            <td>@Model.DonationList[i].PayDate.ToString("dd/MM/yyyy")</td>
+                                            <td>@Model.DonationList[i].Amount €</td>
 
-                                            </tr>
-
-                                        }
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
                 </div>
+
+                <div class="row-content border-MACS">
+                    <div id="row-delete"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-10"><a><strong>Suppression du compte</strong></a></div>
+                            <div class="col-md-2">
+                                <div class="container">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#suppModal">
+                                        Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-
-
         </div>
     </div>
-
-
 </div>
 
 <!-- The infosModal -->
@@ -546,6 +558,48 @@
         </div>
     </div>
 </div>
+
+<!-- The suppModal -->
+<div class="modal" id="suppModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header clearfix">
+                <div class="mx-auto"><h3>Suppression du compte</h3></div>
+                <span class="float-end"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></span>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center border rounded-3 p-3">
+                                <p>Voulez vous supprimer définitivement votre compte ?</p>
+                                <div class="panel-body">
+                                    <fieldset class="d-grid">
+                                        @using (Html.BeginForm("DeleteParticipant", "Participant"))
+                                        {
+                                            <input class="btn btn-primary btn-block mt-3" value="Supprimer" type="submit">
+                                        }
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 @section Footer
     {
