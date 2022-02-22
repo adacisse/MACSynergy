@@ -463,7 +463,7 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-bs-toggle="tab" href="#home" style="color:green">Le projet</a>
+                    <a class="nav-link active" data-bs-toggle="tab" href="#home" style="color: rgb(173, 209, 42)">Le projet</a>
                 </li> 
                 <li class="nav-item" id="recolte">
                     <a class="nav-link" data-bs-toggle="tab" href="#menu2"style="color:green">La récolte</a>
@@ -493,7 +493,7 @@
 
                     <!-- Section heading -->
                     <section class="team-section text-center my-5"
-                             style="background-color: #8fbc8f; opacity: 0.8;">
+                             style="background-color: white; opacity: 0.8;">
                         <div class="mode-vert ms-3">
                             <!-- <h6 style="font-size: 30px;">Comment soutenir ce projet?</h6> -->
 
@@ -502,6 +502,7 @@
                         <!--<h2 class="h1-responsive font-weight-bold my-5">A propos de notre projet</h2>-->
                         <!-- Section description -->
                         <div class="container mt-5" align="justify" style="text-align:justify">
+                            <p style="font-size: 14px">@Model.Project.Summary</p>
                             <div class="row">
                                 <div class="col-sm-7">
 
@@ -693,85 +694,72 @@
                 </div>
                 <div id="menu3" class="container tab-pane fade">
                     <br>
-                    <h3>Contreparties</h3>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam.
-                    </p>
-                    <div class="card" style="border-radius: 14px;">
-                        <h4 class="card-title">Ouragon de Cathrina, USA</h4>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim
-                            veniam,
-                            quis nostrud exercitation ullamco.
-                        </p>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim
-                            veniam,
-                            quis nostrud exercitation ullamco.
-                        </p>
-                        <p>
-                            Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-                            adipiscing
-                            elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim
-                            veniam,
-                            quis nostrud exercitation ullamco.
-                        </p>
-                    </div>
 
-                </div>
-               <!-- <div id="menu4" class="container tab-pane fade ">
-                    <br>
-                    <h3>FAQ</h3>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam.
-                    </p>
-                </div>-->
-               <!-- <div id="menu5" class="container tab-pane fade">
-                    <br>
-                    <h3>Commentaires</h3>
-                    <h5>Commentaires des passants ou des participants</h5>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam.
-                    </p>
-                </div>-->
+                    <section class="team-section text-center my-5" style="background-color: white; opacity: 0.8;">
+                        <!-- #f6f1eb rgb(173, 209, 42)#f6f1eb-->
+                        <!-- Section heading -->
+                        <div class="mode-vert ms-3">
+                            <!-- <h6 style="font-size: 30px;">Comment soutenir ce projet?</h6> -->
+
+                            <h2 class="h1-responsive font-weight-bold my-5" style="color: rgb(173, 209, 42)">Et en contrepartie de mon don?</h2>
+                        </div>
 
 
-               <!-- <div id="menu6" class="container tab-pane fade">
-                    <br>
-                    <h3>Témoignages</h3>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam.
-                    </p>
-                    <h5>Témoignages: Partenaire</h5>
-                    <h5>Témoignages: Bénéficiares</h5>
-                    <h5>Témoignages: Bénévoles de l'association</h5>
-                </div>
-                <div id="menu7" class="container tab-pane fade">
-                    <br>
-                    <h3>Contributions</h3>
-                    <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam.
-                    </p>
-                    <h5>Historique des contributions</h5>
-                </div>-->
+                        <div class="pb-4 px-4">
+                            <div class="mode-vert ms-3" align="justify">
+                                <p>
+                                    Quand vous faites un don pour notre projet vous êtes elligibles à un geste de remerciement de la part de @Model.ProjectOwner.Name.
+                                    En fin de collecte, nous reviendrons vers vous avec plus d'informations.<br />
+                                    N'hésitez pas à suivre notre Newsletter pour être informé des nouveautés.
+                                </p>
+                            </div>
+
+                        </div>
+                        <img style="width:max-content;" src="~/Images/MerciVert.png" alt="" /><img />
+                    </section>
+                
 
             </div>
-        </div>
+                            <!-- <div id="menu4" class="container tab-pane fade ">
+                 <br>
+                 <h3>FAQ</h3>
+                 <p>
+                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                     laudantium, totam rem aperiam.
+                 </p>
+             </div>-->
+                            <!-- <div id="menu5" class="container tab-pane fade">
+                 <br>
+                 <h3>Commentaires</h3>
+                 <h5>Commentaires des passants ou des participants</h5>
+                 <p>
+                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                     laudantium, totam rem aperiam.
+                 </p>
+             </div>-->
+                            <!-- <div id="menu6" class="container tab-pane fade">
+                 <br>
+                 <h3>Témoignages</h3>
+                 <p>
+                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                     laudantium, totam rem aperiam.
+                 </p>
+                 <h5>Témoignages: Partenaire</h5>
+                 <h5>Témoignages: Bénéficiares</h5>
+                 <h5>Témoignages: Bénévoles de l'association</h5>
+             </div>
+             <div id="menu7" class="container tab-pane fade">
+                 <br>
+                 <h3>Contributions</h3>
+                 <p>
+                     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                     laudantium, totam rem aperiam.
+                 </p>
+                 <h5>Historique des contributions</h5>
+             </div>-->
+
+                        </div>
+                </div>
 
 
 
