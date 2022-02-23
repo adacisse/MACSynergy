@@ -235,7 +235,7 @@
                 <div class="card-body">
                     <h4 class="card-title">@Model.Project.Name</h4>
                     <div class="container fluid " style="border-radius:24px">
-                        <div id="toto" style="width:250px; height:80px;border-radius:24px; padding-top:10px; padding-left:20px">
+                        <div id="toto" style="width:250px; height:80px;border-radius:24px; padding-top:20px; padding-left:30px; margin: auto">
                             <pspec id="compteur"></pspec>
                             <script>
                                     // Set the date we're counting down to
@@ -281,7 +281,7 @@
                     </p>
 
                     <div class="progress" style="padding:0px 0px 0px 0px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: @ViewBag.Percentage">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: @ViewBag.Percentage%">
                             @ViewBag.Percentage %
                             @*<span>@ViewBag.Percentage %</span>*@
                         </div>
