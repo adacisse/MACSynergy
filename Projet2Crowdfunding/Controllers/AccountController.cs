@@ -120,7 +120,7 @@ namespace Projet2Crowdfunding.Controllers
                 ModelState.AddModelError("Account.Mail", "Veuillez saisir un email valide");
 
             if (viewModel.Account.Password != null && viewModel.Account.Password.Length < 5)
-                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caractères au minimum pour le mot de passe");
 
             return View(viewModel);
         }
@@ -171,7 +171,7 @@ namespace Projet2Crowdfunding.Controllers
                 ModelState.AddModelError("Account.Mail", "Veuillez saisir un email valide");
             
             if (viewModel.Account.Password != null && viewModel.Account.Password.Length < 5)            
-                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caractères au minimum pour le mot de passe");
             
             if (!viewModel.Participant.ConfidentialityCharter)
                 ModelState.AddModelError("Participant.ConfidentialityCharter", "La politique de confidentialité doit être acceptée");
@@ -256,7 +256,7 @@ namespace Projet2Crowdfunding.Controllers
                 ModelState.AddModelError("Account.Mail", "Veuillez saisir un email valide");
 
             if (viewModel.Account.Password != null && viewModel.Account.Password.Length < 5)
-                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caracters au minimum pour le mot de passe");
+                ModelState.AddModelError("Account.Password", "Veuillez utiliser 5 caractères au minimum pour le mot de passe");
             
 
             return View(viewModel);
