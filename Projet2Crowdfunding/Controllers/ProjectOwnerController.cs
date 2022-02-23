@@ -193,7 +193,7 @@ namespace Projet2Crowdfunding.Controllers
         public IActionResult ModifyProject(int? id, AccountViewModel viewModel, IFormFile Picture)
         {
             string fileNameImage = "";
-            string fileNameVideo = "";
+            //string fileNameVideo = "";
             viewModel.Authentify = HttpContext.User.Identity.IsAuthenticated; //cookies
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -216,19 +216,19 @@ namespace Projet2Crowdfunding.Controllers
                     }
                 }
 
-                if (viewModel.ProjectVideo != null)
-                {
-                    fileNameVideo = Path.GetFileName(viewModel.ProjectVideo.FileName);
-                    var filePath = _env.ContentRootPath + "\\wwwroot\\VideosProject";
-                    using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameVideo), FileMode.Create))
-                    {
-                        viewModel.ProjectVideo.CopyTo(fileSteam);
-                    }
-                }
+                //if (viewModel.ProjectVideo != null)
+                //{
+                //    fileNameVideo = Path.GetFileName(viewModel.ProjectVideo.FileName);
+                //    var filePath = _env.ContentRootPath + "\\wwwroot\\VideosProject";
+                //    using (var fileSteam = new FileStream(Path.Combine(filePath, fileNameVideo), FileMode.Create))
+                //    {
+                //        viewModel.ProjectVideo.CopyTo(fileSteam);
+                //    }
+                //}
 
                 createProjectService.ModifyProject(id, viewModel.Project.Name,
                     viewModel.Project.Summary, viewModel.Project.Descritpion, viewModel.Project.Category,
-                    viewModel.Project.Location, viewModel.Project.EndDate, fileNameImage, fileNameVideo,
+                    viewModel.Project.Location, viewModel.Project.EndDate, fileNameImage, viewModel.Project.Video,
                     viewModel.Project.MaterialDonation, viewModel.Step1.Amount, viewModel.Step1.Description,
                     viewModel.Step2.Amount, viewModel.Step2.Description, viewModel.Step3.Amount, viewModel.Step3.Description);
 

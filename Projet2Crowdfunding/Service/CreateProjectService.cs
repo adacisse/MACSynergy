@@ -64,7 +64,7 @@ namespace Projet2Crowdfunding.Service
                 Location = location,
                 EndDate = endDate,
                 Picture = imageProject,
-                Video = "/VideosProject/" + video,
+                Video = video,
                 MaterialDonation = materialDonation,
                 Status = Status.sumittedForPublishing,
                 ProjectOwnerId = idPO,
