@@ -342,14 +342,14 @@
                                                 <div class="col-md-10">
                                                     <span style="margin:30px">
                                                         Homme
-                                                        @Html.RadioButtonFor(m => m.Participant.Gender, "0", new { @class = "margin-right:10px" })
+                                                        @Html.RadioButtonFor(m => m.Participant.Gender, "1", new { @class = "margin-right:10px" })
                                                     </span>
                                                     <span style="margin-right:30px">
                                                         Femme
-                                                        @Html.RadioButtonFor(m => m.Participant.Gender, "1")
+                                                        @Html.RadioButtonFor(m => m.Participant.Gender, "2")
                                                     </span>
                                                     Autre
-                                                    @Html.RadioButtonFor(m => m.Participant.Gender, "2")
+                                                    @Html.RadioButtonFor(m => m.Participant.Gender, "3")
                                                 </div>
                                                 @Html.TextBoxFor(m => m.Participant.Birthdate, new { @class = "form-control input-lg mt-2", placeholder = "Date de naissance" })
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Projet2Crowdfunding.Models
 {
-    public enum Gender { Homme, Femme, Autre }
+    public enum Gender { NonPrecisé, Homme, Femme, Autre }
 
     public class Participant
     {

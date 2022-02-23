@@ -768,7 +768,7 @@ namespace Projet2Crowdfunding.Models
 
                     Picture = "/ImagesProject/imgWwf.jpeg",
                     Category = Category.Environnement,
-                    StartDate = new DateTime(2022, 1, 29, 15, 6, 8, 245),
+                    StartDate = new DateTime(01, 01, 0, 0, 0, 01, 245),
                     EndDate = new DateTime(2022, 7, 29, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/FK3dav4bA4s",///VideosProject/Videowwf.jpg",
                     MaterialDonation = "Matèriaux de constructions, Aliments pour nourrir les tigres.",
@@ -831,8 +831,8 @@ namespace Projet2Crowdfunding.Models
 
                     Picture = "/ImagesProject/Playimage.jpeg",
                     Category = Category.Education,
-                    StartDate = new DateTime(0, 0, 0, 0, 0, 0, 0),
-                    EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
+                    StartDate = new DateTime(01, 01, 0, 0, 0, 01, 0),
+                    EndDate = new DateTime(2022, 11, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/unW8EgFJXN4",//"/VideosProject/PlayVideo1.html",
                     MaterialDonation = "Materiaux sportifs, Matériaux scolaires, Lotissement.",
                     Location = "New York",
@@ -860,7 +860,7 @@ namespace Projet2Crowdfunding.Models
                     Picture = "/ImagesProject/handicapimage.jpeg",
                     Category = Category.Humanitaire,
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
-                    EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
+                    EndDate = new DateTime(2022, 11, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/1g7tLluDQfI",//"/VideosProject/handicapvideo.html",
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires.",
                     Location = "Nwagadougou",

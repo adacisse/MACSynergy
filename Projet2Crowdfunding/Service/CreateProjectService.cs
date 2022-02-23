@@ -66,7 +66,7 @@ namespace Projet2Crowdfunding.Service
                 Picture = imageProject,
                 Video = "/VideosProject/" + video,
                 MaterialDonation = materialDonation,
-                Status = Status.submittedForEvaluation,
+                Status = Status.sumittedForPublishing,
                 ProjectOwnerId = idPO,
                 HeartCounter = 0
             };
