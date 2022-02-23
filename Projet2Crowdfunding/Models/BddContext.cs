@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Projet2Crowdfunding.Service;
 using System;
 using System.Collections.Generic;
