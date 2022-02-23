@@ -92,7 +92,7 @@ namespace Projet2Crowdfunding.Models
                     Account = new Account
                     {
                         Id = 2,
-                        Mail = "sara.rchouk@gmail.com",
+                        Mail = "sararchouk@gmail.com",
                         Password = AccountService.EncodeMD5("sssss"),
                         Role = "participant"
                     }
@@ -736,7 +736,7 @@ namespace Projet2Crowdfunding.Models
                     Picture = "/ImagesProject/imgProjetAurore.jpg",
                     Category = Category.Santé,
                     StartDate = new DateTime(2021, 11, 9, 16, 5, 7, 123),
-                    EndDate = new DateTime(2022, 2, 24, 0, 0, 0, 0),
+                    EndDate = new DateTime(2022, 8, 24, 0, 0, 0, 0),
                     Video = "https://www.youtube.com/embed/Y_-TnjTNVFA",// "/VideosProject/VideoAurore.jpg",
                     MaterialDonation = "Médicaments, Matériaux informatiques, Bonbons pour arreter de fumer. ",
                     Location = "Iceland",
@@ -831,8 +831,8 @@ namespace Projet2Crowdfunding.Models
 
                     Picture = "/ImagesProject/Playimage.jpeg",
                     Category = Category.Education,
-                    StartDate = new DateTime(2021, 9, 19, 15, 6, 8, 245),
-                    EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
+                    StartDate = new DateTime(0, 0, 0, 0, 0, 0, 0),
+                    EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/unW8EgFJXN4",//"/VideosProject/PlayVideo1.html",
                     MaterialDonation = "Materiaux sportifs, Matériaux scolaires, Lotissement.",
                     Location = "New York",
@@ -860,7 +860,7 @@ namespace Projet2Crowdfunding.Models
                     Picture = "/ImagesProject/handicapimage.jpeg",
                     Category = Category.Humanitaire,
                     StartDate = new DateTime(2021, 5, 10, 15, 6, 8, 245),
-                    EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
+                    EndDate = new DateTime(2022, 12, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/1g7tLluDQfI",//"/VideosProject/handicapvideo.html",
                     MaterialDonation = "Fauteuils roulants, Prothéses, Kits scolaires.",
                     Location = "Nwagadougou",
@@ -900,7 +900,7 @@ namespace Projet2Crowdfunding.Models
                     Picture = "/ImagesProject/bioforceimage.jpeg",
                     Category = Category.Humanitaire,
                     StartDate = new DateTime(2021, 8, 09, 20, 5, 8, 245),
-                    EndDate = new DateTime(2022, 4, 19, 15, 6, 8, 245),
+                    EndDate = new DateTime(2023, 4, 19, 15, 6, 8, 245),
                     Video = "https://www.youtube.com/embed/oCUrC29eq6Y",//VideosProject/bioforcevideo.html",
                     MaterialDonation = "Fournitures scolaires, Terrains, Meubles d'amé1nagement.",
                     Location = "Jordanie",
@@ -1160,7 +1160,7 @@ namespace Projet2Crowdfunding.Models
                       Picture = "/ImagesProject/pharmacie1.jpg",
                       Category = Category.Humanitaire,
                       StartDate = new DateTime(2021, 1, 11, 10, 7, 8, 245),
-                      EndDate = new DateTime(2022, 1, 19, 15, 6, 8, 245),
+                      EndDate = new DateTime(2022, 3, 19, 15, 6, 8, 245),
                       Video = "https://www.youtube.com/embed/gbFo5su9V8k",///VideosProject/pharmacieVideo",
                       MaterialDonation = "Imprimantes, Feuilles, Encres, ",
                       Location = "Toulouse",
@@ -1282,6 +1282,15 @@ namespace Projet2Crowdfunding.Models
                 },
                 new Step
                 {
+                    Id = 17,
+                    Amount = 25000,
+                    Description = "Cette troisième étape permettra de se faire connaitre afin de pouvoir arriver à aider les plus grande " +
+                    "nombres de personnes qui ont besoin d'aide.",
+
+                    ProjectId = 1
+                },
+                new Step
+                {
                     Id = 3,
                     Amount = 15000,
                     Description = "Ce montant va nous permettre de lancer L’initiative " +
@@ -1291,7 +1300,7 @@ namespace Projet2Crowdfunding.Models
                 new Step
                 {
                     Id = 4,
-                    Amount = 47000,
+                    Amount = 7000,
                     Description = "Cette première partie de la collecte, nous permettra d'acheter " +
                     "le matériel necéssaire pour la mise en place du processus du déminage et protèger " +
                     "la future Aire Marine de l’archipel des Îles Barren contre la sédimentation",
@@ -1326,7 +1335,7 @@ namespace Projet2Crowdfunding.Models
                   new Step
                   {
                       Id = 8,
-                      Amount = 16000,
+                      Amount = 10000,
                       Description = "Cette collecte nous permettra de construire des locaux pour " +
                       "les réfugiés de guerre et de leur permettre de se réinsérer professionnellement et de mettre en " +
                       "place un service psychologique pour leur permettre d'évacuer et de se confier.",
@@ -1337,7 +1346,7 @@ namespace Projet2Crowdfunding.Models
                     new Step
                     {
                         Id = 9,
-                        Amount = 60000,
+                        Amount = 30000,
                         Description = "Cette collecte sera consacrée au soutien financier des actions internationales présentant " +
                         "le plus fort intérêt stratégique pour le sport français." +
                         " Elle permettra d'acheter le matériel nécessaire pour les jeux olympiques. ",
@@ -1425,7 +1434,7 @@ namespace Projet2Crowdfunding.Models
                 new Collection
                 {
                     Id = 1,
-                    Amount = 300,
+                    Amount = 4300,
                     ProjectId = 1
                 },
                 new Collection
@@ -1437,13 +1446,13 @@ namespace Projet2Crowdfunding.Models
                 new Collection
                 {
                     Id = 3,
-                    Amount = 550,
+                    Amount = 2550,
                     ProjectId = 3
                 },
                 new Collection
                 {
                     Id = 4,
-                    Amount = 0,
+                    Amount = 580,
                     ProjectId = 4
                 },
                 new Collection
@@ -1467,7 +1476,7 @@ namespace Projet2Crowdfunding.Models
                 new Collection
                 {
                     Id = 8,
-                    Amount = 350,
+                    Amount = 1950,
                     ProjectId = 8
                 },
                 new Collection
