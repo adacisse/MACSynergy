@@ -333,7 +333,7 @@ namespace Projet2Crowdfunding.Models
                     {
                         Id = 10,
                         Mail = "ongwwf@gmail.com",
-                        Password = AccountService.EncodeMD5("wwfwwf"),
+                        Password = AccountService.EncodeMD5("wwwww"),
                         Role = "po"
                     }
 
@@ -800,7 +800,7 @@ namespace Projet2Crowdfunding.Models
                     EndDate = new DateTime(2022, 8, 9, 15, 6, 8, 200),
                     Video = "https://www.youtube.com/embed/-ennmy8Iias",//VideosProject/mangrovevideo.jpeg",
                     MaterialDonation = "Barques motorisées, Matériaux de déminage, Matériaux d'entretiens.",
-                    Location = "Troyes",
+                    Location = "Manambolo",
                     ProjectOwnerId = 2,
                     HeartCounter = 3
                 },

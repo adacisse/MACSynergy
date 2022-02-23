@@ -43,8 +43,10 @@ namespace Projet2Crowdfunding.ViewModels
 
         public IFormFile AssoLogo { get; set; }
 
+        [Display(Name = "Image")]
         public IFormFile ProjectImage { get; set; }
 
+        [Display(Name = "Vidéo")]
         public IFormFile ProjectVideo { get; set; }
 
         public double sumDonations { get; set; }//somme dons
