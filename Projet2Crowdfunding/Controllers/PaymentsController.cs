@@ -154,33 +154,33 @@ namespace Projet2Crowdfunding.Controllers
             }
             paymentService.CreateDonation(id,viewModel.Participant.Id, amount );
 
-            ////Envoie Mail
-            //using (MailMessage mm = new MailMessage("macssynergy@gmail.com", viewModel.Account.Mail))
-            //{
-            //    mm.Subject = "Facture de votre Donnation sur MACSynergy";
-            //    mm.Body = "Bonjour Mr/Mme " + viewModel.Participant.LastName + ",\n\n" +
-            //        "Merci pour votre contribution au projet !! \n\n" +
-            //        "Vous trouverez ci-dessous le récapitulatif de votre donation.\n\n" +
-            //        "Nom du project : " + viewModel.Project.Name + " \n" +
-            //        "Date de clôture du project : " + viewModel.Project.EndDate.ToString("dd/MM/yyyy") + " \n" +
-            //        "Montant donné : " + amount + " € \n\n\n" +
-            //        "A bientôt sur MACSynergy!";
+            //Envoie Mail
+            using (MailMessage mm = new MailMessage("macssynergy@gmail.com", viewModel.Account.Mail))
+            {
+                mm.Subject = "Facture de votre Donnation sur MACSynergy";
+                mm.Body = "Bonjour Mr/Mme " + viewModel.Participant.LastName + ",\n\n" +
+                    "Merci pour votre contribution au projet !! \n\n" +
+                    "Vous trouverez ci-dessous le récapitulatif de votre donation.\n\n" +
+                    "Nom du project : " + viewModel.Project.Name + " \n" +
+                    "Date de clôture du project : " + viewModel.Project.EndDate.ToString("dd/MM/yyyy") + " \n" +
+                    "Montant donné : " + amount + " € \n\n\n" +
+                    "A bientôt sur MACSynergy!";
 
-            //    mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "/wwwroot/Images/logoMacSynergy.png"));
+                mm.Attachments.Add(new System.Net.Mail.Attachment(_env.ContentRootPath + "/wwwroot/Images/logoMacSynergy.png"));
 
-            //    mm.IsBodyHtml = false;
+                mm.IsBodyHtml = false;
 
-            //    using (SmtpClient smtp = new SmtpClient())
-            //    {
-            //        smtp.Host = "smtp.gmail.com";
-            //        smtp.EnableSsl = true;
-            //        NetworkCredential NetworkCred = new NetworkCredential("macssynergy@gmail.com", "Macsynergy4");
-            //        smtp.UseDefaultCredentials = false;
-            //        smtp.Credentials = NetworkCred;
-            //        smtp.Port = 587;
-            //        smtp.Send(mm);
-            //    }
-            //}   
+                using (SmtpClient smtp = new SmtpClient())
+                {
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    NetworkCredential NetworkCred = new NetworkCredential("macssynergy@gmail.com", "Macsynergy4");
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = NetworkCred;
+                    smtp.Port = 587;
+                    smtp.Send(mm);
+                }
+            }
 
             Response.Headers.Add("Location", session.Url);
             return new StatusCodeResult(303);
