@@ -51,12 +51,13 @@
     }
 </script>
 <script>
-    function copyToClipboard(element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($(element).text()).select();
-        document.execCommand("copy");
-        $temp.remove();
+    function copyURI(evt) {
+        evt.preventDefault();
+        navigator.clipboard.writeText(evt.target.getAttribute('href')).then(() => {
+            /* clipboard successfully set */
+        }, () => {
+            /* clipboard write failed */
+        });
     }
 </script>
 
@@ -335,8 +336,8 @@
                                         </div>
 
                                         <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
-                                            @{string pagelink3 = "/Project/projectPage/" + @Model.Project.Id;}
-                                            <a href="@pagelink3" class="btn btn-success float-right" width="7px"
+                                            @{string pagelink3 = "https://mac-synergy.piercuta.com/Project/projectPage/" + @Model.Project.Id;}
+                                            <a href="@pagelink3" class="btn btn-success float-right" onclick="copyURI(event)"width="7px"
                                                style="text-decoration:none">
                                                 Je partage <i class="fa fa-share-alt-square"></i>
                                             </a>
@@ -371,9 +372,9 @@
                                         </div>
 
                                         <div class="col-sm-6" style="position: center; padding: 0px 0px 0px 0px">
-                                            @{string pagelink3 = "/Project/projectPage/" + @Model.Project.Id;}
-                                            <a href="@pagelink3" class="btn btn-success" action="co" id="shareLink" width="7px"
-                                               style="text-decoration:none" onclick="" copyToClipboard('#shareLink')"">
+                                            @{string pagelink3 = "https://mac-synergy.piercuta.com/Project/projectPage/" + @Model.Project.Id;}
+                                            <a href="@pagelink3" class="btn btn-success" onclick="copyURI(event)" width="7px"
+                                               style="text-decoration:none">
                                                 Je partage <i class="fa fa-share-alt-square"></i>
                                             </a>
                                         </div>
@@ -404,9 +405,9 @@
                                     </div>
 
                                     <div class="col-sm-6" style="text-align:left; padding: 0px 0px 0px 0px">
-                                        @{string pagelink3 = "/Project/projectPage/" + @Model.Project.Id;}
-                                        <a href="@pagelink3" class="btn btn-success" action="co" id="shareLink" width="7px"
-                                           style="text-decoration:none" onclick=" copyToClipboard('#shareLink')">
+                                        @{string pagelink3 = "https://mac-synergy.piercuta.com/Project/projectPage/" + @Model.Project.Id;}
+                                        <a href="@pagelink3" class="btn btn-success" onclick="copyURI(event)" width="7px"
+                                           style="text-decoration:none">
                                             Je partage <i class="fa fa-share-alt-square"></i>
                                         </a>
                                     </div>
